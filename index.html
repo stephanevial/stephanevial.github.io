@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>418 · I'm a teapot</title>
+<style>
+  :root{ --bg:#0d0f12; --fg:#e8e6e3; --dim:#6b7280; --accent:#e0a83a; --accent2:#5ed3c4; }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:radial-gradient(1100px 560px at 50% -12%, #17202b 0%, var(--bg) 62%);
+    color:var(--fg);
+    font-family:'SFMono-Regular',ui-monospace,Menlo,Consolas,'Courier New',monospace;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:100dvh;padding:32px 20px;text-align:center;line-height:1.5;
+  }
+  .status{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent2);opacity:.85}
+  .teapot{
+    margin:16px 0 2px;color:var(--accent);
+    font-size:clamp(9px,2.3vw,15px);line-height:1.15;white-space:pre;
+    text-shadow:0 0 18px rgba(224,168,58,.28);
+  }
+  h1{font-size:clamp(30px,8vw,58px);margin:.15em 0 0;font-weight:700;letter-spacing:.01em}
+  .tag{color:var(--dim);font-size:clamp(13px,2.6vw,15px);margin:6px 0 22px}
+  .msg{max-width:46ch;color:var(--fg);font-size:clamp(14px,2.8vw,16px)}
+  .msg .hi{color:var(--accent2)}
+  .cursor{
+    display:inline-block;width:.55ch;height:1.15em;vertical-align:-.18em;
+    background:var(--accent2);margin-left:.2ch;animation:blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0}}
+  footer{margin-top:36px;color:#3a4048;font-size:11px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+  <div class="status">HTTP 418 · I'm a teapot</div>
+  <pre class="teapot" aria-hidden="true">             ((( )))
+              )   (
+          .---------.
+   .--.  /           \___
+  /    \|             |   \
+  \    /|    4 1 8    |    >
+   '--' |             |___/
+         \           /
+          '---------'</pre>
+  <h1>Rien à infuser ici.</h1>
+  <p class="tag">cette page est une théière — elle ne sert aucun contenu.</p>
+  <p class="msg">Mais le <span class="hi">service à thé</span> est bien garni ailleurs sur ce serveur&nbsp;:
+     il suffit de connaître la table où il est dressé.<span class="cursor"></span></p>
+  <footer>© Stéphane Vial</footer>
+</body>
+</html>
