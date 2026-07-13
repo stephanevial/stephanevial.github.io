@@ -19,7 +19,7 @@
   }
   .status{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent2);opacity:.85}
 
-  /* Théière + vapeur qui sort du bec */
+  /* Théière + vapeur (ambre) qui sort du bec */
   .pot{position:relative;margin:24px 0 2px}
   .teapot{
     margin:0;color:var(--accent);
@@ -31,16 +31,16 @@
     0%,100%{text-shadow:0 0 14px rgba(224,168,58,.18)}
     50%    {text-shadow:0 0 26px rgba(224,168,58,.40)}
   }
-  .steam{position:absolute;top:70px;right:1%;display:flex;gap:6px;height:40px;pointer-events:none}
+  .steam{position:absolute;top:2px;right:5%;display:flex;gap:7px;height:40px;pointer-events:none}
   .steam span{width:2px;height:22px;border-radius:2px;
-    background:linear-gradient(to top,rgba(94,211,196,0),rgba(94,211,196,.6));
+    background:linear-gradient(to top,rgba(224,168,58,0),rgba(224,168,58,.75));
     opacity:0;filter:blur(.4px);animation:rise 3.2s ease-in-out infinite}
   .steam span:nth-child(1){animation-delay:0s}
   .steam span:nth-child(2){animation-delay:1s;height:28px}
   .steam span:nth-child(3){animation-delay:2s}
   @keyframes rise{
     0%{opacity:0;transform:translateY(10px) scaleY(.5)}
-    35%{opacity:.8}
+    35%{opacity:.85}
     100%{opacity:0;transform:translateY(-22px) scaleY(1.15)}
   }
 
@@ -59,18 +59,19 @@
 
   <div class="pot">
     <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
-    <pre class="teapot" aria-hidden="true">                  ___
-                _(   )_
-               '-------'
-            .-"""""""""-.__
-          .'             '. '-._
-         /                 \     '.
-   .-.  |                   |      )
-  /   \ |                   |
-  |    ||                   |
-  \   / |                   |
-   '-'  |                   |
-         \                 /
+    <pre class="teapot" aria-hidden="true">              .---.
+             (  ~  )
+              )---(                        ___
+          .-----------.                 ,-'   )
+        .'             '.             ,-'   ,-'
+   .--./                 \         ,-'    ,-'
+  /    |                   |     ,-'     ,-'
+ |     |                   |   ,-'     ,-'
+ |     |                   | ,-'     ,-'
+ |     |                   |'     ,-'
+  \    |                   |   ,-'
+   '--'\                   |,-'
+        '.               ,-'
           '-.._______..-'
          (_______________)</pre>
   </div>
