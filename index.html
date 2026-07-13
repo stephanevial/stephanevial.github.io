@@ -43,6 +43,15 @@
   .steam .side:nth-child(1) i:nth-child(2){animation-delay:1.2s}
   .steam .side:nth-child(2) i:nth-child(1){animation-delay:.6s}
   .steam .side:nth-child(2) i:nth-child(2){animation-delay:1.8s}
+  /* vapeur au milieu du pot */
+  .steam-mid{position:absolute;top:42%;left:0;right:0;height:46px;
+    display:flex;justify-content:center;align-items:flex-end;gap:10px;pointer-events:none}
+  .steam-mid i{display:block;width:2px;height:24px;border-radius:2px;
+    background:linear-gradient(to top,rgba(224,168,58,0),rgba(224,168,58,.6));
+    opacity:0;filter:blur(.6px);animation:rise 3.4s ease-in-out infinite}
+  .steam-mid i:nth-child(1){animation-delay:.4s}
+  .steam-mid i:nth-child(2){height:32px;animation-delay:1.5s}
+  .steam-mid i:nth-child(3){animation-delay:2.3s}
   @keyframes rise{
     0%{opacity:0;transform:translateY(8px) scaleY(.5)}
     40%{opacity:.8}
@@ -67,20 +76,21 @@
       <span class="side"><i></i><i></i></span>
       <span class="side"><i></i><i></i></span>
     </div>
-    <pre class="teapot" aria-hidden="true">              .---.
-             (  ~  )
-              )---(
-          .-----------.
-        .'             '.
-   .--./                 \.--.
-  /    |                   |    \
- |     |                   |     |
- |     |                   |     |
-  \    |                   |    /
-   '--'\                   /'--'
-        '.               .'
-          '-.._______..-'
-         (_______________)</pre>
+    <div class="steam-mid" aria-hidden="true"><i></i><i></i><i></i></div>
+    <pre class="teapot" aria-hidden="true">               .---.
+              (  ~  )
+               )---(
+           .-----------.
+         .'             '.
+    .--./                 \.--.
+   /    |                 |    \
+  |     |                 |     |
+  |     |                 |     |
+   \    |                 |    /
+    '--'\                 /'--'
+         '.             .'
+           '-.._____..-'
+          (_____________)</pre>
   </div>
 
   <h1>Rien à infuser ici.</h1>
