@@ -1,0 +1,1055 @@
+/* ==========================================================================
+   Thème « UQAM » — diapositives de Stéphane Vial
+   Continuité visuelle avec stephane-vial.net (Cardo + Inter, #F9F9F9 / #111)
+   Ne pas modifier ici sans mettre à jour CHARTE-DIAPOS-UQAM.md
+   ========================================================================== */
+
+/* --- 1. Jetons de design ------------------------------------------------- */
+
+:root {
+  --sv-bg:      #F9F9F9;
+  --sv-ink:     #111111;
+  --sv-muted:   #636363;
+  --sv-rule:    #D4D4D2;
+  --sv-accent:  #B3541E;   /* ocre profond, contraste 4.6:1 sur le fond clair */
+  --sv-surface: rgba(17, 17, 17, .06);
+
+  /* Ombre portée : trois couches, pour détacher un objet clair d'un fond
+     clair sans que l'ombre elle-même se voie. Jamais décorative. */
+  --sv-ombre: 0 2px 4px rgba(17, 17, 17, .05),
+              0 10px 24px rgba(17, 17, 17, .07),
+              0 30px 60px rgba(17, 17, 17, .05);
+
+  --sv-serif: "Cardo", Georgia, "Times New Roman", serif;
+  --sv-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* échelle typographique, canevas 1280 × 720 */
+  --sv-display: 76px;
+  --sv-h1:      60px;
+  --sv-h2:      42px;
+  --sv-lead:    30px;
+  --sv-body:    26px;
+  --sv-small:   20px;
+  --sv-micro:   15px;
+  --sv-legende: 16px;
+
+  --sv-pad-x: 88px;
+  --sv-pad-y: 64px;
+  --sv-measure: 26ch;   /* mesure des grands titres */
+}
+
+/* Variante sombre : appliquée au deck entier (<body class="sombre">)
+   ou à une diapo isolée (:: contenu sombre) */
+.sombre {
+  --sv-bg:      #111111;
+  --sv-ink:     #F4F4F2;
+  --sv-muted:   #9A9A96;
+  --sv-rule:    #3A3A38;
+  --sv-accent:  #E08A45;   /* ocre éclairci, contraste 7.1:1 sur le fond sombre */
+  --sv-surface: rgba(249, 249, 249, .08);
+  --sv-ombre: 0 2px 6px rgba(0, 0, 0, .34),
+              0 12px 30px rgba(0, 0, 0, .40),
+              0 34px 70px rgba(0, 0, 0, .30);
+}
+
+/* --- 2. Fondations ------------------------------------------------------- */
+
+html { background: #F9F9F9; }
+html.sv-hors-cadre-sombre { background: #111111; }
+body, .reveal-viewport { background: transparent !important; }
+
+.reveal {
+  font-family: var(--sv-sans);
+  font-size: var(--sv-body);
+  font-weight: 400;
+  color: var(--sv-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal .slides { text-align: left; }
+
+.reveal .slides section {
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--sv-pad-y) var(--sv-pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--sv-bg);
+  color: var(--sv-ink);
+}
+
+/* reveal impose display:block en ligne sur la diapo affichée : on rétablit
+   la mise en page en colonne là où la diapo est réellement visible */
+.reveal .slides section.present,
+.reveal.overview .slides > section { display: flex !important; }
+
+/* la diapo occupe toujours le cadre, sans décalage vertical calculé */
+.reveal .slides section { top: 0 !important; }
+
+.reveal .slides section.sombre { background: #111111; }
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: var(--sv-serif);
+  font-weight: 400;
+  color: var(--sv-ink);
+  margin: 0;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+/* le titre de diapo passe en gras : c'est le contraste de graisse, et non la
+   taille seule, qui le détache du texte courant */
+.reveal h2 { font-weight: 700; }
+
+.reveal p { margin: 0 0 .8em; line-height: 1.55; }
+.reveal p:last-child { margin-bottom: 0; }
+.reveal strong { font-weight: 600; }
+.reveal em { font-style: italic; }
+
+.reveal a {
+  color: var(--sv-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  text-decoration-color: var(--sv-accent);
+  text-decoration-skip-ink: auto;
+}
+.reveal a:hover { text-decoration-thickness: 2px; }
+
+.reveal code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: .88em;
+  background: var(--sv-surface);
+  padding: .06em .3em;
+}
+
+/* Accent typographique réservé : le seul usage de couleur dans le texte */
+.reveal .accent { color: var(--sv-accent); }
+
+/* --- 3. Éléments transverses --------------------------------------------- */
+
+/* surtitre : cadre du cours, numéro de partie, nature de la diapo */
+.sv-eyebrow {
+  font-family: var(--sv-sans);
+  font-size: var(--sv-micro);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sv-muted);
+  margin: 0 0 28px;
+}
+
+.sv-rule {
+  height: 1px;
+  background: var(--sv-rule);
+  border: 0;
+  margin: 32px 0;
+  flex: none;
+}
+
+.sv-meta {
+  font-size: var(--sv-small);
+  color: var(--sv-muted);
+  line-height: 1.5;
+}
+
+.sv-caption {
+  font-size: var(--sv-legende);
+  line-height: 1.4;
+  color: var(--sv-muted);
+  margin: 36px 0 0;
+  max-width: 78ch;
+}
+
+/* listes : puce en filet court, pas de rond */
+.reveal ul, .reveal ol {
+  margin: 0 0 .8em;
+  padding: 0;
+  list-style: none;
+}
+.reveal li { position: relative; padding-left: 1.15em; margin-bottom: .5em; line-height: 1.5; }
+.reveal ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .68em;
+  width: .55em; height: 1px;
+  background: var(--sv-accent);
+}
+.reveal ol { counter-reset: sv-ol; }
+.reveal ol > li { padding-left: 1.6em; }
+.reveal ol > li::before {
+  counter-increment: sv-ol;
+  content: counter(sv-ol) ".";
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--sv-accent);
+  font-size: .82em;
+  font-variant-numeric: tabular-nums;
+  padding-top: .22em;
+}
+.reveal li li { font-size: .92em; margin-top: .35em; }
+
+/* --- 4. Types de diapos --------------------------------------------------- */
+
+/* 4.1 Couverture */
+.sv-couverture { justify-content: center; }
+.sv-couverture h1 {
+  font-size: var(--sv-display);
+  line-height: 1.06;
+  max-width: 22ch;
+}
+.sv-couverture .sv-eyebrow { color: var(--sv-accent); }
+.sv-couverture .sv-sous-titre {
+  font-family: var(--sv-sans);
+  font-size: var(--sv-lead);
+  font-weight: 400;
+  color: var(--sv-muted);
+  line-height: 1.3;
+  max-width: 40ch;
+  margin: 22px 0 0;
+}
+.sv-couverture .sv-rule { margin: 44px 0 24px; max-width: 100%; }
+.sv-couverture .sv-nom {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--sv-ink);
+  line-height: 1.3;
+  margin: 0;
+}
+.sv-couverture .sv-fonction {
+  font-size: 20px;
+  color: var(--sv-muted);
+  line-height: 1.4;
+  margin: 4px 0 0;
+  max-width: 52ch;
+}
+.sv-couverture .sv-date {
+  font-size: 15px;
+  color: var(--sv-muted);
+  letter-spacing: .02em;
+  margin: 14px 0 0;
+}
+
+/* 4.2 Section */
+.sv-section { justify-content: center; }
+.sv-section .sv-eyebrow { color: var(--sv-accent); margin-bottom: 22px; }
+.sv-section h1 {
+  font-size: var(--sv-h1);
+  line-height: 1.1;
+  max-width: 20ch;
+}
+
+/* 4.3 Plan */
+.reveal .slides section.sv-plan { justify-content: center; }
+.sv-plan h2 { font-size: var(--sv-h2); margin-bottom: 8px; }
+.sv-plan ol { margin-top: 16px; }
+.sv-plan ol > li { color: var(--sv-muted); font-size: var(--sv-lead); margin-bottom: .55em; }
+.sv-plan ol > li.encours { color: var(--sv-ink); }
+.sv-plan ol > li.encours::before { color: var(--sv-accent); }
+
+/* 4.4 Contenu courant */
+.reveal .slides section.sv-contenu { justify-content: flex-start; }
+.sv-contenu h2 {
+  font-size: var(--sv-h2);
+  line-height: 1.15;
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--sv-rule);
+}
+.sv-contenu .sv-corps { max-width: 46ch; }
+.sv-contenu.large .sv-corps { max-width: none; }
+
+/* 4.5 Affirmation */
+.sv-affirmation { justify-content: center; align-items: flex-start; }
+.sv-affirmation p:not(.sv-eyebrow) {
+  font-family: var(--sv-serif);
+  font-size: var(--sv-display);
+  line-height: 1.1;
+  max-width: 18ch;
+  margin: 0;
+}
+
+/* 4.6 Citation */
+.reveal .slides section.sv-citation { justify-content: flex-start; }
+.sv-citation h2 {
+  font-size: var(--sv-h2);
+  line-height: 1.15;
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--sv-rule);
+}
+/* la citation se centre dans l'espace qui reste sous le titre ; sans titre,
+   cet espace est toute la diapositive et le rendu est inchangé */
+.sv-citation .sv-bloc-citation {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sv-citation blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-family: var(--sv-serif);
+  font-style: italic;
+  font-size: 44px;
+  line-height: 1.28;
+  max-width: 34ch;
+  position: relative;
+}
+.sv-citation blockquote::before {
+  content: "«";
+  position: absolute;
+  left: -.62em; top: -.06em;
+  color: var(--sv-accent);
+  font-style: normal;
+}
+.sv-citation blockquote::after {
+  content: "\202F»";
+  color: var(--sv-accent);
+  font-style: normal;
+}
+.sv-citation .sv-attribution {
+  font-family: var(--sv-sans);
+  font-size: var(--sv-small);
+  color: var(--sv-muted);
+  margin: 40px 0 0;
+  max-width: 46ch;
+}
+
+/* 4.7 Deux colonnes */
+.reveal .slides section.sv-colonnes { justify-content: flex-start; }
+.sv-colonnes h2 {
+  font-size: var(--sv-h2);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--sv-rule);
+}
+.sv-colonnes .sv-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  flex: 1;
+  min-height: 0;
+}
+.sv-colonnes .sv-col { min-width: 0; display: flex; flex-direction: column; min-height: 0; }
+.sv-colonnes .sv-col-titre {
+  font-size: var(--sv-body);
+  font-weight: 600;
+  color: var(--sv-accent);
+  line-height: 1.3;
+  margin: 0 0 16px;
+}
+.sv-colonnes .sv-col img { max-height: 100%; object-fit: contain; object-position: left top; }
+
+/* 4.8 Image encadrée */
+.reveal .slides section.sv-image { justify-content: flex-start; }
+.sv-image h2 { font-size: 32px; margin-bottom: 22px; }
+.sv-image .sv-cadre {
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+.sv-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.sv-image .sv-caption { flex: none; }
+
+/* 4.9 Image bord à bord */
+.reveal .slides section.sv-image-pleine { padding: 0; justify-content: flex-end; position: relative; overflow: hidden; }
+.sv-image-pleine img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  margin: 0; border: 0; box-shadow: none;
+}
+.sv-image-pleine .sv-cartouche {
+  position: relative;
+  z-index: 1;
+  margin: 0 32px 32px;
+  padding: 14px 20px;
+  background: rgba(17, 17, 17, .78);
+  color: #F9F9F9;
+  font-size: var(--sv-legende);
+  line-height: 1.4;
+  max-width: 62ch;
+  backdrop-filter: blur(6px);
+}
+.sv-image-pleine .sv-cartouche .sv-source { color: #B9B9B4; }
+
+/* 4.10 Grille d'images */
+.reveal .slides section.sv-grille-images { justify-content: flex-start; }
+.sv-grille-images h2 {
+  font-size: 32px;
+  padding-bottom: 18px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--sv-rule);
+}
+.sv-grille-images .sv-grille {
+  display: grid;
+  gap: 34px;
+  flex: 1;
+  min-height: 0;
+}
+.sv-grille-images.cols-2 .sv-grille { grid-template-columns: repeat(2, 1fr); }
+.sv-grille-images.cols-3 .sv-grille { grid-template-columns: repeat(3, 1fr); }
+.sv-grille-images.cols-4 .sv-grille { grid-template-columns: repeat(4, 1fr); }
+.sv-grille-images figure {
+  margin: 0; min-height: 0;
+  display: flex; flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.sv-grille-images figure img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0; border: 0; box-shadow: none;
+}
+.sv-grille-images figcaption {
+  flex: none;
+  font-size: var(--sv-legende);
+  line-height: 1.4;
+  color: var(--sv-muted);
+  margin-top: 14px;
+}
+
+/* 4.11 Référence bibliographique */
+.sv-reference { justify-content: center; }
+.sv-reference .sv-grille {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.sv-reference.sans-image .sv-grille { grid-template-columns: 1fr; }
+.sv-reference img {
+  width: 100%;
+  margin: 0; border: 0;
+  box-shadow: 0 2px 22px rgba(0, 0, 0, .16);
+}
+.sv-reference .sv-ref-titre {
+  font-family: var(--sv-serif);
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  max-width: 20ch;
+}
+.sv-reference .sv-ref-detail {
+  font-size: var(--sv-small);
+  color: var(--sv-muted);
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+/* 4.12 Crédits */
+.reveal .slides section.sv-credits { justify-content: flex-start; }
+.sv-credits h2 { font-size: 32px; padding-bottom: 18px; margin-bottom: 24px; border-bottom: 1px solid var(--sv-rule); }
+.sv-credits .sv-corps {
+  columns: 2;
+  column-gap: 56px;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--sv-muted);
+}
+.sv-credits li { margin-bottom: .45em; break-inside: avoid; }
+.sv-credits ul > li::before { top: .62em; }
+
+/* 4.13 Fin */
+.sv-fin { justify-content: center; }
+.sv-fin h1 { font-size: var(--sv-display); line-height: 1.05; }
+.sv-fin .sv-contacts {
+  font-size: var(--sv-lead);
+  line-height: 1.6;
+  margin-top: 34px;
+}
+.sv-fin .sv-contacts p { margin-bottom: .28em; }
+.sv-fin .sv-contacts a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .58em;
+}
+.sv-fin .sv-ico {
+  flex: none;
+  width: .92em;
+  height: .92em;
+  display: inline-flex;
+  color: var(--sv-muted);
+}
+.sv-fin .sv-ico svg { width: 100%; height: 100%; display: block; }
+.sv-fin .sv-contacts a:hover .sv-ico-texte { text-decoration: underline; text-underline-offset: .18em; }
+
+/* --- 5. Repères de navigation -------------------------------------------- */
+
+.sv-numero {
+  position: absolute;
+  right: var(--sv-pad-x);
+  bottom: 30px;
+  font-size: var(--sv-micro);
+  font-variant-numeric: tabular-nums;
+  color: var(--sv-muted);
+  opacity: .75;
+  letter-spacing: .04em;
+}
+.sv-couverture .sv-numero,
+.sv-section .sv-numero,
+.sv-fin .sv-numero,
+.sv-image-pleine .sv-numero { display: none; }
+
+.reveal .progress {
+  height: 2px;
+  color: var(--sv-accent);
+  background: rgba(17, 17, 17, .08);
+}
+.sombre .reveal .progress { background: rgba(249, 249, 249, .12); }
+
+.reveal .controls { display: none; }
+
+/* écran noir (touche B ou point) : montrer que la machine est vivante */
+.reveal .pause-overlay {
+  background: #0B0B0B;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: .3em;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 34px;
+  letter-spacing: .02em;
+  transition: opacity .25s ease;
+}
+.reveal .pause-overlay::before {
+  content: "> pause";
+  color: #9A9A96;
+}
+.reveal .pause-overlay::after {
+  content: "\258C";
+  color: #E08A45;
+  animation: sv-curseur 1.1s steps(1) infinite;
+}
+@keyframes sv-curseur {
+  0%, 49.9%   { opacity: 1; }
+  50%, 100%   { opacity: 0; }
+}
+.reveal .pause-overlay .resume-button {
+  border: 1px solid #3A3A38;
+  color: #6E6E6A;
+  border-radius: 0;
+  font-family: var(--sv-sans);
+  font-size: 14px;
+  padding: 7px 14px;
+}
+.reveal .pause-overlay .resume-button:hover { color: #E08A45; border-color: #E08A45; }
+
+/* palette d'aide (touche ?) : elle remplace celle du moteur, qui est en anglais
+   et qui ignore les liaisons ajoutées ici. Couche d'interface posée sur la page,
+   hors du conteneur des diapositives, donc jamais mise à l'échelle. */
+.sv-aide {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #0B0B0B;
+}
+.sv-aide.visible { display: flex; }
+.sv-aide table {
+  border-collapse: collapse;
+  font-family: var(--sv-sans);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #F4F4F2;
+}
+.sv-aide th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #8A8A86;
+  padding: 26px 0 12px;
+}
+.sv-aide tr:first-child th { padding-top: 0; }
+.sv-aide td {
+  padding: 8px 0;
+  border-top: 1px solid #2C2C2A;
+  vertical-align: baseline;
+}
+.sv-aide td.touche {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color: #E08A45;
+  padding-right: 40px;
+  white-space: nowrap;
+}
+
+/* recherche plein texte (touche S) : le champ est une pièce d'interface,
+   pas un élément de diapositive, d'où son traitement neutre */
+.reveal .searchbox {
+  top: auto !important;
+  bottom: 26px !important;
+  left: var(--sv-pad-x) !important;
+  right: auto !important;
+}
+.reveal .searchbox .searchinput {
+  font-family: var(--sv-sans) !important;
+  font-size: 16px !important;
+  width: 260px !important;
+  padding: 9px 12px !important;
+  color: #111111 !important;
+  background: #FFFFFF !important;
+  border: 1px solid #C9C9C6 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .14) !important;
+}
+.reveal .searchbox .searchinput:focus {
+  border-color: #B3541E !important;
+  outline: 0 !important;
+}
+.reveal .searchbox .searchinput::-webkit-search-cancel-button { filter: grayscale(1); }
+
+/* occurrences trouvées : le module les surligne en ligne, on impose la charte */
+.reveal .slides em[style] {
+  background: var(--sv-accent) !important;
+  color: #F9F9F9 !important;
+  font-style: normal !important;
+  padding: .04em .12em;
+}
+.reveal .slides section.sombre em[style] { color: #111111 !important; }
+
+/* ==========================================================================
+   COMPOSITION — planche d'essai, version 2 (29 juillet 2026)
+   Un seul modèle de diapo de contenu : titre en capitales Cardo ocre,
+   masse de texte sur l'axe. Registres de tête et de pied resserrés.
+   ========================================================================== */
+
+:root {
+  --sv-axe:       188px;  /* retrait constant du contenu : la grille visible */
+  --sv-tete-y:     38px;  /* ligne de base du registre de tête */
+  --sv-pied-y:     28px;  /* hauteur du filet de pied */
+  --sv-contenu-y: 132px;  /* ancrage haut du bloc de contenu */
+}
+
+/* --- 1. Le filet de pied : lieu, nature, numéro -------------------------- */
+
+.sv-pied {
+  position: absolute;
+  left: var(--sv-pad-x);
+  right: var(--sv-pad-x);
+  bottom: var(--sv-pied-y);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  font-family: var(--sv-sans);
+  font-size: 14px;
+  letter-spacing: .01em;
+  color: var(--sv-muted);
+}
+.sv-pied hr {
+  grid-column: 1 / -1;
+  margin: 0 0 12px;
+  border: 0;
+  border-top: 1px solid var(--sv-rule);
+}
+.sv-pied-nature { text-align: center; }
+.sv-pied-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.sv-pied-lieu:empty, .sv-pied-nature:empty { min-height: 1em; }
+
+.sv-image-pleine .sv-pied { color: rgba(255, 255, 255, .82); z-index: 3; }
+.sv-image-pleine .sv-pied hr { border-top-color: rgba(255, 255, 255, .38); }
+
+/* --- 2. Le registre de tête ---------------------------------------------- */
+
+.sv-tete {
+  position: absolute;
+  left: var(--sv-pad-x);
+  right: var(--sv-pad-x);
+  top: var(--sv-tete-y);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--sv-serif);
+}
+.sv-partie {
+  font-size: 34px;
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--sv-ink);
+}
+.sv-courant {
+  font-size: 18px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--sv-muted);
+  text-align: right;
+  max-width: 62%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- 3. Le titre de diapo de contenu, figé pour tous les types ----------- */
+
+.reveal .slides p.sv-titre-contenu {
+  margin: 0 0 32px;
+  padding: 0;
+  border: 0;
+  max-width: none;
+  font-family: var(--sv-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--sv-accent);
+}
+
+/* --- 4. L'ancrage haut et l'axe ------------------------------------------ */
+
+.reveal .slides section.sv-contenu,
+.reveal .slides section.sv-lignes,
+.reveal .slides section.sv-plan,
+.reveal .slides section.sv-citation,
+.reveal .slides section.sv-colonnes,
+.reveal .slides section.sv-image,
+.reveal .slides section.sv-grille-images,
+.reveal .slides section.sv-reference,
+.reveal .slides section.sv-credits,
+.reveal .slides section.sv-affirmation {
+  justify-content: flex-start;
+  padding: var(--sv-contenu-y) var(--sv-pad-x) 92px
+           calc(var(--sv-pad-x) + var(--sv-axe));
+}
+
+.reveal .slides section.sv-section {
+  padding-left: calc(var(--sv-pad-x) + var(--sv-axe));
+  padding-bottom: 100px;
+}
+.sv-section h1 { max-width: 15ch; font-size: 76px; line-height: 1.08; }
+
+/* Les mesures de livre sautent : le texte occupe la colonne composée. */
+.sv-contenu .sv-corps { max-width: none; font-size: 34px; line-height: 1.4; }
+.sv-credits .sv-corps { max-width: none; }
+.sv-contenu .sv-corps p { margin: 0 0 .55em; }
+.sv-contenu .sv-corps li { margin-bottom: .45em; }
+
+/* --- 5. Le plan : des rangs numérotés entre filets ----------------------- */
+
+.sv-plan-rangs { margin-top: 8px; }
+.sv-rang {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: baseline;
+  padding: 26px 0;
+  border-top: 1px solid var(--sv-rule);
+}
+.sv-rang:last-child { border-bottom: 1px solid var(--sv-rule); }
+.sv-rang-num {
+  font-family: var(--sv-serif);
+  font-size: 32px;
+  color: var(--sv-accent);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sv-rang-texte { font-size: 36px; line-height: 1.3; }
+
+/* --- 6. Le texte en lignes pleines --------------------------------------- */
+
+.sv-lignes .sv-enonces { margin-top: 2px; }
+.sv-lignes .sv-enonces p {
+  margin: 0 0 .42em;
+  font-size: 38px;
+  line-height: 1.28;
+  letter-spacing: -.008em;
+  color: var(--sv-ink);
+}
+
+/* --- 7. Citation, affirmation, blocs empilés ----------------------------- */
+
+.sv-citation blockquote { font-size: 40px; line-height: 1.38; max-width: 27ch; }
+.sv-citation .sv-attribution { margin: 26px 0 0; font-size: 19px; max-width: none; }
+
+.sv-affirmation p:not(.sv-eyebrow):not(.sv-titre-contenu) {
+  max-width: none;
+  font-size: 54px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.sv-blocs { display: flex; flex-direction: column; gap: 32px; }
+.sv-bloc-libelle {
+  margin: 0 0 10px;
+  font-family: var(--sv-sans);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--sv-muted);
+}
+.sv-bloc-texte { font-size: 29px; line-height: 1.42; max-width: none; }
+.sv-bloc-texte p { margin: 0; }
+
+/* --- 8. La couverture : titre en haut, signature au pied ----------------- */
+
+.reveal .slides section.sv-couverture {
+  justify-content: flex-start;
+  padding: 132px var(--sv-pad-x) 136px var(--sv-pad-x);
+}
+.sv-couverture h1 {
+  margin: 16px 0 0;
+  font-size: 88px;
+  line-height: 1.06;
+  max-width: 12ch;
+}
+.sv-couverture .sv-sous-titre {
+  margin: 24px 0 0;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--sv-muted);
+  max-width: 30ch;
+}
+.sv-couverture .sv-signature {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.sv-couverture .sv-nom {
+  margin: 0 0 6px;
+  font-family: var(--sv-sans);
+  font-size: 23px;
+  font-weight: 600;
+}
+.sv-couverture .sv-fonction {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--sv-muted);
+  max-width: none;
+}
+
+/* --- 9. La fin répond à la couverture ------------------------------------ */
+
+.reveal .slides section.sv-fin {
+  justify-content: flex-start;
+  padding: 132px var(--sv-pad-x) 136px var(--sv-pad-x);
+}
+.sv-fin h1 { margin: 0; font-size: 88px; line-height: 1.06; max-width: none; }
+.sv-fin .sv-contacts {
+  margin-top: auto;
+  font-size: 24px;
+  line-height: 2;
+}
+.sv-fin .sv-contacts p { margin: 0; }
+
+/* --- 10. Ce que la composition retire ------------------------------------ */
+
+.sv-numero { display: none; }
+.reveal .progress { display: none !important; }
+
+/* --- 11. Accords de la version 2 ----------------------------------------- */
+
+/* La citation s'ancre en haut comme les autres contenus. */
+.sv-citation .sv-bloc-citation { margin: 0; }
+.sv-citation blockquote { margin-top: 0; }
+
+/* Le sous-titre de couverture ne casse pas avant sa mesure naturelle. */
+.sv-couverture .sv-sous-titre { max-width: 36ch; }
+
+/* Un seul second registre : les surtitres adoptent les capitales Cardo
+   ocre du titre de contenu (couverture et sections comprises). */
+.reveal .slides .sv-eyebrow {
+  font-family: var(--sv-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: .14em;
+  color: var(--sv-accent);
+}
+
+/* La citation ne se centre plus dans l'espace restant : elle s'ancre en haut,
+   comme tout contenu. */
+.sv-citation .sv-bloc-citation { flex: 0 0 auto; justify-content: flex-start; }
+
+/* --- 12. Accords de la version 3 ----------------------------------------- */
+
+/* Le bloc de contenu — titre de diapo compris — se centre dans le champ
+   entre le registre de tête et le filet de pied. Vaut pour tous les contenus. */
+.sv-champ { margin-top: auto; margin-bottom: auto; }
+.sv-image .sv-champ,
+.sv-reference .sv-champ {
+  margin: 0;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* L'image : la légende passe en colonne à droite, posée sur le bas. */
+.sv-image .sv-image-rangee {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  gap: 48px;
+  align-items: stretch;
+}
+/* La colonne d'image épouse la largeur réelle de l'image (aspect-ratio
+   posé par le moteur) : le texte la suit à une gouttière fixe. */
+.sv-image .sv-image-rangee .sv-cadre {
+  flex: 0 0 auto;
+  width: auto;
+  height: 100%;
+  max-width: 58%;
+}
+.sv-image .sv-image-rangee .sv-image-texte {
+  flex: 1 1 auto;
+  max-width: 24ch;
+  margin: 0;
+  align-self: flex-start;
+  font-size: 29px;
+  line-height: 1.42;
+  color: var(--sv-ink);
+}
+.sv-image img { object-position: left top; }
+
+/* La saisie du raccourci G (aller à une diapositive) suit le même dessin
+   que celle de la recherche : lisible sur fond clair comme sur fond sombre. */
+.reveal .jump-to-slide { top: 10px; left: 10px; font-size: 14px; }
+.reveal .jump-to-slide-input {
+  font-family: var(--sv-sans);
+  width: 240px;
+  padding: 8px 10px;
+  color: #111111;
+  background: #FFFFFF;
+  border: 1px solid #C9C9C6;
+  border-radius: 0;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .14);
+}
+.reveal .jump-to-slide-input::placeholder { color: #636363; opacity: 1; }
+.reveal .jump-to-slide-input:focus { border-color: #B3541E; outline: 0; }
+
+/* Deux colonnes de listes se posent côte à côte : l'empilement est réservé
+   à la prose. */
+.sv-blocs.cote-a-cote { flex-direction: row; gap: 48px; }
+.sv-blocs.cote-a-cote .sv-bloc { flex: 1 1 0; }
+
+/* --- 13. Refonte des trois derniers types (v3, 29 juillet 2026) ----------- */
+
+/* Référence : la géométrie de la diapo d'image, appliquée à la bibliographie. */
+.reveal .slides section.sv-reference { justify-content: flex-start; }
+.sv-reference .sv-image-rangee {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  gap: 48px;
+  align-items: stretch;
+}
+.sv-reference .sv-cadre {
+  flex: 0 0 auto;
+  width: auto;
+  height: 100%;
+  max-width: 46%;
+  position: relative;
+  overflow: hidden;
+}
+.sv-reference .sv-image-texte { flex: 1 1 auto; align-self: center; }
+.sv-reference img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: left top;
+  margin: 0; border: 0; box-shadow: none;
+}
+.sv-reference .sv-ref-titre {
+  font-family: var(--sv-serif);
+  font-size: 40px;
+  line-height: 1.14;
+  margin: 0 0 20px;
+  max-width: none;
+  color: var(--sv-ink);
+}
+.sv-reference .sv-ref-detail {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--sv-muted);
+  max-width: none;
+}
+.sv-reference .sv-ref-detail p { margin: 0 0 .5em; }
+
+/* Grille d'images : titre en capitales ocre, légendes inchangées. */
+.sv-grille-images .sv-grille { margin-top: 4px; }
+
+/* Image bord à bord : le cartouche se pose au-dessus du filet de pied,
+   aligné sur les marges du cadre, et non plus dans l'angle. */
+.reveal .slides section.sv-image-pleine { justify-content: flex-end; }
+.sv-image-pleine .sv-cartouche {
+  margin: 0 var(--sv-pad-x) 92px;
+  padding: 16px 22px;
+  max-width: 52ch;
+}
+
+/* --- 14. Couverture avec image ------------------------------------------- */
+
+/* Une image sur la couverture occupe la partie droite, calée sur la marge,
+   sur toute la hauteur du champ. Le bloc de texte garde sa composition. */
+.reveal .slides section.sv-couverture.avec-image {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 64px;
+}
+.sv-couverture.avec-image .sv-couv-texte {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sv-couverture.avec-image .sv-couv-image {
+  flex: 0 0 auto;
+  width: auto;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.sv-couverture.avec-image .sv-couv-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  margin: 0; border: 0; box-shadow: none;
+}
+
+/* --- 15. Ombre portée des objets clairs ---------------------------------- */
+
+/* Une couverture d'ouvrage est presque blanche : sans ombre, son bord se
+   dissout dans le fond. L'ombre est ici un outil de séparation, pas un
+   ornement — elle ne se pose que sur les images dont le ratio exact est
+   connu, donc dont le cadre épouse le visuel au pixel près. */
+.sv-couv-image.avec-ombre { box-shadow: var(--sv-ombre); }
