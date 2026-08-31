@@ -1,0 +1,198 @@
+/* Feuille de style provisoire, séance 1.
+   Elle ne porte aucune direction artistique : elle rend les quatre pages
+   lisibles, navigables au clavier et imprimables, et rien de plus.
+   La composition se décide en séance 2, sur les deux pistes du §5 du cahier
+   des charges. Les couleurs ci-dessous sont celles du système de couverture,
+   posées en variables pour que la séance 2 n'ait pas à les rechercher.
+
+   Aucune fonte n'est chargée ici : la pile est celle du système. Archivo
+   variable sera auto-hébergée en WOFF2 dans fontes/, en séance 2. */
+
+:root {
+  --bleu:   #192E85;   /* encre unique de toutes les éditions */
+  --safran: #FCBB05;   /* fond de l'édition française */
+  --creme:  #F4E7CE;   /* le papier du livre */
+  --papier: #FFFDF8;
+  --gris:   #5a5a5a;
+
+  --texte: 1.0625rem;
+  --mesure: 34rem;     /* la largeur de la colonne de texte */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: #1b1b1b;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--texte);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------ accès et navigation */
+
+.evitement {
+  position: absolute;
+  left: -9999px;
+}
+.evitement:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: var(--bleu);
+  color: #fff;
+}
+
+a { color: var(--bleu); }
+a:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 2px;
+}
+
+.bandeau {
+  border-bottom: 1px solid var(--creme);
+  padding: 1rem 1.25rem;
+}
+.signature {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.signature a { text-decoration: none; }
+.signature a:hover { text-decoration: underline; }
+
+.sommaire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+}
+.sommaire a {
+  text-decoration: none;
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+}
+.sommaire a:hover { border-bottom-color: var(--safran); }
+.sommaire a[aria-current="page"] {
+  border-bottom-color: var(--bleu);
+  font-weight: 600;
+}
+
+/* Le sélecteur de langue est masqué jusqu'au 17 novembre 2026. L'attribut
+   hidden le retire du flux : il ne laisse ni trace visible ni espace vide.
+   Cette règle le garantit même si une autre déclaration l'affichait. */
+.langues[hidden] { display: none; }
+
+/* ------------------------------------------------------------ le texte */
+
+main { padding: 0 1.25rem; }
+
+.page {
+  max-width: var(--mesure);
+  margin: 2.5rem auto 4rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  color: var(--bleu);
+  text-wrap: balance;
+}
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--bleu);
+}
+h3 {
+  font-size: 1.0625rem;
+  margin: 2rem 0 0.25rem;
+}
+
+p, ul, ol { margin: 0 0 1rem; }
+
+.attribution,
+.chapeau {
+  color: var(--gris);
+  margin-bottom: 1.5rem;
+}
+.chapeau { font-style: italic; }
+
+.accroche {
+  font-size: 1.3125rem;
+  line-height: 1.4;
+}
+
+.cloture {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--creme);
+  font-size: 1.1875rem;
+  line-height: 1.4;
+}
+
+.renvoi {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--creme);
+  font-size: 0.9375rem;
+}
+
+ul { padding-left: 1.1rem; }
+li { margin-bottom: 0.75rem; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Rien ne doit déborder en largeur, à aucune taille d'écran. */
+.corps > * { overflow-wrap: break-word; }
+
+/* -------------------------------------------------------------- le pied */
+
+.pied {
+  border-top: 1px solid var(--creme);
+  padding: 1.5rem 1.25rem 3rem;
+  color: var(--gris);
+  font-size: 0.875rem;
+}
+.pied p {
+  max-width: var(--mesure);
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------- impression */
+
+/* La déclaration sera imprimée et citée. Elle doit sortir propre sur une
+   feuille, avec l'adresse du site et la mention des pages 129-130. */
+
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .bandeau, .pied, .evitement, .renvoi { display: none; }
+  main { padding: 0; }
+  .page { max-width: none; margin: 0; }
+  h1, h2 { color: #000; }
+  a { color: #000; text-decoration: none; }
+  h2, h3 { break-after: avoid; }
+  p { orphans: 3; widows: 3; }
+
+  body[data-page="declaration"] .corps::after {
+    display: block;
+    margin-top: 1.5em;
+    padding-top: 0.75em;
+    border-top: 1pt solid #000;
+    font-size: 9pt;
+    content: "Déclaration sur l’usage de l’intelligence artificielle. "
+             "Texte imprimé aux pages 129 et 130 de Petit lexique vivant de "
+             "l’intelligence artificielle, Stéphane Vial, "
+             "ISBN 978-2-9825534-0-8. "
+             "web.stephane-vial.net/lexique-ia/declaration/";
+  }
+}

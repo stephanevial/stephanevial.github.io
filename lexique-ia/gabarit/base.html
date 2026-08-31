@@ -1,0 +1,39 @@
+%(avertissement)s
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>%(titre)s</title>
+  <meta name="description" content="%(description)s">
+  <link rel="canonical" href="%(canonique)s">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  %(og)s
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="%(prefixe)sstyle.css">
+  <script type="application/ld+json">
+%(donnees)s
+  </script>
+</head>
+<body data-page="%(page)s">
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="bandeau">
+    <p class="signature"><a href="https://stephane-vial.net">Stéphane Vial</a></p>
+    <nav class="sommaire" aria-label="Sections du site">
+      %(navigation)s
+    </nav>
+    %(langues)s
+  </header>
+
+  <main id="contenu">
+%(corps)s
+  </main>
+
+  <footer class="pied">
+    <p>
+      %(pied)s
+    </p>
+  </footer>
+</body>
+</html>
