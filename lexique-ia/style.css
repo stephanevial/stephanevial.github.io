@@ -96,6 +96,14 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
 }
 .langues[hidden] { display: none; }
 
+/* L'adresse de contact presse est coupée en deux par un fragment que cette
+   règle masque. Un moissonneur qui lit le HTML brut récolte une adresse
+   morte ; un lecteur d'écran saute le fragment, comme le copier-coller.
+   Aucun JavaScript n'intervient.
+   NE PAS RETIRER sans retirer d'abord le fragment de contenu/contact.md :
+   sans cette règle, l'adresse s'affiche cassée. build.py le vérifie. */
+.leurre { display: none; }
+
 /* ------------------------------------------------------------ la titraille */
 
 main { padding: 0; }
@@ -255,8 +263,12 @@ h3 {
   margin: 2.25rem 0 0.2rem;
 }
 
-/* Les trois portes : trois pavés, en grille asymétrique sur large écran. */
-.accueil > ul {
+/* Les trois portes : trois pavés, en grille asymétrique sur large écran.
+   Cette composition ne vise que la liste qui suit « Trois choses à lire ».
+   Les liens d'achat, plus bas, restent des liens en texte : le §1.5 du
+   cahier des charges interdit le bouton et l'encadré, le site n'étant pas
+   un tunnel de conversion. */
+.accueil > #trois-choses-a-lire + ul {
   list-style: none;
   padding-left: var(--air);
   padding-right: var(--air);
@@ -267,13 +279,13 @@ h3 {
   border-top: 1px solid var(--bleu);
   border-bottom: 1px solid var(--bleu);
 }
-.accueil > ul li {
+.accueil > #trois-choses-a-lire + ul li {
   background: var(--papier);
   margin: 0;
   padding: 1.4rem clamp(1rem, 2vw, 1.75rem) 1.6rem;
 }
-.accueil > ul li strong { font-weight: 400; }
-.accueil > ul li a {
+.accueil > #trois-choses-a-lire + ul li strong { font-weight: 400; }
+.accueil > #trois-choses-a-lire + ul li a {
   display: inline-block;
   font-variation-settings: "wdth" 72;
   font-weight: 700;
@@ -282,16 +294,16 @@ h3 {
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
-.accueil > ul li a:hover { background: var(--safran); }
+.accueil > #trois-choses-a-lire + ul li a:hover { background: var(--safran); }
 
 @media (min-width: 55rem) {
-  .accueil > ul {
+  .accueil > #trois-choses-a-lire + ul {
     grid-template-columns: 1.25fr 1fr 1fr;   /* l'asymétrie est là */
     padding-left: 0;
     padding-right: 0;
   }
-  .accueil > ul li:first-child { padding-left: var(--air); }
-  .accueil > ul li:last-child  { padding-right: var(--air); }
+  .accueil > #trois-choses-a-lire + ul li:first-child { padding-left: var(--air); }
+  .accueil > #trois-choses-a-lire + ul li:last-child  { padding-right: var(--air); }
 }
 
 /* Le portrait, sans filet, comme la couverture. */
@@ -304,7 +316,11 @@ h3 {
   color: var(--bleu);
   border-top: 1px solid var(--bleu);
   margin: clamp(3rem, 7vw, 6rem) 0 0;
+  /* Le bloc reste pleine largeur, pour que son filet traverse la page, mais
+     le texte se replie sur une justification lisible : la marge de droite
+     grandit avec l'écran au lieu de laisser filer la ligne. */
   padding: clamp(2.5rem, 6vw, 4.5rem) var(--air);
+  padding-right: max(var(--air), calc(100% - var(--air) - 44rem));
   max-width: none;
   font-variation-settings: "wdth" 76;
   font-weight: 600;
@@ -322,6 +338,7 @@ h3 {
   margin-top: clamp(3rem, 6vw, 5rem);
   margin-bottom: 0;
   padding: 1.5rem var(--air) 2.5rem;
+  padding-right: max(var(--air), calc(100% - var(--air) - 40rem));
   background: var(--papier);
   border-top: 1px solid var(--bleu);
   max-width: none;

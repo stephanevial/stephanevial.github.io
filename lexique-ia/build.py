@@ -50,13 +50,15 @@ BASE = "/lexique-ia/"
 DOMAINE = "https://web.stephane-vial.net"
 NBSP = "\u00a0"   # jamais en littéral : il ne survit pas aux aller-retours de fichier
 
+FEUILLE = ""     # style.css, lue au démarrage, pour les vérifications
+
 AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
                  "main : éditer contenu/%s.md -->")
 
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
 MENU = ["accueil", "la-fabrique", "declaration", "le-livre", "contact"]
-MENU_LIBELLE = {"accueil": "Le lexique", "la-fabrique": "La fabrique",
+MENU_LIBELLE = {"accueil": "Accueil", "la-fabrique": "La fabrique",
                 "declaration": "La déclaration", "le-livre": "Le livre",
                 "contact": "Contact"}
 
@@ -243,6 +245,11 @@ def verifier(nom, corps, contenu, html):
                       "plus rien dans l’ouvrage et ne doit apparaître nulle "
                       "part.")
 
+    if 'class="leurre"' in html and ".leurre { display: none; }" not in FEUILLE:
+        ennuis.append("la page emploie le fragment anti-moissonnage mais "
+                      "style.css ne le masque plus : l’adresse de contact "
+                      "s’afficherait cassée.")
+
     if "'" in html:
         ennuis.append("apostrophe droite dans la page. Le site emploie "
                       "l’apostrophe courbe partout, comme le livre.")
@@ -265,7 +272,10 @@ def verifier(nom, corps, contenu, html):
 def navigation(prefixe, courante, urls):
     entrees = []
     for nom in MENU:
-        cible = prefixe + urls[nom][len(BASE):]
+        # Sur l'accueil, l'entrée qui y renvoie vaudrait href="" : un href
+        # vide pointe sur le document courant, requête comprise. « ./ » dit
+        # la même chose sans ambiguïté.
+        cible = prefixe + urls[nom][len(BASE):] or "./"
         marque = ' aria-current="page"' if nom == courante else ""
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
@@ -411,6 +421,8 @@ def sitemap(urls):
 
 
 def main():
+    global FEUILLE
+    FEUILLE = lire(os.path.join(ICI, "style.css"))
     base = lire(os.path.join(GABARIT, "base.html"))
     gabarits = {"accueil": lire(os.path.join(GABARIT, "accueil.html")),
                 "page": lire(os.path.join(GABARIT, "page.html"))}
