@@ -165,10 +165,14 @@ main { padding: 0 1.5rem; }
 /* Le fil du texte est mis en colonne ; les H2 partent en marge à partir de
    62rem, comme les repères d'un ouvrage. Sous ce seuil, tout se remet dans
    l'ordre naturel du document, sans rien perdre. */
-.page > *,
+.page > *:not(.corps),
 .corps > * {
   max-width: var(--mesure);
 }
+/* .corps n'est qu'une enveloppe : elle ne porte pas la justification, sinon
+   celle-ci s'additionne au décalage de ses enfants et la colonne de texte
+   se retrouve deux fois trop étroite. Défaut vu au rendu, pas dans le code. */
+.corps { max-width: none; }
 
 @media (min-width: 62rem) {
   .page > h2, .corps > h2 {

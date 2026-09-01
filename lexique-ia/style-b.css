@@ -160,10 +160,14 @@ h1 {
    qu'est l'asymétrie. */
 .page > h2,
 .page > p,
-.page > ul,
-.corps {
+.page > ul {
   padding-left: var(--air);
   padding-right: var(--air);
+}
+/* Le corps des pages de document démarre après la surface safran : il lui
+   faut son propre air en tête, sinon la première ligne touche l'aplat. */
+.corps {
+  padding: clamp(2rem, 5vw, 3.5rem) var(--air) 0;
 }
 .page > p,
 .page > ul,
