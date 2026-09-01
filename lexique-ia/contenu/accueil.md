@@ -11,11 +11,11 @@ og_type: book
 og_image: img/couverture.jpg
 ---
 
-J’ai écrit un livre sur l’intelligence artificielle. Je l’ai écrit avec elle. Et je le dis, page 130.
-
-Je n’ai pas seulement écrit ce livre avec l’IA. Je l’ai fabriqué et publié avec elle : la couverture, le code-barres, l’index, les prix, le dépôt. Un auteur seul a tenu une chaîne éditoriale complète.
+J’ai écrit un livre sur l’IA, avec l’IA, et j’explique comment.
 
 Chaque page a été relue et commentée de façon critique par Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, qui signe la préface.
+
+Mais ce n’est pas tout : je l’ai également fabriqué et publié avec l’IA, la couverture, le code-barres, l’index, les prix, le dépôt légal.
 
 ## Trois choses à lire
 
@@ -25,12 +25,6 @@ Chaque page a été relue et commentée de façon critique par Marcello Vitali-R
   Le texte signé, pages 129 et 130. « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. »
 - **[Le livre](le-livre/)**  
   Quatre-vingt-onze notions en huit chapitres, dont huit à lire sur place.
-
-## Ce qu’est ce livre
-
-Quatre-vingt-onze notions, une page chacune, en langage clair. Une définition, un exemple tiré du quotidien, et ce qui fait son importance.
-
-[Les quatre-vingt-onze notions](le-livre/)
 
 ## L’auteur
 
@@ -53,12 +47,17 @@ L’ouvrage est également disponible sur les autres boutiques Amazon.
 
 ## L’ouvrage
 
-*Petit lexique vivant de l’intelligence artificielle*, Stéphane Vial  
-Préface de Marcello Vitali-Rosati  
-Stéphane Vial, éditeur · Montréal, Québec  
-ISBN 978-2-9825534-0-8 · dépôt légal BAnQ et Bibliothèque et Archives Canada  
-138 pages · broché et numérique · 6 octobre 2026
+| Renseignement | Valeur |
+|---|---|
+| **Titre** | *Petit lexique vivant de l’intelligence artificielle* |
+| **Auteur** | Stéphane Vial |
+| **Préface** | Marcello Vitali-Rosati |
+| **Éditeur** | Stéphane Vial, éditeur · Montréal, Québec |
+| **Parution** | 6 octobre 2026 |
+| **Format** | Broché, 138 pages · numérique (ePub) |
+| **ISBN** | 978-2-9825534-0-8 (broché) · 978-2-9825534-1-5 (numérique) |
+| **Dépôt légal** | BAnQ et Bibliothèque et Archives Canada |
 
-Presse et demandes d’entretien : vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca
+Presse et demandes d’entretien : [Contact](contact/)
 
 <p class="cloture">Comprendre l’intelligence artificielle ne dispense pas de penser. C’est la condition pour continuer à le faire.</p>

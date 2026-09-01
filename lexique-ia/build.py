@@ -53,12 +53,12 @@ NBSP = "\u00a0"   # jamais en littéral : il ne survit pas aux aller-retours de 
 AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
                  "main : éditer contenu/%s.md -->")
 
-# La navigation. Quatre pages du site, puis un lien sortant vers la page de
-# contact du site principal. Les huit notions n’y figurent pas.
-MENU = ["accueil", "la-fabrique", "declaration", "le-livre"]
+# La navigation. Les huit notions n’y figurent pas : on y arrive par la page
+# du livre.
+MENU = ["accueil", "la-fabrique", "declaration", "le-livre", "contact"]
 MENU_LIBELLE = {"accueil": "Le lexique", "la-fabrique": "La fabrique",
-                "declaration": "La déclaration", "le-livre": "Le livre"}
-MENU_SORTANT = [("Contact", "https://stephane-vial.net/contact/")]
+                "declaration": "La déclaration", "le-livre": "Le livre",
+                "contact": "Contact"}
 
 PIED = [
     "Petit lexique vivant de l’intelligence artificielle · Stéphane Vial · "
@@ -269,8 +269,6 @@ def navigation(prefixe, courante, urls):
         marque = ' aria-current="page"' if nom == courante else ""
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
-    for libelle, adresse in MENU_SORTANT:
-        entrees.append('<a href="%s">%s</a>' % (adresse, libelle))
     return "\n      ".join(entrees)
 
 
@@ -292,9 +290,10 @@ def construire(nom, fichier, base, gabarits, urls):
     adresse = meta["url"]
     cible, prefixe = sortie(adresse)
 
-    # Conversion Markdown. Aucune extension de substitution typographique :
-    # « smarty » n’est pas chargée, et ne doit jamais l’être.
-    md = markdown.Markdown(extensions=[], output_format="html")
+    # Conversion Markdown. « tables » compose l’état civil de l’ouvrage et ne
+    # touche à aucun caractère. Aucune extension de substitution
+    # typographique : « smarty » n’est pas chargée, et ne doit jamais l’être.
+    md = markdown.Markdown(extensions=["tables"], output_format="html")
     contenu = poser_les_ancres(md.convert(corps))
 
     # Les chemins d’images de contenu/ sont relatifs à /lexique-ia/.
@@ -307,7 +306,6 @@ def construire(nom, fichier, base, gabarits, urls):
         # paragraphe est le seul endroit du site où le corps est plus gros.
         coupe = contenu.find("<h2")
         chapeau, contenu = contenu[:coupe], contenu[coupe:]
-        chapeau = chapeau.replace("<p>", '<p class="accroche">', 1)
         # Le chapeau est enveloppé : sans conteneur, une feuille de style ne
         # peut pas viser « les paragraphes jusqu'au premier H2 », et toute
         # tentative de le faire par sélecteur de frère déborde sur la phrase

@@ -29,7 +29,8 @@
 :root {
   --safran: #FCBB05;   /* SPEC-systeme-couverture.md */
   --bleu:   #192E85;   /* l'encre unique de toutes les éditions */
-  --creme:  #F4E7CE;   /* le papier du livre */
+  --creme:  #F4E7CE;   /* le crème du livre, gardé en mémoire du système ;
+                          il ne sert plus de fond, retiré le 31 août 2026 */
   --papier: #FFFDF7;
   --encre:  #14120E;
 
@@ -170,18 +171,19 @@ h1 {
 
 /* Le chapeau de l'accueil : deuxième moment, sur le crème du papier du
    livre, corps nettement au-dessus du reste. */
+/* Le chapeau de l'accueil : un seul corps de texte, sur le fond du reste de
+   la page. Le crème n'y sert plus de surface. */
 .entree {
-  background: var(--creme);
+  background: var(--papier);
   border-top: 1px solid var(--bleu);
   padding: clamp(2rem, 5vw, 3.5rem) var(--air) clamp(1.5rem, 4vw, 2.5rem);
 }
-.entree > * { max-width: 46rem; }
-.entree > *:last-child { margin-bottom: 0; }
-.accroche {
-  font-size: clamp(1.3125rem, 3.2vw, 2rem);
-  line-height: 1.26;
-  font-weight: 600;
+.entree > * {
+  max-width: 46rem;
+  font-size: clamp(1.125rem, 1.9vw, 1.375rem);
+  line-height: 1.4;
 }
+.entree > *:last-child { margin-bottom: 0; }
 
 /* Le chapeau des pages de document reste sur la surface du titre. */
 .page > .chapeau {
@@ -298,7 +300,7 @@ h3 {
 
 /* La clôture : dernier moment, sur le crème, en grand, encre bleue. */
 .page > .cloture {
-  background: var(--creme);
+  background: var(--papier);
   color: var(--bleu);
   border-top: 1px solid var(--bleu);
   margin: clamp(3rem, 7vw, 6rem) 0 0;
@@ -319,8 +321,8 @@ h3 {
 .corps > .renvoi, .page > .renvoi {
   margin-top: clamp(3rem, 6vw, 5rem);
   margin-bottom: 0;
-  padding: 1.5rem var(--air) 2rem;
-  background: var(--creme);
+  padding: 1.5rem var(--air) 2.5rem;
+  background: var(--papier);
   border-top: 1px solid var(--bleu);
   max-width: none;
   font-size: 0.9375rem;
@@ -329,6 +331,40 @@ h3 {
 ul { padding-left: 1.15rem; }
 li { margin-bottom: 0.55rem; }
 .corps > * { overflow-wrap: break-word; }
+
+/* L'état civil de l'ouvrage. Un tableau de deux colonnes, sans en-tête
+   visible : la première colonne porte le libellé, la seconde la valeur.
+   Il déborderait sur un petit écran, il a donc son propre défilement. */
+.page > table, .corps > table {
+  margin: 0 var(--air) 1.5rem;
+  max-width: var(--mesure);
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+th, td {
+  text-align: left;
+  vertical-align: baseline;
+  padding: 0.6rem 1rem 0.6rem 0;
+  border-bottom: 1px solid rgba(25, 46, 133, 0.18);
+}
+tr:first-child th, tr:first-child td { border-top: 1px solid var(--bleu); }
+/* L'en-tête du tableau est retiré de l'œil, pas du lecteur d'écran :
+   display:none le supprimerait aussi pour lui, et la colonne perdrait son
+   nom. */
+thead th {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+td:first-child {
+  width: 9rem;
+  color: var(--bleu);
+  white-space: nowrap;
+}
+td:last-child { padding-right: 0; }
 
 /* ------------------------------------------------------------- le pied */
 
