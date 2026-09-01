@@ -114,6 +114,11 @@ main { padding: 0; }
 .titre {
   background: var(--safran);
   padding: clamp(2rem, 5vw, 4rem) var(--air) clamp(1.75rem, 4vw, 3rem);
+  /* La colonne s'étire à la hauteur de la couverture : le titre se centre
+     dedans, sinon tout le vide tombe sous l'attribution. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
@@ -121,7 +126,7 @@ h1 {
   font-variation-settings: "wdth" 68;
   font-weight: 700;
   /* Rupture d'échelle franche : le titre vaut trois fois le corps. */
-  font-size: clamp(2.35rem, 6.4vw, 4.5rem);
+  font-size: clamp(2.35rem, 7vw, 5rem);
   /* Mesuré sur la fonte, à wdth 68 : la descendante la plus profonde vaut
      -0,197 cadratin et l'ascendante la plus haute +0,734. L'interlignage
      0,92 de la couverture se croise donc de 0,011 cadratin et ne peut pas
@@ -139,7 +144,7 @@ h1 {
   margin: 0;
   font-weight: 600;
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
-  max-width: 30rem;
+  max-width: 34rem;
 }
 
 /* La couverture, assez grande pour qu'on la lise, posée sur le papier et
@@ -160,7 +165,7 @@ h1 {
 
 @media (min-width: 55rem) {
   .couverture { padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem); }
-  .couverture img { width: min(100%, 22rem); }
+  .couverture img { width: min(100%, 19rem); }
 }
 
 /* Le chapeau de l'accueil : deuxième moment, sur le crème du papier du
