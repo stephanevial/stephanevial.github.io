@@ -53,11 +53,6 @@ NBSP = "\u00a0"   # jamais en littéral : il ne survit pas aux aller-retours de 
 AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
                  "main : éditer contenu/%s.md -->")
 
-# Le titre du site, en tête de chaque page. Il remplace le nom de l’auteur :
-# c’est le livre qui est chez lui ici. Les éditions anglaise et espagnole
-# porteront leur propre titre au même endroit.
-ENSEIGNE = "Petit lexique vivant de l’intelligence artificielle"
-
 # La navigation. Quatre pages du site, puis un lien sortant vers la page de
 # contact du site principal. Les huit notions n’y figurent pas.
 MENU = ["accueil", "la-fabrique", "declaration", "le-livre"]
@@ -81,15 +76,6 @@ LANGUES = [("fr", "Français", ""),
 
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
 
-# Les deux pistes de la séance 2. Chacune reprend l’accueil et la déclaration,
-# contenu et hiérarchie de titres identiques, seule la composition change.
-# Elles portent noindex, ne figurent pas au sitemap, et disparaissent quand la
-# direction est retenue.
-APERCUS = [
-    ("apercu-a", "style-a.css", "Piste A · l’objet éditorial"),
-    ("apercu-b", "style-b.css", "Piste B · l’affiche"),
-]
-APERCU_PAGES = ["accueil", "declaration"]
 
 
 # ------------------------------------------------------- données structurées
@@ -276,18 +262,10 @@ def verifier(nom, corps, contenu, html):
 
 # ------------------------------------------------------------- construction
 
-def navigation(prefixe, courante, urls, apercu=None):
-    """Dans un aperçu, les deux pages montées pointent l’une vers l’autre ;
-    les autres entrées renvoient au site réel, pour qu’on puisse en sortir."""
+def navigation(prefixe, courante, urls):
     entrees = []
     for nom in MENU:
-        if apercu and nom in APERCU_PAGES:
-            reste = urls[nom][len(BASE):]
-            cible = "./" if not reste else "../" * 0 + reste
-            if courante != "accueil":
-                cible = "../" if nom == "accueil" else reste
-        else:
-            cible = prefixe + urls[nom][len(BASE):]
+        cible = prefixe + urls[nom][len(BASE):]
         marque = ' aria-current="page"' if nom == courante else ""
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
@@ -308,13 +286,10 @@ def selecteur_de_langue(prefixe):
             '    </nav>' % "\n      ".join(liens))
 
 
-def construire(nom, fichier, base, gabarits, urls, apercu=None):
+def construire(nom, fichier, base, gabarits, urls):
     source = lire(fichier)
     meta, corps = entete_et_corps(source)
-
     adresse = meta["url"]
-    if apercu:
-        adresse = BASE + apercu[0] + "/" + adresse[len(BASE):]
     cible, prefixe = sortie(adresse)
 
     # Conversion Markdown. Aucune extension de substitution typographique :
@@ -343,6 +318,8 @@ def construire(nom, fichier, base, gabarits, urls, apercu=None):
             "attribution": echapper(meta["attribution"]),
             "chapeau": chapeau.strip(),
             "contenu": contenu.strip(),
+            "couverture": meta["couverture"],
+            "couverture_alt": echapper(meta["couverture_alt"]),
         }
     else:
         corps_html = gabarits["page"] % {
@@ -382,16 +359,11 @@ def construire(nom, fichier, base, gabarits, urls, apercu=None):
         "canonique": url,
         "prefixe": prefixe,
         "page": nom,
-        "enseigne": echapper(ENSEIGNE),
-        "accueil": prefixe if prefixe else "./",
         "og": "\n  ".join('<meta property="%s" content="%s">'
                           % (k, echapper(v)) for k, v in og),
         "donnees": donnees,
-        "robots": "noindex, nofollow" if apercu else ROBOTS,
-        "feuille": apercu[1] if apercu else "style.css",
-        "etiquette": ('  <p class="etiquette">%s</p>\n' % echapper(apercu[2])
-                      if apercu else ""),
-        "navigation": navigation(prefixe, nom, urls, apercu),
+        "robots": ROBOTS,
+        "navigation": navigation(prefixe, nom, urls),
         "langues": selecteur_de_langue(prefixe),
         "corps": corps_html,
         "pied": "<br>\n      ".join(PIED),
@@ -455,14 +427,6 @@ def main():
         liste.append(url)
         print("  ✓ %-34s %s" % (cible, url))
 
-    # Les deux pistes de la séance 2. Hors sitemap, en noindex : ce sont des
-    # brouillons servis pour être regardés, pas des pages du site.
-    fichiers = dict(pages)
-    for apercu in APERCUS:
-        for nom in APERCU_PAGES:
-            cible, url = construire(nom, fichiers[nom], base, gabarits, urls,
-                                    apercu)
-            print("  · %-34s %s  (noindex)" % (cible, url))
 
     chemin, n = sitemap(liste)
     print("  ✓ %-34s %d adresses" % (os.path.relpath(chemin, ICI), n))

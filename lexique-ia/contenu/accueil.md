@@ -4,6 +4,8 @@ title: "Petit lexique vivant de l’intelligence artificielle | Stéphane Vial"
 description: "91 notions d’intelligence artificielle, une page chacune, en langage clair. Un livre écrit avec l’IA, qui le déclare, et relu par un pair."
 h1: "Petit lexique vivant de l’intelligence artificielle"
 attribution: "Stéphane Vial · Préface de Marcello Vitali-Rosati · Parution le 6 octobre 2026"
+couverture: img/couverture.jpg
+couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
 gabarit: accueil
 og_type: book
 og_image: img/couverture.jpg
