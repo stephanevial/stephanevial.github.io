@@ -7,10 +7,10 @@
   <title>%(titre)s</title>
   <meta name="description" content="%(description)s">
   <link rel="canonical" href="%(canonique)s">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="robots" content="%(robots)s">
   %(og)s
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="%(prefixe)sstyle.css">
+  <link rel="stylesheet" href="%(prefixe)s%(feuille)s">
   <script type="application/ld+json">
 %(donnees)s
   </script>
@@ -35,5 +35,5 @@
       %(pied)s
     </p>
   </footer>
-</body>
+%(etiquette)s</body>
 </html>

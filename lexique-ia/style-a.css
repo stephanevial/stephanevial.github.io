@@ -1,0 +1,326 @@
+/* ===========================================================================
+   PISTE A — L'OBJET ÉDITORIAL
+   Séance 2. Feuille d'exploration, servie sous /lexique-ia/apercu-a/.
+
+   Le parti : la page emprunte à la page de livre, pas au vocabulaire de la
+   page d'atterrissage. Colonne de marge qui porte les repères, filets fins,
+   blanc généreux, fond papier. La couleur intervient par petites touches
+   structurantes, jamais en aplat décoratif. La densité change d'une section
+   à l'autre, comme un ouvrage passe d'une ouverture de chapitre à un index.
+   =========================================================================== */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fontes/archivo-variable.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-stretch: 62% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("fontes/archivo-italique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --papier:  #FAF3E4;   /* ivoire chaud, éclairci pour la lecture d'écran */
+  --creme:   #F4E7CE;   /* le crème exact du livre, en aplat de section */
+  --filet:   #DFD0AE;
+  --bleu:    #192E85;   /* l'encre unique de toutes les éditions */
+  --safran:  #FCBB05;
+  --encre:   #1A1814;
+  --gris:    #6B6455;
+
+  --mesure:  35rem;     /* la justification du texte courant */
+  --marge:   11rem;     /* la colonne de marge, à partir de 62rem */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-variation-settings: "wdth" 100;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------- le titrage */
+
+/* wdth 68 : la valeur exacte du titre imprimé sur la couverture. Elle ne
+   s'obtient que par font-variation-settings ; font-stretch seul ne suffit
+   pas. L'interlignage de 0,92 retenu pour la couverture ne tient pas à
+   l'écran : la descendante du g de « l'intelligence » rencontre les
+   ascendantes d'« artificielle ». 1,04 laisse passer, vérifié au rendu. */
+h1 {
+  font-variation-settings: "wdth" 68;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5.4vw, 3.25rem);
+  line-height: 1.04;
+  margin: 0 0 0.6rem;
+  color: var(--bleu);
+  text-wrap: balance;
+  hyphens: none;
+}
+
+h2 {
+  font-variation-settings: "wdth" 68;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--bleu);
+  margin: 0 0 0.9rem;
+}
+
+h3 {
+  font-variation-settings: "wdth" 78;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 1.2;
+  margin: 2.25rem 0 0.2rem;
+  color: var(--bleu);
+}
+
+p, ul, ol { margin: 0 0 1.05rem; }
+em { font-style: italic; }
+strong { font-weight: 600; }
+
+/* ------------------------------------------------ accès, bandeau, menu */
+
+.evitement { position: absolute; left: -9999px; }
+.evitement:focus {
+  left: 0.75rem; top: 0.75rem; z-index: 10;
+  padding: 0.5rem 0.85rem;
+  background: var(--bleu); color: var(--papier);
+}
+
+a { color: var(--bleu); text-underline-offset: 0.18em; }
+a:focus-visible { outline: 2px solid var(--bleu); outline-offset: 3px; }
+
+.bandeau {
+  border-bottom: 1px solid var(--filet);
+  padding: 1.15rem 1.5rem 0.9rem;
+}
+
+/* Le titre courant, comme en tête de page d'un ouvrage. */
+.enseigne {
+  margin: 0 0 0.7rem;
+  font-variation-settings: "wdth" 68;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--gris);
+  line-height: 1.3;
+}
+.enseigne a { color: inherit; text-decoration: none; }
+.enseigne a:hover { color: var(--bleu); }
+
+/* Le chevron, signature d'éditeur reprise du livre. */
+.enseigne a::before {
+  content: "\203A";
+  color: var(--safran);
+  margin-right: 0.45em;
+  font-size: 1.15em;
+}
+
+.sommaire { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; }
+.sommaire a {
+  font-size: 0.9375rem;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+}
+.sommaire a:hover { border-bottom-color: var(--safran); }
+.sommaire a[aria-current="page"] {
+  border-bottom-color: var(--bleu);
+  font-weight: 600;
+}
+
+.langues[hidden] { display: none; }
+
+/* ------------------------------------------------------ la page composée */
+
+main { padding: 0 1.5rem; }
+
+.page {
+  max-width: calc(var(--marge) + var(--mesure) + 3rem);
+  margin: 3rem auto 5rem;
+}
+
+/* Le fil du texte est mis en colonne ; les H2 partent en marge à partir de
+   62rem, comme les repères d'un ouvrage. Sous ce seuil, tout se remet dans
+   l'ordre naturel du document, sans rien perdre. */
+.page > *,
+.corps > * {
+  max-width: var(--mesure);
+}
+
+@media (min-width: 62rem) {
+  .page > h2, .corps > h2 {
+    max-width: none;
+    display: grid;
+    grid-template-columns: var(--marge) minmax(0, var(--mesure));
+    column-gap: 3rem;
+    align-items: start;
+    margin-top: 3.25rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--filet);
+  }
+  .page > h2::after, .corps > h2::after { content: ""; }
+  /* Le décalage se pose une fois, sur les éléments qui portent du texte.
+     Jamais sur .corps lui-même, sinon il s'additionnerait à celui de ses
+     enfants et la colonne partirait deux fois trop loin. */
+  .page > *:not(h2):not(.corps), .corps > *:not(h2) {
+    margin-left: calc(var(--marge) + 3rem);
+  }
+}
+
+/* L'accroche. Le seul endroit du site où le corps est plus gros que le
+   reste : c'est elle qui doit être lue avant tout arbitrage du lecteur. */
+.entree { margin-bottom: 1rem; }
+.accroche {
+  font-size: clamp(1.25rem, 2.4vw, 1.4375rem);
+  line-height: 1.34;
+  margin-bottom: 1.4rem;
+}
+
+.attribution {
+  font-size: 0.9375rem;
+  color: var(--gris);
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+.chapeau {
+  font-size: 0.9375rem;
+  color: var(--gris);
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+/* Les trois portes, en entrées d'index. */
+.accueil ul { list-style: none; padding: 0; }
+.accueil li {
+  padding: 0.85rem 0 0.9rem;
+  border-bottom: 1px solid var(--filet);
+  margin: 0;
+}
+.accueil li strong { font-weight: 400; }
+.accueil li a {
+  font-variation-settings: "wdth" 78;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--filet);
+}
+.accueil li a:hover { border-bottom-color: var(--bleu); }
+
+ul { padding-left: 1.15rem; }
+li { margin-bottom: 0.55rem; }
+
+img { max-width: 100%; height: auto; display: block; }
+.accueil img {
+  max-width: 13rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--filet);
+}
+
+/* La densité change : l'état civil de l'ouvrage est un colophon, il se
+   compose serré et petit, comme au verso d'une page de titre. */
+.accueil h2#l-ouvrage + p {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--gris);
+}
+
+.cloture {
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 2px solid var(--safran);
+  font-variation-settings: "wdth" 82;
+  font-size: clamp(1.1875rem, 2.2vw, 1.375rem);
+  line-height: 1.32;
+  color: var(--bleu);
+}
+
+.renvoi {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--filet);
+  font-size: 0.9375rem;
+  color: var(--gris);
+}
+.renvoi a { color: var(--bleu); }
+
+.corps > * { overflow-wrap: break-word; }
+
+/* ------------------------------------------------------------- le pied */
+
+.pied {
+  border-top: 1px solid var(--filet);
+  background: var(--creme);
+  padding: 1.6rem 1.5rem 3.5rem;
+  color: var(--gris);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.pied p {
+  max-width: calc(var(--marge) + var(--mesure) + 3rem);
+  margin: 0 auto;
+}
+
+/* -------------------------------------------- l'étiquette de l'aperçu */
+
+.etiquette {
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  background: var(--bleu);
+  color: var(--papier);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------- impression */
+
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .bandeau, .pied, .evitement, .renvoi, .etiquette { display: none; }
+  main { padding: 0; }
+  .page { max-width: none; margin: 0; }
+  .page > *, .corps > * { max-width: none; margin-left: 0; }
+  h1, h2, h3 { color: #000; }
+  h2 { display: block; border-top: 1pt solid #000; }
+  a { color: #000; text-decoration: none; }
+  h1, h2, h3 { break-after: avoid; }
+  p { orphans: 3; widows: 3; }
+
+  body[data-page="declaration"] .corps::after {
+    display: block;
+    margin-top: 1.5em;
+    padding-top: 0.75em;
+    border-top: 1pt solid #000;
+    font-size: 9pt;
+    content: "Déclaration sur l’usage de l’intelligence artificielle. "
+             "Texte imprimé aux pages 129 et 130 de Petit lexique vivant de "
+             "l’intelligence artificielle, Stéphane Vial, "
+             "ISBN 978-2-9825534-0-8. "
+             "web.stephane-vial.net/lexique-ia/declaration/";
+  }
+}
