@@ -323,7 +323,9 @@ def construire(nom, fichier, base, gabarits, urls):
         }
     else:
         corps_html = gabarits["page"] % {
-            "classe": gabarit,
+            # La classe dit ce qu'est la page, pas quel gabarit l'a produite :
+            # « page » ne veut rien dire dans une feuille de style.
+            "classe": "notion" if gabarit == "notion" else "document",
             "h1": echapper(meta["h1"]),
             "chapeau": ('<p class="chapeau">%s</p>' % echapper(meta["chapeau"])
                         if meta.get("chapeau") else ""),

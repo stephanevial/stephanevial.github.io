@@ -159,7 +159,7 @@ h1 {
   justify-content: center;
 }
 .couverture img {
-  width: min(100%, 20rem);
+  width: min(100%, 22rem);
   box-shadow: 0 1rem 2.5rem rgba(20, 18, 14, 0.22);
 }
 
@@ -193,9 +193,13 @@ h1 {
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
   max-width: none;
 }
-.page.document > h1 {
+/* Toute page qui n'est pas l'accueil porte son titre sur le safran, en
+   pleine surface, comme la couverture. */
+.page:not(.accueil) > h1 {
   background: var(--safran);
   padding: clamp(2rem, 5vw, 4rem) var(--air) clamp(1.25rem, 3vw, 2rem);
+  margin: 0;
+  font-size: clamp(2.1rem, 5.2vw, 3.75rem);
 }
 
 /* ------------------------------------------------------------ le corps */
@@ -306,8 +310,15 @@ h3 {
   line-height: 1.2;
 }
 
+/* Le renvoi est une surface, il va donc d'un bord à l'autre. Comme il vit
+   dans .corps, qui porte déjà une marge latérale, il faut la lui reprendre. */
+.corps > .renvoi {
+  margin-left: calc(-1 * var(--air));
+  margin-right: calc(-1 * var(--air));
+}
 .corps > .renvoi, .page > .renvoi {
-  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 0;
   padding: 1.5rem var(--air) 2rem;
   background: var(--creme);
   border-top: 1px solid var(--bleu);
