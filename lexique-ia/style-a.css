@@ -71,6 +71,8 @@ h1 {
   hyphens: none;
 }
 
+/* Le filet et l'air au-dessus des sections valent à toutes les largeurs.
+   La colonne de marge, elle, n'apparaît qu'à partir de 62rem. */
 h2 {
   font-variation-settings: "wdth" 68;
   font-weight: 600;
@@ -79,7 +81,9 @@ h2 {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--bleu);
-  margin: 0 0 0.9rem;
+  margin: 2.75rem 0 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--filet);
 }
 
 h3 {
@@ -174,8 +178,6 @@ main { padding: 0 1.5rem; }
     column-gap: 3rem;
     align-items: start;
     margin-top: 3.25rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--filet);
   }
   .page > h2::after, .corps > h2::after { content: ""; }
   /* Le décalage se pose une fois, sur les éléments qui portent du texte.
