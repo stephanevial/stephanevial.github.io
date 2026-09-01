@@ -144,7 +144,7 @@ h1 {
   margin: 0;
   font-weight: 600;
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
-  max-width: 34rem;
+  max-width: 42rem;   /* la ligne d'attribution tient sur un seul rang */
 }
 
 /* La couverture, assez grande pour qu'on la lise, posée sur le papier et
