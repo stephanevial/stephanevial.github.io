@@ -1,9 +1,9 @@
 ---
 url: /lexique-ia/la-fabrique/
-title: "La fabrique de ce livre : écrire un livre avec l'IA | Stéphane Vial"
-description: "Le récit de fabrication publié dans l'ouvrage. Comment un professeur d'université a écrit un livre sur l'IA avec elle, et tenu seul la chaîne éditoriale."
+title: "La fabrique de ce livre : écrire un livre avec l’IA | Stéphane Vial"
+description: "Le récit de fabrication publié dans l’ouvrage. Comment un professeur d’université a écrit un livre sur l’IA avec elle, et tenu seul la chaîne éditoriale."
 h1: "La fabrique de ce livre"
-chapeau: "Le récit de fabrication publié dans l'ouvrage, pages 131 à 134. Texte intégral."
+chapeau: "Le récit de fabrication publié dans l’ouvrage, pages 131 à 134. Texte intégral."
 gabarit: page
 og_type: article
 ---
@@ -28,10 +28,14 @@ Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que 
 
 Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
-## Ce que l'autoédition a coûté
+## Ce que l’autoédition a coûté
 
-Cette expérience m'a coûté du temps, beaucoup plus que je ne l'avais prévu, à cause précisément de toutes ces vérifications. Elle m'a coûté des abonnements. Elle m'a coûté une adaptation cognitive et un apprentissage, dont le développement d'un esprit de sur-vérification qui ne me quitte plus.
+Cette expérience m’a coûté du temps, beaucoup plus que je ne l’avais prévu, à cause précisément de toutes ces vérifications. Elle m’a coûté des abonnements. Elle m’a coûté une adaptation cognitive et un apprentissage, dont le développement d’un esprit de sur-vérification qui ne me quitte plus.
 
-Et l'autoédition m'a coûté autre chose encore. Tout faire soi-même, ce que j'adore par ailleurs, suppose de renoncer à la diffusion en librairie, à la distribution classique, à une équipe éditoriale dont je sais toute la valeur, et à la possibilité d'être au Salon du livre. J'y ai gagné le contrôle de la chaîne et le droit de déclarer. J'ai pu choisir et valider moi-même chaque décision de production et de commercialisation, en toute indépendance. C'était la condition de l'expérience, et non son résultat.
+Et l’autoédition m’a coûté autre chose encore. Tout faire soi-même, ce que j’adore par ailleurs, suppose de renoncer à la diffusion en librairie, à la distribution classique, à une équipe éditoriale dont je sais toute la valeur, et à la possibilité d’être au Salon du livre. J’y ai gagné le contrôle de la chaîne et le droit de déclarer. J’ai pu choisir et valider moi-même chaque décision de production et de commercialisation, en toute indépendance. C’était la condition de l’expérience, et non son résultat.
 
-<p class="renvoi">La déclaration signée figure aux pages 129 et 130 de l'ouvrage. Elle est publiée ici en texte intégral. [→ Déclaration sur l'usage de l'intelligence artificielle](../declaration/)</p>
+## Pour citer ce texte
+
+Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur.
+
+<p class="renvoi">La déclaration signée figure aux pages 129 et 130 de l’ouvrage. Elle est publiée ici en texte intégral. <a href="../declaration/">→ Déclaration sur l’usage de l’intelligence artificielle</a></p>

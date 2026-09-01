@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build.py — la fabrique du site du Petit lexique vivant de l'IA.
+build.py — la fabrique du site du Petit lexique vivant de l’IA.
 
     python3 build.py
 
-Lit les quatre fichiers de contenu/, applique les gabarits de gabarit/, écrit
-les quatre index.html du site et régénère ../sitemap.xml.
+Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
+index.html du site et régénère ../sitemap.xml.
+
+Douze pages : les quatre principales, et les huit notions données à lire, une
+par adresse sous /lexique-ia/le-livre/. Les notions ne figurent pas dans la
+navigation : on y arrive par la page du livre.
 
 Deux exécutions successives produisent des fichiers identiques : aucune date,
-aucun compteur, aucun aléa n'entre dans la sortie.
+aucun compteur, aucun aléa n’entre dans la sortie.
 
 Trois exigences de conversion, contrôlées à chaque exécution et bloquantes :
-  1. aucune substitution typographique (l'extension smarty n'est jamais
-     chargée) : les apostrophes, guillemets et tirets sortent tels qu'ils sont
+  1. aucune substitution typographique (l’extension smarty n’est jamais
+     chargée) : les apostrophes, guillemets et tirets sortent tels qu’ils sont
      entrés ;
   2. les espaces insécables survivent : ils sont comptés avant et après
-     conversion, et le script s'arrête si le compte change ;
+     conversion, et le script s’arrête si le compte change ;
   3. les italiques sont des <em>, jamais des <i> : la présence de <i> ou de
      <b> arrête le script.
 
-Le seul fichier à éditer pour corriger un texte est contenu/<page>.md.
+Le seul endroit à éditer pour corriger un texte est contenu/.
 """
 import io
 import os
@@ -41,33 +45,36 @@ ICI = os.path.dirname(os.path.abspath(__file__))
 CONTENU = os.path.join(ICI, "contenu")
 GABARIT = os.path.join(ICI, "gabarit")
 RACINE = os.path.dirname(ICI)               # la racine du sous-domaine
+BASE = "/lexique-ia/"
 
 DOMAINE = "https://web.stephane-vial.net"
-NBSP = " "
+NBSP = "\u00a0"   # jamais en littéral : il ne survit pas aux aller-retours de fichier
 
 AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
                  "main : éditer contenu/%s.md -->")
 
-# Les quatre pages, dans l'ordre du site. Le nom du fichier de contenu, le
-# dossier de sortie, et le libellé de navigation.
-PAGES = [
-    ("accueil",     "",             "Le lexique"),
-    ("la-fabrique", "la-fabrique",  "La fabrique"),
-    ("declaration", "declaration",  "La déclaration"),
-    ("le-livre",    "le-livre",     "Le livre"),
-]
+# Le titre du site, en tête de chaque page. Il remplace le nom de l’auteur :
+# c’est le livre qui est chez lui ici. Les éditions anglaise et espagnole
+# porteront leur propre titre au même endroit.
+ENSEIGNE = "Petit lexique vivant de l’intelligence artificielle"
+
+# La navigation. Quatre pages du site, puis un lien sortant vers la page de
+# contact du site principal. Les huit notions n’y figurent pas.
+MENU = ["accueil", "la-fabrique", "declaration", "le-livre"]
+MENU_LIBELLE = {"accueil": "Le lexique", "la-fabrique": "La fabrique",
+                "declaration": "La déclaration", "le-livre": "Le livre"}
+MENU_SORTANT = [("Contact", "https://stephane-vial.net/contact/")]
 
 PIED = [
-    "Petit lexique vivant de l'intelligence artificielle · Stéphane Vial · "
+    "Petit lexique vivant de l’intelligence artificielle · Stéphane Vial · "
     "6 octobre 2026",
     "ISBN 978-2-9825534-0-8",
-    "© Stéphane Vial, 2026 · "
-    "<a href=\"https://stephane-vial.net\">stephane-vial.net</a>",
+    "© Stéphane Vial, 2026",
 ]
 
-# Le sélecteur de langue existe dans le code et reste masqué jusqu'au
+# Le sélecteur de langue existe dans le code et reste masqué jusqu’au
 # 17 novembre 2026, date de parution des éditions anglaise et espagnole.
-# Il ne se supprime pas : il se démasque en retirant l'attribut hidden.
+# Il ne se supprime pas : il se démasque en retirant l’attribut hidden.
 LANGUES = [("fr", "Français", ""),
            ("en", "English", "en/"),
            ("es", "Español", "es/")]
@@ -81,7 +88,7 @@ GRAPHE_ACCUEIL = """{
     {
       "@type": "Book",
       "@id": "https://web.stephane-vial.net/lexique-ia/#livre",
-      "name": "Petit lexique vivant de l'intelligence artificielle",
+      "name": "Petit lexique vivant de l’intelligence artificielle",
       "inLanguage": "fr",
       "author": { "@id": "https://web.stephane-vial.net/lexique-ia/#auteur" },
       "contributor": {
@@ -98,7 +105,7 @@ GRAPHE_ACCUEIL = """{
         { "@type": "Thing", "name": "Intelligence artificielle" },
         { "@type": "Thing", "name": "Vulgarisation scientifique" }
       ],
-      "abstract": "Ouvrage d'initiation à l'intelligence artificielle. Quatre-vingt-onze notions, une page chacune, organisées en huit chapitres. Chaque entrée suit la même structure : une définition, un exemple tiré d'usages ordinaires, et ce qui fait son importance.",
+      "abstract": "Ouvrage d’initiation à l’intelligence artificielle. Quatre-vingt-onze notions, une page chacune, organisées en huit chapitres. Chaque entrée suit la même structure : une définition, un exemple tiré d’usages ordinaires, et ce qui fait son importance.",
       "url": "https://web.stephane-vial.net/lexique-ia/",
       "workExample": [
         {
@@ -132,7 +139,7 @@ GRAPHE_ACCUEIL = """{
 
 GRAPHE_PAGE = """{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "%(type)s",
   "name": "%(nom)s",
   "url": "%(url)s",
   "inLanguage": "fr",
@@ -158,7 +165,7 @@ def ecrire(chemin, texte):
 
 
 def entete_et_corps(texte):
-    """Sépare l'en-tête YAML du corps Markdown."""
+    """Sépare l’en-tête YAML du corps Markdown."""
     if not texte.startswith("---"):
         raise ValueError("en-tête YAML absent")
     fin = texte.index("\n---", 3)
@@ -181,26 +188,41 @@ def ancre(titre):
 
 
 def poser_les_ancres(html):
-    """Donne un identifiant à chaque H2 et H3, pour qu'on puisse pointer une
-    section ou une notion depuis l'extérieur."""
+    """Donne un identifiant à chaque H2 et H3, pour qu’on puisse pointer une
+    section depuis l’extérieur."""
     def remplacer(m):
         return '<h%s id="%s">%s</h%s>' % (m.group(1), ancre(m.group(2)),
                                           m.group(2), m.group(1))
     return re.sub(r"<h([23])>(.*?)</h\1>", remplacer, html, flags=re.S)
 
 
+def sortie(url):
+    """Le fichier à écrire, et de combien de crans il faut remonter pour
+    atteindre la racine du lexique. « /lexique-ia/le-livre/token/ » donne
+    « le-livre/token/index.html » et « ../../ »."""
+    reste = url[len(BASE):].strip("/")
+    profondeur = len(reste.split("/")) if reste else 0
+    chemin = os.path.join(ICI, *(reste.split("/") if reste else []))
+    return os.path.join(chemin, "index.html"), "../" * profondeur
+
+
 # ------------------------------------------------------------- vérifications
 
-def verifier(nom, source, html):
-    """Les trois exigences du cahier des charges, plus l'hygiène de balisage.
-    Toute anomalie arrête la construction : une page fausse ne se publie pas."""
+def verifier(nom, corps, contenu, html):
+    """Les trois exigences du cahier des charges, plus l’hygiène de balisage.
+    Toute anomalie arrête la construction : une page fausse ne se publie pas.
+
+    Le compte d’espaces insécables se fait sur le corps Markdown contre le
+    corps converti, et non sur le fichier contre la page : le titre et la
+    description sont écrits une fois dans l’en-tête et plusieurs fois dans le
+    HTML, ce qui fausserait la comparaison sans rien prouver."""
     ennuis = []
 
-    avant, apres = source.count(NBSP), html.count(NBSP)
+    avant, apres = corps.count(NBSP), contenu.count(NBSP)
     if avant != apres:
-        ennuis.append("espaces insécables : %d dans la source, %d dans la "
-                      "page. La conversion en a mangé ou en a ajouté."
-                      % (avant, apres))
+        ennuis.append("espaces insécables : %d dans le corps Markdown, %d "
+                      "après conversion. La conversion en a mangé ou en a "
+                      "ajouté." % (avant, apres))
 
     for balise in ("<i>", "<i ", "<b>", "<b "):
         if balise in html:
@@ -220,8 +242,12 @@ def verifier(nom, source, html):
 
     if "épilogue" in html.lower() or "epilogue" in html.lower():
         ennuis.append("le mot « épilogue » figure dans la page. Il ne désigne "
-                      "plus rien dans l'ouvrage et ne doit apparaître nulle "
+                      "plus rien dans l’ouvrage et ne doit apparaître nulle "
                       "part.")
+
+    if "'" in html:
+        ennuis.append("apostrophe droite dans la page. Le site emploie "
+                      "l’apostrophe courbe partout, comme le livre.")
 
     for hote in re.findall(r'(?:src|href)="https?://([^/"]+)', html):
         if hote.endswith("stephane-vial.net"):
@@ -233,53 +259,52 @@ def verifier(nom, source, html):
     if ennuis:
         for e in ennuis:
             sys.stderr.write("  ✗ %s : %s\n" % (nom, e))
-        sys.exit("Construction interrompue. Rien n'a été publié.")
+        sys.exit("Construction interrompue. Rien n’a été publié.")
 
 
 # ------------------------------------------------------------- construction
 
-def navigation(prefixe, courante):
+def navigation(prefixe, courante, urls):
     entrees = []
-    for nom, dossier, libelle in PAGES:
-        cible = prefixe + (dossier + "/" if dossier else "")
-        if nom == courante:
-            entrees.append('<a href="%s" aria-current="page">%s</a>'
-                           % (cible, libelle))
-        else:
-            entrees.append('<a href="%s">%s</a>' % (cible, libelle))
+    for nom in MENU:
+        cible = prefixe + urls[nom][len(BASE):]
+        marque = ' aria-current="page"' if nom == courante else ""
+        entrees.append('<a href="%s"%s>%s</a>'
+                       % (cible, marque, MENU_LIBELLE[nom]))
+    for libelle, adresse in MENU_SORTANT:
+        entrees.append('<a href="%s">%s</a>' % (adresse, libelle))
     return "\n      ".join(entrees)
 
 
 def selecteur_de_langue(prefixe):
-    """Présent dans le code, masqué jusqu'au 17 novembre 2026. Il ne laisse ni
-    trace visible ni espace vide : hidden le retire du flux et du lecteur
-    d'écran. Pour le démasquer, retirer l'attribut hidden."""
+    """Présent dans le code, masqué jusqu’au 17 novembre 2026. L’attribut
+    hidden le retire du flux : ni trace visible, ni espace vide. Pour le
+    démasquer, retirer hidden."""
     liens = ['<a href="%s%s" lang="%s"%s>%s</a>'
-             % (prefixe, chemin, code, ' aria-current="true"' if not chemin
-                else "", libelle)
+             % (prefixe, chemin, code,
+                ' aria-current="true"' if not chemin else "", libelle)
              for code, libelle, chemin in LANGUES]
     return ('<nav class="langues" hidden aria-label="Langue">\n      %s\n'
             '    </nav>' % "\n      ".join(liens))
 
 
-def construire(nom, dossier, base, gabarits):
-    source = lire(os.path.join(CONTENU, nom + ".md"))
+def construire(nom, fichier, base, gabarits, urls):
+    source = lire(fichier)
     meta, corps = entete_et_corps(source)
-
-    prefixe = "" if not dossier else "../"
+    cible, prefixe = sortie(meta["url"])
 
     # Conversion Markdown. Aucune extension de substitution typographique :
-    # « smarty » n'est pas chargée, et ne doit jamais l'être.
+    # « smarty » n’est pas chargée, et ne doit jamais l’être.
     md = markdown.Markdown(extensions=[], output_format="html")
     contenu = poser_les_ancres(md.convert(corps))
 
-    # Les chemins d'images de contenu/ sont relatifs à /lexique-ia/ ; sur une
-    # page en sous-dossier, il faut remonter d'un cran.
+    # Les chemins d’images de contenu/ sont relatifs à /lexique-ia/.
     if prefixe:
         contenu = contenu.replace('src="img/', 'src="%simg/' % prefixe)
 
-    if meta.get("gabarit") == "accueil":
-        # Le chapeau, c'est tout ce qui précède le premier H2. Son premier
+    gabarit = meta.get("gabarit", "page")
+    if gabarit == "accueil":
+        # Le chapeau, c’est tout ce qui précède le premier H2. Son premier
         # paragraphe est le seul endroit du site où le corps est plus gros.
         coupe = contenu.find("<h2")
         chapeau, contenu = contenu[:coupe], contenu[coupe:]
@@ -291,13 +316,12 @@ def construire(nom, dossier, base, gabarits):
             "contenu": contenu.strip(),
         }
     else:
-        ancre_texte = ' id="texte"' if meta.get("ancre_texte") else ""
-        chapeau = ('<p class="chapeau">%s</p>' % echapper(meta["chapeau"])
-                   if meta.get("chapeau") else "")
         corps_html = gabarits["page"] % {
+            "classe": gabarit,
             "h1": echapper(meta["h1"]),
-            "chapeau": chapeau,
-            "ancre": ancre_texte,
+            "chapeau": ('<p class="chapeau">%s</p>' % echapper(meta["chapeau"])
+                        if meta.get("chapeau") else ""),
+            "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
             "contenu": contenu.strip(),
         }
 
@@ -306,41 +330,60 @@ def construire(nom, dossier, base, gabarits):
         donnees = GRAPHE_ACCUEIL
     else:
         donnees = GRAPHE_PAGE % {
+            "type": "DefinedTerm" if gabarit == "notion" else "WebPage",
             "nom": meta["h1"], "url": url,
-            "relation": "mainEntity" if nom == "le-livre" else "about",
+            "relation": "mainEntity" if nom == "le-livre" else "inDefinedTermSet"
+            if gabarit == "notion" else "about",
         }
 
     og = [
-        ('og:type', meta.get("og_type", "article")),
-        ('og:locale', 'fr_CA'),
-        ('og:title', meta["h1"]),
-        ('og:description', meta["description"]),
-        ('og:url', url),
-        ('og:image', DOMAINE + "/lexique-ia/img/couverture.jpg"),
+        ("og:type", meta.get("og_type", "article")),
+        ("og:locale", "fr_CA"),
+        ("og:title", meta["h1"]),
+        ("og:description", meta["description"]),
+        ("og:url", url),
+        ("og:image", DOMAINE + BASE + "img/couverture.jpg"),
     ]
 
     page = base % {
-        "avertissement": AVERTISSEMENT % nom,
+        "avertissement": AVERTISSEMENT % os.path.relpath(
+            fichier, CONTENU)[:-3],
         "titre": echapper(meta["title"]),
         "description": echapper(meta["description"]),
         "canonique": url,
         "prefixe": prefixe,
         "page": nom,
+        "enseigne": echapper(ENSEIGNE),
+        "accueil": prefixe if prefixe else "./",
         "og": "\n  ".join('<meta property="%s" content="%s">'
                           % (k, echapper(v)) for k, v in og),
         "donnees": donnees,
-        "navigation": navigation(prefixe, nom),
+        "navigation": navigation(prefixe, nom, urls),
         "langues": selecteur_de_langue(prefixe),
         "corps": corps_html,
         "pied": "<br>\n      ".join(PIED),
     }
 
-    verifier(nom, source, page)
-
-    cible = os.path.join(ICI, dossier, "index.html") if dossier \
-        else os.path.join(ICI, "index.html")
+    verifier(nom, corps, contenu, page)
     ecrire(cible, page)
     return os.path.relpath(cible, ICI), meta["url"]
+
+
+def inventaire():
+    """Les fichiers de contenu, dans l’ordre du site : les quatre pages
+    principales, puis les huit notions, dans l’ordre des chapitres."""
+    pages = [(n, os.path.join(CONTENU, n + ".md")) for n in MENU]
+    dossier = os.path.join(CONTENU, "notions")
+    if os.path.isdir(dossier):
+        notions = []
+        for f in sorted(os.listdir(dossier)):
+            if not f.endswith(".md"):
+                continue
+            chemin = os.path.join(dossier, f)
+            meta, _ = entete_et_corps(lire(chemin))
+            notions.append((meta.get("ordre", 99), f[:-3], chemin))
+        pages += [(n, c) for _, n, c in sorted(notions)]
+    return pages
 
 
 def sitemap(urls):
@@ -350,7 +393,7 @@ def sitemap(urls):
     gardees = []
     if os.path.exists(chemin):
         for u in re.findall(r"<loc>\s*([^<]+?)\s*</loc>", lire(chemin)):
-            if "/lexique-ia/" not in u:
+            if BASE not in u:
                 gardees.append(u)
     toutes = gardees + [DOMAINE + u for u in urls]
     corps = "\n".join("  <url><loc>%s</loc></url>" % echapper(u)
@@ -367,16 +410,22 @@ def main():
     gabarits = {"accueil": lire(os.path.join(GABARIT, "accueil.html")),
                 "page": lire(os.path.join(GABARIT, "page.html"))}
 
-    urls = []
-    for nom, dossier, _ in PAGES:
-        cible, url = construire(nom, dossier, base, gabarits)
-        urls.append(url)
-        print("  ✓ %-24s %s" % (cible, url))
+    pages = inventaire()
+    urls = {}
+    for nom, fichier in pages:
+        meta, _ = entete_et_corps(lire(fichier))
+        urls[nom] = meta["url"]
 
-    chemin, n = sitemap(urls)
-    print("  ✓ %-24s %d adresses"
-          % (os.path.relpath(chemin, ICI), n))
-    print("\nQuatre pages construites. Aucune requête ne sort du domaine.")
+    liste = []
+    for nom, fichier in pages:
+        cible, url = construire(nom, fichier, base, gabarits, urls)
+        liste.append(url)
+        print("  ✓ %-34s %s" % (cible, url))
+
+    chemin, n = sitemap(liste)
+    print("  ✓ %-34s %d adresses" % (os.path.relpath(chemin, ICI), n))
+    print("\n%d pages construites. Aucune requête ne sort du domaine."
+          % len(liste))
 
 
 if __name__ == "__main__":

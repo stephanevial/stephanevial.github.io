@@ -57,14 +57,23 @@ a:focus-visible {
   border-bottom: 1px solid var(--creme);
   padding: 1rem 1.25rem;
 }
-.signature {
+.enseigne {
   margin: 0 0 0.5rem;
+  max-width: 22rem;
+  line-height: 1.2;
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.signature a { text-decoration: none; }
-.signature a:hover { text-decoration: underline; }
+.enseigne a { text-decoration: none; color: inherit; }
+.enseigne a:hover { text-decoration: underline; }
+
+/* L'adresse de contact presse est coupée en deux par un fragment que cette
+   règle masque. Un moissonneur qui lit le HTML brut récolte une adresse
+   morte ; un lecteur d'écran saute le fragment, comme le copier-coller.
+   Aucun JavaScript n'intervient. Ne pas retirer cette règle sans retirer
+   d'abord le fragment de contenu/accueil.md. */
+.leurre { display: none; }
 
 .sommaire {
   display: flex;
@@ -150,6 +159,13 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Une notion tient sur une page courte : la référence de chapitre et de
+   folio est un repère, pas un titre. */
+.notion .corps > p:first-child {
+  color: var(--gris);
+  margin-bottom: 1.5rem;
 }
 
 /* Rien ne doit déborder en largeur, à aucune taille d'écran. */
