@@ -64,7 +64,7 @@ L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co
 | **Auteur** | Stéphane Vial |
 | **Préface** | Marcello Vitali-Rosati |
 | **Éditeur** | Stéphane Vial, éditeur · Montréal, Québec |
-| **Parution** | 6 octobre 2026 |
+| **Parution** | 6 octobre 2026 (version française) |
 | **Format** | Broché, 138 pages · numérique (ePub) |
 | **ISBN** | 978-2-9825534-0-8 (broché) · 978-2-9825534-1-5 (numérique) |
-| **Dépôt légal** | BAnQ et Bibliothèque et Archives Canada |
+| **Dépôt légal** | Bibliothèque et Archives nationales du Québec |
