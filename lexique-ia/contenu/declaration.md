@@ -31,4 +31,4 @@ L’intelligence artificielle peut assister l’écriture. Elle ne dispense jama
 
 ## Pour citer ce texte
 
-Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur, Montréal, Qc, Canada.
+Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur, Montréal.

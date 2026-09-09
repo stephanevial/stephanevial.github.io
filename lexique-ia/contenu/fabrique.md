@@ -30,4 +30,4 @@ Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
 ## Pour citer ce texte
 
-Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur, Montréal, Qc, Canada.
+Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur, Montréal.
