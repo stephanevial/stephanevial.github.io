@@ -43,7 +43,7 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 
 - À propos : [stephane-vial.net](https://stephane-vial.net)
 - Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
-- Opinion : [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+- Opinion dans *Le Devoir* : [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
 
 </div>
 
