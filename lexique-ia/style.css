@@ -456,6 +456,11 @@ td:last-child { padding-right: 0; }
 /* Grand : 1,35 fois le corps du titre de l'accueil, le rapport de la 1re de
    couverture. */
 .pied .chevron { font-size: clamp(3.2rem, 9.45vw, 6.75rem); flex: none; }
+/* Le chevron est un lien vers la page suivante du menu, l'accueil après la
+   dernière. Il avance d'un cran au survol. */
+a.chevron { text-decoration: none; transition: transform 0.15s ease-out; }
+a.chevron:hover { transform: translateX(0.12em); }
+a.chevron:focus-visible { outline-offset: 6px; }
 
 /* ---------------------------------------------------------- impression */
 

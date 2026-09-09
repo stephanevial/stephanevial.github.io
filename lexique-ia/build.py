@@ -282,6 +282,14 @@ def verifier(nom, corps, contenu, html):
 
 # ------------------------------------------------------------- construction
 
+def page_suivante(nom):
+    """Le chevron du pied mène à la page suivante du menu ; après la dernière,
+    il ramène à l’accueil. Une notion, hors menu, envoie à la page qui suit
+    « Le livre », d’où l’on y est arrivé."""
+    i = MENU.index(nom) if nom in MENU else MENU.index("le-livre")
+    return MENU[(i + 1) % len(MENU)]
+
+
 def navigation(prefixe, courante, urls):
     entrees = []
     for nom in MENU:
@@ -388,6 +396,8 @@ def construire(nom, fichier, base, gabarits, urls):
         "donnees": donnees,
         "robots": ROBOTS,
         "navigation": navigation(prefixe, nom, urls),
+        "suivante": prefixe + urls[page_suivante(nom)][len(BASE):] or "./",
+        "suivante_libelle": MENU_LIBELLE[page_suivante(nom)],
         "langues": selecteur_de_langue(prefixe),
         "corps": corps_html,
         "pied": "\n      ".join("<p>%s</p>" % "<br>\n      ".join(g)
