@@ -361,10 +361,14 @@ h3 {
   line-height: 1.4;
   color: #6E6C69;   /* 5,0 : 1 sur le papier, AA pour du petit texte */
 }
-/* Les deux liens, en liste, précédés du chevron simple. */
-.accueil > .auteur ul { list-style: none; padding-left: 0; }
-.accueil > .auteur li { margin-bottom: 0.35rem; }
-.accueil > .auteur li::before {
+/* Les listes à puce chevron : les liens de l'auteur sur l'accueil, et les
+   extraits à lire sur la page du livre. */
+.accueil > .auteur ul,
+body[data-page="livre"] .corps > ul { list-style: none; padding-left: 0; }
+.accueil > .auteur li,
+body[data-page="livre"] .corps > ul li { margin-bottom: 0.35rem; }
+.accueil > .auteur li::before,
+body[data-page="livre"] .corps > ul li::before {
   content: "\203A";
   color: var(--bleu);
   font-weight: 700;
