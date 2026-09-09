@@ -439,6 +439,14 @@ td:last-child { padding-right: 0; }
 /* Le dernier bloc de l'accueil, le tableau de l'ouvrage, ne colle pas au pied. */
 .accueil > table:last-child { margin-bottom: clamp(3.5rem, 7vw, 6rem); }
 
+/* Sur la page du livre, un filet pâle sépare les chapitres : au-dessus de
+   chaque titre de chapitre qui suit la liste du précédent. */
+body[data-page="livre"] .corps > ul + h3 {
+  border-top: 1px solid var(--filet);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
 /* Le lien de téléchargement du communiqué : un lien en texte, en tête. */
 .telecharger { font-weight: 600; }
 /* Une note, en plus petit : la mention des exemplaires de presse. */

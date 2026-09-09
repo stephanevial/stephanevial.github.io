@@ -3,12 +3,11 @@ url: /lexique-ia/livre/traitement-du-langage-naturel/
 title: "Traitement du langage naturel : définition et exemple | Stéphane Vial"
 description: "Le traitement du langage naturel désigne un ensemble de méthodes informatiques qui permettent à une machine de traiter, d’interpréter et de produire du…"
 h1: "Traitement du langage naturel"
+chapeau: "Natural Language Processing, NLP · chapitre 4"
 gabarit: notion
 ordre: 4
 og_type: article
 ---
-
-*Natural Language Processing, NLP* · chapitre 4 · page 71
 
 **Définition**  
 Le traitement du langage naturel désigne un ensemble de méthodes informatiques qui permettent à une machine de traiter, d’interpréter et de produire du langage humain, à l’écrit comme à l’oral. Il s’agit d’un domaine de recherche développé depuis les années 1950, à la croisée de la linguistique, de l’informatique et, aujourd’hui, de l’apprentissage automatique. Le langage est converti en données exploitables (mots, phrases, structures), puis analysé par des modèles afin de produire des résultats cohérents à partir des régularités détectées.
@@ -18,3 +17,7 @@ Quand vous utilisez un moteur de recherche, le système interprète votre requê
 
 **Importance**  
 Le traitement du langage naturel est devenu une interface centrale entre humains et machines. Il permet d’interagir de manière plus directe, sans passer par des commandes techniques. Mais le langage reste ambigu, contextuel et culturellement situé, ce qui limite les performances : les modèles peuvent produire des réponses plausibles sans réellement saisir le sens, ce qui explique certaines erreurs ou malentendus.
+
+## Pour citer ce texte
+
+Vial, S. (2026). Traitement du langage naturel. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 71). Stéphane Vial, éditeur, Montréal.

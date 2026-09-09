@@ -3,12 +3,11 @@ url: /lexique-ia/livre/intelligence-artificielle/
 title: "Intelligence artificielle : définition et exemple | Stéphane Vial"
 description: "L’intelligence artificielle (IA) désigne un ensemble de méthodes et de systèmes informatiques capables de reproduire ou de simuler certaines capacités que…"
 h1: "Intelligence artificielle"
+chapeau: "Artificial Intelligence, AI · chapitre 1"
 gabarit: notion
 ordre: 1
 og_type: article
 ---
-
-*Artificial Intelligence, AI* · chapitre 1 · page 22
 
 **Définition**  
 L’intelligence artificielle (IA) désigne un ensemble de méthodes et de systèmes informatiques capables de reproduire ou de simuler certaines capacités que l’on associe habituellement à l’intelligence humaine. Par exemple : comprendre le langage, reconnaître des images, résoudre des problèmes ou apprendre à partir de données. Il ne s’agit pas d’une pensée consciente, mais d’une capacité à reproduire, grâce à des calculs, certains mécanismes du raisonnement, de l’apprentissage et de la perception humaine.
@@ -18,3 +17,7 @@ Quand on demande à un assistant vocal la météo ou quand Netflix nous recomman
 
 **Importance**  
 L’IA est en train de transformer de nombreux domaines : santé, finance, éducation, sports, transports, création artistique… Elle permet d’automatiser certaines tâches, d’augmenter les capacités humaines, mais elle crée aussi de nouveaux risques sociaux, éthiques et politiques. Comprendre ce qu’est l’intelligence artificielle permet de moins fantasmer sur sa nature, d’être plus réaliste et de mieux décider de ses usages souhaitables.
+
+## Pour citer ce texte
+
+Vial, S. (2026). Intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 22). Stéphane Vial, éditeur, Montréal.

@@ -3,12 +3,11 @@ url: /lexique-ia/livre/ia-agentique/
 title: "IA agentique : définition et exemple | Stéphane Vial"
 description: "L’IA agentique désigne des systèmes d’intelligence artificielle capables d’agir de manière semi-autonome ou autonome pour atteindre un objectif, souvent en…"
 h1: "IA agentique"
+chapeau: "Agentic AI · chapitre 8"
 gabarit: notion
 ordre: 8
 og_type: article
 ---
-
-*Agentic AI* · chapitre 8 · page 118
 
 **Définition**  
 L’IA agentique désigne des systèmes d’intelligence artificielle capables d’agir de manière semi-autonome ou autonome pour atteindre un objectif, souvent en plusieurs étapes. Contrairement à un *chatbot* classique qui se contente de répondre à une demande immédiate, une IA agentique peut planifier des actions, utiliser des outils, accéder à des services externes, mémoriser certaines informations et ajuster son comportement en fonction des résultats obtenus. En pratique, cette autonomie repose sur un modèle de langage orchestré avec des instructions, une mémoire et des outils. L’ensemble se comporte alors comme un agent qui exécute des tâches avec peu de supervision humaine.
@@ -18,3 +17,7 @@ Un agent IA chargé d’organiser un voyage peut rechercher des vols, comparer d
 
 **Importance**  
 L’IA agentique ne se contente plus de générer du contenu ou de répondre à des questions : elle peut enchaîner plusieurs actions en utilisant des outils et des logiciels. Cette capacité ouvre des possibilités importantes d’automatisation dans le travail, les services ou la recherche. Mais cette autonomie soulève aussi des enjeux critiques de sécurité, de contrôle et de responsabilité.
+
+## Pour citer ce texte
+
+Vial, S. (2026). IA agentique. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 118). Stéphane Vial, éditeur, Montréal.
