@@ -18,5 +18,3 @@ Un agent IA chargé d’organiser un voyage peut rechercher des vols, comparer d
 
 **Importance**  
 L’IA agentique ne se contente plus de générer du contenu ou de répondre à des questions : elle peut enchaîner plusieurs actions en utilisant des outils et des logiciels. Cette capacité ouvre des possibilités importantes d’automatisation dans le travail, les services ou la recherche. Mais cette autonomie soulève aussi des enjeux critiques de sécurité, de contrôle et de responsabilité.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 118 de l’ouvrage.</p>

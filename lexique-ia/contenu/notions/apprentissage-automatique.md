@@ -18,5 +18,3 @@ Pour entraîner un système de reconnaissance vocale, on lui fait écouter des m
 
 **Importance**  
 La quasi-totalité des IA actuelles repose sur l’apprentissage automatique : reconnaissance faciale, filtres de spam, recommandations, assistants vocaux, etc. C’est un changement profond : on ne décrit plus explicitement la solution, on laisse le modèle la découvrir à partir des données. Toutefois, ces systèmes ne comprennent pas au sens humain, ils produisent des résultats à partir de calculs et de probabilités. Cela aide à mieux saisir à la fois leur puissance… et leurs limites.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 58 de l’ouvrage.</p>

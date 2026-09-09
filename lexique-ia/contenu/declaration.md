@@ -38,5 +38,3 @@ La préface est dédiée au domaine public par son auteur, sous licence CC0 1.0 
 ## Pour citer ce texte
 
 Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur.
-
-<p class="renvoi">Le procédé complet est raconté dans le récit de fabrication publié aux pages 131 à 134. <a href="../fabrique/">→ La fabrique de ce livre</a></p>

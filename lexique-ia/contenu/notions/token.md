@@ -18,5 +18,3 @@ La phrase *Bonjour tout le monde !* pourrait être découpée en cinq *tokens*�
 
 **Importance**  
 Le *token* est l’unité de base du fonctionnement des modèles de langage. La fenêtre de contexte est elle aussi exprimée en nombre de *tokens*, non en nombre de mots. Cette logique a des effets concrets : un même texte ne compte pas le même nombre de *tokens* selon la langue. Les coûts d’utilisation des modèles sont d’ailleurs généralement calculés en fonction du nombre de *tokens* traités, en entrée comme en sortie. Comprendre ce qu’est un *token* permet donc de mieux saisir comment une IA « lit » et génère du texte, mais aussi pourquoi certaines requêtes coûtent plus cher en calcul et en énergie.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 83 de l’ouvrage.</p>

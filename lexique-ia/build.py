@@ -83,6 +83,11 @@ LANGUES = [("fr", "Français", ""),
 
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
 
+# La couverture figure sur toutes les pages : à côté du chapeau sur l’accueil,
+# à droite du texte ailleurs, où elle ramène à l’accueil. Son texte de
+# remplacement est celui déclaré dans contenu/accueil.md, lu au démarrage.
+COUVERTURE_ALT = ""
+
 # Les adresses ont perdu leur article le 8 septembre 2026 : « la-fabrique »
 # est devenue « fabrique », « le-livre » est devenue « livre », notions
 # comprises. Les anciennes adresses restent servies par une page de renvoi,
@@ -384,6 +389,8 @@ def construire(nom, fichier, base, gabarits, urls):
             "chapeau": ('<p class="chapeau">%s</p>' % echapper(meta["chapeau"])
                         if meta.get("chapeau") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
+            "prefixe": prefixe,
+            "couverture_alt": echapper(COUVERTURE_ALT),
             "contenu": contenu.strip(),
         }
 
@@ -476,6 +483,9 @@ def main():
     base = lire(os.path.join(GABARIT, "base.html"))
     gabarits = {"accueil": lire(os.path.join(GABARIT, "accueil.html")),
                 "page": lire(os.path.join(GABARIT, "page.html"))}
+
+    global COUVERTURE_ALT
+    COUVERTURE_ALT = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]["couverture_alt"]
 
     pages = inventaire()
     urls = {}

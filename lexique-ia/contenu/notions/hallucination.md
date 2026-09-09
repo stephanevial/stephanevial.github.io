@@ -18,5 +18,3 @@ Si on demande à un agent conversationnel de citer des sources sur un sujet trè
 
 **Importance**  
 Les hallucinations peuvent être anodines dans un contexte humoristique, mais problématiques dans des domaines sensibles comme la santé, l’éducation ou le droit. Pour les limiter, les systèmes modernes utilisent différentes approches : amélioration de l’entraînement, accès à des sources externes actualisées, architectures de type RAG, etc. Ces techniques peuvent améliorer la fiabilité des réponses, mais elles ne transforment pas un modèle probabiliste en système de vérification des faits. Une réponse convaincante doit donc toujours être évaluée de manière critique.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 96 de l’ouvrage.</p>

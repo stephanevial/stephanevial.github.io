@@ -18,5 +18,3 @@ Sur une plateforme de vidéo en continu, le système de recommandation suggère 
 
 **Importance**  
 Les systèmes de recommandation filtrent l’immense quantité d’informations disponibles en ligne et influencent nos choix souvent sans que nous en ayons pleinement conscience. Bien calibrés, ils permettent de découvrir des contenus pertinents ou adaptés à nos goûts. Mais comme ils cherchent aussi à maximiser l’attention et l’engagement, ils peuvent favoriser les contenus émotionnels, polarisants ou répétitifs. À grande échelle, ils jouent donc un rôle majeur dans notre manière de nous informer, de consommer et même de percevoir le monde numérique.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 107 de l’ouvrage.</p>

@@ -18,5 +18,3 @@ Dans un modèle de reconnaissance d’image, des milliers de neurones artificiel
 
 **Importance**  
 Le neurone artificiel est une brique fondamentale de l’apprentissage profond. C’est l’organisation et l’ajustement de millions (voire milliards) de neurones, organisés en réseaux, qui donnent au modèle ses capacités d’analyse, de prédiction ou de génération.
-
-<p class="renvoi">Une des quatre-vingt-onze notions du <a href="../">Petit lexique vivant de l’intelligence artificielle</a>, dans son texte intégral, telle qu’elle est imprimée page 40 de l’ouvrage.</p>

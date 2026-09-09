@@ -228,6 +228,25 @@ h1 {
   max-width: none;
 }
 
+/* Sur les pages de document et de notion, la couverture occupe la droite du
+   texte, comme sur l'accueil à côté du chapeau, et ramène à l'accueil. Elle
+   suit le lecteur dans les textes longs. Sous le texte sur téléphone. */
+.lecture { display: grid; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.lecture > .couverture { padding: 0 var(--air) clamp(2rem, 5vw, 3.5rem); }
+@media (min-width: 55rem) {
+  /* La couverture se place juste après la colonne de texte, comme sur
+     l'accueil, et non au bord de l'écran. */
+  .lecture {
+    grid-template-columns: minmax(0, calc(var(--mesure) + 2 * var(--air))) auto;
+    justify-content: start;
+  }
+  .lecture > .couverture {
+    position: sticky;
+    top: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(2rem, 5vw, 3.5rem) var(--air) clamp(2rem, 5vw, 3.5rem) 0;
+  }
+}
+
 /* Les titres de section, précédés du chevron de la couverture, employé ici
    comme motif de progression. */
 h2 {
@@ -370,23 +389,6 @@ h3 {
   padding-right: max(var(--air), calc(100% - var(--air) - 46rem));
 }
 
-/* Le renvoi est une surface, il va donc d'un bord à l'autre. Comme il vit
-   dans .corps, qui porte déjà une marge latérale, il faut la lui reprendre. */
-.corps > .renvoi {
-  margin-left: calc(-1 * var(--air));
-  margin-right: calc(-1 * var(--air));
-}
-.corps > .renvoi, .page > .renvoi {
-  margin-top: clamp(3rem, 6vw, 5rem);
-  margin-bottom: 0;
-  padding: 1.5rem var(--air) 2.5rem;
-  padding-right: max(var(--air), calc(100% - var(--air) - 40rem));
-  background: var(--papier);
-  border-top: 1px solid var(--bleu);
-  max-width: none;
-  font-size: 0.9375rem;
-}
-
 ul { padding-left: 1.15rem; }
 li { margin-bottom: 0.55rem; }
 .corps > * { overflow-wrap: break-word; }
@@ -470,7 +472,7 @@ a.chevron:focus-visible { outline-offset: 6px; }
 
 @media print {
   body { background: #fff; color: #000; font-size: 11pt; }
-  .bandeau, .pied, .evitement, .renvoi, .couverture, .chevron { display: none; }
+  .bandeau, .pied, .evitement, .couverture, .chevron { display: none; }
   main, .page { padding: 0; margin: 0; }
   .page > *, .titre, .corps, .corps > *, .entree {
     background: none !important;
