@@ -71,7 +71,8 @@ PIED = [
     ["<strong>Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026</strong>",
      "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)"],
     ["<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
-     "© Stéphane Vial, éditeur · 2026"],
+     "© Stéphane Vial, éditeur · 2026",
+     "Tous les contenus de ce site web sont libres de droits"],
 ]
 
 # Le sélecteur de langue existe dans le code et reste masqué jusqu’au
