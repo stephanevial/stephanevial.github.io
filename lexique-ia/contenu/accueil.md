@@ -3,7 +3,8 @@ url: /lexique-ia/
 title: "Petit lexique vivant de l’intelligence artificielle | Stéphane Vial"
 description: "91 notions d’intelligence artificielle, une page chacune, en langage clair. Un livre écrit avec l’IA, qui le déclare, et relu par un pair."
 h1: "Petit lexique vivant de l’intelligence artificielle"
-attribution: "Stéphane Vial · Préface de Marcello Vitali-Rosati · Parution le 6 octobre 2026"
+auteur: "Stéphane Vial"
+attribution: "Préface de Marcello Vitali-Rosati · Parution le 6 octobre 2026"
 couverture: img/couverture.jpg
 couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
 gabarit: accueil
@@ -11,20 +12,22 @@ og_type: book
 og_image: img/couverture.jpg
 ---
 
-J’ai écrit un livre sur l’IA, avec l’IA, et j’explique comment.
+J’ai écrit un livre sur l’IA, avec l’IA, et j’explique comment. Quatre-vingt-onze notions, une page chacune, pour comprendre ce qu’est l’intelligence artificielle et comment elle fonctionne.
 
-Chaque page a été relue et commentée de façon critique par Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, qui signe la préface.
+Comme toute publication universitaire, chaque page a été relue et commentée de façon critique par un pair. Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, a joué ce rôle et signé la préface.
 
-Mais ce n’est pas tout : je l’ai également fabriqué et publié avec l’IA, la couverture, le code-barres, l’index, les prix, le dépôt légal.
+Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec l’aide de l’IA, de la couverture à la mise en marché, en passant par le dépôt légal. Les quatre dernières pages racontent comment je m’y suis pris.
+
+Ce livre est destiné à toutes celles et ceux qui utilisent l’IA tous les jours mais ne savent pas vraiment comment elle fonctionne, aux professionnels, employés et entreprises qui doivent se familiariser avec, aux enseignants, formateurs et étudiants de toutes disciplines.
 
 ## Trois choses à lire sur ce site
 
 - **[La fabrique de ce livre](la-fabrique/)**  
-  Le récit de fabrication publié dans l’ouvrage, pages 131 à 134. Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié.
+  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié.
 - **[Déclaration sur l’usage de l’intelligence artificielle](declaration/)**  
-  Le texte signé, pages 129 et 130. « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. »
+  « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. »
 - **[Le communiqué](communique/)**  
-  Le communiqué de parution, texte intégral, et le PDF à télécharger.
+  Le communiqué de parution officiel, en texte intégral.
 
 ## L’auteur
 
@@ -32,25 +35,27 @@ Mais ce n’est pas tout : je l’ai également fabriqué et publié avec l’IA
 
 ![Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal](img/portrait-stephane-vial.jpg)
 
-Stéphane Vial est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création. Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
+**Stéphane Vial** est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création.
 
-À propos : [stephane-vial.net](https://stephane-vial.net)  
-Blog sur l’IA : [stephane-vial.net/blog/](https://stephane-vial.net/blog/)
+Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
+
+- À propos : [stephane-vial.net](https://stephane-vial.net)
+- Blog sur l’IA : [stephane-vial.net/blog/](https://stephane-vial.net/blog/)
 
 </div>
 
 ## Se procurer le livre
 
-L’édition brochée et l’édition numérique paraissent le 6 octobre 2026.
+Le livre est disponible sur Amazon, en édition brochée et en édition numérique.
 
 - **France**  
-  [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
+  Voir la fiche : [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
 - **Canada**  
-  [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
+  Voir la fiche : [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
 - **États-Unis**  
-  [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
+  Voir la fiche : [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
 
-L’ouvrage est également disponible sur les autres boutiques Amazon.
+L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co.uk/dp/B0HG5YBRPW) · [amazon.de](https://www.amazon.de/dp/B0HG5YBRPW) · [amazon.es](https://www.amazon.es/dp/B0HG5YBRPW) · [amazon.it](https://www.amazon.it/dp/B0HG5YBRPW) · [amazon.nl](https://www.amazon.nl/dp/B0HG5YBRPW) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HG5YBRPW) · [amazon.com.br](https://www.amazon.com.br/dp/B0HG5YBRPW) · [amazon.com.au](https://www.amazon.com.au/dp/B0HG5YBRPW) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HG5YBRPW) · [amazon.in](https://www.amazon.in/dp/B0HG5YBRPW).
 
 ## L’ouvrage
 
@@ -64,5 +69,3 @@ L’ouvrage est également disponible sur les autres boutiques Amazon.
 | **Format** | Broché, 138 pages · numérique (ePub) |
 | **ISBN** | 978-2-9825534-0-8 (broché) · 978-2-9825534-1-5 (numérique) |
 | **Dépôt légal** | BAnQ et Bibliothèque et Archives Canada |
-
-Presse et demandes d’entretien : [Contact](contact/)

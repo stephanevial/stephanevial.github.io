@@ -137,13 +137,15 @@ h1 {
    lieu de filer sur toute la largeur. */
 .accueil h1 { max-width: 15ch; }
 
+/* L'attribution : le nom de l'auteur en gras, le reste en maigre. */
 .attribution {
   color: var(--bleu);
   margin: 0;
-  font-weight: 600;
+  font-weight: 400;
   font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
   max-width: 42rem;   /* la ligne d'attribution tient sur un seul rang */
 }
+.attribution strong { font-weight: 700; }
 
 /* Le chevron est la marque de l'éditeur (SPEC-systeme-couverture.md). Sur la
    1re, il vaut 1,35 fois le corps du titre ; au pied de la 4e, 4,09 fois le
@@ -280,6 +282,7 @@ h3 {
   margin: 0;
   padding: 1.4rem clamp(1rem, 2vw, 1.75rem) 1.6rem;
 }
+.accueil > #se-procurer-le-livre + p + ul li { font-size: 0.9375rem; }
 /* Le titre de la porte : un lien dans la première liste, un libellé dans la
    seconde. Même composition. */
 .accueil > #trois-choses-a-lire-sur-ce-site + ul li strong,
@@ -304,6 +307,9 @@ h3 {
     padding-left: 0;
     padding-right: 0;
   }
+  /* Les trois cases d'achat portent la même ligne : colonnes égales, sinon la
+     dernière casse sa ligne avant les autres. */
+  .accueil > #se-procurer-le-livre + p + ul { grid-template-columns: 1fr 1fr 1fr; }
   .accueil > #trois-choses-a-lire-sur-ce-site + ul li:first-child,
   .accueil > #se-procurer-le-livre + p + ul li:first-child { padding-left: var(--air); }
   .accueil > #trois-choses-a-lire-sur-ce-site + ul li:last-child,
@@ -319,13 +325,32 @@ h3 {
 }
 .accueil > .auteur > * { max-width: var(--mesure); }
 .accueil > .auteur img { max-width: 15rem; margin-bottom: 1.2rem; }
+/* Les deux liens, en liste, précédés du chevron simple. */
+.accueil > .auteur ul { list-style: none; padding-left: 0; }
+.accueil > .auteur li { margin-bottom: 0.35rem; }
+.accueil > .auteur li::before {
+  content: "\203A";
+  color: var(--bleu);
+  font-weight: 700;
+  margin-right: 0.55em;
+}
 @media (min-width: 55rem) {
   .accueil > .auteur {
     grid-template-columns: 15rem minmax(0, 1fr);
-    grid-template-rows: auto 1fr;   /* les liens suivent la biographie, sans tomber au bas du portrait */
+    /* Trois blocs de texte à droite du portrait : deux paragraphes et la
+       liste. La dernière rangée absorbe la hauteur restante du portrait, sans
+       quoi les blocs s'écarteraient. */
+    grid-template-rows: auto auto 1fr;
   }
-  .accueil > .auteur > p:first-child { grid-row: 1 / span 2; }
+  .accueil > .auteur > p:first-child { grid-row: 1 / span 3; }
   .accueil > .auteur img { margin-bottom: 0; }
+}
+
+/* Les autres boutiques Amazon, en plus petit sous les trois cases. */
+.accueil > #se-procurer-le-livre + p + ul + p {
+  font-size: 0.875rem;
+  max-width: none;
+  padding-right: max(var(--air), calc(100% - var(--air) - 46rem));
 }
 
 /* Le renvoi est une surface, il va donc d'un bord à l'autre. Comme il vit
@@ -406,6 +431,7 @@ td:last-child { padding-right: 0; }
   gap: 1.5rem;
 }
 .pied p { margin: 0; max-width: 44rem; }
+.pied p + p { margin-top: 1em; }
 .pied strong { font-weight: 700; }
 /* 4,09 fois le corps des mentions, le rapport du pied de la 4e. */
 .pied .chevron { font-size: 3.58rem; flex: none; }

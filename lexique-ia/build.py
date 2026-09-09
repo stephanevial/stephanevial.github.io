@@ -63,13 +63,16 @@ MENU_LIBELLE = {"accueil": "Accueil", "la-fabrique": "La fabrique",
                 "declaration": "La déclaration", "le-livre": "Le livre",
                 "communique": "Le communiqué", "contact": "Contact"}
 
-# Le pied reprend le verso de titre du manuscrit, mot pour mot pour les ISBN
-# et le dépôt légal. Le nom n’y figure qu’une fois, comme éditeur.
+# Le pied, identique sur toutes les pages, reprend le verso de titre du
+# manuscrit, mot pour mot pour les ISBN et le dépôt légal. Deux paragraphes :
+# l’identification légale, puis le titre et le copyright. Le nom n’y figure
+# qu’une fois, comme éditeur.
 PIED = [
-    "<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
-    "© Stéphane Vial, éditeur · 2026",
-    "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)",
-    "Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026",
+    ["ISBN <strong>978-2-9825534-0-8</strong> (Imprimé) · "
+     "ISBN <strong>978-2-9825534-1-5</strong> (ePUB)",
+     "Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026"],
+    ["<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
+     "© Stéphane Vial, éditeur · 2026"],
 ]
 
 # Le sélecteur de langue existe dans le code et reste masqué jusqu’au
@@ -325,6 +328,7 @@ def construire(nom, fichier, base, gabarits, urls):
         # Le gabarit l’enveloppe dans .entree, à côté de la couverture.
         corps_html = gabarits["accueil"] % {
             "h1": echapper(meta["h1"]),
+            "auteur": echapper(meta["auteur"]),
             "attribution": echapper(meta["attribution"]),
             "chapeau": chapeau.strip(),
             "contenu": contenu.strip(),
@@ -378,7 +382,8 @@ def construire(nom, fichier, base, gabarits, urls):
         "navigation": navigation(prefixe, nom, urls),
         "langues": selecteur_de_langue(prefixe),
         "corps": corps_html,
-        "pied": "<br>\n      ".join(PIED),
+        "pied": "\n      ".join("<p>%s</p>" % "<br>\n      ".join(g)
+                                for g in PIED),
     }
 
     verifier(nom, corps, contenu, page)
