@@ -3,7 +3,7 @@ url: /lexique-ia/livre/intelligence-artificielle/
 title: "Intelligence artificielle : définition et exemple | Stéphane Vial"
 description: "L’intelligence artificielle (IA) désigne un ensemble de méthodes et de systèmes informatiques capables de reproduire ou de simuler certaines capacités que…"
 h1: "Intelligence artificielle"
-chapeau: "Artificial Intelligence, AI · chapitre 1"
+chapeau: "*Artificial Intelligence, AI* · chapitre 1"
 gabarit: notion
 ordre: 1
 og_type: article

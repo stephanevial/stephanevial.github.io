@@ -3,7 +3,7 @@ url: /lexique-ia/livre/apprentissage-automatique/
 title: "Apprentissage automatique : définition et exemple | Stéphane Vial"
 description: "L’apprentissage automatique est une branche de l’intelligence artificielle qui permet à un système d’apprendre à partir de données plutôt que d’être…"
 h1: "Apprentissage automatique"
-chapeau: "Machine Learning · chapitre 3"
+chapeau: "*Machine Learning* · chapitre 3"
 gabarit: notion
 ordre: 3
 og_type: article

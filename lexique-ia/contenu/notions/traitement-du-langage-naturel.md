@@ -3,7 +3,7 @@ url: /lexique-ia/livre/traitement-du-langage-naturel/
 title: "Traitement du langage naturel : définition et exemple | Stéphane Vial"
 description: "Le traitement du langage naturel désigne un ensemble de méthodes informatiques qui permettent à une machine de traiter, d’interpréter et de produire du…"
 h1: "Traitement du langage naturel"
-chapeau: "Natural Language Processing, NLP · chapitre 4"
+chapeau: "*Natural Language Processing, NLP* · chapitre 4"
 gabarit: notion
 ordre: 4
 og_type: article

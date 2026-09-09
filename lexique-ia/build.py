@@ -386,7 +386,12 @@ def construire(nom, fichier, base, gabarits, urls):
             # « page » ne veut rien dire dans une feuille de style.
             "classe": "notion" if gabarit == "notion" else "document",
             "h1": echapper(meta["h1"]),
-            "chapeau": ('<p class="chapeau">%s</p>' % echapper(meta["chapeau"])
+            # Le chapeau passe par le convertisseur, sans extension : il peut
+            # porter un italique (le terme anglais d’une notion), rien d’autre.
+            "chapeau": ('<p class="chapeau">%s</p>' % re.sub(
+                            r"^<p>|</p>$", "",
+                            markdown.Markdown(output_format="html")
+                            .convert(meta["chapeau"]).strip())
                         if meta.get("chapeau") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
             "prefixe": prefixe,

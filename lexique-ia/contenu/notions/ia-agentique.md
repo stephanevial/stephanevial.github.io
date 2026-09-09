@@ -3,7 +3,7 @@ url: /lexique-ia/livre/ia-agentique/
 title: "IA agentique : définition et exemple | Stéphane Vial"
 description: "L’IA agentique désigne des systèmes d’intelligence artificielle capables d’agir de manière semi-autonome ou autonome pour atteindre un objectif, souvent en…"
 h1: "IA agentique"
-chapeau: "Agentic AI · chapitre 8"
+chapeau: "*Agentic AI* · chapitre 8"
 gabarit: notion
 ordre: 8
 og_type: article
