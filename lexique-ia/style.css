@@ -440,6 +440,14 @@ td:last-child { padding-right: 0; }
 .note { font-size: 0.875rem; }
 /* La ligne de lieu et de date du communiqué : plus petite, en italique. */
 .date { font-size: 0.875rem; font-style: italic; }
+/* La notice biographique du communiqué, séparée du corps par un filet et de
+   l'air, et détachée du tableau qui suit. */
+.bio {
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--bleu);
+}
+.bio > p:last-child { margin-bottom: 0; }
 
 /* ------------------------------------------------------------- le pied */
 

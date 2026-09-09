@@ -25,7 +25,11 @@ L’ouvrage est autoédité, par choix créatif et exploratoire. Une telle expé
 
 Le livre s’adresse en particulier aux enseignants et aux étudiants de toutes disciplines, qui doivent aujourd’hui parler de l’IA avant d’avoir eu le temps de l’étudier. Il se termine ainsi : « L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser. »
 
+<div class="bio" markdown="1">
+
 **Stéphane Vial** est professeur titulaire à l’École de design de l’UQAM et chercheur régulier au Centre de recherche de l’IUSMM. Docteur en philosophie, il est notamment l’auteur de *L’être et l’écran : comment le numérique change la perception*.
+
+</div>
 
 | Renseignement | Valeur |
 |---|---|
