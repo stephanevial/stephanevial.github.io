@@ -224,7 +224,8 @@ h1 {
 /* .corps n'est qu'une enveloppe. Elle porte l'air de tête, sinon la première
    ligne toucherait l'aplat safran ; elle ne porte pas la justification. */
 .corps {
-  padding: clamp(2rem, 5vw, 3.5rem) var(--air) 0;
+  /* De l'air aussi en bas : le dernier paragraphe ne colle pas au pied. */
+  padding: clamp(2rem, 5vw, 3.5rem) var(--air) clamp(3rem, 7vw, 6rem);
   max-width: none;
 }
 
