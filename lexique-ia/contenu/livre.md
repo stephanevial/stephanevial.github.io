@@ -19,7 +19,7 @@ Ce lexique vivant propose une initiation claire, rigoureuse et accessible, sans 
 
 Jeu de l’imitation · Intelligence artificielle · Intelligence artificielle générative · Algorithme · Modèle · Phases (d’un modèle) · Entraînement · Inférence · Fine-tuning · Modèle de fondation · Agent · Alignement · Transparence · Explicabilité · Open source
 
-- Extrait à lire : [Intelligence artificielle](intelligence-artificielle/) · page 22
+- <span class="etiquette">Extrait à lire</span> : [Intelligence artificielle](intelligence-artificielle/) · page 22
 
 ### 2. Ce que contient une IA : neurones et paramètres
 
@@ -27,7 +27,7 @@ Jeu de l’imitation · Intelligence artificielle · Intelligence artificielle g
 
 Perceptron · Neurone · Paramètre · Poids · Biais (paramètre) · Fonction d’activation · Couche · Réseau de neurones · Rétropropagation · Attention · Transformeur · Modèle de langage · Grand modèle de langage · Modèle de raisonnement · Modèle de diffusion · Multimodal
 
-- Extrait à lire : [Neurone](neurone/) · page 40
+- <span class="etiquette">Extrait à lire</span> : [Neurone](neurone/) · page 40
 
 ### 3. Ce que l’IA apprend : les formes d’apprentissage
 
@@ -35,7 +35,7 @@ Perceptron · Neurone · Paramètre · Poids · Biais (paramètre) · Fonction d
 
 Apprentissage · Apprentissage automatique · Apprentissage supervisé · Apprentissage non supervisé · Apprentissage par renforcement · Apprentissage profond · Jeu de données · Données d’entraînement · Données personnelles · Pattern · Surapprentissage
 
-- Extrait à lire : [Apprentissage automatique](apprentissage-automatique/) · page 58
+- <span class="etiquette">Extrait à lire</span> : [Apprentissage automatique](apprentissage-automatique/) · page 58
 
 ### 4. Ce que l’IA « comprend » : langage, images, sons
 
@@ -43,7 +43,7 @@ Apprentissage · Apprentissage automatique · Apprentissage supervisé · Appren
 
 Traitement du langage naturel · Agent conversationnel · GPT · Traduction automatique · Reconnaissance vocale · Synthèse vocale · Vision par ordinateur · Reconnaissance faciale · Générateur d’image
 
-- Extrait à lire : [Traitement du langage naturel](traitement-du-langage-naturel/) · page 71
+- <span class="etiquette">Extrait à lire</span> : [Traitement du langage naturel](traitement-du-langage-naturel/) · page 71
 
 ### 5. Le langage des modèles : tokens et calculs
 
@@ -51,7 +51,7 @@ Traitement du langage naturel · Agent conversationnel · GPT · Traduction auto
 
 Token · Fenêtre de contexte · Vecteur · Probabilité · SoftMax · Température
 
-- Extrait à lire : [Token](token/) · page 83
+- <span class="etiquette">Extrait à lire</span> : [Token](token/) · page 83
 
 ### 6. Ce que l’IA produit : réponses, erreurs, hallucinations
 
@@ -59,7 +59,7 @@ Token · Fenêtre de contexte · Vecteur · Probabilité · SoftMax · Températ
 
 Entrée / Sortie · Prompt · Chaîne de pensée · Génération augmentée par récupération · Dérive du contexte · Hallucination · Biais algorithmique · Biais d’amplification · Flagornerie · Boîte noire · Injection d’invite · Deepfake
 
-- Extrait à lire : [Hallucination](hallucination/) · page 96
+- <span class="etiquette">Extrait à lire</span> : [Hallucination](hallucination/) · page 96
 
 ### 7. L’IA dans nos vies numériques : filtres, moteurs, interfaces
 
@@ -67,7 +67,7 @@ Entrée / Sortie · Prompt · Chaîne de pensée · Génération augmentée par 
 
 Personnalisation · Fil d’actualité · Système de recommandation · Filtrage collaboratif · Classement · Modération · Détection de spam · Bulle algorithmique · Latence · Vibe coding
 
-- Extrait à lire : [Système de recommandation](systeme-de-recommandation/) · page 107
+- <span class="etiquette">Extrait à lire</span> : [Système de recommandation](systeme-de-recommandation/) · page 107
 
 ### 8. Où va l’intelligence artificielle ? Horizons, risques, questions
 
@@ -75,4 +75,4 @@ Personnalisation · Fil d’actualité · Système de recommandation · Filtrage
 
 Puissance de calcul · IA agentique · Intelligence artificielle générale · Conscience (sentience) · Machination de l’IA · Psychose IA · Risque existentiel · Impact écologique de l’IA · Course à l’IA · IA souveraine · Gouvernance de l’IA · IA responsable
 
-- Extrait à lire : [IA agentique](ia-agentique/) · page 118
+- <span class="etiquette">Extrait à lire</span> : [IA agentique](ia-agentique/) · page 118

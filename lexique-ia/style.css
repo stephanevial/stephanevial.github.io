@@ -447,6 +447,18 @@ body[data-page="livre"] .corps > ul li a {
   font-size: 1.125em;
   text-decoration-thickness: 1px;
 }
+/* L'étiquette « Extrait à lire », en petites capitales espacées, comme les
+   intertitres de section : elle se distingue de la liste des notions
+   au-dessus sans ajouter une teinte à la palette. */
+body[data-page="livre"] .corps > ul li { font-size: 0.9375rem; }
+body[data-page="livre"] .corps > ul li .etiquette {
+  font-variation-settings: "wdth" 68;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--bleu);
+}
 
 /* Sur la page du livre, un filet pâle sépare les chapitres : au-dessus de
    chaque titre de chapitre qui suit la liste du précédent. */
