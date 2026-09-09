@@ -72,7 +72,9 @@ PIED = [
      "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)"],
     ["<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
      "© Stéphane Vial, éditeur · 2026",
-     "Tous les contenus de ce site web sont libres de droits"],
+     "Les textes de ce site sont sous licence "
+     "<a href=\"https://creativecommons.org/licenses/by/4.0/deed.fr\">CC BY 4.0</a>, "
+     "sauf mention contraire"],
 ]
 
 # Le sélecteur de langue existe dans le code et reste masqué jusqu’au
