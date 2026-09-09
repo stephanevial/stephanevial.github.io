@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /lexique-ia/
+Allow: /sitemap.xml
 Disallow: /
 
 Sitemap: https://web.stephane-vial.net/sitemap.xml
