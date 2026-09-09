@@ -68,7 +68,7 @@ MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
 # l’identification légale, puis le titre et le copyright. Le nom n’y figure
 # qu’une fois, comme éditeur.
 PIED = [
-    ["Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026",
+    ["<strong>Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026</strong>",
      "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)"],
     ["<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
      "© Stéphane Vial, éditeur · 2026"],
