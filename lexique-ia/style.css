@@ -170,7 +170,7 @@ h1 {
   border-top: 1px solid var(--bleu);
   padding: clamp(2rem, 5vw, 3.5rem) var(--air) clamp(1.5rem, 4vw, 2.5rem);
   display: grid;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(2rem, 6vw, 5rem);
   align-items: center;
 }
 .entree-texte > * {
@@ -180,6 +180,8 @@ h1 {
 }
 .entree-texte > *:last-child { margin-bottom: 0; }
 .couverture { margin: 0; }
+.couverture a { display: block; width: fit-content; }
+.couverture a:focus-visible { outline-offset: 6px; }
 .couverture img {
   width: min(100%, 12rem);
   box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
@@ -267,8 +269,8 @@ h3 {
 .accueil > #trois-choses-a-lire-sur-ce-site + ul,
 .accueil > #se-procurer-le-livre + p + ul {
   list-style: none;
-  padding-left: var(--air);
-  padding-right: var(--air);
+  padding-left: 0;
+  padding-right: 0;
   max-width: none;
   display: grid;
   gap: 1px;
@@ -280,7 +282,9 @@ h3 {
 .accueil > #se-procurer-le-livre + p + ul li {
   background: var(--papier);
   margin: 0;
-  padding: 1.4rem clamp(1rem, 2vw, 1.75rem) 1.6rem;
+  /* En colonne unique, la case porte elle-même la marge latérale de la page :
+     le bleu de la liste n'apparaît qu'entre les cases, jamais sur les côtés. */
+  padding: 1.4rem var(--air) 1.6rem;
 }
 .accueil > #se-procurer-le-livre + p + ul li { font-size: 0.9375rem; }
 /* Le titre de la porte : un lien dans la première liste, un libellé dans la
@@ -304,8 +308,11 @@ h3 {
   .accueil > #trois-choses-a-lire-sur-ce-site + ul,
   .accueil > #se-procurer-le-livre + p + ul {
     grid-template-columns: 1.25fr 1fr 1fr;   /* l'asymétrie est là */
-    padding-left: 0;
-    padding-right: 0;
+  }
+  .accueil > #trois-choses-a-lire-sur-ce-site + ul li,
+  .accueil > #se-procurer-le-livre + p + ul li {
+    padding-left: clamp(1rem, 2vw, 1.75rem);
+    padding-right: clamp(1rem, 2vw, 1.75rem);
   }
   /* Les trois cases d'achat portent la même ligne : colonnes égales, sinon la
      dernière casse sa ligne avant les autres. */
@@ -345,6 +352,9 @@ h3 {
   .accueil > .auteur > p:first-child { grid-row: 1 / span 3; }
   .accueil > .auteur img { margin-bottom: 0; }
 }
+
+/* La phrase qui précède les cases d'achat n'est pas cadrée à la mesure. */
+.accueil > #se-procurer-le-livre + p { max-width: none; }
 
 /* Les autres boutiques Amazon, en plus petit sous les trois cases. */
 .accueil > #se-procurer-le-livre + p + ul + p {
@@ -433,8 +443,9 @@ td:last-child { padding-right: 0; }
 .pied p { margin: 0; max-width: 44rem; }
 .pied p + p { margin-top: 1em; }
 .pied strong { font-weight: 700; }
-/* 4,09 fois le corps des mentions, le rapport du pied de la 4e. */
-.pied .chevron { font-size: 3.58rem; flex: none; }
+/* Le rapport du pied de la 4e donnerait 3,58 rem ; relevé à 4,5 rem le
+   8 septembre 2026, à la demande de Stéphane. */
+.pied .chevron { font-size: 4.5rem; flex: none; }
 
 /* ---------------------------------------------------------- impression */
 

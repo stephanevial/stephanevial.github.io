@@ -68,9 +68,8 @@ MENU_LIBELLE = {"accueil": "Accueil", "la-fabrique": "La fabrique",
 # l’identification légale, puis le titre et le copyright. Le nom n’y figure
 # qu’une fois, comme éditeur.
 PIED = [
-    ["ISBN <strong>978-2-9825534-0-8</strong> (Imprimé) · "
-     "ISBN <strong>978-2-9825534-1-5</strong> (ePUB)",
-     "Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026"],
+    ["Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026",
+     "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)"],
     ["<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
      "© Stéphane Vial, éditeur · 2026"],
 ]
@@ -200,6 +199,14 @@ def poser_les_ancres(html):
         return '<h%s id="%s">%s</h%s>' % (m.group(1), ancre(m.group(2)),
                                           m.group(2), m.group(1))
     return re.sub(r"<h([23])>(.*?)</h\1>", remplacer, html, flags=re.S)
+
+
+def liens_externes(html):
+    """Tout lien externe s’ouvre dans une nouvelle fenêtre. Les liens internes
+    du site sont relatifs : un href absolu est toujours externe. rel=noopener
+    coupe l’accès de la page ouverte à celle qui l’a ouverte."""
+    return re.sub(r'<a href="(https?://[^"]+)"',
+                  r'<a href="\1" target="_blank" rel="noopener"', html)
 
 
 def sortie(url):
@@ -333,6 +340,7 @@ def construire(nom, fichier, base, gabarits, urls):
             "chapeau": chapeau.strip(),
             "contenu": contenu.strip(),
             "couverture": meta["couverture"],
+            "couverture_lien": meta["couverture_lien"],
             "couverture_alt": echapper(meta["couverture_alt"]),
         }
     else:
@@ -386,6 +394,7 @@ def construire(nom, fichier, base, gabarits, urls):
                                 for g in PIED),
     }
 
+    page = liens_externes(page)
     verifier(nom, corps, contenu, page)
     ecrire(cible, page)
     return os.path.relpath(cible, ICI), adresse

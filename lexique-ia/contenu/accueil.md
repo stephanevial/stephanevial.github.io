@@ -6,6 +6,7 @@ h1: "Petit lexique vivant de l’intelligence artificielle"
 auteur: "Stéphane Vial"
 attribution: "Préface de Marcello Vitali-Rosati · Parution le 6 octobre 2026"
 couverture: img/couverture.jpg
+couverture_lien: https://www.amazon.ca/dp/B0HG5YBRPW
 couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
 gabarit: accueil
 og_type: book
@@ -18,14 +19,12 @@ Comme toute publication universitaire, chaque page a été relue et commentée d
 
 Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec l’aide de l’IA, de la couverture à la mise en marché, en passant par le dépôt légal. Les quatre dernières pages racontent comment je m’y suis pris.
 
-Ce livre est destiné à toutes celles et ceux qui utilisent l’IA tous les jours mais ne savent pas vraiment comment elle fonctionne, aux professionnels, employés et entreprises qui doivent se familiariser avec, aux enseignants, formateurs et étudiants de toutes disciplines.
-
 ## Trois choses à lire sur ce site
 
 - **[La fabrique de ce livre](la-fabrique/)**  
-  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié.
+  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié. Une expérience d’écriture et d’édition unique.
 - **[Déclaration sur l’usage de l’intelligence artificielle](declaration/)**  
-  « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. »
+  « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
 - **[Le communiqué](communique/)**  
   Le communiqué de parution officiel, en texte intégral.
 
@@ -40,7 +39,7 @@ Ce livre est destiné à toutes celles et ceux qui utilisent l’IA tous les jou
 Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
 
 - À propos : [stephane-vial.net](https://stephane-vial.net)
-- Blog sur l’IA : [stephane-vial.net/blog/](https://stephane-vial.net/blog/)
+- Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
 
 </div>
 
