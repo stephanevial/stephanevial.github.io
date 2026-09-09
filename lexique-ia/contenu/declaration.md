@@ -1,7 +1,7 @@
 ---
 url: /lexique-ia/declaration/
 title: "Déclaration sur l’usage de l’intelligence artificielle | Stéphane Vial"
-description: "Le texte intégral de la déclaration signée, imprimée pages 129 et 130 du Petit lexique vivant de l’intelligence artificielle. Relu par un pair."
+description: "Le texte intégral de la déclaration signée, imprimée aux pages 129 et 130 du Petit lexique vivant de l’intelligence artificielle. Je n’ai pas écrit ce livre malgré l’IA, je l’ai écrit avec elle."
 h1: "Déclaration sur l’usage de l’intelligence artificielle"
 chapeau: "« Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée."
 ancre_texte: oui
