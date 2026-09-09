@@ -33,7 +33,7 @@ Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec 
 <div class="auteur" markdown="1">
 
 <figure>
-<img src="img/portrait-stephane-vial.jpg" alt="Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal">
+<a href="img/portrait-stephane-vial-hd.jpg" target="_blank" rel="noopener" title="Ouvrir le portrait en haute définition"><img src="img/portrait-stephane-vial.jpg" alt="Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal"></a>
 <figcaption>© Justine Latour pour l’UQAM</figcaption>
 </figure>
 

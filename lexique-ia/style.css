@@ -330,6 +330,8 @@ h3 {
 .accueil > .auteur > * { max-width: var(--mesure); }
 .accueil > .auteur figure { margin: 0 0 1.2rem; }
 .accueil > .auteur img { max-width: 15rem; }
+.accueil > .auteur figure a { display: block; width: fit-content; }
+.accueil > .auteur figure a:focus-visible { outline-offset: 4px; }
 /* Le crédit de la photographie, petit et en gris, sous le portrait. */
 .accueil > .auteur figcaption {
   max-width: 15rem;
