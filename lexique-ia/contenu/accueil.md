@@ -15,7 +15,7 @@ og_image: img/couverture.jpg
 
 J’ai écrit un livre sur l’IA, avec l’IA, et j’explique comment. Quatre-vingt-onze notions, une page chacune, pour comprendre ce qu’est l’intelligence artificielle et comment elle fonctionne.
 
-Comme toute publication universitaire, chaque page a été relue et commentée de façon critique par un pair. Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, a joué ce rôle et signé la préface.
+Comme pour toute publication universitaire, chaque page a été relue et commentée de façon critique par un pair. Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, a joué ce rôle et signé la préface.
 
 Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec l’aide de l’IA, de la couverture à la mise en marché, en passant par le dépôt légal. Les quatre dernières pages racontent comment je m’y suis pris.
 
@@ -40,12 +40,13 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 
 - À propos : [stephane-vial.net](https://stephane-vial.net)
 - Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
 
 </div>
 
 ## Se procurer le livre
 
-Le livre est disponible sur Amazon, en édition brochée et en édition numérique.
+Le livre est disponible uniquement sur Amazon, en édition brochée et en édition numérique.
 
 - **France**  
   Voir la fiche : [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
