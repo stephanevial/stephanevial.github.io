@@ -438,6 +438,8 @@ td:last-child { padding-right: 0; }
 .telecharger { font-weight: 600; }
 /* Une note, en plus petit : la mention des exemplaires de presse. */
 .note { font-size: 0.875rem; }
+/* La ligne de lieu et de date du communiqué : plus petite, en italique. */
+.date { font-size: 0.875rem; font-style: italic; }
 
 /* ------------------------------------------------------------- le pied */
 
