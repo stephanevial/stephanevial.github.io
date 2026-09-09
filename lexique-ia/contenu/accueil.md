@@ -6,7 +6,7 @@ h1: "Petit lexique vivant de l’intelligence artificielle"
 auteur: "Stéphane Vial"
 attribution: "Parution le 6 octobre 2026 · Préface de Marcello Vitali-Rosati"
 couverture: img/couverture.jpg
-couverture_lien: https://www.amazon.ca/dp/B0HG5YBRPW
+couverture_lien: img/couverture-hd.png
 couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
 gabarit: accueil
 og_type: book
