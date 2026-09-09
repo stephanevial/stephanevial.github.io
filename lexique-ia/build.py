@@ -8,7 +8,7 @@ build.py — la fabrique du site du Petit lexique vivant de l’IA.
 Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
 index.html du site et régénère ../sitemap.xml.
 
-Douze pages : les quatre principales, et les huit notions données à lire, une
+Quatorze pages : les six principales, et les huit notions données à lire, une
 par adresse sous /lexique-ia/le-livre/. Les notions ne figurent pas dans la
 navigation : on y arrive par la page du livre.
 
@@ -57,16 +57,19 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
-MENU = ["accueil", "la-fabrique", "declaration", "le-livre", "contact"]
+MENU = ["accueil", "la-fabrique", "declaration", "le-livre", "communique",
+        "contact"]
 MENU_LIBELLE = {"accueil": "Accueil", "la-fabrique": "La fabrique",
                 "declaration": "La déclaration", "le-livre": "Le livre",
-                "contact": "Contact"}
+                "communique": "Le communiqué", "contact": "Contact"}
 
+# Le pied reprend le verso de titre du manuscrit, mot pour mot pour les ISBN
+# et le dépôt légal. Le nom n’y figure qu’une fois, comme éditeur.
 PIED = [
-    "Petit lexique vivant de l’intelligence artificielle · Stéphane Vial · "
-    "6 octobre 2026",
-    "ISBN 978-2-9825534-0-8",
-    "© Stéphane Vial, 2026",
+    "<strong>Petit lexique vivant de l’intelligence artificielle</strong>",
+    "© Stéphane Vial, éditeur · 2026",
+    "ISBN 978-2-9825534-0-8 (Imprimé) · ISBN 978-2-9825534-1-5 (ePUB)",
+    "Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026",
 ]
 
 # Le sélecteur de langue existe dans le code et reste masqué jusqu’au
@@ -303,7 +306,10 @@ def construire(nom, fichier, base, gabarits, urls):
     # Conversion Markdown. « tables » compose l’état civil de l’ouvrage et ne
     # touche à aucun caractère. Aucune extension de substitution
     # typographique : « smarty » n’est pas chargée, et ne doit jamais l’être.
-    md = markdown.Markdown(extensions=["tables"], output_format="html")
+    # « md_in_html » permet à l’accueil d’envelopper la section de l’auteur
+    # dans un <div markdown="1"> pour la composer en deux colonnes.
+    md = markdown.Markdown(extensions=["tables", "md_in_html"],
+                           output_format="html")
     contenu = poser_les_ancres(md.convert(corps))
 
     # Les chemins d’images de contenu/ sont relatifs à /lexique-ia/.
@@ -316,11 +322,7 @@ def construire(nom, fichier, base, gabarits, urls):
         # paragraphe est le seul endroit du site où le corps est plus gros.
         coupe = contenu.find("<h2")
         chapeau, contenu = contenu[:coupe], contenu[coupe:]
-        # Le chapeau est enveloppé : sans conteneur, une feuille de style ne
-        # peut pas viser « les paragraphes jusqu'au premier H2 », et toute
-        # tentative de le faire par sélecteur de frère déborde sur la phrase
-        # de clôture, qui est un paragraphe elle aussi.
-        chapeau = '<div class="entree">\n%s\n</div>' % chapeau.strip()
+        # Le gabarit l’enveloppe dans .entree, à côté de la couverture.
         corps_html = gabarits["accueil"] % {
             "h1": echapper(meta["h1"]),
             "attribution": echapper(meta["attribution"]),

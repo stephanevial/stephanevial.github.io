@@ -109,25 +109,11 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
 main { padding: 0; }
 .page { margin: 0; }
 
-/* Le titre à gauche sur le safran, l'objet à droite sur le papier. La
-   couverture est elle-même safran : la poser sur du safran l'effacerait. */
-.titraille { display: grid; }
-
-@media (min-width: 55rem) {
-  .titraille {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    align-items: stretch;
-  }
-}
-
+/* Le titre sur le safran, d'un bord à l'autre, comme la 1re de couverture.
+   Sous l'attribution, le chevron de la marque, dans la fonte de titrage. */
 .titre {
   background: var(--safran);
-  padding: clamp(2rem, 5vw, 4rem) var(--air) clamp(1.75rem, 4vw, 3rem);
-  /* La colonne s'étire à la hauteur de la couverture : le titre se centre
-     dedans, sinon tout le vide tombe sous l'attribution. */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: clamp(2rem, 5vw, 4rem) var(--air) clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 h1 {
@@ -147,6 +133,9 @@ h1 {
   text-wrap: balance;
   hyphens: none;
 }
+/* Sur l'accueil, le titre garde la coupe en trois lignes de la couverture au
+   lieu de filer sur toute la largeur. */
+.accueil h1 { max-width: 15ch; }
 
 .attribution {
   color: var(--bleu);
@@ -156,42 +145,47 @@ h1 {
   max-width: 42rem;   /* la ligne d'attribution tient sur un seul rang */
 }
 
-/* La couverture, assez grande pour qu'on la lise, posée sur le papier et
-   détachée par une ombre douce : elle doit se voir comme un objet, pas comme
-   une répétition du titre. Aucun filet autour. */
-.couverture {
-  background: var(--papier);
-  margin: 0;
-  padding: clamp(2rem, 4vw, 3.5rem) var(--air);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Le chevron est la marque de l'éditeur (SPEC-systeme-couverture.md). Sur la
+   1re, il vaut 1,35 fois le corps du titre ; au pied de la 4e, 4,09 fois le
+   corps des mentions. Les deux rapports sont repris tels quels. */
+.chevron {
+  display: block;
+  color: var(--bleu);
+  font-variation-settings: "wdth" 68;
+  font-weight: 700;
+  line-height: 0.8;
 }
-.couverture img {
-  width: min(100%, 22rem);
-  box-shadow: 0 1rem 2.5rem rgba(20, 18, 14, 0.22);
-}
-
-@media (min-width: 55rem) {
-  .couverture { padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem); }
-  .couverture img { width: min(100%, 19rem); }
+.titre .chevron {
+  font-size: clamp(3.2rem, 9.45vw, 6.75rem);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
-/* Le chapeau de l'accueil : deuxième moment, sur le crème du papier du
-   livre, corps nettement au-dessus du reste. */
-/* Le chapeau de l'accueil : un seul corps de texte, sur le fond du reste de
-   la page. Le crème n'y sert plus de surface. */
+/* Le chapeau : le texte à gauche, la couverture à droite sur le papier,
+   plus petite, détachée par une ombre douce pour se lire comme un objet.
+   Sur téléphone, la couverture passe sous le texte. */
 .entree {
   background: var(--papier);
   border-top: 1px solid var(--bleu);
   padding: clamp(2rem, 5vw, 3.5rem) var(--air) clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
 }
-.entree > * {
+.entree-texte > * {
   max-width: 46rem;
   font-size: clamp(1.125rem, 1.9vw, 1.375rem);
   line-height: 1.4;
 }
-.entree > *:last-child { margin-bottom: 0; }
+.entree-texte > *:last-child { margin-bottom: 0; }
+.couverture { margin: 0; }
+.couverture img {
+  width: min(100%, 12rem);
+  box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
+}
+@media (min-width: 55rem) {
+  .entree { grid-template-columns: minmax(0, 46rem) auto; justify-content: start; }
+  .couverture img { width: 14rem; }
+}
 
 /* Le chapeau des pages de document reste sur la surface du titre. */
 .page > .chapeau {
@@ -263,12 +257,13 @@ h3 {
   margin: 2.25rem 0 0.2rem;
 }
 
-/* Les trois portes : trois pavés, en grille asymétrique sur large écran.
-   Cette composition ne vise que la liste qui suit « Trois choses à lire ».
-   Les liens d'achat, plus bas, restent des liens en texte : le §1.5 du
-   cahier des charges interdit le bouton et l'encadré, le site n'étant pas
-   un tunnel de conversion. */
-.accueil > #trois-choses-a-lire + ul {
+/* Les portes : trois pavés, en grille asymétrique sur large écran. Deux
+   listes de l'accueil sont composées ainsi : « Trois choses à lire sur ce
+   site » et « Se procurer le livre ». [Le 8 septembre 2026, Stéphane a levé
+   la règle du §1.5 du cahier des charges qui réservait aux liens d'achat une
+   liste en texte.] */
+.accueil > #trois-choses-a-lire-sur-ce-site + ul,
+.accueil > #se-procurer-le-livre + p + ul {
   list-style: none;
   padding-left: var(--air);
   padding-right: var(--air);
@@ -279,13 +274,18 @@ h3 {
   border-top: 1px solid var(--bleu);
   border-bottom: 1px solid var(--bleu);
 }
-.accueil > #trois-choses-a-lire + ul li {
+.accueil > #trois-choses-a-lire-sur-ce-site + ul li,
+.accueil > #se-procurer-le-livre + p + ul li {
   background: var(--papier);
   margin: 0;
   padding: 1.4rem clamp(1rem, 2vw, 1.75rem) 1.6rem;
 }
-.accueil > #trois-choses-a-lire + ul li strong { font-weight: 400; }
-.accueil > #trois-choses-a-lire + ul li a {
+/* Le titre de la porte : un lien dans la première liste, un libellé dans la
+   seconde. Même composition. */
+.accueil > #trois-choses-a-lire-sur-ce-site + ul li strong,
+.accueil > #se-procurer-le-livre + p + ul li strong { font-weight: 400; }
+.accueil > #trois-choses-a-lire-sur-ce-site + ul li a,
+.accueil > #se-procurer-le-livre + p + ul li strong {
   display: inline-block;
   font-variation-settings: "wdth" 72;
   font-weight: 700;
@@ -293,39 +293,39 @@ h3 {
   line-height: 1.14;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  color: var(--bleu);
 }
-.accueil > #trois-choses-a-lire + ul li a:hover { background: var(--safran); }
+.accueil > #trois-choses-a-lire-sur-ce-site + ul li a:hover { background: var(--safran); }
 
 @media (min-width: 55rem) {
-  .accueil > #trois-choses-a-lire + ul {
+  .accueil > #trois-choses-a-lire-sur-ce-site + ul,
+  .accueil > #se-procurer-le-livre + p + ul {
     grid-template-columns: 1.25fr 1fr 1fr;   /* l'asymétrie est là */
     padding-left: 0;
     padding-right: 0;
   }
-  .accueil > #trois-choses-a-lire + ul li:first-child { padding-left: var(--air); }
-  .accueil > #trois-choses-a-lire + ul li:last-child  { padding-right: var(--air); }
+  .accueil > #trois-choses-a-lire-sur-ce-site + ul li:first-child,
+  .accueil > #se-procurer-le-livre + p + ul li:first-child { padding-left: var(--air); }
+  .accueil > #trois-choses-a-lire-sur-ce-site + ul li:last-child,
+  .accueil > #se-procurer-le-livre + p + ul li:last-child  { padding-right: var(--air); }
 }
 
-/* Le portrait, sans filet, comme la couverture. */
-.accueil .corps img,
-.accueil > p img { max-width: 15rem; margin-bottom: 1.2rem; }
-
-/* La clôture : dernier moment, sur le crème, en grand, encre bleue. */
-.page > .cloture {
-  background: var(--papier);
-  color: var(--bleu);
-  border-top: 1px solid var(--bleu);
-  margin: clamp(3rem, 7vw, 6rem) 0 0;
-  /* Le bloc reste pleine largeur, pour que son filet traverse la page, mais
-     le texte se replie sur une justification lisible : la marge de droite
-     grandit avec l'écran au lieu de laisser filer la ligne. */
-  padding: clamp(2.5rem, 6vw, 4.5rem) var(--air);
-  padding-right: max(var(--air), calc(100% - var(--air) - 44rem));
-  max-width: none;
-  font-variation-settings: "wdth" 76;
-  font-weight: 600;
-  font-size: clamp(1.375rem, 3.4vw, 2.25rem);
-  line-height: 1.2;
+/* L'auteur : le portrait à gauche, sans filet comme la couverture, la
+   biographie à droite. Une seule colonne sur téléphone. */
+.accueil > .auteur {
+  padding: 0 var(--air);
+  display: grid;
+  gap: 0 clamp(1.5rem, 4vw, 3rem);
+}
+.accueil > .auteur > * { max-width: var(--mesure); }
+.accueil > .auteur img { max-width: 15rem; margin-bottom: 1.2rem; }
+@media (min-width: 55rem) {
+  .accueil > .auteur {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr;   /* les liens suivent la biographie, sans tomber au bas du portrait */
+  }
+  .accueil > .auteur > p:first-child { grid-row: 1 / span 2; }
+  .accueil > .auteur img { margin-bottom: 0; }
 }
 
 /* Le renvoi est une surface, il va donc d'un bord à l'autre. Comme il vit
@@ -382,6 +382,12 @@ td:first-child {
   white-space: nowrap;
 }
 td:last-child { padding-right: 0; }
+/* Dans .corps, l'enveloppe porte déjà la marge latérale : le tableau ne la
+   double pas. */
+.corps > table { margin-left: 0; margin-right: 0; }
+
+/* Le lien de téléchargement du communiqué : un lien en texte, en tête. */
+.telecharger { font-weight: 600; }
 
 /* ------------------------------------------------------------- le pied */
 
@@ -391,11 +397,18 @@ td:last-child { padding-right: 0; }
   background: var(--safran);
   color: var(--bleu);
   border-top: 1px solid var(--bleu);
-  padding: 1.75rem var(--air) 3rem;
+  padding: 1.75rem var(--air) 2.5rem;
   font-size: 0.875rem;
   line-height: 1.55;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
 }
 .pied p { margin: 0; max-width: 44rem; }
+.pied strong { font-weight: 700; }
+/* 4,09 fois le corps des mentions, le rapport du pied de la 4e. */
+.pied .chevron { font-size: 3.58rem; flex: none; }
 
 /* ---------------------------------------------------------- impression */
 
@@ -405,7 +418,7 @@ td:last-child { padding-right: 0; }
 
 @media print {
   body { background: #fff; color: #000; font-size: 11pt; }
-  .bandeau, .pied, .evitement, .renvoi, .couverture { display: none; }
+  .bandeau, .pied, .evitement, .renvoi, .couverture, .chevron { display: none; }
   main, .page { padding: 0; margin: 0; }
   .page > *, .titre, .corps, .corps > *, .entree {
     background: none !important;

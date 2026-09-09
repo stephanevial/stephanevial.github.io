@@ -17,31 +17,38 @@ Chaque page a été relue et commentée de façon critique par Marcello Vitali-R
 
 Mais ce n’est pas tout : je l’ai également fabriqué et publié avec l’IA, la couverture, le code-barres, l’index, les prix, le dépôt légal.
 
-## Trois choses à lire
+## Trois choses à lire sur ce site
 
 - **[La fabrique de ce livre](la-fabrique/)**  
   Le récit de fabrication publié dans l’ouvrage, pages 131 à 134. Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié.
 - **[Déclaration sur l’usage de l’intelligence artificielle](declaration/)**  
   Le texte signé, pages 129 et 130. « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. »
-- **[Le livre](le-livre/)**  
-  Quatre-vingt-onze notions en huit chapitres, dont huit à lire sur place.
+- **[Le communiqué](communique/)**  
+  Le communiqué de parution, texte intégral, et le PDF à télécharger.
 
 ## L’auteur
+
+<div class="auteur" markdown="1">
 
 ![Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal](img/portrait-stephane-vial.jpg)
 
 Stéphane Vial est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création. Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
 
-Son site : [stephane-vial.net](https://stephane-vial.net)  
-Sa position sur l’IA et l’écriture, publiée dans *Le Devoir* à l’été 2025 : [ledevoir.com/opinion/idees/911919](https://www.ledevoir.com/opinion/idees/911919)
+À propos : [stephane-vial.net](https://stephane-vial.net)  
+Blog sur l’IA : [stephane-vial.net/blog/](https://stephane-vial.net/blog/)
+
+</div>
 
 ## Se procurer le livre
 
-L’édition brochée et l’édition numérique paraissent le 6 octobre 2026. Les éditions anglaise et espagnole suivront le 17 novembre.
+L’édition brochée et l’édition numérique paraissent le 6 octobre 2026.
 
-- France : [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
-- Canada : [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
-- États-Unis : [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
+- **France**  
+  [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
+- **Canada**  
+  [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
+- **États-Unis**  
+  [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
 
 L’ouvrage est également disponible sur les autres boutiques Amazon.
 
@@ -59,5 +66,3 @@ L’ouvrage est également disponible sur les autres boutiques Amazon.
 | **Dépôt légal** | BAnQ et Bibliothèque et Archives Canada |
 
 Presse et demandes d’entretien : [Contact](contact/)
-
-<p class="cloture">Comprendre l’intelligence artificielle ne dispense pas de penser. C’est la condition pour continuer à le faire.</p>
