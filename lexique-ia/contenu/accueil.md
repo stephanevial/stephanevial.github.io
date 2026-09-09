@@ -32,7 +32,10 @@ Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec 
 
 <div class="auteur" markdown="1">
 
-![Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal](img/portrait-stephane-vial.jpg)
+<figure>
+<img src="img/portrait-stephane-vial.jpg" alt="Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal">
+<figcaption>©Justine Latour pour l’UQAM</figcaption>
+</figure>
 
 **Stéphane Vial** est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création.
 
@@ -55,7 +58,7 @@ Le livre est disponible uniquement sur Amazon, en édition brochée et en éditi
 - **États-Unis**  
   Voir la fiche : [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
 
-L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co.uk/dp/B0HG5YBRPW) · [amazon.de](https://www.amazon.de/dp/B0HG5YBRPW) · [amazon.es](https://www.amazon.es/dp/B0HG5YBRPW) · [amazon.it](https://www.amazon.it/dp/B0HG5YBRPW) · [amazon.nl](https://www.amazon.nl/dp/B0HG5YBRPW) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HG5YBRPW) · [amazon.com.br](https://www.amazon.com.br/dp/B0HG5YBRPW) · [amazon.com.au](https://www.amazon.com.au/dp/B0HG5YBRPW) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HG5YBRPW) · [amazon.in](https://www.amazon.in/dp/B0HG5YBRPW).
+L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co.uk/dp/B0HG5YBRPW) · [amazon.de](https://www.amazon.de/dp/B0HG5YBRPW) · [amazon.es](https://www.amazon.es/dp/B0HG5YBRPW) · [amazon.it](https://www.amazon.it/dp/B0HG5YBRPW) · [amazon.nl](https://www.amazon.nl/dp/B0HG5YBRPW) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HG5YBRPW) · [amazon.com.br](https://www.amazon.com.br/dp/B0HG5YBRPW) · [amazon.com.au](https://www.amazon.com.au/dp/B0HG5YBRPW) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HG5YBRPW).
 
 ## L’ouvrage
 

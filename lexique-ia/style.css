@@ -328,7 +328,16 @@ h3 {
   gap: 0 clamp(1.5rem, 4vw, 3rem);
 }
 .accueil > .auteur > * { max-width: var(--mesure); }
-.accueil > .auteur img { max-width: 15rem; margin-bottom: 1.2rem; }
+.accueil > .auteur figure { margin: 0 0 1.2rem; }
+.accueil > .auteur img { max-width: 15rem; }
+/* Le crédit de la photographie, petit et en gris, sous le portrait. */
+.accueil > .auteur figcaption {
+  max-width: 15rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #6E6C69;   /* 5,0 : 1 sur le papier, AA pour du petit texte */
+}
 /* Les deux liens, en liste, précédés du chevron simple. */
 .accueil > .auteur ul { list-style: none; padding-left: 0; }
 .accueil > .auteur li { margin-bottom: 0.35rem; }
@@ -346,8 +355,7 @@ h3 {
        quoi les blocs s'écarteraient. */
     grid-template-rows: auto auto 1fr;
   }
-  .accueil > .auteur > p:first-child { grid-row: 1 / span 3; }
-  .accueil > .auteur img { margin-bottom: 0; }
+  .accueil > .auteur figure { grid-row: 1 / span 3; margin-bottom: 0; }
 }
 
 /* La phrase qui précède les cases d'achat n'est pas cadrée à la mesure. */
