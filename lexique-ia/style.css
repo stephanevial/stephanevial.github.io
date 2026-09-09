@@ -439,6 +439,15 @@ td:last-child { padding-right: 0; }
 /* Le dernier bloc de l'accueil, le tableau de l'ouvrage, ne colle pas au pied. */
 .accueil > table:last-child { margin-bottom: clamp(3.5rem, 7vw, 6rem); }
 
+/* Sur la page du livre, le lien de l'extrait à lire porte le poids : la
+   fonte des titres, en gras, un peu plus grande ; l'étiquette reste en maigre. */
+body[data-page="livre"] .corps > ul li a {
+  font-variation-settings: "wdth" 72;
+  font-weight: 700;
+  font-size: 1.125em;
+  text-decoration-thickness: 1px;
+}
+
 /* Sur la page du livre, un filet pâle sépare les chapitres : au-dessus de
    chaque titre de chapitre qui suit la liste du précédent. */
 body[data-page="livre"] .corps > ul + h3 {
