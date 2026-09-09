@@ -3,7 +3,7 @@ url: /lexique-ia/livre/
 title: "Comprendre l’intelligence artificielle : 91 notions | Stéphane Vial"
 description: "Quatre-vingt-onze notions expliquées en une page chacune : définition, exemple, importance. Sans formule, sans code, sans prérequis. Huit notions à lire."
 h1: "91 notions pour comprendre l’intelligence artificielle"
-chapeau: "Aperçu et extraits"
+chapeau: "Huit chapitres, huit notions à lire"
 gabarit: page
 og_type: article
 ---
