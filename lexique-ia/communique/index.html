@@ -99,7 +99,7 @@ que moi. J’ai dit plus vite », écrit-il.</p>
 </tr>
 <tr>
 <td><strong>Contact presse</strong></td>
-<td>vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</td>
+<td><span class="courriel">vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</span></td>
 </tr>
 </tbody>
 </table>
@@ -113,6 +113,16 @@ que moi. J’ai dit plus vite », écrit-il.</p>
 
   </main>
 
+  <script>
+    document.querySelectorAll(".courriel").forEach(function (e) {
+      var t = "";
+      e.childNodes.forEach(function (n) { if (n.nodeType === 3) { t += n.textContent; } });
+      var a = document.createElement("a");
+      a.href = "mailto:" + t;
+      a.textContent = t;
+      e.replaceWith(a);
+    });
+  </script>
   <footer class="pied">
     <div class="pied-texte">
       <p><strong>Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026</strong><br>

@@ -55,7 +55,7 @@
       <div class="lecture">
         <div class="corps">
 <h2 id="presse">Presse</h2>
-<p>Questions et entrevues : vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</p>
+<p>Questions et entrevues : <span class="courriel">vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</span></p>
 <p>Des exemplaires de presse sont disponibles sur demande.</p>
         </div>
         <figure class="couverture">
@@ -66,6 +66,16 @@
 
   </main>
 
+  <script>
+    document.querySelectorAll(".courriel").forEach(function (e) {
+      var t = "";
+      e.childNodes.forEach(function (n) { if (n.nodeType === 3) { t += n.textContent; } });
+      var a = document.createElement("a");
+      a.href = "mailto:" + t;
+      a.textContent = t;
+      e.replaceWith(a);
+    });
+  </script>
   <footer class="pied">
     <div class="pied-texte">
       <p><strong>Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026</strong><br>

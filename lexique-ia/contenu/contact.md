@@ -9,6 +9,6 @@ og_type: article
 ---
 ## Presse
 
-Questions et entrevues : vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca
+Questions et entrevues : <span class="courriel">vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</span>
 
 Des exemplaires de presse sont disponibles sur demande.

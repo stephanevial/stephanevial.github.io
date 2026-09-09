@@ -38,7 +38,7 @@ Le livre s’adresse en particulier aux enseignants et aux étudiants de toutes 
 | **ISBN** | 978-2-9825534-0-8 (imprimé) · 978-2-9825534-1-5 (ePub) |
 | **Éditeur** | Stéphane Vial · Montréal · Dépôt légal BAnQ |
 | **Diffusion** | [amazon.ca](https://www.amazon.ca/dp/B0HG5YBRPW) · [amazon.fr](https://www.amazon.fr/dp/B0HG5YBRPW) · [amazon.com](https://www.amazon.com/dp/B0HG5YBRPW) |
-| **Contact presse** | vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca |
+| **Contact presse** | <span class="courriel">vial.stephane<span class="leurre">SUPPRIMEZ-CE-FRAGMENT</span>@uqam.ca</span> |
 
 <p class="note"><em>Des exemplaires de presse sont disponibles sur demande, en livre imprimé ou en PDF.</em></p>
 

@@ -83,6 +83,22 @@ LANGUES = [("fr", "Français", ""),
 
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
 
+# Le seul script du site, posé uniquement sur les pages qui portent une
+# adresse de courriel. L’adresse est coupée dans le code par un fragment que
+# le CSS masque ; le script la recolle à partir des seuls nœuds de texte, en
+# ignorant le fragment, et en fait un lien mailto. Sans script, le texte
+# reste lisible et copiable : rien n’est perdu. Aucune mesure, aucune requête.
+SCRIPT = """  <script>
+    document.querySelectorAll(".courriel").forEach(function (e) {
+      var t = "";
+      e.childNodes.forEach(function (n) { if (n.nodeType === 3) { t += n.textContent; } });
+      var a = document.createElement("a");
+      a.href = "mailto:" + t;
+      a.textContent = t;
+      e.replaceWith(a);
+    });
+  </script>"""
+
 # La couverture figure sur toutes les pages : à côté du chapeau sur l’accueil,
 # à droite du texte ailleurs, où elle ramène à l’accueil. Son texte de
 # remplacement est celui déclaré dans contenu/accueil.md, lu au démarrage.
@@ -438,6 +454,7 @@ def construire(nom, fichier, base, gabarits, urls):
         "corps": corps_html,
         "pied": "\n      ".join("<p>%s</p>" % "<br>\n      ".join(g)
                                 for g in PIED),
+        "script": SCRIPT if 'class="courriel"' in corps_html else "",
     }
 
     page = liens_externes(page)
