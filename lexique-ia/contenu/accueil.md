@@ -22,7 +22,7 @@ Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec 
 ## Trois choses à lire sur ce site
 
 - **[La fabrique de ce livre](la-fabrique/)**  
-  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié — sans rien céder sur mes exigences intellectuelles
+  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié, sans rien céder sur mes exigences intellectuelles.
 - **[Déclaration sur l’usage de l’IA](declaration/)**  
   « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
 - **[Le communiqué](communique/)**  
