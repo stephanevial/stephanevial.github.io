@@ -33,6 +33,7 @@
                           il ne sert plus de fond, retiré le 31 août 2026 */
   --papier: #FFFDF7;
   --encre:  #14120E;
+  --filet:  rgba(25, 46, 133, 0.18);   /* le filet clair des tableaux et des notices */
 
   --mesure: 36rem;
   --air:    clamp(1.25rem, 5vw, 5rem);   /* la marge latérale des surfaces */
@@ -408,9 +409,9 @@ th, td {
   text-align: left;
   vertical-align: baseline;
   padding: 0.6rem 1rem 0.6rem 0;
-  border-bottom: 1px solid rgba(25, 46, 133, 0.18);
+  border-bottom: 1px solid var(--filet);
 }
-tr:first-child th, tr:first-child td { border-top: 1px solid var(--bleu); }
+tr:first-child th, tr:first-child td { border-top: 1px solid var(--filet); }
 /* L'en-tête du tableau est retiré de l'œil, pas du lecteur d'écran :
    display:none le supprimerait aussi pour lui, et la colonne perdrait son
    nom. */
@@ -443,9 +444,11 @@ td:last-child { padding-right: 0; }
 /* La notice biographique du communiqué, séparée du corps par un filet et de
    l'air, et détachée du tableau qui suit. */
 .bio {
-  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(2.5rem, 5vw, 4rem);
-  padding-top: clamp(1.25rem, 2.5vw, 2rem);
-  border-top: 1px solid var(--bleu);
+  /* Même filet clair que les tableaux, et le même air entre le texte et le
+     filet du dessus qu'entre le texte et le filet du tableau qui suit. */
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--filet);
 }
 .bio > p:last-child { margin-bottom: 0; }
 
