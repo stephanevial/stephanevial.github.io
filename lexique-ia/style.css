@@ -436,6 +436,8 @@ td:last-child { padding-right: 0; }
 
 /* Le lien de téléchargement du communiqué : un lien en texte, en tête. */
 .telecharger { font-weight: 600; }
+/* Une note, en plus petit : la mention des exemplaires de presse. */
+.note { font-size: 0.875rem; }
 
 /* ------------------------------------------------------------- le pied */
 

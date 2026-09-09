@@ -57,7 +57,7 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
-MENU = ["accueil", "fabrique", "declaration", "livre", "communique",
+MENU = ["accueil", "livre", "fabrique", "declaration", "communique",
         "contact"]
 MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
                 "declaration": "La déclaration", "livre": "Le livre",
