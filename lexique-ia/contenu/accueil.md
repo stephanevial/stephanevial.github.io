@@ -34,7 +34,7 @@ Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec 
 
 <figure>
 <img src="img/portrait-stephane-vial.jpg" alt="Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal">
-<figcaption>©Justine Latour pour l’UQAM</figcaption>
+<figcaption>© Justine Latour pour l’UQAM</figcaption>
 </figure>
 
 **Stéphane Vial** est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création.
