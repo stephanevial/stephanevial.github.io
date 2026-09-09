@@ -147,19 +147,16 @@ h1 {
 }
 .attribution strong { font-weight: 700; }
 
-/* Le chevron est la marque de l'éditeur (SPEC-systeme-couverture.md). Sur la
-   1re, il vaut 1,35 fois le corps du titre ; au pied de la 4e, 4,09 fois le
-   corps des mentions. Les deux rapports sont repris tels quels. */
+/* Le chevron est la marque de l'éditeur (SPEC-systeme-couverture.md). Il ne
+   figure qu'au pied, comme au pied de la 4e de couverture : celui de la
+   titraille a été retiré le 8 septembre 2026, il doublait celui de la
+   couverture posée juste dessous. */
 .chevron {
   display: block;
   color: var(--bleu);
   font-variation-settings: "wdth" 68;
   font-weight: 700;
   line-height: 0.8;
-}
-.titre .chevron {
-  font-size: clamp(3.2rem, 9.45vw, 6.75rem);
-  margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 /* Le chapeau : le texte à gauche, la couverture à droite sur le papier,
@@ -421,6 +418,9 @@ td:last-child { padding-right: 0; }
    double pas. */
 .corps > table { margin-left: 0; margin-right: 0; }
 
+/* Le dernier bloc de l'accueil, le tableau de l'ouvrage, ne colle pas au pied. */
+.accueil > table:last-child { margin-bottom: clamp(3.5rem, 7vw, 6rem); }
+
 /* Le lien de téléchargement du communiqué : un lien en texte, en tête. */
 .telecharger { font-weight: 600; }
 
@@ -443,9 +443,9 @@ td:last-child { padding-right: 0; }
 .pied p { margin: 0; max-width: 44rem; }
 .pied p + p { margin-top: 1em; }
 .pied strong { font-weight: 700; }
-/* Le rapport du pied de la 4e donnerait 3,58 rem ; relevé à 4,5 rem le
-   8 septembre 2026, à la demande de Stéphane. */
-.pied .chevron { font-size: 4.5rem; flex: none; }
+/* Grand : 1,35 fois le corps du titre de l'accueil, le rapport de la 1re de
+   couverture. */
+.pied .chevron { font-size: clamp(3.2rem, 9.45vw, 6.75rem); flex: none; }
 
 /* ---------------------------------------------------------- impression */
 

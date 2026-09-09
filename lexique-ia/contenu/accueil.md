@@ -4,7 +4,7 @@ title: "Petit lexique vivant de l’intelligence artificielle | Stéphane Vial"
 description: "91 notions d’intelligence artificielle, une page chacune, en langage clair. Un livre écrit avec l’IA, qui le déclare, et relu par un pair."
 h1: "Petit lexique vivant de l’intelligence artificielle"
 auteur: "Stéphane Vial"
-attribution: "Préface de Marcello Vitali-Rosati · Parution le 6 octobre 2026"
+attribution: "Parution le 6 octobre 2026 · Préface de Marcello Vitali-Rosati"
 couverture: img/couverture.jpg
 couverture_lien: https://www.amazon.ca/dp/B0HG5YBRPW
 couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
@@ -23,10 +23,10 @@ Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec 
 
 - **[La fabrique de ce livre](la-fabrique/)**  
   Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié. Une expérience d’écriture et d’édition unique.
-- **[Déclaration sur l’usage de l’intelligence artificielle](declaration/)**  
+- **[Déclaration sur l’usage de l’IA](declaration/)**  
   « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
 - **[Le communiqué](communique/)**  
-  Le communiqué de parution officiel, en texte intégral.
+  Le communiqué de parution officiel, en texte intégral et à télécharger.
 
 ## L’auteur
 
