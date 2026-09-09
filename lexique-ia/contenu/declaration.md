@@ -3,7 +3,7 @@ url: /lexique-ia/declaration/
 title: "Déclaration sur l’usage de l’intelligence artificielle | Stéphane Vial"
 description: "Le texte intégral de la déclaration signée, imprimée pages 129 et 130 du Petit lexique vivant de l’intelligence artificielle. Relu par un pair."
 h1: "Déclaration sur l’usage de l’intelligence artificielle"
-chapeau: "Le texte signé, imprimé aux pages 129 et 130 de l’ouvrage. Texte intégral."
+chapeau: "« Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée."
 ancre_texte: oui
 gabarit: page
 og_type: article
@@ -29,12 +29,6 @@ Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à
 
 L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
 
-## Relu par un pair
-
-Chaque page a été relue et commentée de façon critique par [Marcello Vitali-Rosati](https://vitalirosati.com/), professeur titulaire à l’Université de Montréal, titulaire de la Chaire de recherche du Canada sur les écritures numériques. Cet ouvrage est relu par un pair, comme n’importe quelle autre publication universitaire. Un livre écrit avec l’IA avait besoin d’être relu par quelqu’un qui ne l’a pas été.
-
-La préface est dédiée au domaine public par son auteur, sous licence CC0 1.0 Universel.
-
 ## Pour citer ce texte
 
-Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur.
+Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur, Montréal, Qc, Canada.
