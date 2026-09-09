@@ -1,5 +1,5 @@
 ---
-url: /lexique-ia/le-livre/token/
+url: /lexique-ia/livre/token/
 title: "Token : définition et exemple | Stéphane Vial"
 description: "En intelligence artificielle, un token (ou « jeton ») est la plus petite unité de texte que les modèles de langage manipulent."
 h1: "Token"

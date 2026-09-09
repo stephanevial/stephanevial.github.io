@@ -1,5 +1,5 @@
 ---
-url: /lexique-ia/le-livre/systeme-de-recommandation/
+url: /lexique-ia/livre/systeme-de-recommandation/
 title: "Système de recommandation : définition et exemple | Stéphane Vial"
 description: "Un système de recommandation est un système algorithmique conçu pour proposer automatiquement des contenus, produits ou services à un utilisateur en fonction…"
 h1: "Système de recommandation"

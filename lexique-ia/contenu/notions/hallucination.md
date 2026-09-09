@@ -1,5 +1,5 @@
 ---
-url: /lexique-ia/le-livre/hallucination/
+url: /lexique-ia/livre/hallucination/
 title: "Hallucination : définition et exemple | Stéphane Vial"
 description: "Une hallucination désigne le phénomène par lequel un modèle génère une information fausse, inventée, déformée ou trompeuse, tout en la présentant avec une…"
 h1: "Hallucination"

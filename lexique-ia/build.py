@@ -9,7 +9,7 @@ Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
 index.html du site et régénère ../sitemap.xml.
 
 Quatorze pages : les six principales, et les huit notions données à lire, une
-par adresse sous /lexique-ia/le-livre/. Les notions ne figurent pas dans la
+par adresse sous /lexique-ia/livre/. Les notions ne figurent pas dans la
 navigation : on y arrive par la page du livre.
 
 Deux exécutions successives produisent des fichiers identiques : aucune date,
@@ -57,10 +57,10 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
-MENU = ["accueil", "la-fabrique", "declaration", "le-livre", "communique",
+MENU = ["accueil", "fabrique", "declaration", "livre", "communique",
         "contact"]
-MENU_LIBELLE = {"accueil": "Accueil", "la-fabrique": "La fabrique",
-                "declaration": "La déclaration", "le-livre": "Le livre",
+MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
+                "declaration": "La déclaration", "livre": "Le livre",
                 "communique": "Le communiqué", "contact": "Contact"}
 
 # Le pied, identique sur toutes les pages, reprend le verso de titre du
@@ -82,6 +82,30 @@ LANGUES = [("fr", "Français", ""),
            ("es", "Español", "es/")]
 
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
+
+# Les adresses ont perdu leur article le 8 septembre 2026 : « la-fabrique »
+# est devenue « fabrique », « le-livre » est devenue « livre », notions
+# comprises. Les anciennes adresses restent servies par une page de renvoi,
+# hors sitemap et non indexée, pour qui les aurait notées.
+RENVOIS = {
+    "/lexique-ia/la-fabrique/": "/lexique-ia/fabrique/",
+    "/lexique-ia/le-livre/": "/lexique-ia/livre/",
+}
+
+RENVOI = """<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Cette page a changé d’adresse</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="%(vers)s">
+  <meta http-equiv="refresh" content="0; url=%(vers)s">
+</head>
+<body>
+  <p>Cette page a changé d’adresse : <a href="%(vers)s">%(vers)s</a></p>
+</body>
+</html>
+"""
 
 
 
@@ -211,8 +235,8 @@ def liens_externes(html):
 
 def sortie(url):
     """Le fichier à écrire, et de combien de crans il faut remonter pour
-    atteindre la racine du lexique. « /lexique-ia/le-livre/token/ » donne
-    « le-livre/token/index.html » et « ../../ »."""
+    atteindre la racine du lexique. « /lexique-ia/livre/token/ » donne
+    « livre/token/index.html » et « ../../ »."""
     reste = url[len(BASE):].strip("/")
     profondeur = len(reste.split("/")) if reste else 0
     chemin = os.path.join(ICI, *(reste.split("/") if reste else []))
@@ -286,7 +310,7 @@ def page_suivante(nom):
     """Le chevron du pied mène à la page suivante du menu ; après la dernière,
     il ramène à l’accueil. Une notion, hors menu, envoie à la page qui suit
     « Le livre », d’où l’on y est arrivé."""
-    i = MENU.index(nom) if nom in MENU else MENU.index("le-livre")
+    i = MENU.index(nom) if nom in MENU else MENU.index("livre")
     return MENU[(i + 1) % len(MENU)]
 
 
@@ -370,7 +394,7 @@ def construire(nom, fichier, base, gabarits, urls):
         donnees = GRAPHE_PAGE % {
             "type": "DefinedTerm" if gabarit == "notion" else "WebPage",
             "nom": meta["h1"], "url": url,
-            "relation": "mainEntity" if nom == "le-livre" else "inDefinedTermSet"
+            "relation": "mainEntity" if nom == "livre" else "inDefinedTermSet"
             if gabarit == "notion" else "about",
         }
 
@@ -465,6 +489,15 @@ def main():
         liste.append(url)
         print("  ✓ %-34s %s" % (cible, url))
 
+
+    # Les pages de renvoi depuis les anciennes adresses.
+    for u in liste:
+        for ancien, nouveau in RENVOIS.items():
+            if u.startswith(nouveau):
+                vieux = ancien + u[len(nouveau):]
+                cible, _ = sortie(vieux)
+                ecrire(cible, RENVOI % {"vers": DOMAINE + u})
+                print("  → %-34s renvoie vers %s" % (os.path.relpath(cible, ICI), u))
 
     chemin, n = sitemap(liste)
     print("  ✓ %-34s %d adresses" % (os.path.relpath(chemin, ICI), n))

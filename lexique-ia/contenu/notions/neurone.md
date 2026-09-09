@@ -1,5 +1,5 @@
 ---
-url: /lexique-ia/le-livre/neurone/
+url: /lexique-ia/livre/neurone/
 title: "Neurone : définition et exemple | Stéphane Vial"
 description: "Un neurone artificiel est une unité de calcul dont le nom et le principe général s’inspirent d’une représentation simplifiée des neurones biologiques."
 h1: "Neurone"

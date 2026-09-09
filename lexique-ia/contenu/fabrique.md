@@ -1,5 +1,5 @@
 ---
-url: /lexique-ia/la-fabrique/
+url: /lexique-ia/fabrique/
 title: "La fabrique de ce livre : écrire un livre avec l’IA | Stéphane Vial"
 description: "Le récit de fabrication publié dans l’ouvrage. Comment un professeur d’université a écrit un livre sur l’IA avec elle, et tenu seul la chaîne éditoriale."
 h1: "La fabrique de ce livre"
