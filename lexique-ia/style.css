@@ -447,6 +447,13 @@ body[data-page="livre"] .corps > ul li a {
   font-size: 1.125em;
   text-decoration-thickness: 1px;
 }
+/* La liste brute des notions de chaque chapitre, le second paragraphe sous
+   le titre de chapitre, en corps réduit : c'est un inventaire, pas un texte
+   à lire, et il se distingue ainsi de l'ouverture en gras qui le précède. */
+body[data-page="livre"] .corps > h3 + p + p {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
 /* L'étiquette « Extrait à lire », en petites capitales espacées, comme les
    intertitres de section : elle se distingue de la liste des notions
    au-dessus sans ajouter une teinte à la palette. */
