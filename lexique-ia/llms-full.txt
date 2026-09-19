@@ -1,0 +1,428 @@
+# Petit lexique vivant de l’intelligence artificielle : texte intégral du site
+
+> 91 notions d’intelligence artificielle, une page chacune, en langage clair. Un livre écrit avec l’IA, qui le déclare, et relu par un pair.
+
+Un livre de Stéphane Vial. Parution le 6 octobre 2026. Préface de Marcello Vitali-Rosati. ISBN 978-2-9825534-0-8 (imprimé) et 978-2-9825534-1-5 (ePUB). © Stéphane Vial, éditeur, 2026. Les textes de ce site sont sous licence CC BY 4.0, sauf mention contraire.
+
+Ce fichier réunit le texte des 14 pages du site : les six pages du menu, puis les huit notions données à lire, dans l’ordre des chapitres. La carte commentée du site est dans https://web.stephane-vial.net/lexique-ia/llms.txt.
+
+---
+
+## Petit lexique vivant de l’intelligence artificielle
+
+Adresse : https://web.stephane-vial.net/lexique-ia/
+
+Stéphane Vial · Parution le 6 octobre 2026 · Préface de Marcello Vitali-Rosati
+
+J’ai écrit un livre sur l’IA, avec l’IA, et j’explique comment. Quatre-vingt-onze notions, une page chacune, pour comprendre ce qu’est l’intelligence artificielle et comment elle fonctionne.
+
+Comme pour toute publication universitaire, chaque page a été relue et commentée de façon critique par un pair. Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal, a joué ce rôle et signé la préface.
+
+Mais ce n’est pas tout : j’ai également fabriqué et publié ce livre avec l’aide de l’IA, de la couverture à la mise en marché, en passant par le dépôt légal. Les quatre dernières pages racontent comment je m’y suis pris.
+
+### Trois choses à lire sur ce site
+
+- **[La fabrique de ce livre](https://web.stephane-vial.net/lexique-ia/fabrique/)**  
+  Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié, sans rien céder sur mes exigences intellectuelles.
+- **[Déclaration sur l’usage de l’IA](https://web.stephane-vial.net/lexique-ia/declaration/)**  
+  « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
+- **[Le communiqué](https://web.stephane-vial.net/lexique-ia/communique/)**  
+  Le communiqué de parution officiel, en texte intégral et à télécharger.
+
+### L’auteur
+
+**Stéphane Vial** est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création.
+
+Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
+
+- À propos : [stephane-vial.net](https://stephane-vial.net)
+- Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Tribune dans *Le Devoir* : [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+
+### Se procurer le livre
+
+Le livre est disponible uniquement sur Amazon, en édition brochée et en édition numérique.
+
+- **France**  
+  Voir la fiche : [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
+- **Canada**  
+  Voir la fiche : [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
+- **États-Unis**  
+  Voir la fiche : [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
+
+L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co.uk/dp/B0HG5YBRPW) · [amazon.de](https://www.amazon.de/dp/B0HG5YBRPW) · [amazon.es](https://www.amazon.es/dp/B0HG5YBRPW) · [amazon.it](https://www.amazon.it/dp/B0HG5YBRPW) · [amazon.nl](https://www.amazon.nl/dp/B0HG5YBRPW) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HG5YBRPW) · [amazon.com.br](https://www.amazon.com.br/dp/B0HG5YBRPW) · [amazon.com.au](https://www.amazon.com.au/dp/B0HG5YBRPW) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HG5YBRPW).
+
+### L’ouvrage
+
+| Renseignement | Valeur |
+|---|---|
+| **Titre** | *Petit lexique vivant de l’intelligence artificielle* |
+| **Auteur** | Stéphane Vial |
+| **Préface** | Marcello Vitali-Rosati |
+| **Éditeur** | Stéphane Vial, éditeur · Montréal, Québec |
+| **Parution** | 6 octobre 2026 (version française) |
+| **Format** | Broché, 138 pages · numérique (ePub) |
+| **ISBN** | 978-2-9825534-0-8 (broché) · 978-2-9825534-1-5 (numérique) |
+| **Dépôt légal** | Bibliothèque et Archives nationales du Québec |
+
+---
+
+## 91 notions pour comprendre l’intelligence artificielle
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/
+
+Huit chapitres, huit notions à lire
+
+L’intelligence artificielle répond à nos questions, complète nos phrases, crée des images et organise notre accès à l’information. Elle est partout, mais que savons-nous vraiment de son fonctionnement ? Qu’est-ce qu’un modèle ? Comment une machine apprend-elle ? Que sont un token, un vecteur, une hallucination ?
+
+Ce lexique vivant propose une initiation claire, rigoureuse et accessible, sans céder aux fantasmes ni aux peurs faciles. Organisé en chapitres thématiques, il se lit comme une histoire : du plus fondamental au plus appliqué, de l’intérieur des modèles à leurs effets sur le monde.
+
+### Les huit chapitres
+
+#### 1. Ce qu’est une intelligence artificielle
+
+**Avant d’entrer dans les détails techniques, commençons par les bases. Qu’est-ce qu’une intelligence artificielle ?** (15 notions)
+
+Jeu de l’imitation · Intelligence artificielle · Intelligence artificielle générative · Algorithme · Modèle · Phases (d’un modèle) · Entraînement · Inférence · Fine-tuning · Modèle de fondation · Agent · Alignement · Transparence · Explicabilité · Open source
+
+- Extrait à lire : [Intelligence artificielle](https://web.stephane-vial.net/lexique-ia/livre/intelligence-artificielle/) · page 22
+
+#### 2. Ce que contient une IA : neurones et paramètres
+
+**À l’intérieur de toute intelligence artificielle se trouve une structure mathématique complexe : neurones, poids, fonctions, couches, etc.** (16 notions)
+
+Perceptron · Neurone · Paramètre · Poids · Biais (paramètre) · Fonction d’activation · Couche · Réseau de neurones · Rétropropagation · Attention · Transformeur · Modèle de langage · Grand modèle de langage · Modèle de raisonnement · Modèle de diffusion · Multimodal
+
+- Extrait à lire : [Neurone](https://web.stephane-vial.net/lexique-ia/livre/neurone/) · page 40
+
+#### 3. Ce que l’IA apprend : les formes d’apprentissage
+
+**Une IA n’est pas programmée au sens classique du terme : elle apprend. Mais que signifie apprendre pour une machine ?** (11 notions)
+
+Apprentissage · Apprentissage automatique · Apprentissage supervisé · Apprentissage non supervisé · Apprentissage par renforcement · Apprentissage profond · Jeu de données · Données d’entraînement · Données personnelles · Pattern · Surapprentissage
+
+- Extrait à lire : [Apprentissage automatique](https://web.stephane-vial.net/lexique-ia/livre/apprentissage-automatique/) · page 58
+
+#### 4. Ce que l’IA « comprend » : langage, images, sons
+
+**L’intelligence artificielle ne se contente pas de traiter des nombres : elle manipule du langage, analyse des images, traite des voix.** (9 notions)
+
+Traitement du langage naturel · Agent conversationnel · GPT · Traduction automatique · Reconnaissance vocale · Synthèse vocale · Vision par ordinateur · Reconnaissance faciale · Générateur d’image
+
+- Extrait à lire : [Traitement du langage naturel](https://web.stephane-vial.net/lexique-ia/livre/traitement-du-langage-naturel/) · page 71
+
+#### 5. Le langage des modèles : tokens et calculs
+
+**Que « voit » une IA lorsqu’elle lit un mot, une image ou une phrase ? Elle ne comprend pas comme un humain : elle calcule.** (6 notions)
+
+Token · Fenêtre de contexte · Vecteur · Probabilité · SoftMax · Température
+
+- Extrait à lire : [Token](https://web.stephane-vial.net/lexique-ia/livre/token/) · page 83
+
+#### 6. Ce que l’IA produit : réponses, erreurs, hallucinations
+
+**L’IA répond, prédit, génère. Mais elle peut aussi se tromper, déformer ou inventer.** (12 notions)
+
+Entrée / Sortie · Prompt · Chaîne de pensée · Génération augmentée par récupération · Dérive du contexte · Hallucination · Biais algorithmique · Biais d’amplification · Flagornerie · Boîte noire · Injection d’invite · Deepfake
+
+- Extrait à lire : [Hallucination](https://web.stephane-vial.net/lexique-ia/livre/hallucination/) · page 96
+
+#### 7. L’IA dans nos vies numériques : filtres, moteurs, interfaces
+
+**L’intelligence artificielle structure nos usages numériques quotidiens : elle filtre, classe, recommande, modère.** (10 notions)
+
+Personnalisation · Fil d’actualité · Système de recommandation · Filtrage collaboratif · Classement · Modération · Détection de spam · Bulle algorithmique · Latence · Vibe coding
+
+- Extrait à lire : [Système de recommandation](https://web.stephane-vial.net/lexique-ia/livre/systeme-de-recommandation/) · page 107
+
+#### 8. Où va l’intelligence artificielle ? Horizons, risques, questions
+
+**L’intelligence artificielle progresse rapidement, et avec elle, émergent des questions décisives.** (12 notions)
+
+Puissance de calcul · IA agentique · Intelligence artificielle générale · Conscience (sentience) · Machination de l’IA · Psychose IA · Risque existentiel · Impact écologique de l’IA · Course à l’IA · IA souveraine · Gouvernance de l’IA · IA responsable
+
+- Extrait à lire : [IA agentique](https://web.stephane-vial.net/lexique-ia/livre/ia-agentique/) · page 118
+
+---
+
+## La fabrique de ce livre
+
+Adresse : https://web.stephane-vial.net/lexique-ia/fabrique/
+
+Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié, sans rien céder sur mes exigences intellectuelles.
+
+La première idée de ce livre remonte au moment où, comme beaucoup d’autres, j’ai pris conscience que l’intelligence artificielle pourrait faire plus vite que moi ce que j’aime le plus : écrire. Je n’ai pas dit qu’elle pourrait le faire mieux que moi. J’ai dit plus vite. Écrire est un labeur, intellectuel et cognitif bien sûr, mais aussi artisanal et manuel : les doigts sur le clavier ou sur le papier, un peu comme le peintre qui connaît ses pigments et dépose les couches une à une sur la toile. Je voulais faire l’expérience, voir ce que c’est qu’écrire avec un nouvel instrument réputé si puissant. Ai-je vraiment besoin, me suis-je dit, d’écrire moi-même, manuellement, chaque déterminant, d’ajuster chaque conjugaison, de former les lettres de chaque préposition, de chaque pronom relatif, de chaque conjonction de coordination ?
+
+J’ai compris plus tard ce qui est en train de se passer. Un auteur qui écrit avec l’IA, c’est comme un peintre qui fait de la couleur avec la photographie : il n’a plus à fabriquer chaque pigment ni à le déposer lui-même manuellement sur la toile, mais il continue de penser l’image qu’il est en train de photographier, de réfléchir à la lumière, de choisir les couleurs clé qu’il veut refléter, le cadrage, la netteté, la profondeur de champ, sans oublier toutes les corrections ultérieures qu’il fera à l’aide d’un logiciel de retouche. Pour écrire, c’est pareil. C’est moi, et ce sera toujours moi, l’auteur, qui pense le texte, élabore l’idée, réfléchis à la structure et à l’argumentation, choisis les concepts clé, valide le choix de chaque mot, décide du style, du ton, du niveau de langue, et qui fais les corrections dans le texte final. Je n’ai pas besoin, pour cela, de donner forme moi-même à chaque lettre ou de composer manuellement les mots une lettre après l’autre. Ma valeur est ailleurs — et mon plaisir aussi. L’instrument varie avec l’époque, il ne peut jamais être l’auteur. L’auteur traverse les âges, il ne peut être qu’humain. Les instruments ont des pouvoirs, mais ils n’ont pas d’identité, d’intention, de signature.
+
+Pourquoi un lexique ? Parce que j’adore les dictionnaires, et que je viens d’en écrire et d’en éditer un sur le design, avec l’aide de près de cent collègues. Pourquoi l’intelligence artificielle ? Parce que je suis l’auteur du livre *L’être et l’écran : comment le numérique change la perception* et que la « révolution de l’IA » reproduit exactement le phénomène que j’ai déjà décrit à propos de la « révolution numérique » : toute technologie nouvelle qui s’impose de manière systémique finit par se naturaliser. Certes, des lexiques de l’IA existent déjà. Je voulais amener quelque chose de différent. Ainsi m’est venue l’idée qui commande tout l’ouvrage : un lexique qui ne se présente pas par ordre alphabétique, mais par chapitres, comme un essai qui raconte une histoire, du plus théorique au plus appliqué.
+
+Au début, j’ai été tenté de faire vite. De laisser produire, et d’aller au résultat. Je n’ai pas pu. Mon nom sur une couverture signifie depuis toujours la même chose, pour tous mes livres : l’engagement de ma responsabilité intellectuelle et universitaire, l’endossement du contenu mot à mot et, bien sûr, ma signature d’auteur — avec le patronyme qu’elle porte. Il a donc été très vite hors de question de laisser l’IA aller sans que je contrôle tout. J’ai élaboré mon processus d’écriture en conséquence pour faire de l’IA mon assistante cognitive et rédactionnelle, dans chacune de *mes* phases de travail.
+
+J’ai d’abord réfléchi un angle, un titre, et je lui ai demandé de me stimuler et m’évaluer. J’ai défini un gabarit d’article, et je lui ai demandé, de manière itérative, de le produire. Je lui ai fait écrire des premiers jets, que j’ai systématiquement modifiés, parfois beaucoup, parfois peu. Je les ai ensuite fait relire et critiquer par la machine elle-même, qui trouvait rétrospectivement des problèmes dans ce qu’elle avait généré. Rien de ce qui pouvait me paraître intelligent dans ses réponses ne l’était en soi : lorsqu’il s’y trouvait de l’intelligence, c’est parce que c’est *moi* qui en voyais. J’ai décidé d’ignorer des pans entiers de ses réponses, je ne lisais même pas tout ce qu’elle répondait, je sélectionnais seulement ce que *je* trouvais pertinent, comme quand je lis un livre, en prélevant dans son contenu ce qui m’intéresse.
+
+Et puis, bien sûr, il y a eu le travail de vérification. Je n’ai jamais autant corrigé et vérifié un manuscrit. J’ai vérifié toute affirmation technique dans des sources extérieures : encyclopédies, dictionnaires, articles savants, sites web d’industriels du numérique, publications avant-gardistes sur les réseaux sociaux… J’ai remplacé très souvent les exemples proposés par d’autres que je trouvais plus pertinents. J’ai reformulé quantité de tournures que je n’aimais pas, soit parce qu’elles ne me ressemblaient pas, soit parce qu’elles tenaient trop du style d’une machine probabiliste (généralisant, abstrait, banalement exact, sans personnalité).
+
+Quand j’ai terminé le manuscrit, j’ai fait ce que tout bon universitaire fait : j’ai demandé à un pair de procéder à une relecture critique et, pour cela, j’ai choisi le professeur Marcello Vitali-Rosati, non pas parce que c’est un ami, mais parce que tout le monde sait que le regard qu’il porte sur l’intelligence artificielle est un regard critique et intransigeant, loin de toute complaisance. J’ai dû faire ensuite une série de corrections. Quand j’ai cru à nouveau que le manuscrit final était terminé, je l’ai fait analyser par une autre intelligence artificielle que celle utilisée initialement. Je lui ai demandé de faire des vérifications systématiques de tous les aspects du manuscrit, parfois en faisant tourner plusieurs agents en parallèle, comme l’orthographe et la grammaire, les coquilles, l’exactitude (y a-t-il des erreurs ?), la cohérence (est-ce que je me contredis ?), la stabilité terminologique (est-ce que j’emploie partout les mêmes termes pour désigner les mêmes choses ?), la confection du fichier, les numéros de pages, les styles, etc. Il a encore fallu que je fasse de nombreuses corrections car des incohérences apparaissaient, et je ne les avais pas vues avant.
+
+Puis quelque chose d’inattendu s’est produit. Le manuscrit terminé, j’ai découvert que je pouvais continuer. Concevoir la couverture et calculer l’épaisseur du dos. Obtenir les numéros d’ISBN et générer le code-barres qui correspond. Générer l’index et vérifier automatiquement les quatre-vingt-onze renvois. Établir une grille de prix sur huit places de marché. Déposer, corriger sur épreuve, publier, promouvoir. Ce que fait une maison d’édition, avec ses métiers et ses années de savoir-faire, je l’ai appris et réalisé seul, en quelques semaines. Je n’en tire aucune leçon triomphale, c’était beaucoup de travail. Travailler ainsi demande une vigilance constante.
+
+Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que prévu, mais moins que dans un processus éditorial classique. J’ai dû faire face à quelques coûts techniques, et développer un esprit de survérification. Le choix de l’autoédition a aussi un coût social : tout faire soi-même suppose de renoncer à la diffusion en librairie, à la distribution classique, à une équipe éditoriale dont je sais la valeur. En contrepartie, j’ai gagné le contrôle de la chaîne et une liberté totale, indispensable pour mener une telle expérience.
+
+Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
+
+### Pour citer ce texte
+
+Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Déclaration sur l’usage de l’intelligence artificielle
+
+Adresse : https://web.stephane-vial.net/lexique-ia/declaration/
+
+« Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
+
+Ce livre a été écrit avec l’aide de l’intelligence artificielle.
+
+Mais aussi avec l’insupportable Microsoft Word et son correcteur orthographique, l’épatant Google Sheets et sa gestion tabulaire, les merveilleux procédés de *copier-coller* et de *couper-coller*, les moteurs de recherche, Wikipédia, le CNRTL, la Vitrine linguistique de l’OQLF, des sites web spécialisés comme ceux d’IBM, d’Oracle ou d’Amazon Web Services, plusieurs centaines de requêtes Google, au moins autant de lectures et d’interactions sur LinkedIn, sans compter les discussions incessantes avec mon ami Éric Kavanagh ou les stimulations provocantes de mon camarade Marcello Vitali-Rosati, qui a accepté d’être le relecteur critique de cet ouvrage et dont les remarques ont permis de nombreuses améliorations.
+
+Autrement dit, ce livre a été écrit comme s’écrivent aujourd’hui la plupart des textes sérieux : au moyen d’un écosystème d’outils, de documents, de logiciels, de sources, de conversations et de médiations diverses.
+
+ChatGPT et Claude ont été utilisés à de nombreuses étapes : pour explorer des pistes, proposer des termes, discuter des définitions, tester des formulations, critiquer certains passages, suggérer des améliorations, repérer des ambiguïtés, reformuler des phrases, appliquer des corrections systématiques, préparer le manuscrit final, etc. Mais ces systèmes n’ont été qu’un support, et n’ont jamais exercé de jugement d’auteur sur le contenu du livre, sa structure, son approche, ses choix conceptuels, ses formulations finales. Ces décisions relèvent de l’auteur. Leurs propositions ont été systématiquement évaluées, vérifiées, acceptées, modifiées ou rejetées.
+
+Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle.
+
+Et, pour être honnête, j’ignore si cela m’a finalement pris plus ou moins de temps que sans recours à l’IA, tant j’ai fait des allers-retours par centaines entre mes pensées, outils, documents, sources, conversations avec l’IA, conversations avec des collègues, interactions en ligne, prises de notes et autres inspirations en prenant ma douche… Aucun *prompt* n’aurait pu générer ce livre.
+
+Comme toute technologie intellectuelle avant elle — de la tablette d’argile au livre imprimé, du traitement de texte au moteur de recherche — l’IA est devenue un instrument de travail parmi d’autres, du moins pour celles et ceux qui ne veulent pas abandonner leur capacité de penser et ont compris qu’il n’y a pas de magie du *prompt*.
+
+L’IA ne fait pas disparaître le travail d’écrire : elle insère une nouvelle couche de labeur, plus rapide et plus efficiente par certains aspects mais non moins intellectuellement exigeante et laborieuse, que ce soit dans les processus d’idéation, de structuration, de recherche documentaire, de mise en mots, de reformulation, de correction, de relecture, et ce, sans jamais prendre la place de l’auteur, pour, finalement, nous stimuler et nous pousser à un niveau d’exigence encore plus élevé.
+
+Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à la qualité du travail intellectuel réalisé. Si elles vous semblent contestables ou inexactes, la responsabilité m’en incombe également.
+
+L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Un professeur de l’UQAM publie un livre sur l’IA, écrit avec l’IA
+
+Adresse : https://web.stephane-vial.net/lexique-ia/communique/
+
+Communiqué de presse
+
+[Télécharger le communiqué en PDF](https://web.stephane-vial.net/lexique-ia/communique/communique-parution.pdf) (30 Ko)
+
+Montréal, 8 septembre 2026
+
+Stéphane Vial, professeur titulaire à l’École de design de
+l’Université du Québec à Montréal, publie *Petit lexique vivant de l’intelligence artificielle* :
+quatre-vingt-onze notions, une page chacune, pour mieux comprendre l’IA et comment elle fonctionne.
+
+Non seulement le livre a été écrit avec l’IA mais il documente le processus. Les quatre dernières pages racontent comment l’auteur s’y est pris, sans jamais céder sur ses exigences intellectuelles, pour écrire avec l’IA : « Je n’ai pas dit qu’elle pourrait le faire mieux
+que moi. J’ai dit plus vite », écrit-il.
+
+La préface et la relecture critique sont de Marcello Vitali-Rosati, professeur titulaire à l’Université de Montréal. La relecture par les pairs est au fondement de la publication universitaire, et l’écriture avec l’IA ne change strictement rien à cela. 
+
+L’ouvrage est autoédité, par choix créatif et exploratoire. Une telle expérience d’écriture, plutôt avant-gardiste, nécessitait une liberté totale. De plus, grâce à l’IA, l’auteur est allé encore plus loin et a tenu seul toute la chaîne, de la couverture au dépôt légal, en acceptant d’en payer le prix : ni librairie, ni distribution, ni équipe éditoriale.
+
+Le livre s’adresse en particulier aux enseignants et aux étudiants de toutes disciplines, qui doivent aujourd’hui parler de l’IA avant d’avoir eu le temps de l’étudier. Il se termine ainsi : « L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser. »
+
+**Stéphane Vial** est professeur titulaire à l’École de design de l’UQAM et chercheur régulier au Centre de recherche de l’IUSMM. Docteur en philosophie, il est notamment l’auteur de *L’être et l’écran : comment le numérique change la perception*.
+
+| Renseignement | Valeur |
+|---|---|
+| **Parution** | 6 octobre 2026 |
+| **Format** | Livre broché, 138 pages · Livre numérique (ePub) |
+| **ISBN** | 978-2-9825534-0-8 (imprimé) · 978-2-9825534-1-5 (ePub) |
+| **Éditeur** | Stéphane Vial · Montréal · Dépôt légal BAnQ |
+| **Diffusion** | [amazon.ca](https://www.amazon.ca/dp/B0HG5YBRPW) · [amazon.fr](https://www.amazon.fr/dp/B0HG5YBRPW) · [amazon.com](https://www.amazon.com/dp/B0HG5YBRPW) |
+| **Contact presse** | adresse publiée sur https://web.stephane-vial.net/lexique-ia/contact/ |
+
+*Des exemplaires de presse sont disponibles sur demande, en livre imprimé ou en PDF.*
+
+---
+
+## Contact
+
+Adresse : https://web.stephane-vial.net/lexique-ia/contact/
+
+Pour toute demande d’entretien ou exemplaire de presse.
+
+### Presse
+
+Questions et entrevues : adresse publiée sur https://web.stephane-vial.net/lexique-ia/contact/
+
+Des exemplaires de presse sont disponibles sur demande.
+
+---
+
+## Intelligence artificielle
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/intelligence-artificielle/
+
+*Artificial Intelligence, AI* · chapitre 1
+
+**Définition**  
+L’intelligence artificielle (IA) désigne un ensemble de méthodes et de systèmes informatiques capables de reproduire ou de simuler certaines capacités que l’on associe habituellement à l’intelligence humaine. Par exemple : comprendre le langage, reconnaître des images, résoudre des problèmes ou apprendre à partir de données. Il ne s’agit pas d’une pensée consciente, mais d’une capacité à reproduire, grâce à des calculs, certains mécanismes du raisonnement, de l’apprentissage et de la perception humaine.
+
+**Exemple**  
+Quand on demande à un assistant vocal la météo ou quand Netflix nous recommande une série, on utilise déjà des systèmes d’IA. Ces outils analysent nos requêtes, identifient des régularités dans nos usages et s’appuient sur des modèles entraînés à grande échelle pour produire une réponse pertinente, sans que nous ayons besoin de connaître la programmation.
+
+**Importance**  
+L’IA est en train de transformer de nombreux domaines : santé, finance, éducation, sports, transports, création artistique… Elle permet d’automatiser certaines tâches, d’augmenter les capacités humaines, mais elle crée aussi de nouveaux risques sociaux, éthiques et politiques. Comprendre ce qu’est l’intelligence artificielle permet de moins fantasmer sur sa nature, d’être plus réaliste et de mieux décider de ses usages souhaitables.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 22). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Neurone
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/neurone/
+
+*Neuron* · chapitre 2
+
+**Définition**  
+Un neurone artificiel est une unité de calcul dont le nom et le principe général s’inspirent d’une représentation simplifiée des neurones biologiques. Dans le cerveau humain, un neurone biologique reçoit des signaux (via ses dendrites), les combine (dans le corps cellulaire) et transmet, ou non, un signal à d’autres neurones. De façon analogue, un neurone artificiel reçoit une ou plusieurs entrées (*input*), effectue un calcul (souvent une somme pondérée), applique une fonction d’activation, puis produit une sortie (*output*). Le calcul effectué permet de détecter des régularités.
+
+**Exemple**  
+Dans un modèle de reconnaissance d’image, des milliers de neurones artificiels sont organisés en couches. Les neurones des premières couches détectent des formes simples (lignes, couleurs), ceux des couches intermédiaires reconnaissent des motifs (yeux, roues), et ceux des couches finales identifient l’objet entier (chat, voiture). Chaque neurone « active » ou « inhibe » le passage de l’information (au prochain neurone) selon ce qu’il a appris.
+
+**Importance**  
+Le neurone artificiel est une brique fondamentale de l’apprentissage profond. C’est l’organisation et l’ajustement de millions (voire milliards) de neurones, organisés en réseaux, qui donnent au modèle ses capacités d’analyse, de prédiction ou de génération.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Neurone. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 40). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Apprentissage automatique
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/apprentissage-automatique/
+
+*Machine Learning* · chapitre 3
+
+**Définition**  
+L’apprentissage automatique est une branche de l’intelligence artificielle qui permet à un système d’apprendre à partir de données plutôt que d’être programmé règle par règle. On lui fournit des exemples, et il ajuste automatiquement ses paramètres pour repérer des régularités. Il en extrait des motifs (*patterns*) statistiques qu’il pourra réutiliser sur de nouvelles données. C’est aujourd’hui l’approche dominante pour concevoir des systèmes d’IA performants.
+
+**Exemple**  
+Pour entraîner un système de reconnaissance vocale, on lui fait écouter des milliers d’heures d’enregistrements avec leur transcription. Le modèle apprend à associer les sons aux mots, et ensuite il peut transcrire des phrases qu’il n’a jamais entendues, car il a repéré les régularités statistiques du langage. Ce type d’apprentissage est généralement supervisé : chaque exemple est accompagné de la « bonne réponse », ce qui guide le modèle dans ses ajustements.
+
+**Importance**  
+La quasi-totalité des IA actuelles repose sur l’apprentissage automatique : reconnaissance faciale, filtres de spam, recommandations, assistants vocaux, etc. C’est un changement profond : on ne décrit plus explicitement la solution, on laisse le modèle la découvrir à partir des données. Toutefois, ces systèmes ne comprennent pas au sens humain, ils produisent des résultats à partir de calculs et de probabilités. Cela aide à mieux saisir à la fois leur puissance… et leurs limites.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Apprentissage automatique. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 58). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Traitement du langage naturel
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/traitement-du-langage-naturel/
+
+*Natural Language Processing, NLP* · chapitre 4
+
+**Définition**  
+Le traitement du langage naturel désigne un ensemble de méthodes informatiques qui permettent à une machine de traiter, d’interpréter et de produire du langage humain, à l’écrit comme à l’oral. Il s’agit d’un domaine de recherche développé depuis les années 1950, à la croisée de la linguistique, de l’informatique et, aujourd’hui, de l’apprentissage automatique. Le langage est converti en données exploitables (mots, phrases, structures), puis analysé par des modèles afin de produire des résultats cohérents à partir des régularités détectées.
+
+**Exemple**  
+Quand vous utilisez un moteur de recherche, le système interprète votre requête, identifie les mots importants et reformule parfois votre intention pour proposer des résultats pertinents. De même, les outils de traduction automatique ou les agents conversationnels comme ChatGPT et Claude analysent la structure des phrases pour produire une réponse adaptée au contexte. Ces systèmes ne se contentent pas de mots isolés : ils prennent en compte l’ensemble de la phrase et son environnement.
+
+**Importance**  
+Le traitement du langage naturel est devenu une interface centrale entre humains et machines. Il permet d’interagir de manière plus directe, sans passer par des commandes techniques. Mais le langage reste ambigu, contextuel et culturellement situé, ce qui limite les performances : les modèles peuvent produire des réponses plausibles sans réellement saisir le sens, ce qui explique certaines erreurs ou malentendus.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Traitement du langage naturel. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 71). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Token
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/token/
+
+*Token* · chapitre 5
+
+**Définition**  
+En intelligence artificielle, un *token* (ou « jeton ») est la plus petite unité de texte que les modèles de langage manipulent. Il peut s’agir d’un mot entier, d’un fragment de mot, d’un signe de ponctuation ou d’un espace, selon le découpage propre à chaque modèle. Plutôt que de lire des phrases continues, le modèle reçoit une suite ordonnée de *tokens*, chacun converti en représentation numérique avant d’entrer dans les calculs. Les modèles génératifs produisent également leurs réponses *token* par *token*, dans un enchaînement probabiliste extrêmement rapide.
+
+**Exemple**  
+La phrase *Bonjour tout le monde !* pourrait être découpée en cinq *tokens* : *Bonjour* + *tout* + *le* + *monde* + *!*. Certains mots peuvent être divisés davantage : *tokenisation* deviendrait par exemple *token* + *isation*. Dans les applications, comme ChatGPT, Claude ou Gemini, qui utilisent des grands modèles de langage, chaque question envoyée et chaque réponse générée sont comptabilisées en *tokens*. C’est ce calcul qui détermine les limites de longueur d’une conversation, la vitesse de traitement et souvent le coût d’utilisation.
+
+**Importance**  
+Le *token* est l’unité de base du fonctionnement des modèles de langage. La fenêtre de contexte est elle aussi exprimée en nombre de *tokens*, non en nombre de mots. Cette logique a des effets concrets : un même texte ne compte pas le même nombre de *tokens* selon la langue. Les coûts d’utilisation des modèles sont d’ailleurs généralement calculés en fonction du nombre de *tokens* traités, en entrée comme en sortie. Comprendre ce qu’est un *token* permet donc de mieux saisir comment une IA « lit » et génère du texte, mais aussi pourquoi certaines requêtes coûtent plus cher en calcul et en énergie.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Token. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 83). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Hallucination
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/hallucination/
+
+*Hallucination* · chapitre 6
+
+**Définition**  
+Une hallucination désigne le phénomène par lequel un modèle génère une information fausse, inventée, déformée ou trompeuse, tout en la présentant avec une apparente cohérence ou assurance. Les modèles de langage peuvent ainsi produire des réponses crédibles, bien formulées et convaincantes… mais factuellement erronées. Ce phénomène découle de la manière même dont fonctionne un modèle probabiliste : celui-ci ne vérifie pas la vérité de ce qu’il affirme ; il prédit simplement la suite de mots la plus plausible selon son entraînement et le contexte de la conversation.
+
+**Exemple**  
+Si on demande à un agent conversationnel de citer des sources sur un sujet très spécialisé, il peut inventer des références inexistantes : « Selon une étude de Dupuis publiée en 2017 dans la revue *Santé et cognition*… », alors qu’aucune étude de ce type n’existe, ni même la revue citée. De la même manière, une IA peut attribuer une citation à la mauvaise personne, inventer une décision juridique ou décrire une fonctionnalité imaginaire d’un logiciel. Plus la demande est ambiguë, rare ou difficile à vérifier, plus le risque d’hallucination augmente.
+
+**Importance**  
+Les hallucinations peuvent être anodines dans un contexte humoristique, mais problématiques dans des domaines sensibles comme la santé, l’éducation ou le droit. Pour les limiter, les systèmes modernes utilisent différentes approches : amélioration de l’entraînement, accès à des sources externes actualisées, architectures de type RAG, etc. Ces techniques peuvent améliorer la fiabilité des réponses, mais elles ne transforment pas un modèle probabiliste en système de vérification des faits. Une réponse convaincante doit donc toujours être évaluée de manière critique.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Hallucination. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 96). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## Système de recommandation
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/systeme-de-recommandation/
+
+*Recommender System* · chapitre 7
+
+**Définition**  
+Un système de recommandation est un système algorithmique conçu pour proposer automatiquement des contenus, produits ou services à un utilisateur en fonction de ses préférences, de son comportement passé ou de celui d’utilisateurs jugés similaires. Il analyse des signaux comme les clics, les recherches, les achats, les visionnages ou le temps passé sur certains contenus afin d’anticiper ce qui pourrait retenir l’attention de l’utilisateur. Ces systèmes sont omniprésents dans les plateformes de diffusion en continu, le commerce en ligne, les réseaux sociaux ou les applications musicales.
+
+**Exemple**  
+Sur une plateforme de vidéo en continu, le système de recommandation suggère des films ou séries à partir de votre historique de visionnage et des comportements d’utilisateurs aux profils proches du vôtre. Sur une plateforme de e-commerce, il propose des produits liés à vos achats ou à ceux d’autres clients similaires.
+
+**Importance**  
+Les systèmes de recommandation filtrent l’immense quantité d’informations disponibles en ligne et influencent nos choix souvent sans que nous en ayons pleinement conscience. Bien calibrés, ils permettent de découvrir des contenus pertinents ou adaptés à nos goûts. Mais comme ils cherchent aussi à maximiser l’attention et l’engagement, ils peuvent favoriser les contenus émotionnels, polarisants ou répétitifs. À grande échelle, ils jouent donc un rôle majeur dans notre manière de nous informer, de consommer et même de percevoir le monde numérique.
+
+### Pour citer ce texte
+
+Vial, S. (2026). Système de recommandation. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 107). Stéphane Vial, éditeur, Montréal.
+
+---
+
+## IA agentique
+
+Adresse : https://web.stephane-vial.net/lexique-ia/livre/ia-agentique/
+
+*Agentic AI* · chapitre 8
+
+**Définition**  
+L’IA agentique désigne des systèmes d’intelligence artificielle capables d’agir de manière semi-autonome ou autonome pour atteindre un objectif, souvent en plusieurs étapes. Contrairement à un *chatbot* classique qui se contente de répondre à une demande immédiate, une IA agentique peut planifier des actions, utiliser des outils, accéder à des services externes, mémoriser certaines informations et ajuster son comportement en fonction des résultats obtenus. En pratique, cette autonomie repose sur un modèle de langage orchestré avec des instructions, une mémoire et des outils. L’ensemble se comporte alors comme un agent qui exécute des tâches avec peu de supervision humaine.
+
+**Exemple**  
+Un agent IA chargé d’organiser un voyage peut rechercher des vols, comparer des hôtels, consulter la météo, réserver des activités, remplir des formulaires et envoyer des confirmations par courriel à partir d’une instruction comme : « Organise un week-end à Rome pour deux personnes en mai. » Claude Code est un exemple d’agent logiciel avancé. Il peut écrire du code, modifier des fichiers, exécuter des commandes, appeler des outils externes et enchaîner plusieurs actions pour atteindre un objectif défini.
+
+**Importance**  
+L’IA agentique ne se contente plus de générer du contenu ou de répondre à des questions : elle peut enchaîner plusieurs actions en utilisant des outils et des logiciels. Cette capacité ouvre des possibilités importantes d’automatisation dans le travail, les services ou la recherche. Mais cette autonomie soulève aussi des enjeux critiques de sécurité, de contrôle et de responsabilité.
+
+### Pour citer ce texte
+
+Vial, S. (2026). IA agentique. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 118). Stéphane Vial, éditeur, Montréal.

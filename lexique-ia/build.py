@@ -6,7 +6,8 @@ build.py — la fabrique du site du Petit lexique vivant de l’IA.
     python3 build.py
 
 Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
-index.html du site, régénère ../sitemap.xml et llms.txt.
+index.html du site, régénère ../sitemap.xml, llms.txt (ici et à la racine du
+sous-domaine) et llms-full.txt.
 
 Quatorze pages : les six principales, et les huit notions données à lire, une
 par adresse sous /lexique-ia/livre/. Les notions ne figurent pas dans la
@@ -31,6 +32,7 @@ import os
 import re
 import sys
 import unicodedata
+from urllib.parse import urljoin
 
 try:
     import markdown
@@ -77,9 +79,12 @@ PIED = [
      "sauf mention contraire"],
 ]
 
-# Le sélecteur de langue existe dans le code et reste masqué jusqu’au
-# 17 novembre 2026, date de parution des éditions anglaise et espagnole.
-# Il ne se supprime pas : il se démasque en retirant l’attribut hidden.
+# Le sélecteur de langue existe dans le code et ne sort dans aucune page tant
+# que les éditions anglaise et espagnole ne sont pas parues. Un lien masqué
+# reste un lien : les robots le suivaient jusqu’à une page introuvable. Il ne
+# se supprime pas : il se publie en passant LANGUES_PUBLIEES à True, une fois
+# les dossiers en/ et es/ en place.
+LANGUES_PUBLIEES = False
 LANGUES = [("fr", "Français", ""),
            ("en", "English", "en/"),
            ("es", "Español", "es/")]
@@ -352,14 +357,15 @@ def navigation(prefixe, courante, urls):
 
 
 def selecteur_de_langue(prefixe):
-    """Présent dans le code, masqué jusqu’au 17 novembre 2026. L’attribut
-    hidden le retire du flux : ni trace visible, ni espace vide. Pour le
-    démasquer, retirer hidden."""
+    """Présent dans le code, absent des pages tant que LANGUES_PUBLIEES est
+    faux : ni trace visible, ni lien à suivre pour un robot."""
+    if not LANGUES_PUBLIEES:
+        return ""
     liens = ['<a href="%s%s" lang="%s"%s>%s</a>'
              % (prefixe, chemin, code,
                 ' aria-current="true"' if not chemin else "", libelle)
              for code, libelle, chemin in LANGUES]
-    return ('<nav class="langues" hidden aria-label="Langue">\n      %s\n'
+    return ('<nav class="langues" aria-label="Langue">\n      %s\n'
             '    </nav>' % "\n      ".join(liens))
 
 
@@ -483,33 +489,165 @@ def inventaire():
     return pages
 
 
+# ------------------------------------------------- pour les assistants d’IA
+
+POUR_CITER = "## Pour citer ce texte"
+
+
+def a_plat(texte):
+    """Les fichiers lus par des machines portent des espaces ordinaires : une
+    insécable y gêne la recherche d’une expression sans rien apporter."""
+    return texte.replace(NBSP, " ").replace(" ", " ")
+
+
+def section(corps, titre, fichier):
+    """Le texte d’une section de niveau 2, sans son titre. Un titre renommé
+    dans contenu/ arrête la construction au lieu de vider llms.txt."""
+    m = re.search(r"^## %s[ \t]*\n(.*?)(?=^## |\Z)" % re.escape(titre), corps,
+                  flags=re.M | re.S)
+    if not m:
+        sys.exit("llms.txt : la section « %s » est introuvable dans %s."
+                 % (titre, fichier))
+    return m.group(1).strip()
+
+
+def en_markdown(corps, adresse):
+    """Un corps de contenu/ ramené à du Markdown nu, pour un lecteur qui ne
+    rend pas le HTML : liens absolus, plus aucune balise. L’adresse de courriel
+    n’est jamais recopiée : elle est coupée exprès sur le site, contre les
+    moissonneurs, et reste à lire sur la page de contact."""
+    t = re.sub(r"<figure>.*?</figure>", "", corps, flags=re.S)
+    t = re.sub(r'<span class="courriel">.*?</span>[^<]*</span>',
+               "adresse publiée sur %s%scontact/" % (DOMAINE, BASE), t,
+               flags=re.S)
+    t = re.sub(r'<a href="([^"]+)"[^>]*>(.*?)</a>', r"[\2](\1)", t, flags=re.S)
+    t = re.sub(r"</?em>", "*", t)
+    t = re.sub(r"<[^>]+>", "", t)
+
+    def absolu(m):
+        cible = m.group(1)
+        if re.match(r"[a-z]+:|#", cible):
+            return m.group(0)
+        return "](%s)" % urljoin(DOMAINE + adresse, cible)
+    t = re.sub(r"\]\(([^)\s]+)\)", absolu, t)
+    return re.sub(r"\n{3,}", "\n\n", t).strip()
+
+
+def chapitres(corps):
+    """Les huit chapitres de contenu/livre.md : titre et liste des notions.
+    Le compte est contrôlé : le livre en annonce quatre-vingt-onze."""
+    sortie_ = []
+    for bloc in re.split(r"^### ", corps, flags=re.M)[1:]:
+        lignes = [l.strip() for l in bloc.split("\n") if l.strip()]
+        notions = [n.strip() for n in lignes[2].split(" · ")]
+        sortie_.append((lignes[0], notions))
+    total = sum(len(n) for _, n in sortie_)
+    if total != 91:
+        sys.exit("llms.txt : %d notions relevées dans contenu/livre.md, il en "
+                 "faut 91." % total)
+    return sortie_
+
+
+def premiere_phrase(corps, fichier):
+    """La première phrase de la définition d’une notion. La description de
+    l’en-tête, taillée pour les moteurs, s’arrête au milieu d’une phrase."""
+    m = re.search(r"\*\*Définition\*\*\s*\n(.+?)(?:\n\s*\n|\Z)", corps,
+                  flags=re.S)
+    if not m:
+        sys.exit("llms.txt : pas de définition dans %s." % fichier)
+    paragraphe = " ".join(m.group(1).split())
+    p = re.match(r"(.+?[.!?])(?=\s+[A-ZÀ-ÖØ-Þ«]|$)", paragraphe)
+    return p.group(1) if p else paragraphe
+
+
 def llms(pages):
-    """Écrit llms.txt à la racine du lexique : la carte du site pour les
-    assistants d’IA, au format llms.txt (un titre, un résumé en citation, des
-    listes de liens commentés). Tout vient des en-têtes de contenu/ : h1,
-    description, chapeau. Rien n’est rédigé ici."""
+    """Écrit les deux fichiers destinés aux assistants d’IA.
+
+    llms.txt, la carte : un titre, un résumé en citation, l’état civil de
+    l’ouvrage, l’auteur, les 91 notions par chapitre, où se procurer le livre,
+    puis des listes de liens commentés (format llms.txt). Il est écrit deux
+    fois, à l’identique : dans /lexique-ia/, et à la racine du sous-domaine,
+    où les outils le cherchent d’office. Ses liens sont absolus.
+
+    llms-full.txt, le texte intégral des pages, en Markdown nu, à la suite.
+
+    Tout vient de contenu/ : en-têtes et corps. Ne sont écrits ici que les
+    intitulés et les phrases de liaison. Les éditions à paraître n’y figurent
+    pas."""
+    lus = [(nom, fichier) + entete_et_corps(lire(fichier))
+           for nom, fichier in pages]
+    corps_de = dict((nom, corps) for nom, _, _, corps in lus)
+    accueil = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]
+    racine = DOMAINE + BASE
+
     principales, notions = [], []
-    for nom, fichier in pages:
-        meta, _ = entete_et_corps(lire(fichier))
-        ligne = "- [%s](%s): %s" % (meta["h1"], DOMAINE + meta["url"],
-                                    meta["description"])
+    for nom, fichier, meta, corps in lus:
         if meta.get("gabarit") == "notion":
             chapeau = re.sub(r"\*([^*]+)\*", r"\1", meta.get("chapeau", ""))
             notions.append("- [%s](%s): %s. %s"
                            % (meta["h1"], DOMAINE + meta["url"], chapeau,
-                              meta["description"]))
+                              premiere_phrase(corps, fichier)))
         else:
-            principales.append(ligne)
-    accueil = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]
-    texte = "\n".join([
+            principales.append("- [%s](%s): %s" % (meta["h1"],
+                                                   DOMAINE + meta["url"],
+                                                   meta["description"]))
+
+    licence = ("Un livre de %s. %s. ISBN 978-2-9825534-0-8 (imprimé) et "
+               "978-2-9825534-1-5 (ePUB). © Stéphane Vial, éditeur, 2026. Les "
+               "textes de ce site sont sous licence CC BY 4.0, sauf mention "
+               "contraire."
+               % (accueil["auteur"], accueil["attribution"].replace(" · ", ". ")))
+
+    # L’état civil : le tableau de l’accueil, une ligne par renseignement.
+    ouvrage = []
+    for ligne in section(corps_de["accueil"], "L’ouvrage",
+                         "accueil.md").split("\n"):
+        cases = [c.strip() for c in ligne.strip().strip("|").split("|")]
+        if len(cases) == 2 and cases[0].startswith("**"):
+            ouvrage.append("- %s : %s" % (cases[0].strip("*"), cases[1]))
+
+    livre = chapitres(corps_de["livre"])
+    optionnel = ["- [Plan du site](%s/sitemap.xml): toutes les adresses, au "
+                 "format sitemap." % DOMAINE]
+    for cible, libelle in re.findall(r'<a href="([^"]+\.pdf)"[^>]*>(.*?)</a>',
+                                     corps_de["communique"]):
+        optionnel.append("- [%s](%s): le communiqué de parution, mis en page."
+                         % (libelle, urljoin(racine + "communique/", cible)))
+    optionnel.append("- [Couverture en haute définition](%s): %s."
+                     % (racine + accueil["couverture_lien"],
+                        accueil["couverture_alt"]))
+    portrait = re.search(r'<figure>.*?<a href="([^"]+)".*?<figcaption>(.*?)'
+                         r'</figcaption>', corps_de["accueil"], flags=re.S)
+    if portrait:
+        optionnel.append("- [Portrait de l’auteur en haute définition](%s): %s."
+                         % (racine + portrait.group(1), portrait.group(2)))
+
+    carte = a_plat("\n".join([
         "# " + accueil["h1"],
         "",
         "> " + accueil["description"],
         "",
-        "Un livre de %s. %s. ISBN 978-2-9825534-0-8 (imprimé) et "
-        "978-2-9825534-1-5 (ePUB). © Stéphane Vial, éditeur, 2026. Les textes "
-        "de ce site sont sous licence CC BY 4.0, sauf mention contraire."
-        % (accueil["auteur"], accueil["attribution"].replace(" · ", ". ")),
+        licence + " Les pages qui portent une section « Pour citer ce texte » "
+        "donnent la référence à employer.",
+        "",
+        "**L’ouvrage**",
+        "",
+    ] + ouvrage + [
+        "",
+        "**L’auteur**",
+        "",
+        en_markdown(section(corps_de["accueil"], "L’auteur", "accueil.md"),
+                    BASE),
+        "",
+        "**Se procurer le livre**",
+        "",
+        en_markdown(section(corps_de["accueil"], "Se procurer le livre",
+                            "accueil.md"), BASE),
+        "",
+        "**Les 91 notions, en huit chapitres**",
+        "",
+    ] + ["- **%s** (%d notions) : %s" % (titre, len(liste), " · ".join(liste))
+         for titre, liste in livre] + [
         "",
         "## Le livre et son auteur",
         "",
@@ -519,15 +657,50 @@ def llms(pages):
         "",
     ] + notions + [
         "",
+        "## Texte intégral",
+        "",
+        "- [Tout le site en un seul fichier](%sllms-full.txt): le texte des "
+        "%d pages, en Markdown, à la suite." % (racine, len(lus)),
+        "",
         "## Optional",
         "",
-        "- [Plan du site](%s/sitemap.xml): toutes les adresses, au format "
-        "sitemap." % DOMAINE,
+    ] + optionnel + [
         "",
-    ])
-    chemin = os.path.join(ICI, "llms.txt")
-    ecrire(chemin, texte)
-    return chemin, len(principales) + len(notions)
+    ]))
+
+    # Le texte intégral. Les titres de chaque page descendent d’un cran, sous
+    # le titre de la page.
+    blocs = []
+    for nom, fichier, meta, corps in lus:
+        texte = re.sub(r"^(#{2,5}) ", r"#\1 ",
+                       en_markdown(corps, meta["url"]), flags=re.M)
+        tete = ["## " + meta["h1"], "", "Adresse : " + DOMAINE + meta["url"]]
+        if nom == "accueil":
+            tete += ["", "%s · %s" % (meta["auteur"], meta["attribution"])]
+        elif meta.get("chapeau"):
+            tete += ["", meta["chapeau"]]
+        blocs.append("\n".join(tete + ["", texte]))
+    integral = a_plat("\n".join([
+        "# %s : texte intégral du site" % accueil["h1"],
+        "",
+        "> " + accueil["description"],
+        "",
+        licence,
+        "",
+        "Ce fichier réunit le texte des %d pages du site : les six pages du "
+        "menu, puis les huit notions données à lire, dans l’ordre des "
+        "chapitres. La carte commentée du site est dans %sllms.txt."
+        % (len(lus), racine),
+        "",
+        "---",
+        "",
+        "",
+    ]) + "\n\n---\n\n".join(blocs) + "\n")
+
+    ecrire(os.path.join(ICI, "llms.txt"), carte)
+    ecrire(os.path.join(RACINE, "llms.txt"), carte)
+    ecrire(os.path.join(ICI, "llms-full.txt"), integral)
+    return len(principales) + len(notions)
 
 
 def sitemap(urls):
@@ -583,8 +756,9 @@ def main():
 
     chemin, n = sitemap(liste)
     print("  ✓ %-34s %d adresses" % (os.path.relpath(chemin, ICI), n))
-    chemin, n = llms(pages)
-    print("  ✓ %-34s %d pages" % (os.path.relpath(chemin, ICI), n))
+    n = llms(pages)
+    for f in ("llms.txt", "../llms.txt", "llms-full.txt"):
+        print("  ✓ %-34s %d pages" % (f, n))
     print("\n%d pages construites. Aucune requête ne sort du domaine."
           % len(liste))
 
