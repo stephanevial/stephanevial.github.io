@@ -57,7 +57,7 @@ Token · Fenêtre de contexte · Vecteur · Probabilité · SoftMax · Températ
 
 **L’IA répond, prédit, génère. Mais elle peut aussi se tromper, déformer ou inventer.** (12 notions)
 
-Entrée / Sortie · Prompt · Chaîne de pensée · Génération augmentée par récupération · Dérive du contexte · Hallucination · Biais algorithmique · Biais d’amplification · Flagornerie · Boîte noire · Injection d’invite · Deepfake
+Entrée / Sortie · Prompt · Chaîne de pensée · Génération augmentée par récupération · Dérive du contexte · Hallucination · Biais algorithmique · Surélaboration · Flagornerie · Boîte noire · Injection d’invite · Deepfake
 
 - <span class="etiquette">Extrait à lire</span> : [Hallucination](hallucination/) · page 96
 
