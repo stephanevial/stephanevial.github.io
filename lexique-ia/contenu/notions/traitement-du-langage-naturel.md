@@ -6,6 +6,7 @@ h1: "Traitement du langage naturel"
 chapeau: "*Natural Language Processing, NLP* · chapitre 4"
 gabarit: notion
 ordre: 4
+page: 71
 og_type: article
 ---
 

@@ -6,6 +6,7 @@ h1: "Intelligence artificielle"
 chapeau: "*Artificial Intelligence, AI* · chapitre 1"
 gabarit: notion
 ordre: 1
+page: 22
 og_type: article
 ---
 

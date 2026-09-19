@@ -6,6 +6,7 @@ h1: "Neurone"
 chapeau: "*Neuron* · chapitre 2"
 gabarit: notion
 ordre: 2
+page: 40
 og_type: article
 ---
 

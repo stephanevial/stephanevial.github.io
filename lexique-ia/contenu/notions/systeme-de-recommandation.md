@@ -6,6 +6,7 @@ h1: "Système de recommandation"
 chapeau: "*Recommender System* · chapitre 7"
 gabarit: notion
 ordre: 7
+page: 107
 og_type: article
 ---
 

@@ -6,6 +6,7 @@ h1: "Hallucination"
 chapeau: "*Hallucination* · chapitre 6"
 gabarit: notion
 ordre: 6
+page: 96
 og_type: article
 ---
 

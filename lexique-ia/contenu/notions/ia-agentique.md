@@ -6,6 +6,7 @@ h1: "IA agentique"
 chapeau: "*Agentic AI* · chapitre 8"
 gabarit: notion
 ordre: 8
+page: 118
 og_type: article
 ---
 

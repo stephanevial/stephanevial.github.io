@@ -369,6 +369,19 @@ def selecteur_de_langue(prefixe):
             '    </nav>' % "\n      ".join(liens))
 
 
+def folio(meta):
+    """Le numéro de page d’une notion, à la suite du chapitre dans le chapeau
+    et dans la même graisse : chapitre et page localisent l’entrée ensemble,
+    face au terme anglais en italique. Il vient du champ « page » de
+    l’en-tête, obligatoire pour une notion."""
+    if meta.get("gabarit") != "notion":
+        return ""
+    if not meta.get("page"):
+        sys.exit("%s : il manque le champ « page » dans l’en-tête."
+                 % meta["url"])
+    return '<span class="folio"> · page %s</span>' % meta["page"]
+
+
 def construire(nom, fichier, base, gabarits, urls):
     source = lire(fichier)
     meta, corps = entete_et_corps(source)
@@ -413,10 +426,10 @@ def construire(nom, fichier, base, gabarits, urls):
             "h1": echapper(meta["h1"]),
             # Le chapeau passe par le convertisseur, sans extension : il peut
             # porter un italique (le terme anglais d’une notion), rien d’autre.
-            "chapeau": ('<p class="chapeau">%s</p>' % re.sub(
+            "chapeau": ('<p class="chapeau">%s%s</p>' % (re.sub(
                             r"^<p>|</p>$", "",
                             markdown.Markdown(output_format="html")
-                            .convert(meta["chapeau"]).strip())
+                            .convert(meta["chapeau"]).strip()), folio(meta))
                         if meta.get("chapeau") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
             "prefixe": prefixe,
@@ -583,7 +596,9 @@ def llms(pages):
     principales, notions = [], []
     for nom, fichier, meta, corps in lus:
         if meta.get("gabarit") == "notion":
-            chapeau = re.sub(r"\*([^*]+)\*", r"\1", meta.get("chapeau", ""))
+            chapeau = "%s · page %s" % (
+                re.sub(r"\*([^*]+)\*", r"\1", meta.get("chapeau", "")),
+                meta["page"])
             notions.append("- [%s](%s): %s. %s"
                            % (meta["h1"], DOMAINE + meta["url"], chapeau,
                               premiere_phrase(corps, fichier)))
@@ -678,7 +693,8 @@ def llms(pages):
         if nom == "accueil":
             tete += ["", "%s · %s" % (meta["auteur"], meta["attribution"])]
         elif meta.get("chapeau"):
-            tete += ["", meta["chapeau"]]
+            tete += ["", meta["chapeau"] + (" · page %s" % meta["page"]
+                                            if meta.get("page") else "")]
         blocs.append("\n".join(tete + ["", texte]))
     integral = a_plat("\n".join([
         "# %s : texte intégral du site" % accueil["h1"],
