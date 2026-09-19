@@ -95,25 +95,20 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
   border-bottom-color: var(--bleu);
   font-weight: 700;
 }
-/* « Acheter » est la seule entrée composée en bouton : l'encre bleue en aplat,
-   le texte au safran, à angles vifs comme la couverture. Sur sa propre page,
-   le bouton s'inverse : un cadre bleu, vide, qui dit « vous y êtes ». */
+/* « Acheter » est la seule entrée composée en bouton, à angles vifs comme la
+   couverture : un cadre à l'encre bleue, vide. Il se remplit au survol, et
+   reste plein sur sa propre page : l'aplat bleu, le texte au safran. */
 .sommaire a.bouton {
-  background: var(--bleu);
-  color: var(--safran);
+  background: transparent;
+  color: var(--bleu);
   font-weight: 700;
   padding: 0.3rem 0.85rem;
   border: 2px solid var(--bleu);
 }
-.sommaire a.bouton:hover {
-  background: var(--encre);
-  border-color: var(--encre);
-}
-.sommaire a.bouton[aria-current="page"],
-.sommaire a.bouton[aria-current="page"]:hover {
-  background: transparent;
-  color: var(--bleu);
-  border-color: var(--bleu);
+.sommaire a.bouton:hover,
+.sommaire a.bouton[aria-current="page"] {
+  background: var(--bleu);
+  color: var(--safran);
 }
 .langues[hidden] { display: none; }
 
