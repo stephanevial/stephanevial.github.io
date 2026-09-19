@@ -483,8 +483,10 @@ body[data-page="livre"] .corps > ul li .etiquette {
 }
 
 /* Sur la page du livre, un filet pâle sépare les chapitres : au-dessus de
-   chaque titre de chapitre qui suit la liste du précédent. */
-body[data-page="livre"] .corps > ul + h3 {
+   chaque titre de chapitre qui suit la liste du précédent. Le même filet
+   sépare le dernier chapitre de « Pour citer ce livre ». */
+body[data-page="livre"] .corps > ul + h3,
+body[data-page="livre"] .corps > ul + h2 {
   border-top: 1px solid var(--filet);
   padding-top: clamp(1.5rem, 3vw, 2.25rem);
   margin-top: clamp(2rem, 4vw, 3rem);
