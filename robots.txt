@@ -1,6 +1,12 @@
+# Site du Petit lexique vivant de l'intelligence artificielle.
+# Tout le dossier /lexique-ia/ est ouvert à tous les robots, moteurs de
+# recherche comme assistants d'IA. Ne jamais remettre « Disallow: / » ici :
+# beaucoup de robots d'IA s'arrêtent à cette ligne sans lire les exceptions.
+# Ce qui doit rester hors indexation se nomme explicitement ci-dessous.
+
 User-agent: *
-Allow: /lexique-ia/
-Allow: /sitemap.xml
-Disallow: /
+Disallow: /cours/
+Disallow: /diapos/
+Allow: /
 
 Sitemap: https://web.stephane-vial.net/sitemap.xml
