@@ -61,6 +61,8 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 # du livre.
 MENU = ["accueil", "livre", "fabrique", "declaration", "communique",
         "acheter"]
+# L’entrée composée en bouton dans le menu : celle qui mène à l’achat.
+MENU_BOUTON = "acheter"
 MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
                 "declaration": "La déclaration", "livre": "Le livre",
                 "communique": "Le communiqué", "acheter": "Acheter"}
@@ -354,6 +356,8 @@ def navigation(prefixe, courante, urls):
         # la même chose sans ambiguïté.
         cible = prefixe + urls[nom][len(BASE):] or "./"
         marque = ' aria-current="page"' if nom == courante else ""
+        if nom == MENU_BOUTON:
+            marque = ' class="bouton"' + marque
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
     return "\n      ".join(entrees)
