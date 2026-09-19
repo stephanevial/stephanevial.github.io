@@ -76,3 +76,7 @@ Personnalisation · Fil d’actualité · Système de recommandation · Filtrage
 Puissance de calcul · IA agentique · Intelligence artificielle générale · Conscience (sentience) · Machination de l’IA · Psychose IA · Risque existentiel · Impact écologique de l’IA · Course à l’IA · IA souveraine · Gouvernance de l’IA · IA responsable
 
 - <span class="etiquette">Extrait à lire</span> : [IA agentique](ia-agentique/) · page 118
+
+## Pour citer ce livre
+
+Vial, S. (2026). *Petit lexique vivant de l’intelligence artificielle*. Stéphane Vial, éditeur, Montréal.

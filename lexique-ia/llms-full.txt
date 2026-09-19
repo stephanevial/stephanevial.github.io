@@ -143,6 +143,10 @@ Puissance de calcul · IA agentique · Intelligence artificielle générale · C
 
 - Extrait à lire : [IA agentique](https://web.stephane-vial.net/lexique-ia/livre/ia-agentique/) · page 118
 
+### Pour citer ce livre
+
+Vial, S. (2026). *Petit lexique vivant de l’intelligence artificielle*. Stéphane Vial, éditeur, Montréal.
+
 ---
 
 ## La fabrique de ce livre
