@@ -60,10 +60,10 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
 MENU = ["accueil", "livre", "fabrique", "declaration", "communique",
-        "contact"]
+        "acheter"]
 MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
                 "declaration": "La déclaration", "livre": "Le livre",
-                "communique": "Le communiqué", "contact": "Contact"}
+                "communique": "Le communiqué", "acheter": "Acheter"}
 
 # Le pied, identique sur toutes les pages, reprend le verso de titre du
 # manuscrit, mot pour mot pour les ISBN et le dépôt légal. Deux paragraphes :
@@ -115,8 +115,11 @@ COUVERTURE_ALT = ""
 # Les adresses ont perdu leur article le 8 septembre 2026 : « la-fabrique »
 # est devenue « fabrique », « le-livre » est devenue « livre », notions
 # comprises. Les anciennes adresses restent servies par une page de renvoi,
-# hors sitemap et non indexée, pour qui les aurait notées.
+# hors sitemap et non indexée, pour qui les aurait notées. Le 19 septembre
+# 2026, la page « Contact » est devenue « Acheter » : les liens d’achat en
+# tête, le contact presse en bas.
 RENVOIS = {
+    "/lexique-ia/contact/": "/lexique-ia/acheter/",
     "/lexique-ia/la-fabrique/": "/lexique-ia/fabrique/",
     "/lexique-ia/le-livre/": "/lexique-ia/livre/",
 }
@@ -433,6 +436,14 @@ def construire(nom, fichier, base, gabarits, urls):
                         if meta.get("chapeau") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
             "prefixe": prefixe,
+            # La couverture ramène à l’accueil, sauf si l’en-tête de la page
+            # nomme une autre destination : « couverture_vers: livre » sur la
+            # page d’achat, où l’on va plutôt voir ce que le livre contient.
+            "couverture_href": (prefixe + urls[meta["couverture_vers"]][len(BASE):]
+                                if meta.get("couverture_vers") else prefixe),
+            "couverture_titre": (echapper(meta["couverture_titre"])
+                                 if meta.get("couverture_vers")
+                                 else "Retour à l’accueil"),
             "couverture_alt": echapper(COUVERTURE_ALT),
             "contenu": contenu.strip(),
         }
@@ -528,10 +539,10 @@ def en_markdown(corps, adresse):
     """Un corps de contenu/ ramené à du Markdown nu, pour un lecteur qui ne
     rend pas le HTML : liens absolus, plus aucune balise. L’adresse de courriel
     n’est jamais recopiée : elle est coupée exprès sur le site, contre les
-    moissonneurs, et reste à lire sur la page de contact."""
+    moissonneurs, et reste à lire sur la page d’achat, section « Presse »."""
     t = re.sub(r"<figure>.*?</figure>", "", corps, flags=re.S)
     t = re.sub(r'<span class="courriel">.*?</span>[^<]*</span>',
-               "adresse publiée sur %s%scontact/" % (DOMAINE, BASE), t,
+               "adresse publiée sur %s%sacheter/" % (DOMAINE, BASE), t,
                flags=re.S)
     t = re.sub(r'<a href="([^"]+)"[^>]*>(.*?)</a>', r"[\2](\1)", t, flags=re.S)
     t = re.sub(r"</?em>", "*", t)
@@ -747,6 +758,16 @@ def main():
 
     global COUVERTURE_ALT
     COUVERTURE_ALT = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]["couverture_alt"]
+
+    # Les liens d’achat figurent deux fois, sur l’accueil et sur la page
+    # « Acheter » : les deux listes doivent rester les mêmes.
+    boutiques = [sorted(set(re.findall(r"https://www\.amazon\.[a-z.]+/dp/\w+",
+                                       lire(os.path.join(CONTENU, f)))))
+                 for f in ("accueil.md", "acheter.md")]
+    if boutiques[0] != boutiques[1]:
+        sys.exit("Les liens Amazon de contenu/accueil.md et de "
+                 "contenu/acheter.md ne sont plus les mêmes : %s"
+                 % ", ".join(sorted(set(boutiques[0]) ^ set(boutiques[1]))))
 
     pages = inventaire()
     urls = {}
