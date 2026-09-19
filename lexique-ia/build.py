@@ -6,7 +6,7 @@ build.py — la fabrique du site du Petit lexique vivant de l’IA.
     python3 build.py
 
 Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
-index.html du site et régénère ../sitemap.xml.
+index.html du site, régénère ../sitemap.xml et llms.txt.
 
 Quatorze pages : les six principales, et les huit notions données à lire, une
 par adresse sous /lexique-ia/livre/. Les notions ne figurent pas dans la
@@ -483,6 +483,53 @@ def inventaire():
     return pages
 
 
+def llms(pages):
+    """Écrit llms.txt à la racine du lexique : la carte du site pour les
+    assistants d’IA, au format llms.txt (un titre, un résumé en citation, des
+    listes de liens commentés). Tout vient des en-têtes de contenu/ : h1,
+    description, chapeau. Rien n’est rédigé ici."""
+    principales, notions = [], []
+    for nom, fichier in pages:
+        meta, _ = entete_et_corps(lire(fichier))
+        ligne = "- [%s](%s): %s" % (meta["h1"], DOMAINE + meta["url"],
+                                    meta["description"])
+        if meta.get("gabarit") == "notion":
+            chapeau = re.sub(r"\*([^*]+)\*", r"\1", meta.get("chapeau", ""))
+            notions.append("- [%s](%s): %s. %s"
+                           % (meta["h1"], DOMAINE + meta["url"], chapeau,
+                              meta["description"]))
+        else:
+            principales.append(ligne)
+    accueil = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]
+    texte = "\n".join([
+        "# " + accueil["h1"],
+        "",
+        "> " + accueil["description"],
+        "",
+        "Un livre de %s. %s. ISBN 978-2-9825534-0-8 (imprimé) et "
+        "978-2-9825534-1-5 (ePUB). © Stéphane Vial, éditeur, 2026. Les textes "
+        "de ce site sont sous licence CC BY 4.0, sauf mention contraire."
+        % (accueil["auteur"], accueil["attribution"].replace(" · ", ". ")),
+        "",
+        "## Le livre et son auteur",
+        "",
+    ] + principales + [
+        "",
+        "## Huit notions à lire, une par chapitre",
+        "",
+    ] + notions + [
+        "",
+        "## Optional",
+        "",
+        "- [Plan du site](%s/sitemap.xml): toutes les adresses, au format "
+        "sitemap." % DOMAINE,
+        "",
+    ])
+    chemin = os.path.join(ICI, "llms.txt")
+    ecrire(chemin, texte)
+    return chemin, len(principales) + len(notions)
+
+
 def sitemap(urls):
     """Régénère ../sitemap.xml. Toute adresse déjà présente qui ne relève pas
     de /lexique-ia/ est conservée : ce fichier sert tout le sous-domaine."""
@@ -536,6 +583,8 @@ def main():
 
     chemin, n = sitemap(liste)
     print("  ✓ %-34s %d adresses" % (os.path.relpath(chemin, ICI), n))
+    chemin, n = llms(pages)
+    print("  ✓ %-34s %d pages" % (os.path.relpath(chemin, ICI), n))
     print("\n%d pages construites. Aucune requête ne sort du domaine."
           % len(liste))
 
