@@ -56,11 +56,11 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 Le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique.
 
 - **France**  
-  Commander : [amazon.fr/dp/B0HG5YBRPW](https://www.amazon.fr/dp/B0HG5YBRPW)
+  <a href="https://www.amazon.fr/Petit-lexique-vivant-lintelligence-artificielle-ebook/dp/B0HG5YBRPW" class="commander">Commander sur Amazon.fr</a>
 - **Canada**  
-  Commander : [amazon.ca/dp/B0HG5YBRPW](https://www.amazon.ca/dp/B0HG5YBRPW)
+  <a href="https://www.amazon.ca/-/fr/St%C3%A9phane-Vial-ebook/dp/B0HG5YBRPW" class="commander">Commander sur Amazon.ca</a>
 - **États-Unis**  
-  Commander : [amazon.com/dp/B0HG5YBRPW](https://www.amazon.com/dp/B0HG5YBRPW)
+  <a href="https://www.amazon.com/lexique-vivant-lintelligence-artificielle-French-ebook/dp/B0HG5YBRPW/" class="commander">Commander sur Amazon.com</a>
 
 L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co.uk/dp/B0HG5YBRPW) · [amazon.de](https://www.amazon.de/dp/B0HG5YBRPW) · [amazon.es](https://www.amazon.es/dp/B0HG5YBRPW) · [amazon.it](https://www.amazon.it/dp/B0HG5YBRPW) · [amazon.nl](https://www.amazon.nl/dp/B0HG5YBRPW) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HG5YBRPW) · [amazon.com.br](https://www.amazon.com.br/dp/B0HG5YBRPW) · [amazon.com.au](https://www.amazon.com.au/dp/B0HG5YBRPW) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HG5YBRPW).
 

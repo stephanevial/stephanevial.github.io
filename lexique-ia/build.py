@@ -876,7 +876,7 @@ def main():
 
     # Les liens d’achat figurent deux fois, sur l’accueil et sur la page
     # « Acheter » : les deux listes doivent rester les mêmes.
-    boutiques = [sorted(set(re.findall(r"https://www\.amazon\.[a-z.]+/dp/\w+",
+    boutiques = [sorted(set(re.findall(r"https://www\.amazon\.[a-z.]+/(?:[^\s\"()]*/)?dp/\w+",
                                        lire(os.path.join(CONTENU, f)))))
                  for f in ("accueil.md", "acheter.md")]
     if boutiques[0] != boutiques[1]:

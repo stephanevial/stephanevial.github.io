@@ -556,9 +556,8 @@ body[data-page="livre"] .corps > ul + h2 {
 .telecharger { font-weight: 600; }
 
 /* La page « Acheter » : les trois cases d'achat de l'accueil, empilées dans la
-   colonne de lecture. Toute la case est cliquable, pas seulement l'adresse :
-   le lien s'étend à sa surface, et la case passe au safran sous le pointeur
-   comme au clavier. */
+   colonne de lecture. Chaque case porte un bouton de commande : c'est lui qui
+   réagit au pointeur, la case reste sur le papier. */
 body[data-page="acheter"] .corps > ul {
   list-style: none;
   padding-left: 0;
@@ -575,8 +574,6 @@ body[data-page="acheter"] .corps > ul li {
   background: var(--papier);
   font-size: 0.9375rem;
 }
-body[data-page="acheter"] .corps > ul li:hover,
-body[data-page="acheter"] .corps > ul li:focus-within { background: var(--safran); }
 body[data-page="acheter"] .corps > ul li strong {
   display: inline-block;
   font-variation-settings: "wdth" 72;
@@ -586,13 +583,20 @@ body[data-page="acheter"] .corps > ul li strong {
   margin-bottom: 0.35rem;
   color: var(--bleu);
 }
-body[data-page="acheter"] .corps > ul li a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+/* Le bouton de commande, sur l'accueil et sur la page « Acheter » : l'aplat
+   bleu de l'encre, le texte en blanc, à angles vifs comme la couverture. Sous
+   le pointeur il passe au safran, et le texte revient au bleu pour rester
+   lisible. */
+a.commander {
+  display: inline-block;
+  background: var(--bleu);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.55rem 1rem;
+  border: 2px solid var(--bleu);
 }
-body[data-page="acheter"] .corps > ul li a:focus-visible { outline: none; }
-body[data-page="acheter"] .corps > ul li:focus-within { outline: 2px solid var(--bleu); outline-offset: -2px; }
+a.commander:hover { background: var(--safran); color: var(--bleu); }
 /* Les autres boutiques Amazon, en plus petit sous les trois cases. */
 body[data-page="acheter"] .corps > ul + p { font-size: 0.875rem; }
 /* Une note, en plus petit : la mention des exemplaires de presse. */
@@ -660,6 +664,7 @@ a.chevron:focus-visible { outline-offset: 6px; }
   h2 { font-size: 11pt; display: block; }
   h2::before { content: none; }
   a { color: #000; text-decoration: none; }
+  a.commander { background: none; border: 0; padding: 0; }
   h1, h2, h3 { break-after: avoid; }
   p { orphans: 3; widows: 3; }
 
