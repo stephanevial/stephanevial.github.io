@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 3
 page: 58
 og_type: article
+video: apprentissage-automatique
 ---
 
 **Définition**  

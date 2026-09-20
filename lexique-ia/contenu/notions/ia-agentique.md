@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 8
 page: 118
 og_type: article
+video: ia-agentique
 ---
 
 **Définition**  

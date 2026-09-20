@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 7
 page: 107
 og_type: article
+video: systeme-de-recommandation
 ---
 
 **Définition**  

@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 2
 page: 40
 og_type: article
+video: neurone
 ---
 
 **Définition**  

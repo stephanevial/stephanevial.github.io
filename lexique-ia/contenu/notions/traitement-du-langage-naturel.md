@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 4
 page: 71
 og_type: article
+video: traitement-du-langage-naturel
 ---
 
 **Définition**  
