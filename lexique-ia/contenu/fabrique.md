@@ -28,6 +28,10 @@ Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que 
 
 Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
+## Lisez aussi ceci
+
+[Ma déclaration sur l’usage de l’intelligence artificielle](../declaration/)
+
 ## Pour citer ce texte
 
 Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur, Montréal.

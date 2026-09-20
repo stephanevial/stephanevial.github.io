@@ -29,6 +29,10 @@ Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à
 
 L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
 
+## Lisez aussi ceci
+
+[La fabrique de ce livre](../fabrique/)
+
 ## Pour citer ce texte
 
 Vial, S. (2026). Déclaration sur l’usage de l’intelligence artificielle. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 129–130). Stéphane Vial, éditeur, Montréal.

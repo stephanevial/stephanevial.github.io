@@ -177,6 +177,10 @@ Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que 
 
 Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
+### Lisez aussi ceci
+
+[Ma déclaration sur l’usage de l’intelligence artificielle](https://web.stephane-vial.net/lexique-ia/declaration/)
+
 ### Pour citer ce texte
 
 Vial, S. (2026). La fabrique de ce livre. Dans *Petit lexique vivant de l’intelligence artificielle* (p. 131–134). Stéphane Vial, éditeur, Montréal.
@@ -208,6 +212,10 @@ L’IA ne fait pas disparaître le travail d’écrire : elle insère une nouvel
 Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à la qualité du travail intellectuel réalisé. Si elles vous semblent contestables ou inexactes, la responsabilité m’en incombe également.
 
 L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
+
+### Lisez aussi ceci
+
+[La fabrique de ce livre](https://web.stephane-vial.net/lexique-ia/fabrique/)
 
 ### Pour citer ce texte
 
