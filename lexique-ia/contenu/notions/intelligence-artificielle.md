@@ -8,6 +8,7 @@ gabarit: notion
 ordre: 1
 page: 22
 og_type: article
+video: intelligence-artificielle
 ---
 
 **Définition**  

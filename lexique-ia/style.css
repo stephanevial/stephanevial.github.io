@@ -204,6 +204,20 @@ h1 {
   .couverture img { width: 14rem; }
 }
 
+/* Sur une notion filmée, la vidéo prend la place de la couverture, au même
+   gabarit vertical, et un lien discret permet de l'emporter. */
+.couverture video {
+  display: block;
+  width: min(100%, 12rem);
+  height: auto;
+  background: var(--safran);
+  box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
+}
+.couverture figcaption { margin-top: 0.9rem; font-size: 0.875rem; }
+@media (min-width: 55rem) {
+  .couverture video { width: 14rem; }
+}
+
 /* Le chapeau des pages de document reste sur la surface du titre. */
 .page > .chapeau {
   background: var(--safran);

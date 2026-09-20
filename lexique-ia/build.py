@@ -267,6 +267,35 @@ def liens_externes(html):
                   r'<a href="\1" target="_blank" rel="noopener"', html)
 
 
+def cote(meta, prefixe, urls):
+    """Ce qui occupe la droite du texte : la couverture, ou la vidéo de la
+    notion quand l’en-tête en nomme une (« video: intelligence-artificielle »,
+    le nom des fichiers de video/, sans extension)."""
+    if meta.get("video"):
+        fichier = "%svideo/%s" % (prefixe, meta["video"])
+        return (
+            '        <figure class="couverture video">\n'
+            '          <video controls playsinline preload="none" '
+            'poster="%(f)s.jpg" width="720" height="1280" '
+            'aria-label="%(titre)s, la notion en vidéo">'
+            '<source src="%(f)s.mp4" type="video/mp4"></video>\n'
+            '          <figcaption><a href="%(f)s.mp4" download>'
+            'Télécharger la vidéo</a></figcaption>\n'
+            '        </figure>' % {"f": fichier, "titre": echapper(meta["h1"])})
+    # La couverture ramène à l’accueil, sauf si l’en-tête de la page
+    # nomme une autre destination : « couverture_vers: livre » sur la
+    # page d’achat, où l’on va plutôt voir ce que le livre contient.
+    href = (prefixe + urls[meta["couverture_vers"]][len(BASE):]
+            if meta.get("couverture_vers") else prefixe)
+    titre = (echapper(meta["couverture_titre"])
+             if meta.get("couverture_vers") else "Retour à l’accueil")
+    return (
+        '        <figure class="couverture">\n'
+        '          <a href="%s" title="%s"><img src="%simg/couverture.jpg" '
+        'alt="%s" width="800" height="1280" loading="lazy"></a>\n'
+        '        </figure>' % (href, titre, prefixe, echapper(COUVERTURE_ALT)))
+
+
 def sortie(url):
     """Le fichier à écrire, et de combien de crans il faut remonter pour
     atteindre la racine du lexique. « /lexique-ia/livre/token/ » donne
@@ -439,16 +468,7 @@ def construire(nom, fichier, base, gabarits, urls):
                             .convert(meta["chapeau"]).strip()), folio(meta))
                         if meta.get("chapeau") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
-            "prefixe": prefixe,
-            # La couverture ramène à l’accueil, sauf si l’en-tête de la page
-            # nomme une autre destination : « couverture_vers: livre » sur la
-            # page d’achat, où l’on va plutôt voir ce que le livre contient.
-            "couverture_href": (prefixe + urls[meta["couverture_vers"]][len(BASE):]
-                                if meta.get("couverture_vers") else prefixe),
-            "couverture_titre": (echapper(meta["couverture_titre"])
-                                 if meta.get("couverture_vers")
-                                 else "Retour à l’accueil"),
-            "couverture_alt": echapper(COUVERTURE_ALT),
+            "cote": cote(meta, prefixe, urls),
             "contenu": contenu.strip(),
         }
 
