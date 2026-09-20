@@ -3,7 +3,7 @@ url: /lexique-ia/auteur/
 title: "L’auteur du Petit lexique vivant de l’intelligence artificielle | Stéphane Vial"
 description: "Stéphane Vial est professeur titulaire à l’École de design de l’UQAM. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design."
 h1: "L’auteur"
-chapeau: "Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal"
+chapeau: "Stéphane Vial, professeur, chercheur et entrepreneur"
 gabarit: page
 cote: portrait
 og_type: profile
