@@ -204,6 +204,10 @@ h1 {
 @media (min-width: 55rem) {
   .entree { grid-template-columns: minmax(0, 46rem) auto; justify-content: start; }
   .couverture img { width: 14rem; }
+  /* À côté du chapeau, la vidéo est un cran plus petite que sur les notions :
+     16rem, la plus grande taille où elle reste au moins aussi haute que le
+     texte à toutes les largeurs d'écran, sans laisser trop de blanc dessous. */
+  .entree .couverture .ecran { width: min(100%, 16rem, calc((100vh - 9rem) * 9 / 16)); }
 }
 
 /* Sur une notion filmée, la vidéo prend la place de la couverture, au même
