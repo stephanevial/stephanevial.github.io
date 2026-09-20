@@ -885,13 +885,12 @@ def main():
                  % ", ".join(sorted(set(boutiques[0]) ^ set(boutiques[1]))))
 
     # La biographie figure deux fois, sur l’accueil et sur la page de
-    # l’auteur : les deux textes doivent rester les mêmes. Un saut de ligne
-    # (deux espaces en fin de ligne) n’est pas une différence de texte : la
-    # page de l’auteur en porte un, que l’accueil n’a pas.
+    # l’auteur : les deux textes doivent rester les mêmes, au mot et à
+    # l’insécable près. Le découpage en paragraphes n’est pas comparé : la
+    # page de l’auteur en fait un de plus que l’accueil.
     def biographie(texte):
         t = re.sub(r"<figure>.*?</figure>|</?div[^>]*>", "", texte, flags=re.S)
-        t = re.sub(r" {2,}\n", " ", t)
-        return re.sub(r"\n{2,}", "\n\n", t).strip()
+        return re.sub(r"[ \n]+", " ", t).strip()
     accueil_md = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[1]
     auteur_md = entete_et_corps(lire(os.path.join(CONTENU, "auteur.md")))[1]
     if biographie(section(accueil_md, "L’auteur", "accueil.md")) != biographie(auteur_md):
