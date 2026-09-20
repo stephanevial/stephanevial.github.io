@@ -3,7 +3,7 @@ url: /lexique-ia/acheter/
 title: "Acheter le Petit lexique vivant de l’intelligence artificielle | Stéphane Vial"
 description: "Où acheter le Petit lexique vivant de l’intelligence artificielle, de Stéphane Vial : sur Amazon, en édition brochée et en édition numérique. Contact presse."
 h1: "Se procurer le livre"
-chapeau: "Le livre est disponible uniquement sur Amazon, en édition brochée et en édition numérique."
+chapeau: "Le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique."
 gabarit: page
 couverture_vers: livre
 couverture_titre: "Découvrir le livre"
