@@ -129,8 +129,11 @@ SCRIPT_VIDEO = """  <script>
     });
   </script>"""
 
-# La page de l’auteur. Partout ailleurs sur le site, son nom y mène.
-NOM = re.compile("Stéphane[ \u00a0]Vial")
+# La page de l’auteur. Partout ailleurs sur le site, son nom y mène. Sauf dans
+# la ligne « Éditeur » de la notice de l’accueil : « Stéphane Vial, éditeur ·
+# Montréal » y nomme la maison, pas la personne.
+NOM = re.compile("Stéphane[ \u00a0]Vial"
+                 "(?!,[ \u00a0]éditeur[ \u00a0]·[ \u00a0]Montréal)")
 
 # La couverture figure sur toutes les pages : à côté du chapeau sur l’accueil,
 # à droite du texte ailleurs, où elle ramène à l’accueil. Son texte de
