@@ -290,10 +290,11 @@ def liens_externes(html):
                   r'<a href="\1" target="_blank" rel="noopener"', html)
 
 
-def video(meta, prefixe):
+def video(meta, prefixe, telechargeable=True):
     """La vidéo que nomme l’en-tête (« video: token », le nom des fichiers de
     video/, sans extension), à la taille d’un reel, et le lien pour
-    l’emporter. Rien si l’en-tête n’en nomme pas."""
+    l’emporter, sauf sur l’accueil où il n’a pas d’utilité. Rien si l’en-tête
+    n’en nomme pas."""
     if not meta.get("video"):
         return None
     libelle = meta.get("video_libelle") or "%s, la notion en vidéo" % meta["h1"]
@@ -303,10 +304,10 @@ def video(meta, prefixe):
         'preload="none" poster="%(f)s.jpg" width="320" height="569" '
         'aria-label="%(libelle)s">'
         '<source src="%(f)s.mp4" type="video/mp4"></video></div>\n'
-        '          <figcaption><a href="%(f)s.mp4" download>'
-        'Télécharger la vidéo</a></figcaption>\n'
-        '        </figure>' % {"f": "%svideo/%s" % (prefixe, meta["video"]),
-                               "libelle": echapper(libelle)})
+        + ('          <figcaption><a href="%(f)s.mp4" download>'
+           'Télécharger la vidéo</a></figcaption>\n' if telechargeable else "")
+        + '        </figure>') % {"f": "%svideo/%s" % (prefixe, meta["video"]),
+                               "libelle": echapper(libelle)}
 
 
 def portrait(prefixe):
@@ -523,7 +524,7 @@ def construire(nom, fichier, base, gabarits, urls):
             "contenu": contenu.strip(),
             # La vidéo d’annonce, ou à défaut la couverture, qui s’ouvre en
             # grand.
-            "cote": video(meta, prefixe) or (
+            "cote": video(meta, prefixe, telechargeable=False) or (
                 '        <figure class="couverture">\n'
                 '          <a href="%s" target="_blank" rel="noopener" '
                 'title="Ouvrir la couverture en grand"><img src="%s" alt="%s" '
