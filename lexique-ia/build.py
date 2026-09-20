@@ -276,7 +276,7 @@ def cote(meta, prefixe, urls):
         return (
             '        <figure class="couverture video">\n'
             '          <video controls playsinline preload="none" '
-            'poster="%(f)s.jpg" width="720" height="1280" '
+            'poster="%(f)s.jpg" width="320" height="569" '
             'aria-label="%(titre)s, la notion en vidéo">'
             '<source src="%(f)s.mp4" type="video/mp4"></video>\n'
             '          <figcaption><a href="%(f)s.mp4" download>'

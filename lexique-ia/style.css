@@ -208,15 +208,15 @@ h1 {
    gabarit vertical, et un lien discret permet de l'emporter. */
 .couverture video {
   display: block;
-  width: min(100%, 12rem);
+  /* La taille d'un reel : 20rem de large au plus, jamais plus haute que
+     l'écran, et toujours en 9:16. */
+  width: min(100%, 20rem, calc((100vh - 9rem) * 9 / 16));
   height: auto;
+  aspect-ratio: 9 / 16;
   background: var(--safran);
   box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
 }
 .couverture figcaption { margin-top: 0.9rem; font-size: 0.875rem; }
-@media (min-width: 55rem) {
-  .couverture video { width: 14rem; }
-}
 
 /* Le chapeau des pages de document reste sur la surface du titre. */
 .page > .chapeau {
