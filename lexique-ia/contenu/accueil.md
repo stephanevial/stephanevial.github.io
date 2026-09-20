@@ -25,12 +25,12 @@ S.V., Montréal, septembre 2026
 
 ## Trois choses à lire sur ce site
 
+- **[Huit extraits](livre/)**  
+  Intelligence artificielle · Neurone · Apprentissage automatique · Traitement du langage naturel · Token · Hallucination · Système de recommandation · IA agentique
 - **[La fabrique de ce livre](fabrique/)**  
   Comment ce livre a été pensé, écrit, vérifié, fabriqué et publié, sans rien céder sur mes exigences intellectuelles.
 - **[Déclaration sur l’usage de l’IA](declaration/)**  
   « Je n’ai pas écrit ce livre malgré l’IA. Je l’ai écrit avec elle. » Ma position assumée.
-- **[Le communiqué](communique/)**  
-  Le communiqué de parution officiel, en texte intégral et à télécharger.
 
 ## L’auteur
 
