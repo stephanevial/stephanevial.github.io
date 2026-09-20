@@ -9,7 +9,7 @@ Lit les fichiers de contenu/, applique les gabarits de gabarit/, écrit les
 index.html du site, régénère ../sitemap.xml, llms.txt (ici et à la racine du
 sous-domaine) et llms-full.txt.
 
-Quatorze pages : les six principales, et les huit notions données à lire, une
+Quinze pages : les sept principales, et les huit notions données à lire, une
 par adresse sous /lexique-ia/livre/. Les notions ne figurent pas dans la
 navigation : on y arrive par la page du livre.
 
@@ -60,12 +60,13 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
 MENU = ["accueil", "livre", "fabrique", "declaration", "communique",
-        "acheter"]
+        "auteur", "acheter"]
 # L’entrée composée en bouton dans le menu : celle qui mène à l’achat.
 MENU_BOUTON = "acheter"
 MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
                 "declaration": "La déclaration", "livre": "Le livre",
-                "communique": "Le communiqué", "acheter": "Acheter"}
+                "communique": "Le communiqué", "auteur": "L’auteur",
+                "acheter": "Acheter"}
 
 # Le pied, identique sur toutes les pages, reprend le verso de titre du
 # manuscrit, mot pour mot pour les ISBN et le dépôt légal. Deux paragraphes :
@@ -108,6 +109,28 @@ SCRIPT = """  <script>
       e.replaceWith(a);
     });
   </script>"""
+
+# Le second script, posé uniquement sur les pages qui portent une vidéo : un
+# gros bouton de lecture par-dessus la vignette, pour qu’on comprenne qu’il
+# faut cliquer. Il s’efface à la lecture et revient, avec la vignette, à la
+# fin. Sans script, les commandes du navigateur suffisent. Que des guillemets
+# doubles : l’apostrophe droite est interdite dans les pages.
+SCRIPT_VIDEO = """  <script>
+    document.querySelectorAll(".ecran").forEach(function (e) {
+      var v = e.querySelector("video");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "lecture-video";
+      b.setAttribute("aria-label", "Lire la vidéo");
+      e.appendChild(b);
+      b.addEventListener("click", function () { v.play(); });
+      v.addEventListener("play", function () { b.hidden = true; });
+      v.addEventListener("ended", function () { v.load(); b.hidden = false; });
+    });
+  </script>"""
+
+# La page de l’auteur. Partout ailleurs sur le site, son nom y mène.
+NOM = re.compile("Stéphane[ \u00a0]Vial")
 
 # La couverture figure sur toutes les pages : à côté du chapeau sur l’accueil,
 # à droite du texte ailleurs, où elle ramène à l’accueil. Son texte de
@@ -267,21 +290,45 @@ def liens_externes(html):
                   r'<a href="\1" target="_blank" rel="noopener"', html)
 
 
+def video(meta, prefixe):
+    """La vidéo que nomme l’en-tête (« video: token », le nom des fichiers de
+    video/, sans extension), à la taille d’un reel, et le lien pour
+    l’emporter. Rien si l’en-tête n’en nomme pas."""
+    if not meta.get("video"):
+        return None
+    libelle = meta.get("video_libelle") or "%s, la notion en vidéo" % meta["h1"]
+    return (
+        '        <figure class="couverture video">\n'
+        '          <div class="ecran"><video controls playsinline '
+        'preload="none" poster="%(f)s.jpg" width="320" height="569" '
+        'aria-label="%(libelle)s">'
+        '<source src="%(f)s.mp4" type="video/mp4"></video></div>\n'
+        '          <figcaption><a href="%(f)s.mp4" download>'
+        'Télécharger la vidéo</a></figcaption>\n'
+        '        </figure>' % {"f": "%svideo/%s" % (prefixe, meta["video"]),
+                               "libelle": echapper(libelle)})
+
+
+def portrait(prefixe):
+    """Le portrait de l’auteur et son crédit, tels que l’accueil les donne :
+    ils ne s’écrivent qu’une fois, dans contenu/accueil.md."""
+    corps = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[1]
+    m = re.search(r"<figure>\n(.*?)\n</figure>", corps, flags=re.S)
+    if not m:
+        sys.exit("Le portrait de l’auteur est introuvable dans accueil.md.")
+    interieur = m.group(1).replace('="img/', '="%simg/' % prefixe)
+    return ('        <figure class="couverture portrait">\n          %s\n'
+            '        </figure>' % interieur.replace("\n", "\n          "))
+
+
 def cote(meta, prefixe, urls):
-    """Ce qui occupe la droite du texte : la couverture, ou la vidéo de la
-    notion quand l’en-tête en nomme une (« video: intelligence-artificielle »,
-    le nom des fichiers de video/, sans extension)."""
+    """Ce qui occupe la droite du texte : la vidéo quand l’en-tête en nomme
+    une, le portrait sur la page de l’auteur (« cote: portrait »), la
+    couverture ailleurs."""
     if meta.get("video"):
-        fichier = "%svideo/%s" % (prefixe, meta["video"])
-        return (
-            '        <figure class="couverture video">\n'
-            '          <video controls playsinline preload="none" '
-            'poster="%(f)s.jpg" width="320" height="569" '
-            'aria-label="%(titre)s, la notion en vidéo">'
-            '<source src="%(f)s.mp4" type="video/mp4"></video>\n'
-            '          <figcaption><a href="%(f)s.mp4" download>'
-            'Télécharger la vidéo</a></figcaption>\n'
-            '        </figure>' % {"f": fichier, "titre": echapper(meta["h1"])})
+        return video(meta, prefixe)
+    if meta.get("cote") == "portrait":
+        return portrait(prefixe)
     # La couverture ramène à l’accueil, sauf si l’en-tête de la page
     # nomme une autre destination : « couverture_vers: livre » sur la
     # page d’achat, où l’on va plutôt voir ce que le livre contient.
@@ -294,6 +341,30 @@ def cote(meta, prefixe, urls):
         '          <a href="%s" title="%s"><img src="%simg/couverture.jpg" '
         'alt="%s" width="800" height="1280" loading="lazy"></a>\n'
         '        </figure>' % (href, titre, prefixe, echapper(COUVERTURE_ALT)))
+
+
+def lier_le_nom(html, cible):
+    """Fait du nom de l’auteur un lien vers sa page, partout où il se lit :
+    dans le texte seulement, jamais dans un attribut ni dans un lien existant.
+    Les sections « Pour citer » sont épargnées : une référence se copie, et
+    un lien copié avec elle encombrerait la bibliographie de qui la colle."""
+    morceaux = re.split(r"(?=<h2[ >])", html)
+    for i, morceau in enumerate(morceaux):
+        if morceau.startswith('<h2 id="pour-citer'):
+            continue
+        dans_un_lien, sortie_ = False, []
+        for bout in re.split(r"(<[^>]+>)", morceau):
+            if bout.startswith("<"):
+                if re.match(r"<a[ >]", bout):
+                    dans_un_lien = True
+                elif bout.startswith("</a"):
+                    dans_un_lien = False
+            elif not dans_un_lien:
+                bout = NOM.sub(lambda m: '<a href="%s">%s</a>'
+                               % (cible, m.group(0)), bout)
+            sortie_.append(bout)
+        morceaux[i] = "".join(sortie_)
+    return "".join(morceaux)
 
 
 def sortie(url):
@@ -450,9 +521,15 @@ def construire(nom, fichier, base, gabarits, urls):
             "attribution": echapper(meta["attribution"]),
             "chapeau": chapeau.strip(),
             "contenu": contenu.strip(),
-            "couverture": meta["couverture"],
-            "couverture_lien": meta["couverture_lien"],
-            "couverture_alt": echapper(meta["couverture_alt"]),
+            # La vidéo d’annonce, ou à défaut la couverture, qui s’ouvre en
+            # grand.
+            "cote": video(meta, prefixe) or (
+                '        <figure class="couverture">\n'
+                '          <a href="%s" target="_blank" rel="noopener" '
+                'title="Ouvrir la couverture en grand"><img src="%s" alt="%s" '
+                'width="800" height="1280"></a>\n        </figure>'
+                % (meta["couverture_lien"], meta["couverture"],
+                   echapper(meta["couverture_alt"]))),
         }
     else:
         corps_html = gabarits["page"] % {
@@ -471,6 +548,12 @@ def construire(nom, fichier, base, gabarits, urls):
             "cote": cote(meta, prefixe, urls),
             "contenu": contenu.strip(),
         }
+
+    # Le nom de l’auteur mène à sa page, sauf sur celle-ci.
+    pied = "\n      ".join("<p>%s</p>" % "<br>\n      ".join(g) for g in PIED)
+    if nom != "auteur":
+        vers = prefixe + urls["auteur"][len(BASE):]
+        corps_html, pied = lier_le_nom(corps_html, vers), lier_le_nom(pied, vers)
 
     url = DOMAINE + adresse
     if nom == "accueil":
@@ -509,9 +592,10 @@ def construire(nom, fichier, base, gabarits, urls):
         "suivante_libelle": MENU_LIBELLE[page_suivante(nom)],
         "langues": selecteur_de_langue(prefixe),
         "corps": corps_html,
-        "pied": "\n      ".join("<p>%s</p>" % "<br>\n      ".join(g)
-                                for g in PIED),
-        "script": SCRIPT if 'class="courriel"' in corps_html else "",
+        "pied": pied,
+        "script": "\n".join(s for s, signe in ((SCRIPT, 'class="courriel"'),
+                                               (SCRIPT_VIDEO, "<video"))
+                            if signe in corps_html),
     }
 
     page = liens_externes(page)
@@ -738,7 +822,7 @@ def llms(pages):
         "",
         licence,
         "",
-        "Ce fichier réunit le texte des %d pages du site : les six pages du "
+        "Ce fichier réunit le texte des %d pages du site : les sept pages du "
         "menu, puis les huit notions données à lire, dans l’ordre des "
         "chapitres. La carte commentée du site est dans %sllms.txt."
         % (len(lus), racine),
@@ -792,6 +876,18 @@ def main():
         sys.exit("Les liens Amazon de contenu/accueil.md et de "
                  "contenu/acheter.md ne sont plus les mêmes : %s"
                  % ", ".join(sorted(set(boutiques[0]) ^ set(boutiques[1]))))
+
+    # La biographie figure deux fois, sur l’accueil et sur la page de
+    # l’auteur : les deux textes doivent rester les mêmes.
+    def biographie(texte):
+        t = re.sub(r"<figure>.*?</figure>|</?div[^>]*>", "", texte, flags=re.S)
+        return re.sub(r"\n{2,}", "\n\n", t).strip()
+    accueil_md = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[1]
+    auteur_md = entete_et_corps(lire(os.path.join(CONTENU, "auteur.md")))[1]
+    if biographie(section(accueil_md, "L’auteur", "accueil.md")) != biographie(auteur_md):
+        sys.exit("La biographie de contenu/auteur.md n’est plus celle de la "
+                 "section « L’auteur » de contenu/accueil.md : corriger les "
+                 "deux.")
 
     pages = inventaire()
     urls = {}

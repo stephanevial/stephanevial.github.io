@@ -9,6 +9,8 @@ couverture: img/couverture.jpg
 couverture_lien: img/couverture-hd.png
 couverture_alt: "Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial"
 gabarit: accueil
+video: annonce
+video_libelle: "Le livre présenté en vidéo par son auteur"
 og_type: book
 og_image: img/couverture.jpg
 ---

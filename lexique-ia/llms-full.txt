@@ -4,7 +4,7 @@
 
 Un livre de Stéphane Vial. Parution le 6 octobre 2026. Préface de Marcello Vitali-Rosati. ISBN 978-2-9825534-0-8 (imprimé) et 978-2-9825534-1-5 (ePUB). © Stéphane Vial, éditeur, 2026. Les textes de ce site sont sous licence CC BY 4.0, sauf mention contraire.
 
-Ce fichier réunit le texte des 14 pages du site : les six pages du menu, puis les huit notions données à lire, dans l’ordre des chapitres. La carte commentée du site est dans https://web.stephane-vial.net/lexique-ia/llms.txt.
+Ce fichier réunit le texte des 15 pages du site : les sept pages du menu, puis les huit notions données à lire, dans l’ordre des chapitres. La carte commentée du site est dans https://web.stephane-vial.net/lexique-ia/llms.txt.
 
 ---
 
@@ -248,6 +248,22 @@ Le livre s’adresse en particulier aux enseignants et aux étudiants de toutes 
 | **Contact presse** | adresse publiée sur https://web.stephane-vial.net/lexique-ia/acheter/ |
 
 *Des exemplaires de presse sont disponibles sur demande, en livre imprimé ou en PDF.*
+
+---
+
+## L’auteur
+
+Adresse : https://web.stephane-vial.net/lexique-ia/auteur/
+
+Stéphane Vial, professeur titulaire à l’École de design de l’Université du Québec à Montréal
+
+**Stéphane Vial** est professeur titulaire à l’École de design de l’Université du Québec à Montréal. Docteur en philosophie, diplômé en psychologie clinique et chercheur en design, il enseigne notamment l’usage de l’intelligence artificielle dans la recherche, l’écriture et la création.
+
+Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
+
+- À propos : [stephane-vial.net](https://stephane-vial.net)
+- Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Tribune dans *Le Devoir* : [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
 
 ---
 

@@ -206,17 +206,57 @@ h1 {
 
 /* Sur une notion filmée, la vidéo prend la place de la couverture, au même
    gabarit vertical, et un lien discret permet de l'emporter. */
-.couverture video {
-  display: block;
+.couverture .ecran {
+  position: relative;
   /* La taille d'un reel : 20rem de large au plus, jamais plus haute que
      l'écran, et toujours en 9:16. */
   width: min(100%, 20rem, calc((100vh - 9rem) * 9 / 16));
+  box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
+}
+.couverture video {
+  display: block;
+  width: 100%;
   height: auto;
   aspect-ratio: 9 / 16;
   background: var(--safran);
-  box-shadow: 0 0.75rem 2rem rgba(20, 18, 14, 0.22);
 }
 .couverture figcaption { margin-top: 0.9rem; font-size: 0.875rem; }
+/* Le bouton de lecture, posé par le script : toute la vignette se clique, et
+   un disque à l'encre bleue le dit. Il est centré dans la largeur, et placé
+   sous les titres des vignettes, qui occupent la moitié haute. */
+.lecture-video {
+  position: absolute; inset: 0; width: 100%;
+  border: 0; padding: 0; background: none; cursor: pointer;
+}
+.lecture-video[hidden] { display: none; }
+.lecture-video::before, .lecture-video::after {
+  content: ""; position: absolute; left: 50%; top: 66%;
+}
+.lecture-video::before {
+  width: 5rem; height: 5rem; border-radius: 50%;
+  background: var(--bleu);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0.4rem 1.2rem rgba(20, 18, 14, 0.3);
+  transition: transform 0.15s ease-out;
+}
+.lecture-video::after {
+  border-style: solid;
+  border-width: 1rem 0 1rem 1.7rem;
+  border-color: transparent transparent transparent var(--papier);
+  transform: translate(-38%, -50%);
+}
+.lecture-video:hover::before { transform: translate(-50%, -50%) scale(1.08); }
+.lecture-video:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
+/* Sur la page de l'auteur, le portrait tient la place de la couverture, sans
+   ombre et avec son crédit, comme sur l'accueil. */
+.couverture.portrait img { width: min(100%, 15rem); box-shadow: none; }
+.couverture.portrait figcaption {
+  max-width: 15rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #6E6C69;
+}
 
 /* Le chapeau des pages de document reste sur la surface du titre. */
 .page > .chapeau {
