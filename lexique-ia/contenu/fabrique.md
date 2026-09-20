@@ -28,7 +28,7 @@ Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que 
 
 Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
-## Lisez aussi ceci
+## Lire aussi ceci
 
 [Ma déclaration sur l’usage de l’intelligence artificielle](../declaration/)
 

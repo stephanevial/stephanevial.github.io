@@ -177,7 +177,7 @@ Le paradoxe, c’est que la production de ce livre m’a pris plus de temps que 
 
 Telle est l’histoire de ce livre sur l’IA, écrit avec l’IA.
 
-### Lisez aussi ceci
+### Lire aussi ceci
 
 [Ma déclaration sur l’usage de l’intelligence artificielle](https://web.stephane-vial.net/lexique-ia/declaration/)
 
@@ -213,7 +213,7 @@ Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à
 
 L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
 
-### Lisez aussi ceci
+### Lire aussi ceci
 
 [La fabrique de ce livre](https://web.stephane-vial.net/lexique-ia/fabrique/)
 

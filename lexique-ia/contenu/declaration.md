@@ -29,7 +29,7 @@ Si certaines pages de ce livre vous semblent éclairantes, le mérite revient à
 
 L’intelligence artificielle peut assister l’écriture. Elle ne dispense jamais de penser.
 
-## Lisez aussi ceci
+## Lire aussi ceci
 
 [La fabrique de ce livre](../fabrique/)
 
