@@ -318,6 +318,12 @@ def portrait(prefixe):
     if not m:
         sys.exit("Le portrait de l’auteur est introuvable dans accueil.md.")
     interieur = m.group(1).replace('="img/', '="%simg/' % prefixe)
+    # Sous le crédit, un lien vers l’image en pleine grandeur, celle que le
+    # portrait ouvre déjà : il s’ouvre dans un nouvel onglet.
+    grande = re.search(r'<a href="([^"]+)"', interieur).group(1)
+    interieur = interieur.replace(
+        "</figcaption>", '<br><a href="%s" target="_blank" rel="noopener">'
+        'Télécharger la photo</a></figcaption>' % grande)
     return ('        <figure class="couverture portrait">\n          %s\n'
             '        </figure>' % interieur.replace("\n", "\n          "))
 
