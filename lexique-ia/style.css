@@ -580,7 +580,7 @@ body[data-page="acheter"] .corps > ul li strong {
   font-weight: 700;
   font-size: clamp(1.25rem, 2.2vw, 1.625rem);
   line-height: 1.14;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.85rem;
   color: var(--bleu);
 }
 /* Le bouton de commande, sur l'accueil et sur la page « Acheter » : l'aplat
