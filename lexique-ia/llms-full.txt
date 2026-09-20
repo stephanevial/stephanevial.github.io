@@ -43,7 +43,7 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 
 ### Se procurer le livre
 
-À compter du 6 octobre 2026, le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique (Kindle). Avant la date de parution, la pré-commande est disponible seulement pour la version Kindle. Le 6 octobre 2026, la version imprimée sera disponible à la commande.
+À compter du 6 octobre 2026, le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique (Kindle). Avant la date de parution, la pré-commande est disponible seulement pour la version Kindle.
 
 - **France**  
   [Commander sur Amazon.fr](https://www.amazon.fr/Petit-lexique-vivant-lintelligence-artificielle-ebook/dp/B0HG5YBRPW)
@@ -255,7 +255,7 @@ Le livre s’adresse en particulier aux enseignants et aux étudiants de toutes 
 | **ISBN** | 978-2-9825534-0-8 (imprimé) · 978-2-9825534-1-5 (ePub) |
 | **Éditeur** | Stéphane Vial · Montréal · Dépôt légal BAnQ |
 | **Diffusion** | [amazon.ca](https://www.amazon.ca/dp/B0HG5YBRPW) · [amazon.fr](https://www.amazon.fr/dp/B0HG5YBRPW) · [amazon.com](https://www.amazon.com/dp/B0HG5YBRPW) |
-| **Contact presse** | adresse publiée sur https://web.stephane-vial.net/lexique-ia/acheter/ |
+| **Contact presse** | adresse publiée sur https://web.stephane-vial.net/lexique-ia/commander/ |
 
 *Des exemplaires de presse sont disponibles sur demande, en livre imprimé ou en PDF.*
 
@@ -281,7 +281,7 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 
 ## Se procurer le livre
 
-Adresse : https://web.stephane-vial.net/lexique-ia/acheter/
+Adresse : https://web.stephane-vial.net/lexique-ia/commander/
 
 Le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique (Kindle).
 
@@ -298,7 +298,7 @@ Avant la date de parution, la pré-commande est disponible seulement pour la ver
 
 ### Presse
 
-Questions et entrevues : adresse publiée sur https://web.stephane-vial.net/lexique-ia/acheter/
+Questions et entrevues : adresse publiée sur https://web.stephane-vial.net/lexique-ia/commander/
 
 Des exemplaires de presse sont disponibles sur demande.
 

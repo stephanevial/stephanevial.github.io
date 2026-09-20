@@ -95,7 +95,7 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
   border-bottom-color: var(--bleu);
   font-weight: 700;
 }
-/* « Acheter » est la seule entrée composée en bouton, à angles vifs comme la
+/* « Commander » est la seule entrée composée en bouton, à angles vifs comme la
    couverture : un cadre à l'encre bleue, vide. Il se remplit au survol, et
    reste plein sur sa propre page : l'aplat bleu, le texte au safran. */
 .sommaire a.bouton {
@@ -116,7 +116,7 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
    règle masque. Un moissonneur qui lit le HTML brut récolte une adresse
    morte ; un lecteur d'écran saute le fragment, comme le copier-coller.
    Aucun JavaScript n'intervient.
-   NE PAS RETIRER sans retirer d'abord le fragment de contenu/acheter.md :
+   NE PAS RETIRER sans retirer d'abord le fragment de contenu/commander.md :
    sans cette règle, l'adresse s'affiche cassée. build.py le vérifie. */
 .leurre { display: none; }
 
@@ -555,10 +555,10 @@ body[data-page="livre"] .corps > ul + h2 {
 /* Le lien de téléchargement du communiqué : un lien en texte, en tête. */
 .telecharger { font-weight: 600; }
 
-/* La page « Acheter » : les trois cases d'achat de l'accueil, empilées dans la
+/* La page « Commander » : les trois cases d'achat de l'accueil, empilées dans la
    colonne de lecture. Chaque case porte un bouton de commande : c'est lui qui
    réagit au pointeur, la case reste sur le papier. */
-body[data-page="acheter"] .corps > ul {
+body[data-page="commander"] .corps > ul {
   list-style: none;
   padding-left: 0;
   display: grid;
@@ -567,14 +567,14 @@ body[data-page="acheter"] .corps > ul {
   border-top: 1px solid var(--bleu);
   border-bottom: 1px solid var(--bleu);
 }
-body[data-page="acheter"] .corps > ul li {
+body[data-page="commander"] .corps > ul li {
   position: relative;
   margin: 0;
   padding: 1.25rem 1rem 1.4rem;
   background: var(--papier);
   font-size: 0.9375rem;
 }
-body[data-page="acheter"] .corps > ul li strong {
+body[data-page="commander"] .corps > ul li strong {
   display: inline-block;
   font-variation-settings: "wdth" 72;
   font-weight: 700;
@@ -583,7 +583,7 @@ body[data-page="acheter"] .corps > ul li strong {
   margin-bottom: 0.85rem;
   color: var(--bleu);
 }
-/* Le bouton de commande, sur l'accueil et sur la page « Acheter » : l'aplat
+/* Le bouton de commande, sur l'accueil et sur la page « Commander » : l'aplat
    bleu de l'encre, le texte en blanc, à angles vifs comme la couverture. Sous
    le pointeur il passe au safran, et le texte revient au bleu pour rester
    lisible. */

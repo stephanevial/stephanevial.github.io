@@ -60,13 +60,13 @@ AVERTISSEMENT = ("<!-- Fichier généré par build.py. Ne pas modifier à la "
 # La navigation. Les huit notions n’y figurent pas : on y arrive par la page
 # du livre.
 MENU = ["accueil", "livre", "fabrique", "declaration", "communique",
-        "auteur", "acheter"]
+        "auteur", "commander"]
 # L’entrée composée en bouton dans le menu : celle qui mène à l’achat.
-MENU_BOUTON = "acheter"
+MENU_BOUTON = "commander"
 MENU_LIBELLE = {"accueil": "Accueil", "fabrique": "La fabrique",
                 "declaration": "La déclaration", "livre": "Le livre",
                 "communique": "Le communiqué", "auteur": "L’auteur",
-                "acheter": "Acheter"}
+                "commander": "Commander"}
 
 # Le pied, identique sur toutes les pages, reprend le verso de titre du
 # manuscrit, mot pour mot pour les ISBN et le dépôt légal. Deux paragraphes :
@@ -142,9 +142,11 @@ COUVERTURE_ALT = ""
 # comprises. Les anciennes adresses restent servies par une page de renvoi,
 # hors sitemap et non indexée, pour qui les aurait notées. Le 19 septembre
 # 2026, la page « Contact » est devenue « Acheter » : les liens d’achat en
-# tête, le contact presse en bas.
+# tête, le contact presse en bas. Le 20 septembre 2026, « Acheter » est devenue
+# « Commander » : les deux anciennes adresses y renvoient.
 RENVOIS = {
-    "/lexique-ia/contact/": "/lexique-ia/acheter/",
+    "/lexique-ia/contact/": "/lexique-ia/commander/",
+    "/lexique-ia/acheter/": "/lexique-ia/commander/",
     "/lexique-ia/la-fabrique/": "/lexique-ia/fabrique/",
     "/lexique-ia/le-livre/": "/lexique-ia/livre/",
 }
@@ -657,7 +659,7 @@ def en_markdown(corps, adresse):
     moissonneurs, et reste à lire sur la page d’achat, section « Presse »."""
     t = re.sub(r"<figure>.*?</figure>", "", corps, flags=re.S)
     t = re.sub(r'<span class="courriel">.*?</span>[^<]*</span>',
-               "adresse publiée sur %s%sacheter/" % (DOMAINE, BASE), t,
+               "adresse publiée sur %s%scommander/" % (DOMAINE, BASE), t,
                flags=re.S)
     t = re.sub(r'<a href="([^"]+)"[^>]*>(.*?)</a>', r"[\2](\1)", t, flags=re.S)
     t = re.sub(r"</?em>", "*", t)
@@ -875,13 +877,13 @@ def main():
     COUVERTURE_ALT = entete_et_corps(lire(os.path.join(CONTENU, "accueil.md")))[0]["couverture_alt"]
 
     # Les liens d’achat figurent deux fois, sur l’accueil et sur la page
-    # « Acheter » : les deux listes doivent rester les mêmes.
+    # « Commander » : les deux listes doivent rester les mêmes.
     boutiques = [sorted(set(re.findall(r"https://www\.amazon\.[a-z.]+/(?:[^\s\"()]*/)?dp/\w+",
                                        lire(os.path.join(CONTENU, f)))))
-                 for f in ("accueil.md", "acheter.md")]
+                 for f in ("accueil.md", "commander.md")]
     if boutiques[0] != boutiques[1]:
         sys.exit("Les liens Amazon de contenu/accueil.md et de "
-                 "contenu/acheter.md ne sont plus les mêmes : %s"
+                 "contenu/commander.md ne sont plus les mêmes : %s"
                  % ", ".join(sorted(set(boutiques[0]) ^ set(boutiques[1]))))
 
     # La biographie figure deux fois, sur l’accueil et sur la page de
