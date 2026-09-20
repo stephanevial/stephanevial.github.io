@@ -53,7 +53,7 @@ Auteur de plusieurs livres, dont *L’être et l’écran : comment le numériqu
 
 ## Se procurer le livre
 
-Le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique.
+Le livre est disponible dans 12 pays, uniquement sur Amazon, en version imprimée (brochée) et numérique (Kindle). Avant la date de parution, la pré-commande est disponible seulement pour la version Kindle.
 
 - **France**  
   <a href="https://www.amazon.fr/Petit-lexique-vivant-lintelligence-artificielle-ebook/dp/B0HG5YBRPW" class="commander">Commander sur Amazon.fr</a>

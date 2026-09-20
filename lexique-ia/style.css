@@ -597,8 +597,6 @@ a.commander {
   border: 2px solid var(--bleu);
 }
 a.commander:hover { background: var(--safran); color: var(--bleu); }
-/* Les autres boutiques Amazon, en plus petit sous les trois cases. */
-body[data-page="acheter"] .corps > ul + p { font-size: 0.875rem; }
 /* Une note, en plus petit : la mention des exemplaires de presse. */
 .note { font-size: 0.875rem; }
 /* La ligne de lieu et de date du communiqué : plus petite, en italique. */
