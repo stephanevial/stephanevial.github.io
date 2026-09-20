@@ -9,7 +9,7 @@ couverture_vers: livre
 couverture_titre: "Découvrir le livre"
 og_type: article
 ---
-Avant la date de parution, la pré-commande est disponible seulement pour la version Kindle.
+Avant la date de parution, la pré-commande est disponible seulement pour la version Kindle. Le 6 octobre 2026, la version imprimée sera disponible à la commande.
 
 - **France**  
   <a href="https://www.amazon.fr/Petit-lexique-vivant-lintelligence-artificielle-ebook/dp/B0HG5YBRPW" class="commander">Commander sur Amazon.fr</a>
