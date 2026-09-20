@@ -46,6 +46,7 @@ S.V., Montréal, septembre 2026
 Auteur de plusieurs livres, dont *L’être et l’écran : comment le numérique change la perception*, il explore la manière dont les technologies transforment nos façons de percevoir, de penser et d’agir.
 
 - À propos : [stephane-vial.net](https://stephane-vial.net)
+- Livres publiés : [stephane-vial.net/livres](https://stephane-vial.net/livres/)
 - Blog sur l’IA : [stephane-vial.net/blog](https://stephane-vial.net/blog)
 - Tribune dans *Le Devoir* : [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
 
