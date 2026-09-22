@@ -343,25 +343,32 @@ def cote(meta, prefixe, urls):
         return portrait(prefixe)
     # La couverture ramène à l’accueil, sauf si l’en-tête de la page
     # nomme une autre destination : « couverture_vers: livre » sur la
-    # page d’achat, où l’on va plutôt voir ce que le livre contient.
-    href = (prefixe + urls[meta["couverture_vers"]][len(BASE):]
-            if meta.get("couverture_vers") else prefixe)
-    titre = (echapper(meta["couverture_titre"])
-             if meta.get("couverture_vers") else "Retour à l’accueil")
+    # page d’achat, où l’on va plutôt voir ce que le livre contient. Là où
+    # elle se télécharge (page du livre), elle s’ouvre en grand, à la même
+    # adresse que le lien dessous, comme sur l’accueil.
+    telechargeable = bool(meta.get("couverture_telechargeable"))
+    if telechargeable:
+        href, titre = prefixe + COUVERTURE_HD, "Ouvrir la couverture en grand"
+    elif meta.get("couverture_vers"):
+        href = prefixe + urls[meta["couverture_vers"]][len(BASE):]
+        titre = echapper(meta["couverture_titre"])
+    else:
+        href, titre = prefixe, "Retour à l’accueil"
+    nouvel_onglet = ' target="_blank" rel="noopener"' if telechargeable else ""
     # Sur la page du livre (« couverture_telechargeable: oui »), sous
     # l’image, un lien vers la couverture en haute définition, dans le même
     # corps que « Télécharger la photo » sous le portrait : seuls les mots du
     # lien sont cliquables, le format et le poids suivent entre parenthèses.
     # Le poids se lit sur le fichier à chaque construction, jamais à la main.
-    legende = (legende_couverture(prefixe)
-               if meta.get("couverture_telechargeable") else "")
+    legende = legende_couverture(prefixe) if telechargeable else ""
     return (
         '        <figure class="couverture%s">\n'
-        '          <a href="%s" title="%s"><img src="%simg/couverture.jpg" '
+        '          <a href="%s"%s title="%s"><img src="%simg/couverture.jpg" '
         'alt="%s" width="800" height="1280" loading="lazy"></a>\n'
         + legende +
-        '        </figure>') % (" telechargeable" if legende else "", href,
-                                titre, prefixe, echapper(COUVERTURE_ALT))
+        '        </figure>') % (" telechargeable" if telechargeable else "",
+                                href, nouvel_onglet, titre, prefixe,
+                                echapper(COUVERTURE_ALT))
 
 
 COUVERTURE_HD = "img/couverture-hd.jpg"

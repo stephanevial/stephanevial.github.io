@@ -79,5 +79,5 @@ L’ouvrage est également disponible sur : [amazon.co.uk](https://www.amazon.co
 
 - [Plan du site](https://web.stephane-vial.net/sitemap.xml): toutes les adresses, au format sitemap.
 - [Télécharger le communiqué en PDF](https://web.stephane-vial.net/lexique-ia/communique/communique-parution.pdf): le communiqué de parution, mis en page.
-- [Couverture en haute définition](https://web.stephane-vial.net/lexique-ia/img/couverture-hd.png): Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial.
+- [Couverture en haute définition](https://web.stephane-vial.net/lexique-ia/img/couverture-hd.jpg): Couverture du livre : sur fond safran, le titre « Petit lexique vivant de l’intelligence artificielle » en bleu profond, et le nom de Stéphane Vial.
 - [Portrait de l’auteur en haute définition](https://web.stephane-vial.net/lexique-ia/img/portrait-stephane-vial-hd.jpg): © Justine Latour pour l’UQAM.
