@@ -5,6 +5,7 @@ description: "Communiqué de parution du Petit lexique vivant de l’intelligenc
 h1: "Un professeur de l’UQAM publie un livre sur l’IA, écrit avec l’IA"
 chapeau: "Communiqué de presse"
 gabarit: page
+couverture_telechargeable: oui
 og_type: article
 ---
 
