@@ -256,7 +256,8 @@ h1 {
 /* Sur la page de l'auteur, le portrait tient la place de la couverture, sans
    ombre et avec son crédit, comme sur l'accueil. */
 .couverture.portrait img { width: min(100%, 15rem); box-shadow: none; }
-.couverture.portrait figcaption {
+.couverture.portrait figcaption,
+.couverture.telechargeable figcaption {
   max-width: 15rem;
   margin-top: 0.5rem;
   font-size: 0.75rem;

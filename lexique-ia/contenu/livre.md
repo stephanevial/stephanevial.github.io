@@ -5,6 +5,7 @@ description: "Quatre-vingt-onze notions expliquées en une page chacune : défin
 h1: "91 notions pour comprendre l’intelligence artificielle"
 chapeau: "Huit chapitres, huit notions à lire"
 gabarit: page
+couverture_telechargeable: oui
 og_type: article
 ---
 L’intelligence artificielle répond à nos questions, complète nos phrases, crée des images et organise notre accès à l’information. Elle est partout, mais que savons-nous vraiment de son fonctionnement ? Qu’est-ce qu’un modèle ? Comment une machine apprend-elle ? Que sont un token, un vecteur, une hallucination ?

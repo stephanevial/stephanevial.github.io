@@ -348,11 +348,34 @@ def cote(meta, prefixe, urls):
             if meta.get("couverture_vers") else prefixe)
     titre = (echapper(meta["couverture_titre"])
              if meta.get("couverture_vers") else "Retour à l’accueil")
+    # Sur la page du livre (« couverture_telechargeable: oui »), sous
+    # l’image, un lien vers la couverture en haute définition, dans le même
+    # corps que « Télécharger la photo » sous le portrait : seuls les mots du
+    # lien sont cliquables, le format et le poids suivent entre parenthèses.
+    # Le poids se lit sur le fichier à chaque construction, jamais à la main.
+    legende = ""
+    if meta.get("couverture_telechargeable"):
+        fichier = "img/couverture-hd.jpg"
+        legende = ('          <figcaption><a href="%s%s" target="_blank" '
+                   'rel="noopener">Télécharger la couverture</a> (JPG, %s)'
+                   '</figcaption>\n'
+                   % (prefixe, fichier,
+                      poids(os.path.getsize(os.path.join(ICI, fichier)))))
     return (
-        '        <figure class="couverture">\n'
+        '        <figure class="couverture%s">\n'
         '          <a href="%s" title="%s"><img src="%simg/couverture.jpg" '
         'alt="%s" width="800" height="1280" loading="lazy"></a>\n'
-        '        </figure>' % (href, titre, prefixe, echapper(COUVERTURE_ALT)))
+        + legende +
+        '        </figure>') % (" telechargeable" if legende else "", href,
+                                titre, prefixe, echapper(COUVERTURE_ALT))
+
+
+def poids(octets):
+    """Un poids de fichier tel qu’on l’écrit en français : « 251 Ko »,
+    « 1,2 Mo »."""
+    if octets < 1000 * 1000:
+        return "%d Ko" % round(octets / 1000)
+    return ("%.1f Mo" % (octets / 1000 / 1000)).replace(".", ",")
 
 
 def lier_le_nom(html, cible):
