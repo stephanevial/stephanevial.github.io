@@ -353,14 +353,8 @@ def cote(meta, prefixe, urls):
     # corps que « Télécharger la photo » sous le portrait : seuls les mots du
     # lien sont cliquables, le format et le poids suivent entre parenthèses.
     # Le poids se lit sur le fichier à chaque construction, jamais à la main.
-    legende = ""
-    if meta.get("couverture_telechargeable"):
-        fichier = "img/couverture-hd.jpg"
-        legende = ('          <figcaption><a href="%s%s" target="_blank" '
-                   'rel="noopener">Télécharger la couverture</a> (JPG, %s)'
-                   '</figcaption>\n'
-                   % (prefixe, fichier,
-                      poids(os.path.getsize(os.path.join(ICI, fichier)))))
+    legende = (legende_couverture(prefixe)
+               if meta.get("couverture_telechargeable") else "")
     return (
         '        <figure class="couverture%s">\n'
         '          <a href="%s" title="%s"><img src="%simg/couverture.jpg" '
@@ -368,6 +362,40 @@ def cote(meta, prefixe, urls):
         + legende +
         '        </figure>') % (" telechargeable" if legende else "", href,
                                 titre, prefixe, echapper(COUVERTURE_ALT))
+
+
+COUVERTURE_HD = "img/couverture-hd.jpg"
+
+
+def legende_couverture(prefixe):
+    """Le lien « Télécharger la couverture », suivi du format et du poids
+    entre parenthèses, hors du lien."""
+    return ('          <figcaption><a href="%s%s" target="_blank" '
+            'rel="noopener">Télécharger la couverture</a> (JPG, %s)'
+            '</figcaption>\n'
+            % (prefixe, COUVERTURE_HD,
+               poids(os.path.getsize(os.path.join(ICI, COUVERTURE_HD)))))
+
+
+def couverture_de_l_ouvrage(contenu):
+    """Sur l’accueil, la couverture en regard du tableau « L’ouvrage », même
+    taille que sur les autres pages, avec le lien de téléchargement dessous.
+    Le tableau et la figure sont enveloppés pour se composer en deux
+    colonnes. La couverture s’ouvre en grand, comme celle du haut."""
+    figure = (
+        '<div class="ouvrage">\n'
+        '<figure class="couverture telechargeable">\n'
+        '  <a href="%s" target="_blank" rel="noopener" '
+        'title="Ouvrir la couverture en grand"><img src="img/couverture.jpg" '
+        'alt="%s" width="800" height="1280" loading="lazy"></a>\n'
+        '%s</figure>\n' % (COUVERTURE_HD, echapper(COUVERTURE_ALT),
+                            legende_couverture("").strip(" ")))
+    nouveau, n = re.subn(r'(<h2 id="l-ouvrage">[^\n]*</h2>\n)(<table>.*?</table>)',
+                         lambda m: m.group(1) + figure + m.group(2) + "\n</div>",
+                         contenu, count=1, flags=re.S)
+    if n != 1:
+        sys.exit("Le tableau « L’ouvrage » est introuvable sur l’accueil.")
+    return nouveau
 
 
 def poids(octets):
@@ -549,6 +577,7 @@ def construire(nom, fichier, base, gabarits, urls):
         # paragraphe est le seul endroit du site où le corps est plus gros.
         coupe = contenu.find("<h2")
         chapeau, contenu = contenu[:coupe], contenu[coupe:]
+        contenu = couverture_de_l_ouvrage(contenu)
         # Le gabarit l’enveloppe dans .entree, à côté de la couverture.
         corps_html = gabarits["accueil"] % {
             "h1": echapper(meta["h1"]),

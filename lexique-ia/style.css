@@ -478,7 +478,7 @@ li { margin-bottom: 0.55rem; }
 /* L'état civil de l'ouvrage. Un tableau de deux colonnes, sans en-tête
    visible : la première colonne porte le libellé, la seconde la valeur.
    Il déborderait sur un petit écran, il a donc son propre défilement. */
-.page > table, .corps > table {
+.page > table, .corps > table, .accueil > .ouvrage > table {
   margin: 0 var(--air) 1.5rem;
   max-width: var(--mesure);
   border-collapse: collapse;
@@ -512,8 +512,21 @@ td:last-child { padding-right: 0; }
    double pas. */
 .corps > table { margin-left: 0; margin-right: 0; }
 
+/* Sur l'accueil, le tableau de l'ouvrage a la couverture en regard, à
+   gauche, comme la biographie a le portrait : deux colonnes sur grand écran,
+   une seule sur téléphone, la couverture au-dessus. */
+.accueil > .ouvrage {
+  padding: 0 var(--air);
+  display: grid;
+  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+.accueil > .ouvrage > table { margin: 0; }
+@media (min-width: 55rem) {
+  .accueil > .ouvrage { grid-template-columns: 14rem minmax(0, 1fr); }
+}
 /* Le dernier bloc de l'accueil, le tableau de l'ouvrage, ne colle pas au pied. */
-.accueil > table:last-child { margin-bottom: clamp(3.5rem, 7vw, 6rem); }
+.accueil > .ouvrage:last-child { margin-bottom: clamp(3.5rem, 7vw, 6rem); }
 
 /* Sur la page du livre, le lien de l'extrait à lire porte le poids : la
    fonte des titres, en gras, un peu plus grande ; l'étiquette reste en maigre. */
