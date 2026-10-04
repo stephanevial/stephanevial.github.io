@@ -992,6 +992,11 @@ def main():
     print("\n%d pages construites. Aucune requête ne sort du domaine."
           % len(liste))
 
+    # Le mini-site anglais, dans en/ : construit à la suite, pour que le
+    # sitemap que l’on vient de régénérer retrouve ses adresses.
+    import build_en
+    build_en.main()
+
 
 if __name__ == "__main__":
     main()
