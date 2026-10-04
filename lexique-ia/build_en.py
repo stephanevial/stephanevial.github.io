@@ -14,8 +14,9 @@ même feuille de style, mêmes sections dans le même ordre. Changent : la
 langue, la couverture, la couleur (le fond de la couverture anglaise, posé
 par style.css sur html[lang="en"]), les boutiques (pays anglophones d’abord)
 et, seule vraie différence de contenu, les extraits : ils portent la
-couverture, pas de vidéo. La vidéo d’annonce en version anglaise reste sur
-l’accueil.
+couverture, pas de vidéo. La vidéo d’annonce en version anglaise était sur
+l’accueil : retirée le 4 octobre 2026 (on y voit le livre français), la
+couverture anglaise la remplace.
 
 Sources dans contenu/en/. Les textes tirés du livre (extraits, chapitres,
 fabrique, déclaration) sont ceux du manuscrit anglais révisé, mot pour mot :
@@ -334,7 +335,14 @@ def construire(nom, base, gabarits, alt):
             "attribution": fr.echapper(meta["attribution"]),
             "chapeau": chapeau.strip(),
             "contenu": contenu.strip(),
-            "cote": fr.video(meta, racine, telechargeable=False),
+            # La couverture anglaise, qui s’ouvre en grand ; une vidéo si
+            # l’en-tête en nomme une (« video: »), comme sur l’accueil français.
+            "cote": fr.video(meta, racine, telechargeable=False) or (
+                '        <figure class="couverture">\n'
+                '          <a href="%s%s" target="_blank" rel="noopener" '
+                'title="Open the cover at full size"><img src="%s%s" alt="%s" '
+                'width="800" height="1280"></a>\n        </figure>'
+                % (racine, COUVERTURE_HD, racine, COUVERTURE, fr.echapper(alt))),
         }
     else:
         notion = nom in EXTRAITS
@@ -412,7 +420,11 @@ def construire(nom, base, gabarits, alt):
                 .replace('aria-label="Sections du site"', 'aria-label="Site sections"')
                 .replace('aria-label="Page suivante : ', 'aria-label="Next page: ')
                 .replace('href="%sfavicon.svg"' % racine,
-                         'href="%sfavicon-en.svg"' % racine))
+                         'href="%sfavicon-en.svg"' % racine)
+                .replace('href="%sfavicon.ico"' % racine,
+                         'href="%sfavicon-en.ico"' % racine)
+                .replace('href="%sapple-touch-icon.png"' % racine,
+                         'href="%sapple-touch-icon-en.png"' % racine))
     page = fr.liens_externes(page)
     if "'" in page:
         sys.exit("en/%s : une apostrophe droite s’est glissée dans la page." % nom)

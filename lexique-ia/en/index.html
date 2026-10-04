@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../favicon-en.svg" type="image/svg+xml">
-  <link rel="icon" href="../favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" href="../favicon-en.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon-en.png">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -109,8 +109,8 @@
 <p>But that is not all: I also produced and published this book with the help of AI, from the cover to the marketing, by way of the legal deposit. The last four pages tell how I went about it.</p>
 <p>S.V., Montréal, October 2026</p>
         </div>
-        <figure class="couverture video">
-          <div class="ecran"><video controls playsinline preload="none" poster="../video/annonce-en.jpg" width="320" height="569" aria-label="The book presented on video by its author (in French, English subtitles)"><source src="../video/annonce-en.mp4" type="video/mp4"></video></div>
+        <figure class="couverture">
+          <a href="../img/cover-en-hd.jpg" target="_blank" rel="noopener" title="Open the cover at full size"><img src="../img/cover-en.jpg" alt="Book cover: on a coral background, the title “A Living Lexicon of Artificial Intelligence” in deep blue, and the name Stéphane Vial" width="800" height="1280"></a>
         </figure>
       </div>
 <h2 id="trois-choses-a-lire-sur-ce-site">Three things to read on this site</h2>
@@ -207,19 +207,7 @@
 
   </main>
 
-  <script>
-    document.querySelectorAll(".ecran").forEach(function (e) {
-      var v = e.querySelector("video");
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "lecture-video";
-      b.setAttribute("aria-label", "Play the video");
-      e.appendChild(b);
-      b.addEventListener("click", function () { v.play(); });
-      v.addEventListener("play", function () { b.hidden = true; });
-      v.addEventListener("ended", function () { v.load(); b.hidden = false; });
-    });
-  </script>
+
   <footer class="pied">
     <div class="pied-texte">
       <p><strong>Dépôt légal, Bibliothèque et Archives nationales du Québec, 2026</strong><br>

@@ -6,8 +6,6 @@ h1: "A Living Lexicon of Artificial Intelligence"
 auteur: "Stéphane Vial"
 attribution: "Available October 13, 2026 · Foreword by Marcello Vitali-Rosati"
 couverture_alt: "Book cover: on a coral background, the title “A Living Lexicon of Artificial Intelligence” in deep blue, and the name Stéphane Vial"
-video: annonce-en
-video_libelle: "The book presented on video by its author (in French, English subtitles)"
 ---
 
 I wrote a book about AI, with AI, and I explain how. Ninety-one concepts, one page each, to understand what artificial intelligence is and how it works.
