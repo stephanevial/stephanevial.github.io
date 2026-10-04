@@ -92,13 +92,20 @@ LANGUES = [("fr", "Français", ""),
            ("en", "English", "en/"),
            ("es", "Español", "es/")]
 
-# Le site de l’édition anglaise (build_en.py) est un miroir réduit : six
-# pages. Au bout du menu, « English » mène à la page miroir quand elle existe,
-# à l’accueil anglais sinon. build_en.py porte la table inverse.
-VERS_ANGLAIS = {"accueil": "en/", "auteur": "en/author/",
-                "commander": "en/order/", "fabrique": "en/making-of/",
-                "declaration": "en/statement/",
-                "hallucination": "en/hallucination/"}
+# Le site de l’édition anglaise (build_en.py) reprend ce site page pour page.
+# Au bout du menu, « EN » mène à la page miroir. build_en.py porte la table
+# inverse.
+VERS_ANGLAIS = {"accueil": "en/", "livre": "en/book/",
+                "fabrique": "en/making-of/", "declaration": "en/statement/",
+                "communique": "en/press-release/", "auteur": "en/author/",
+                "commander": "en/order/",
+                "intelligence-artificielle": "en/book/artificial-intelligence/",
+                "neurone": "en/book/neuron/",
+                "apprentissage-automatique": "en/book/machine-learning/",
+                "traitement-du-langage-naturel": "en/book/natural-language-processing/",
+                "token": "en/book/token/", "hallucination": "en/book/hallucination/",
+                "systeme-de-recommandation": "en/book/recommender-system/",
+                "ia-agentique": "en/book/agentic-ai/"}
 
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
 
@@ -539,7 +546,8 @@ def navigation(prefixe, courante, urls):
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
     # La bascule de langue, au bout du menu.
-    entrees.append('<a href="%s%s" lang="en" hreflang="en">English</a>'
+    entrees.append('<a href="%s%s" lang="en" hreflang="en" '
+                   'title="English version">EN</a>'
                    % (prefixe, VERS_ANGLAIS.get(courante, "en/")))
     return "\n      ".join(entrees)
 

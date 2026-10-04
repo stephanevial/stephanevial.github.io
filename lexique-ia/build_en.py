@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_en.py — le site de l’édition anglaise, dans en/, miroir réduit du site
-français.
+build_en.py — le site de l’édition anglaise, dans en/ : le site français
+entier, page pour page, mutatis mutandis.
 
     python3 build.py           (construit le français, puis appelle ce script)
     python3 build_en.py        (l’anglais seul)
 
-Trois pages au menu : Home, The author, Order. Trois autres atteintes depuis
-l’accueil seulement : un extrait (Hallucination), The Making of This Book,
-Statement on the Use of AI. Chaque page reprend la mise en page de sa page
-française : mêmes gabarits, même feuille de style, mêmes sections dans le
-même ordre. Seuls changent la langue, la couverture, la vidéo et la couleur
-(le fond de la couverture anglaise, posé par style.css sur html[lang="en"]).
+Sept pages au menu (Home, The book, The making, The statement, Press release,
+The author, Order) et huit extraits sous book/, comme le site français.
+Chaque page reprend la mise en page de sa page française : mêmes gabarits,
+même feuille de style, mêmes sections dans le même ordre. Changent : la
+langue, la couverture, la couleur (le fond de la couverture anglaise, posé
+par style.css sur html[lang="en"]), les boutiques (pays anglophones d’abord)
+et, seule vraie différence de contenu, les extraits : ils portent la
+couverture, pas de vidéo. La vidéo d’annonce en version anglaise reste sur
+l’accueil.
 
-Sources dans contenu/en/. Les textes tirés du livre (extrait, fabrique,
-déclaration) sont ceux du manuscrit anglais révisé, mot pour mot : ils ne se
-retouchent pas ici.
+Sources dans contenu/en/. Les textes tirés du livre (extraits, chapitres,
+fabrique, déclaration) sont ceux du manuscrit anglais révisé, mot pour mot :
+ils ne se retouchent pas ici.
 
 Écrit aussi en/llms.txt et en/llms-full.txt, et ajoute les adresses anglaises
 à ../sitemap.xml.
@@ -35,19 +38,56 @@ BASE = "/lexique-ia/en/"
 
 # L’ASIN de l’édition anglaise, tel qu’Amazon l’affiche sur la fiche du livre.
 # Vide : les pages annoncent la date sans lien d’achat. Ne jamais le deviner.
-ASIN = ""
+ASIN = "B0HLWQDMZX"   # donné par Stéphane le 4 octobre 2026 (liens amazon.com/dp/…)
+# Les quatre boutiques des pays anglophones, en boutons ; les autres en ligne.
 BOUTIQUES = [("United States", "Amazon.com", "https://www.amazon.com/dp/%s"),
+             ("United Kingdom", "Amazon.co.uk", "https://www.amazon.co.uk/dp/%s"),
              ("Canada", "Amazon.ca", "https://www.amazon.ca/dp/%s"),
-             ("United Kingdom", "Amazon.co.uk", "https://www.amazon.co.uk/dp/%s")]
+             ("Australia", "Amazon.com.au", "https://www.amazon.com.au/dp/%s")]
+AUTRES = ["amazon.de", "amazon.fr", "amazon.es", "amazon.it", "amazon.nl",
+          "amazon.co.jp", "amazon.com.br", "amazon.com.mx", "amazon.in"]
 
-MENU = [("home", "Home"), ("author", "The author"), ("order", "Order")]
-HORS_MENU = ["hallucination", "making-of", "statement"]
+# Les pages, dans l’ordre du menu : nom anglais (celui du fichier de
+# contenu/en/), libellé du menu, et nom de la page française miroir, qui sert
+# aussi d’attribut data-page : la feuille de style compose « livre » et
+# « commander » d’après lui.
+MENU = [("home", "Home", "accueil"), ("book", "The book", "livre"),
+        ("making-of", "The making", "fabrique"),
+        ("statement", "The statement", "declaration"),
+        ("press-release", "Press release", "communique"),
+        ("author", "The author", "auteur"), ("order", "Order", "commander")]
+LIBELLE = dict((n, l) for n, l, _ in MENU)
+MIROIR = dict((n, f) for n, _, f in MENU)
+# Les huit extraits et leur notion française.
+EXTRAITS = {"artificial-intelligence": "intelligence-artificielle",
+            "neuron": "neurone", "machine-learning": "apprentissage-automatique",
+            "natural-language-processing": "traitement-du-langage-naturel",
+            "token": "token", "hallucination": "hallucination",
+            "recommender-system": "systeme-de-recommandation",
+            "agentic-ai": "ia-agentique"}
+# L’adresse de la page française miroir, sous /lexique-ia/ : le lien « FR » du
+# menu y mène. build.py porte la table inverse (VERS_ANGLAIS).
+VERS_FRANCAIS = {"home": "", "book": "livre/", "making-of": "fabrique/",
+                 "statement": "declaration/", "press-release": "communique/",
+                 "author": "auteur/", "order": "commander/"}
+VERS_FRANCAIS.update((e, "livre/%s/" % f) for e, f in EXTRAITS.items())
 
-# La page française dont chaque page anglaise est le miroir : le lien
-# « Français » du menu y mène. build.py porte la table inverse (VERS_ANGLAIS).
-VERS_FRANCAIS = {"home": "", "author": "auteur/", "order": "commander/",
-                 "hallucination": "livre/hallucination/",
-                 "making-of": "fabrique/", "statement": "declaration/"}
+# L’extrait a d’abord été publié à en/hallucination/, le 4 octobre 2026.
+RENVOIS = {"hallucination/": "book/hallucination/"}
+RENVOI = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>This page has moved</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="%(vers)s">
+  <meta http-equiv="refresh" content="0; url=%(vers)s">
+</head>
+<body>
+  <p>This page has moved: <a href="%(vers)s">%(vers)s</a></p>
+</body>
+</html>
+"""
 
 IDENTIFIANTS = {"three-things-to-read-on-this-site": "trois-choses-a-lire-sur-ce-site",
                 "the-author": "l-auteur", "order-the-book": "se-procurer-le-livre",
@@ -147,11 +187,27 @@ def boutiques():
                      % (pays, lien % ASIN, nom) for pays, nom, lien in BOUTIQUES)
 
 
+def autres():
+    """Les autres boutiques, en une ligne, comme sur le site français."""
+    if not ASIN:
+        return ""
+    return "The book is also available on: %s." % " · ".join(
+        "[%s](https://www.%s/dp/%s)" % (b, b, ASIN) for b in AUTRES)
+
+
+def chemin_de(nom):
+    return os.path.join(CONTENU, "entries" if nom in EXTRAITS else "", nom + ".md")
+
+
 def source(nom):
     """L’en-tête et le corps d’une page, liens d’achat posés."""
-    meta, corps = fr.entete_et_corps(fr.lire(os.path.join(CONTENU, nom + ".md")))
-    if "%(boutiques)s" in corps:
-        corps = corps.replace("%(boutiques)s", boutiques())
+    meta, corps = fr.entete_et_corps(fr.lire(chemin_de(nom)))
+    for cle, valeur in (
+            ("boutiques", boutiques()), ("autres", autres()),
+            ("autres_liste", "- **Other countries**  \n  " + autres() if ASIN else ""),
+            ("diffusion", " · ".join("[%s](%s)" % (n.lower(), l % ASIN)
+                                     for _, n, l in BOUTIQUES) if ASIN else "Amazon")):
+        corps = corps.replace("%%(%s)s" % cle, valeur)
     return meta, corps
 
 
@@ -162,11 +218,33 @@ def poids(chemin):
     return "%.1f MB" % (octets / 1000 / 1000)
 
 
-def couverture(racine, href, titre, alt):
-    return ('        <figure class="couverture">\n'
-            '          <a href="%s" title="%s"><img src="%s%s" alt="%s" '
-            'width="800" height="1280" loading="lazy"></a>\n        </figure>'
-            % (href, titre, racine, COUVERTURE, fr.echapper(alt)))
+def legende(racine):
+    return ('<figcaption><a href="%s%s" target="_blank" rel="noopener">'
+            'Download the cover</a> (JPG, %s)</figcaption>\n'
+            % (racine, COUVERTURE_HD, poids(COUVERTURE_HD)))
+
+
+def cote(meta, racine, en, alt):
+    """La droite du texte : le portrait sur la page de l’auteur, la couverture
+    ailleurs. Elle ramène à l’accueil, mène à la page du livre depuis « Order »,
+    et s’ouvre en grand, avec son lien de téléchargement, là où la page
+    française la donne à télécharger. Jamais de vidéo sur un extrait."""
+    if meta.get("cote") == "portrait":
+        return portrait(racine)
+    telechargeable = bool(meta.get("couverture_telechargeable"))
+    if telechargeable:
+        href, titre = racine + COUVERTURE_HD, "Open the cover at full size"
+    elif meta.get("couverture_vers"):
+        href, titre = en + meta["couverture_vers"] + "/", fr.echapper(meta["couverture_titre"])
+    else:
+        href, titre = en or "./", "Back to the home page"
+    return ('        <figure class="couverture%s">\n'
+            '          <a href="%s"%s title="%s"><img src="%s%s" alt="%s" '
+            'width="800" height="1280" loading="lazy"></a>\n%s        </figure>'
+            % (" telechargeable" if telechargeable else "", href,
+               ' target="_blank" rel="noopener"' if telechargeable else "",
+               titre, racine, COUVERTURE, fr.echapper(alt),
+               "          " + legende(racine) if telechargeable else ""))
 
 
 def couverture_de_l_ouvrage(contenu, racine, alt):
@@ -178,10 +256,9 @@ def couverture_de_l_ouvrage(contenu, racine, alt):
         '  <a href="%(r)s%(hd)s" target="_blank" rel="noopener" '
         'title="Open the cover at full size"><img src="%(r)s%(c)s" '
         'alt="%(alt)s" width="800" height="1280" loading="lazy"></a>\n'
-        '<figcaption><a href="%(r)s%(hd)s" target="_blank" rel="noopener">'
-        'Download the cover</a> (JPG, %(poids)s)</figcaption>\n</figure>\n'
+        '%(legende)s</figure>\n'
         % {"r": racine, "hd": COUVERTURE_HD, "c": COUVERTURE,
-           "alt": fr.echapper(alt), "poids": poids(COUVERTURE_HD)})
+           "alt": fr.echapper(alt), "legende": legende(racine)})
     nouveau, n = re.subn(r'(<h2 id="l-ouvrage">[^\n]*</h2>\n)(<table>.*?</table>)',
                          lambda m: m.group(1) + figure + m.group(2) + "\n</div>",
                          contenu, count=1, flags=re.S)
@@ -231,7 +308,7 @@ def construire(nom, base, gabarits, alt):
     meta, corps = source(nom)
     adresse = meta["url"]
     reste = adresse[len(BASE):].strip("/")
-    en = "../" if reste else ""          # vers l’accueil anglais
+    en = "../" * len(reste.split("/")) if reste else ""   # vers l’accueil anglais
     racine = en + "../"                  # vers /lexique-ia/ : style, images, vidéo
     cible = os.path.join(ICI, "en", reste, "index.html")
 
@@ -260,7 +337,7 @@ def construire(nom, base, gabarits, alt):
             "cote": fr.video(meta, racine, telechargeable=False),
         }
     else:
-        notion = nom == "hallucination"
+        notion = nom in EXTRAITS
         corps_html = gabarits["page"] % {
             "classe": "notion" if notion else "document",
             "h1": fr.echapper(meta["h1"]),
@@ -269,8 +346,7 @@ def construire(nom, base, gabarits, alt):
                 '<span class="folio"> · page %s</span>' % meta["page"]
                 if meta.get("page") else ""),
             "ancre": ' id="texte"' if meta.get("ancre_texte") else "",
-            "cote": (portrait(racine) if meta.get("cote") == "portrait"
-                     else couverture(racine, en or "./", "Back to the home page", alt)),
+            "cote": cote(meta, racine, en, alt),
             "contenu": contenu.strip(),
         }
 
@@ -279,18 +355,21 @@ def construire(nom, base, gabarits, alt):
         corps_html = lier_le_nom(corps_html, en + "author/")
         pied = lier_le_nom(pied, en + "author/")
 
-    noms = [n for n, _ in MENU]
+    noms = [n for n, _, _ in MENU]
     liens = []
-    for n, libelle in MENU:
+    for n in noms:
         href = en + ("" if n == "home" else n + "/") or "./"
         marque = ' aria-current="page"' if n == nom else ""
         if n == "order":
             marque = ' class="bouton"' + marque
-        liens.append('<a href="%s"%s>%s</a>' % (href, marque, libelle))
+        liens.append('<a href="%s"%s>%s</a>' % (href, marque, LIBELLE[n]))
     # La bascule de langue, au bout du menu : vers la page française miroir.
-    francais = racine + VERS_FRANCAIS[nom]
-    liens.append('<a href="%s" lang="fr" hreflang="fr">Français</a>' % francais)
-    suivante = noms[(noms.index(nom) + 1) % len(noms)] if nom in noms else "home"
+    liens.append('<a href="%s%s" lang="fr" hreflang="fr" title="Version française">FR</a>'
+                 % (racine, VERS_FRANCAIS[nom]))
+    # Le chevron du pied : la page suivante du menu ; un extrait envoie à la
+    # page qui suit « The book », comme sur le site français.
+    i = noms.index(nom) if nom in noms else noms.index("book")
+    suivante = noms[(i + 1) % len(noms)]
 
     url = fr.DOMAINE + adresse
     og = [("og:type", "book" if nom == "home" else
@@ -305,20 +384,21 @@ def construire(nom, base, gabarits, alt):
         "description": fr.echapper(meta["description"]),
         "canonique": url,
         "prefixe": racine,
-        "page": "accueil" if nom == "home" else nom,
+        "page": MIROIR.get(nom) or EXTRAITS[nom],
         "og": "\n  ".join('<meta property="%s" content="%s">' % (k, fr.echapper(v))
                           for k, v in og)
               + '\n  <link rel="alternate" hreflang="en" href="%s">'
                 '\n  <link rel="alternate" hreflang="fr" href="%s/lexique-ia/%s">'
                 % (url, fr.DOMAINE, VERS_FRANCAIS[nom]),
         "donnees": GRAPHE_ACCUEIL if nom == "home" else GRAPHE_PAGE % {
-            "type": "DefinedTerm" if nom == "hallucination" else "WebPage",
+            "type": "DefinedTerm" if nom in EXTRAITS else "WebPage",
             "nom": meta["h1"], "url": url,
-            "relation": "inDefinedTermSet" if nom == "hallucination" else "about"},
+            "relation": "mainEntity" if nom == "book" else
+            "inDefinedTermSet" if nom in EXTRAITS else "about"},
         "robots": fr.ROBOTS,
         "navigation": "\n      ".join(liens),
         "suivante": en + ("" if suivante == "home" else suivante + "/") or "./",
-        "suivante_libelle": dict(MENU)[suivante],
+        "suivante_libelle": LIBELLE[suivante],
         "langues": "",
         "corps": corps_html,
         "pied": pied,
@@ -356,8 +436,9 @@ def llms():
     """en/llms.txt, la carte commentée du site anglais, et en/llms-full.txt,
     le texte de ses six pages. Même plan que les fichiers français."""
     racine = fr.DOMAINE + BASE
-    lus = [(nom,) + source(nom) for nom in [n for n, _ in MENU] + HORS_MENU]
+    lus = [(nom,) + source(nom) for nom in pages()]
     accueil, corps_accueil = lus[0][1], lus[0][2]
+    corps_de = dict((nom, corps) for nom, _, corps in lus)
 
     licence = ("A book by %s. %s. ISBN 978-2-9825534-2-2 (print) and "
                "978-2-9825534-3-9 (ePUB). Translated from the French; "
@@ -372,13 +453,26 @@ def llms():
         if len(cases) == 2 and cases[0].startswith("**"):
             ouvrage.append("- %s: %s" % (cases[0].strip("*"), cases[1]))
 
-    principales = ["- [%s](%s): %s" % (meta["h1"], fr.DOMAINE + meta["url"],
-                                       meta["description"])
-                   for nom, meta, _ in lus if nom != "hallucination"]
-    extrait = ["- [%s](%s): %s · page %s. %s"
-               % (meta["h1"], fr.DOMAINE + meta["url"], meta["chapeau"],
-                  meta["page"], meta["description"])
-               for nom, meta, _ in lus if nom == "hallucination"]
+    # Les huit chapitres de book.md : titre et liste des notions, compte contrôlé.
+    livre = []
+    for bloc in re.split(r"^### ", corps_de["book"], flags=re.M)[1:]:
+        lignes = [l.strip() for l in bloc.split("\n") if l.strip()]
+        livre.append((lignes[0], [n.strip() for n in lignes[2].split(" · ")]))
+    if sum(len(n) for _, n in livre) != 91:
+        sys.exit("en/llms.txt : il faut 91 notions dans contenu/en/book.md.")
+
+    principales, extrait = [], []
+    for nom, meta, corps in lus:
+        if nom in EXTRAITS:
+            definition = re.search(r"\*\*Definition\*\*\s*\n(.+?)(?:\n\s*\n|\Z)",
+                                   corps, flags=re.S).group(1)
+            phrase = re.match(r"(.+?[.!?])(?=\s+[A-Z]|$)", " ".join(definition.split()))
+            extrait.append("- [%s](%s): %s · page %s. %s"
+                           % (meta["h1"], fr.DOMAINE + meta["url"], meta["chapeau"],
+                              meta["page"], phrase.group(1) if phrase else definition))
+        else:
+            principales.append("- [%s](%s): %s" % (meta["h1"], fr.DOMAINE + meta["url"],
+                                                   meta["description"]))
 
     carte = fr.a_plat("\n".join([
         "# " + accueil["h1"],
@@ -400,11 +494,16 @@ def llms():
         "",
         en_markdown(fr.section(corps_accueil, "Order the book", "en/home.md"), BASE),
         "",
+        "**The 91 concepts, in eight chapters**",
+        "",
+    ] + ["- **%s** (%d concepts): %s" % (titre, len(liste), " · ".join(liste))
+         for titre, liste in livre] + [
+        "",
         "## The book and its author",
         "",
     ] + principales + [
         "",
-        "## An excerpt",
+        "## Eight entries to read, one per chapter",
         "",
     ] + extrait + [
         "",
@@ -419,8 +518,8 @@ def llms():
         "- [Cover in high definition](%s/lexique-ia/%s): %s."
         % (fr.DOMAINE, COUVERTURE_HD, accueil["couverture_alt"]),
         "- [Original French edition](%s/lexique-ia/llms.txt): Petit lexique "
-        "vivant de l’intelligence artificielle, with eight entries to read in "
-        "full, in French." % fr.DOMAINE,
+        "vivant de l’intelligence artificielle, the map of the French site."
+        % fr.DOMAINE,
         "",
     ]))
 
@@ -442,10 +541,10 @@ def llms():
         "",
         licence,
         "",
-        "This file gathers the text of the %d pages of the site: the three "
-        "pages of the menu, then an excerpt, the making of the book and the "
-        "statement on the use of AI. The annotated map of the site is at "
-        "%sllms.txt." % (len(lus), racine),
+        "This file gathers the text of the %d pages of the site: the seven "
+        "pages of the menu, then the eight entries to read, in chapter "
+        "order. The annotated map of the site is at %sllms.txt."
+        % (len(lus), racine),
         "",
         "---",
         "",
@@ -466,15 +565,26 @@ def sitemap(adresses):
     fr.ecrire(chemin, texte.replace("</urlset>", ajout + "</urlset>"))
 
 
+def pages():
+    """Les sept pages du menu, puis les huit extraits dans l’ordre des chapitres."""
+    extraits = sorted(EXTRAITS, key=lambda e: fr.entete_et_corps(
+        fr.lire(chemin_de(e)))[0]["ordre"])
+    return [n for n, _, _ in MENU] + extraits
+
+
 def main():
     base = fr.lire(os.path.join(fr.GABARIT, "base.html"))
     gabarits = {"accueil": fr.lire(os.path.join(fr.GABARIT, "accueil.html")),
                 "page": fr.lire(os.path.join(fr.GABARIT, "page.html"))}
     alt = source("home")[0]["couverture_alt"]
     adresses = []
-    for nom in [n for n, _ in MENU] + HORS_MENU:
+    for nom in pages():
         adresses.append(construire(nom, base, gabarits, alt))
         print("  ✓ en  %s" % adresses[-1])
+    for ancien, nouveau in RENVOIS.items():
+        fr.ecrire(os.path.join(ICI, "en", ancien, "index.html"),
+                  RENVOI % {"vers": fr.DOMAINE + BASE + nouveau})
+        print("  → en/%s renvoie vers en/%s" % (ancien, nouveau))
     sitemap(adresses)
     llms()
     print("  ✓ en/llms.txt, en/llms-full.txt")

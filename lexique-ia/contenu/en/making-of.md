@@ -32,4 +32,4 @@ Such is the story of this book about AI, written with AI.
 
 ## How to cite this text
 
-Vial, S. (2026). The making of this book. In *A Living Lexicon of Artificial Intelligence* (pp. 131–134). Stéphane Vial, Montréal.
+Vial, S. (2026). The making of this book. In *A Living Lexicon of Artificial Intelligence* (pp. 131–134). Stéphane Vial, publisher, Montréal.

@@ -4,7 +4,7 @@
 
 A book by Stéphane Vial. Available October 13, 2026. Foreword by Marcello Vitali-Rosati. ISBN 978-2-9825534-2-2 (print) and 978-2-9825534-3-9 (ePUB). Translated from the French; translation revised by Alexia Moyer. © Stéphane Vial, publisher, 2026. Texts on this site are licensed under CC BY 4.0, unless otherwise noted.
 
-This file gathers the text of the 6 pages of the site: the three pages of the menu, then an excerpt, the making of the book and the statement on the use of AI. The annotated map of the site is at https://web.stephane-vial.net/lexique-ia/en/llms.txt.
+This file gathers the text of the 15 pages of the site: the seven pages of the menu, then the eight entries to read, in chapter order. The annotated map of the site is at https://web.stephane-vial.net/lexique-ia/en/llms.txt.
 
 ---
 
@@ -24,8 +24,8 @@ S.V., Montréal, October 2026
 
 ### Three things to read on this site
 
-- **[An excerpt](https://web.stephane-vial.net/lexique-ia/en/hallucination/)**  
-  Hallucination
+- **[Eight excerpts](https://web.stephane-vial.net/lexique-ia/en/book/)**  
+  Artificial Intelligence · Neuron · Machine Learning · Natural Language Processing · Token · Hallucination · Recommender System · Agentic AI
 - **[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)**  
   How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards.
 - **[Statement on the Use of AI](https://web.stephane-vial.net/lexique-ia/en/statement/)**  
@@ -46,7 +46,16 @@ The author of several books, including *Being and the Screen: How the Digital Ch
 
 From October 13, 2026, the English edition is available on Amazon only, in paperback and Kindle editions. Before publication day, pre-order is available for the Kindle edition only.
 
-Order links will be posted here on publication day, October 13, 2026.
+- **United States**  
+  [Order on Amazon.com](https://www.amazon.com/dp/B0HLWQDMZX)
+- **United Kingdom**  
+  [Order on Amazon.co.uk](https://www.amazon.co.uk/dp/B0HLWQDMZX)
+- **Canada**  
+  [Order on Amazon.ca](https://www.amazon.ca/dp/B0HLWQDMZX)
+- **Australia**  
+  [Order on Amazon.com.au](https://www.amazon.com.au/dp/B0HLWQDMZX)
+
+The book is also available on: [amazon.de](https://www.amazon.de/dp/B0HLWQDMZX) · [amazon.fr](https://www.amazon.fr/dp/B0HLWQDMZX) · [amazon.es](https://www.amazon.es/dp/B0HLWQDMZX) · [amazon.it](https://www.amazon.it/dp/B0HLWQDMZX) · [amazon.nl](https://www.amazon.nl/dp/B0HLWQDMZX) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HLWQDMZX) · [amazon.com.br](https://www.amazon.com.br/dp/B0HLWQDMZX) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HLWQDMZX) · [amazon.in](https://www.amazon.in/dp/B0HLWQDMZX).
 
 ### The book
 
@@ -64,69 +73,85 @@ Order links will be posted here on publication day, October 13, 2026.
 
 ---
 
-## The author
+## 91 concepts to understand artificial intelligence
 
-Address: https://web.stephane-vial.net/lexique-ia/en/author/
+Address: https://web.stephane-vial.net/lexique-ia/en/book/
 
-Stéphane Vial, professor, researcher and entrepreneur
+Eight chapters, eight entries to read
 
-**Stéphane Vial**, Ph.D., is a Full Professor at the School of Design of the Université du Québec à Montréal, a regular researcher at the IUSMM Research Centre and the founder of Mentallys Inc.
+Artificial intelligence answers our questions, completes our sentences, creates images and organizes our access to information. It is everywhere, but what do we really know about how it works? What is a model? How does a machine learn? What are a token, a vector, fine-tuning or a hallucination?
 
-He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design, and teaches, among other things, the use of artificial intelligence in research, writing and creative work.
+This living lexicon offers a clear, rigorous and accessible introduction, free of fantasies and easy fears. Organized in thematic chapters, it reads like a story: from the most fundamental to the most applied, from inside the models to their effects on the world.
 
-The author of several books, including *Being and the Screen: How the Digital Changes Perception* (MIT Press), he explores how technologies transform our ways of perceiving, thinking and acting.
+### The eight chapters
 
-- About (in French): [stephane-vial.net](https://stephane-vial.net)
-- Published books (in French): [stephane-vial.net/livres](https://stephane-vial.net/livres/)
-- Blog on AI (in French): [stephane-vial.net/blog](https://stephane-vial.net/blog)
-- Op-ed in *Le Devoir* (in French): [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+#### 1. What Artificial Intelligence Is
 
----
+**Before getting into technical detail, let’s start with the basics. What is artificial intelligence?** (15 concepts)
 
-## Order the book
+Imitation Game · Artificial Intelligence · Generative Artificial Intelligence · Algorithm · Model · Phases (of a Model) · Training · Inference · Fine-Tuning · Foundation Model · Agent · Alignment · Transparency · Explainability · Open Source
 
-Address: https://web.stephane-vial.net/lexique-ia/en/order/
+- Excerpt to read: [Artificial Intelligence](https://web.stephane-vial.net/lexique-ia/en/book/artificial-intelligence/) · page 22
 
-The English edition is available on Amazon only, in paperback and Kindle editions.
+#### 2. What an AI System Contains: Neurons and Parameters
 
-Before publication day, pre-order is available for the Kindle edition. The paperback will be available from October 13, 2026.
+**Inside every artificial intelligence lies a complex mathematical structure: neurons, weights, functions, layers, and so on.** (16 concepts)
 
-Order links will be posted here on publication day, October 13, 2026.
+Perceptron · Neuron · Parameter · Weight · Bias (Parameter) · Activation Function · Layer · Neural Network · Backpropagation · Attention · Transformer · Language Model · Large Language Model · Reasoning Model · Diffusion Model · Multimodal
 
-### Why only on Amazon?
+- Excerpt to read: [Neuron](https://web.stephane-vial.net/lexique-ia/en/book/neuron/) · page 40
 
-This book is an experiment, and that experiment could only be carried out through self-publishing. I made the deliberate choice to write a book about artificial intelligence with artificial intelligence, because I know it can be done without giving up any intellectual rigour. I did not want to have to negotiate that choice with a publishing house that would have needed convincing, at a time when AI is shaking up the cultural industries and publishers’ caution is understandable.
+#### 3. What (and How) AI Learns: Forms of Learning
 
-I did not want to depend on anyone to carry out this experiment as an author freely, to the very end. And to the very end did not only mean writing the book with AI, as I explain in “[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)”, but actually producing everything else: the layout, the printing, the proofreading, the ISBN, the legal deposit, the sales settings, and so on. So I had to be the publisher as well.
+**An AI system is not programmed in the classic sense of the word: it learns. But what does learning mean for a machine?** (11 concepts)
 
-This book is an experiment in authorship and in publishing at once, and it required a platform that makes it possible for a single person to distribute a book worldwide, on demand, in print and digital, with no stock and no intermediary. That was the material condition of the experiment.
+Learning · Machine Learning · Supervised Learning · Unsupervised Learning · Reinforcement Learning · Deep Learning · Dataset · Training Data · Personal Data · Pattern · Overfitting
 
-### Press
+- Excerpt to read: [Machine Learning](https://web.stephane-vial.net/lexique-ia/en/book/machine-learning/) · page 58
 
-Questions and interviews: address published at https://web.stephane-vial.net/lexique-ia/en/order/
+#### 4. What AI “Understands”: Language, Images, Sound
 
-Review copies are available on request.
+**Artificial intelligence does more than process numbers: it handles language, analyzes images, recognizes voices.** (9 concepts)
 
----
+Natural Language Processing · Chatbot · Generative Pre-trained Transformer · Machine Translation · Speech Recognition · Text-to-Speech · Computer Vision · Facial Recognition · Image Generator
 
-## Hallucination
+- Excerpt to read: [Natural Language Processing](https://web.stephane-vial.net/lexique-ia/en/book/natural-language-processing/) · page 71
 
-Address: https://web.stephane-vial.net/lexique-ia/en/hallucination/
+#### 5. The Language of Models: Tokens and Computation
 
-Chapter 6 · page 96
+**What does an AI system “see” when it reads a word, an image or a sentence? It does not understand the way a human does: it computes.** (6 concepts)
 
-**Definition**  
-A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence. Language models can thus produce answers that are credible, well written and convincing… but factually wrong. This follows from the very way a probabilistic model works: it does not check whether what it asserts is true; it simply predicts the most plausible continuation of words, given its training and the context of the conversation.
+Token · Context Window · Vector · Probability · SoftMax · Temperature
 
-**Example**  
-Ask a chatbot to cite sources on a highly specialized subject and it may invent references that do not exist: “According to a study by Miller published in 2017 in the journal *Health and Cognition*…”, when neither the study nor even the journal cited exists. In the same way, an AI system can attribute a quotation to the wrong person, invent a court ruling or describe an imaginary feature of a piece of software. The more ambiguous, rare or hard to verify the request, the greater the risk of hallucination.
+- Excerpt to read: [Token](https://web.stephane-vial.net/lexique-ia/en/book/token/) · page 83
 
-**Why it matters**  
-Hallucinations can be harmless in a humorous context, but troublesome in sensitive fields such as health, education or law. To limit them, current systems use various approaches: better training, access to up-to-date external sources, RAG-type architectures, and so on. These techniques can improve the reliability of answers, but they do not turn a probabilistic model into a fact-checking system. A convincing answer must therefore always be assessed critically.
+#### 6. What AI Produces: Answers, Errors, Hallucinations
 
-### How to cite this text
+**AI answers, predicts, generates. But it can also get things wrong, distort or invent.** (12 concepts)
 
-Vial, S. (2026). Hallucination. In *A Living Lexicon of Artificial Intelligence* (p. 96). Stéphane Vial, Montréal.
+Input / Output · Prompt · Chain of Thought · Retrieval-Augmented Generation · Context Drift · Hallucination · Algorithmic Bias · Over-elaboration · Sycophancy · Black Box · Prompt Injection · Deepfake
+
+- Excerpt to read: [Hallucination](https://web.stephane-vial.net/lexique-ia/en/book/hallucination/) · page 96
+
+#### 7. AI in Our Digital Lives: Filters, Engines, Interfaces
+
+**Artificial intelligence structures our everyday digital uses: it filters, ranks, recommends, moderates.** (10 concepts)
+
+Personalization · News Feed · Recommender System · Collaborative Filtering · Ranking · Content Moderation · Spam Detection · Filter Bubble · Latency · Vibe Coding
+
+- Excerpt to read: [Recommender System](https://web.stephane-vial.net/lexique-ia/en/book/recommender-system/) · page 107
+
+#### 8. Where Is Artificial Intelligence Going? Horizons, Risks, Questions
+
+**Artificial intelligence is advancing quickly, and with it come decisive questions.** (12 concepts)
+
+Computing Power · Agentic AI · Artificial General Intelligence · Consciousness (Sentience) · AI Scheming · AI Psychosis · Existential Risk · AI Ecological Impact · AI Race · Sovereign AI · AI Governance · Responsible AI
+
+- Excerpt to read: [Agentic AI](https://web.stephane-vial.net/lexique-ia/en/book/agentic-ai/) · page 118
+
+### How to cite this book
+
+Vial, S. (2026). *A Living Lexicon of Artificial Intelligence*. Stéphane Vial, publisher, Montréal.
 
 ---
 
@@ -162,7 +187,7 @@ Such is the story of this book about AI, written with AI.
 
 ### How to cite this text
 
-Vial, S. (2026). The making of this book. In *A Living Lexicon of Artificial Intelligence* (pp. 131–134). Stéphane Vial, Montréal.
+Vial, S. (2026). The making of this book. In *A Living Lexicon of Artificial Intelligence* (pp. 131–134). Stéphane Vial, publisher, Montréal.
 
 ---
 
@@ -198,4 +223,261 @@ Artificial intelligence can assist with writing. It never exempts us from thinki
 
 ### How to cite this text
 
-Vial, S. (2026). Statement on the use of artificial intelligence. In *A Living Lexicon of Artificial Intelligence* (pp. 129–130). Stéphane Vial, Montréal.
+Vial, S. (2026). Statement on the use of artificial intelligence. In *A Living Lexicon of Artificial Intelligence* (pp. 129–130). Stéphane Vial, publisher, Montréal.
+
+---
+
+## A Montréal professor publishes a book about AI, written with AI
+
+Address: https://web.stephane-vial.net/lexique-ia/en/press-release/
+
+Press release
+
+Montréal, October 2026
+
+Stéphane Vial, Full Professor at the School of Design of the Université du Québec à Montréal (UQAM), publishes *A Living Lexicon of Artificial Intelligence*: ninety-one concepts, one page each, to better understand AI and how it works.
+
+Not only was the book written with AI, it also documents the process. The last four pages tell how the author went about writing with AI without ever giving up his intellectual standards: “I did not say it could do so better than me. I said faster,” he writes.
+
+The foreword and critical reading are by Marcello Vitali-Rosati, Full Professor at the Université de Montréal. Peer review is the foundation of scholarly publishing, and writing with AI changes strictly nothing about that.
+
+The book is self-published, as a creative and exploratory choice. Such a writing experiment, rather ahead of its time, required complete freedom. What is more, with the help of AI, the author went further still and ran the whole chain himself, from the cover to the legal deposit, and accepted the price: no bookshops, no distribution, no editorial team.
+
+The book is aimed in particular at teachers and students in every discipline, who now have to talk about AI before having had the time to study it. It ends with these words: “Artificial intelligence can assist with writing. It never exempts us from thinking.”
+
+The English edition is translated from the French; the translation was revised by Alexia Moyer. The original, *Petit lexique vivant de l’intelligence artificielle*, was published on October 6, 2026.
+
+**Stéphane Vial** is a Full Professor at the School of Design of UQAM and a regular researcher at the IUSMM Research Centre. He holds a PhD in philosophy and is the author, among other books, of *Being and the Screen: How the Digital Changes Perception* (MIT Press).
+
+| Detail | Value |
+|---|---|
+| **Publication** | October 13, 2026 |
+| **Format** | Paperback, 138 pages · ebook (ePub) |
+| **ISBN** | 978-2-9825534-2-2 (print) · 978-2-9825534-3-9 (ePub) |
+| **Publisher** | Stéphane Vial · Montréal · Legal deposit BAnQ |
+| **Distribution** | [amazon.com](https://www.amazon.com/dp/B0HLWQDMZX) · [amazon.co.uk](https://www.amazon.co.uk/dp/B0HLWQDMZX) · [amazon.ca](https://www.amazon.ca/dp/B0HLWQDMZX) · [amazon.com.au](https://www.amazon.com.au/dp/B0HLWQDMZX) |
+| **Press contact** | address published at https://web.stephane-vial.net/lexique-ia/en/order/ |
+
+*Review copies are available on request, in print or as a PDF.*
+
+---
+
+## The author
+
+Address: https://web.stephane-vial.net/lexique-ia/en/author/
+
+Stéphane Vial, professor, researcher and entrepreneur
+
+**Stéphane Vial**, Ph.D., is a Full Professor at the School of Design of the Université du Québec à Montréal, a regular researcher at the IUSMM Research Centre and the founder of Mentallys Inc.
+
+He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design, and teaches, among other things, the use of artificial intelligence in research, writing and creative work.
+
+The author of several books, including *Being and the Screen: How the Digital Changes Perception* (MIT Press), he explores how technologies transform our ways of perceiving, thinking and acting.
+
+- About (in French): [stephane-vial.net](https://stephane-vial.net)
+- Published books (in French): [stephane-vial.net/livres](https://stephane-vial.net/livres/)
+- Blog on AI (in French): [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Op-ed in *Le Devoir* (in French): [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+
+---
+
+## Order the book
+
+Address: https://web.stephane-vial.net/lexique-ia/en/order/
+
+The English edition is available on Amazon only, in paperback and Kindle editions.
+
+Before publication day, pre-order is available for the Kindle edition. The paperback will be available from October 13, 2026.
+
+- **United States**  
+  [Order on Amazon.com](https://www.amazon.com/dp/B0HLWQDMZX)
+- **United Kingdom**  
+  [Order on Amazon.co.uk](https://www.amazon.co.uk/dp/B0HLWQDMZX)
+- **Canada**  
+  [Order on Amazon.ca](https://www.amazon.ca/dp/B0HLWQDMZX)
+- **Australia**  
+  [Order on Amazon.com.au](https://www.amazon.com.au/dp/B0HLWQDMZX)
+- **Other countries**  
+  The book is also available on: [amazon.de](https://www.amazon.de/dp/B0HLWQDMZX) · [amazon.fr](https://www.amazon.fr/dp/B0HLWQDMZX) · [amazon.es](https://www.amazon.es/dp/B0HLWQDMZX) · [amazon.it](https://www.amazon.it/dp/B0HLWQDMZX) · [amazon.nl](https://www.amazon.nl/dp/B0HLWQDMZX) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HLWQDMZX) · [amazon.com.br](https://www.amazon.com.br/dp/B0HLWQDMZX) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HLWQDMZX) · [amazon.in](https://www.amazon.in/dp/B0HLWQDMZX).
+
+### Why only on Amazon?
+
+This book is an experiment, and that experiment could only be carried out through self-publishing. I made the deliberate choice to write a book about artificial intelligence with artificial intelligence, because I know it can be done without giving up any intellectual rigour. I did not want to have to negotiate that choice with a publishing house that would have needed convincing, at a time when AI is shaking up the cultural industries and publishers’ caution is understandable.
+
+I did not want to depend on anyone to carry out this experiment as an author freely, to the very end. And to the very end did not only mean writing the book with AI, as I explain in “[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)”, but actually producing everything else: the layout, the printing, the proofreading, the ISBN, the legal deposit, the sales settings, and so on. So I had to be the publisher as well.
+
+This book is an experiment in authorship and in publishing at once, and it required a platform that makes it possible for a single person to distribute a book worldwide, on demand, in print and digital, with no stock and no intermediary. That was the material condition of the experiment.
+
+### Press
+
+Questions and interviews: address published at https://web.stephane-vial.net/lexique-ia/en/order/
+
+Review copies are available on request.
+
+---
+
+## Artificial Intelligence
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/artificial-intelligence/
+
+Chapter 1 · page 22
+
+**Definition**  
+Artificial intelligence (AI) refers to a set of computational methods and systems able to reproduce or simulate certain capacities usually associated with human intelligence. For example: understanding language, recognizing images, solving problems or learning from data. This is not conscious thought, but an ability to reproduce, through calculation, certain mechanisms of human reasoning, learning and perception.
+
+**Example**  
+When we ask a voice assistant for the weather, or when Netflix recommends a series, we are already using AI systems. These tools analyze our requests, identify patterns in our habits and draw on models trained at scale to produce a relevant answer, without our needing to know anything about programming.
+
+**Why it matters**  
+AI is transforming many fields: health, finance, education, sports, transport, artistic creation… It makes it possible to automate certain tasks and to extend human capacities, but it also creates new social, ethical and political risks. Understanding what artificial intelligence is means fantasizing less about its nature, being more realistic, and making better decisions about how we want to use it.
+
+### How to cite this text
+
+Vial, S. (2026). Artificial Intelligence. In *A Living Lexicon of Artificial Intelligence* (p. 22). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Neuron
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/neuron/
+
+Chapter 2 · page 40
+
+**Definition**  
+An artificial neuron is a computing unit whose name and general principle are borrowed, in simplified form, from biological neurons. In the human brain, a biological neuron receives signals (through its dendrites), combines them (in the cell body) and passes on, or does not pass on, a signal to other neurons. In a similar way, an artificial neuron receives one or more inputs, performs a calculation (usually a weighted sum), applies an activation function, then produces an output. The calculation it performs makes it possible to detect patterns.
+
+**Example**  
+In an image recognition model, thousands of artificial neurons are organized into layers. The neurons in the first layers detect simple shapes (lines, colours), those in the middle layers recognize patterns (eyes, wheels), and those in the final layers identify the whole object (cat, car). Each neuron “activates” or “inhibits” the passing of information (to the next neuron) according to what it has learned.
+
+**Why it matters**  
+The artificial neuron is a fundamental building block of deep learning. It is the arrangement and the adjustment of millions (even billions) of neurons, organized into networks, that give a model its capacity to analyze, to predict or to generate.
+
+### How to cite this text
+
+Vial, S. (2026). Neuron. In *A Living Lexicon of Artificial Intelligence* (p. 40). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Machine Learning
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/machine-learning/
+
+Chapter 3 · page 58
+
+**Definition**  
+Machine learning is a branch of artificial intelligence that lets a system learn from data rather than being programmed rule by rule. We give it examples, and it automatically adjusts its parameters to fit them. From them it extracts statistical patterns that it can reuse on new data. It is currently the dominant approach to designing high-performing AI systems.
+
+**Example**  
+To train a speech recognition system, we have it listen to thousands of hours of recordings along with their transcripts. The model learns to match sounds to words, and can then transcribe sentences it has never heard, because it has picked up the statistical patterns of language. This type of learning is generally supervised: each example comes with the “right answer”, which guides the model as it adjusts.
+
+**Why it matters**  
+Nearly all of today’s AI relies on machine learning: facial recognition, spam filters, recommendations, voice assistants, and so on. This is a profound shift: we no longer describe the solution explicitly, we let the model discover it from the data. These systems, however, lack human-like understanding; they produce results from calculations and probabilities. That distinction helps us to grasp both their power… and their limits.
+
+### How to cite this text
+
+Vial, S. (2026). Machine Learning. In *A Living Lexicon of Artificial Intelligence* (p. 58). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Natural Language Processing
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/natural-language-processing/
+
+Chapter 4 · page 71
+
+**Definition**  
+Natural language processing refers to a set of computational methods that allow a machine to process, interpret and produce human language, written or spoken. It is a field of research that has developed since the 1950s, at the crossroads of linguistics, computer science and, today, machine learning. Language is converted into usable data (words, sentences, structures), then analyzed by models in order to produce coherent results from the patterns detected.
+
+**Example**  
+When you use a search engine, the system interprets your query, identifies the important words and sometimes infers your intent in order to offer relevant results. In the same way, machine translation tools and chatbots such as ChatGPT and Claude analyze sentence structure to produce a response suited to the context. These systems do not work on isolated words: they take in the whole sentence and its surroundings.
+
+**Why it matters**  
+Natural language processing has become a central interface between humans and machines. It allows for more direct interaction, without going through technical commands. But language remains ambiguous, contextual and culturally situated, which limits performance: models can produce plausible answers without really grasping meaning, which explains certain errors and misunderstandings.
+
+### How to cite this text
+
+Vial, S. (2026). Natural Language Processing. In *A Living Lexicon of Artificial Intelligence* (p. 71). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Token
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/token/
+
+Chapter 5 · page 83
+
+**Definition**  
+In artificial intelligence, a token is the smallest unit of text that language models handle. It can be a whole word, a fragment of a word, a punctuation mark or a space, depending on how each model does its splitting. Rather than reading continuous sentences, the model receives an ordered sequence of tokens, each converted into a numerical representation before being processed. Generative models also produce their answers token by token, in an extremely fast probabilistic chain.
+
+**Example**  
+The sentence *Hello, how are you?* could be split into six tokens: *Hello* + *,* + *how* + *are* + *you* + *?*. Some words can be divided further: *tokenization* would become *token* + *ization*. In applications such as ChatGPT, Claude or Gemini, which run on large language models, every question sent and every answer generated is counted in tokens. That count determines the length limits of a conversation, the processing speed and often the cost of use.
+
+**Why it matters**  
+The token is the basic unit of operation for language models. The context window, too, is expressed in tokens, not in words. This logic has concrete effects: the same text does not yield the same number of tokens from one language to another. The cost of using models is in fact generally calculated based on the number of tokens processed, input as well as output. Understanding what a token is therefore helps you grasp how an AI system “reads” and generates text, but also why some requests cost more in computation and in energy.
+
+### How to cite this text
+
+Vial, S. (2026). Token. In *A Living Lexicon of Artificial Intelligence* (p. 83). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Hallucination
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/hallucination/
+
+Chapter 6 · page 96
+
+**Definition**  
+A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence. Language models can thus produce answers that are credible, well written and convincing… but factually wrong. This follows from the very way a probabilistic model works: it does not check whether what it asserts is true; it simply predicts the most plausible continuation of words, given its training and the context of the conversation.
+
+**Example**  
+Ask a chatbot to cite sources on a highly specialized subject and it may invent references that do not exist: “According to a study by Miller published in 2017 in the journal *Health and Cognition*…”, when neither the study nor even the journal cited exists. In the same way, an AI system can attribute a quotation to the wrong person, invent a court ruling or describe an imaginary feature of a piece of software. The more ambiguous, rare or hard to verify the request, the greater the risk of hallucination.
+
+**Why it matters**  
+Hallucinations can be harmless in a humorous context, but troublesome in sensitive fields such as health, education or law. To limit them, current systems use various approaches: better training, access to up-to-date external sources, RAG-type architectures, and so on. These techniques can improve the reliability of answers, but they do not turn a probabilistic model into a fact-checking system. A convincing answer must therefore always be assessed critically.
+
+### How to cite this text
+
+Vial, S. (2026). Hallucination. In *A Living Lexicon of Artificial Intelligence* (p. 96). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Recommender System
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/recommender-system/
+
+Chapter 7 · page 107
+
+**Definition**  
+A recommender system is an algorithmic system designed to automatically offer content, products or services to a user based on their preferences, their past behaviour or that of users judged to be similar. It analyzes signals such as clicks, searches, purchases, views or time spent on certain content in order to anticipate what might hold the user’s attention. These systems are everywhere: on streaming platforms, online retail, social media and music apps.
+
+**Example**  
+On a video streaming platform, the recommender system suggests films or series based on your viewing history and on the behaviour of users whose profiles are close to yours. On an e-commerce platform, it offers products related to your purchases or to those of similar customers.
+
+**Why it matters**  
+Recommender systems filter the immense quantity of information available online and influence our choices, often without our being fully aware of it. Well calibrated, they help us discover content that is relevant or suited to our tastes. But because they also seek to maximize attention and engagement, they can favour emotional, polarizing or repetitive content. At scale, they therefore play a major role in how we inform ourselves, how we consume and even how we perceive the digital world.
+
+### How to cite this text
+
+Vial, S. (2026). Recommender System. In *A Living Lexicon of Artificial Intelligence* (p. 107). Stéphane Vial, publisher, Montréal.
+
+---
+
+## Agentic AI
+
+Address: https://web.stephane-vial.net/lexique-ia/en/book/agentic-ai/
+
+Chapter 8 · page 118
+
+**Definition**  
+Agentic AI refers to artificial intelligence systems capable of acting semi-autonomously or autonomously to reach a goal, often over several steps. Unlike a standard chatbot, which merely answers an immediate request, an agentic AI can plan actions, use tools, access external services, remember certain information and adjust its behaviour according to the results it obtains. In practice, this autonomy rests on a language model orchestrated with instructions, a memory and tools. The whole then behaves like an agent carrying out tasks with little human supervision.
+
+**Example**  
+An AI agent asked to organize a trip can search for flights, compare hotels, check the weather, book activities, fill in forms and send confirmations by email, all from an instruction such as: “Organize a weekend in Rome for two people in May.” Claude Code is an example of an advanced software agent. It can write code, modify files, run commands, call external tools and chain several actions together to reach a defined goal.
+
+**Why it matters**  
+Agentic AI no longer merely generates content or answers questions: it can chain several actions together using tools and software. This capacity opens up significant possibilities for automation in work, services and research. But that autonomy also raises critical issues of safety, control and responsibility.
+
+### How to cite this text
+
+Vial, S. (2026). Agentic AI. In *A Living Lexicon of Artificial Intelligence* (p. 118). Stéphane Vial, publisher, Montréal.

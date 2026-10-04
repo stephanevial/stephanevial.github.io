@@ -33,4 +33,4 @@ Artificial intelligence can assist with writing. It never exempts us from thinki
 
 ## How to cite this text
 
-Vial, S. (2026). Statement on the use of artificial intelligence. In *A Living Lexicon of Artificial Intelligence* (pp. 129–130). Stéphane Vial, Montréal.
+Vial, S. (2026). Statement on the use of artificial intelligence. In *A Living Lexicon of Artificial Intelligence* (pp. 129–130). Stéphane Vial, publisher, Montréal.

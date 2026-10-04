@@ -4,10 +4,13 @@ title: "Order A Living Lexicon of Artificial Intelligence | Stéphane Vial"
 description: "Where to buy A Living Lexicon of Artificial Intelligence, by Stéphane Vial: on Amazon, in paperback and Kindle editions. Press contact."
 h1: "Order the book"
 chapeau: "The English edition is available on Amazon only, in paperback and Kindle editions."
+couverture_vers: book
+couverture_titre: "Discover the book"
 ---
 Before publication day, pre-order is available for the Kindle edition. The paperback will be available from October 13, 2026.
 
 %(boutiques)s
+%(autres_liste)s
 
 ## Why only on Amazon?
 

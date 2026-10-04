@@ -20,8 +20,8 @@ S.V., Montréal, October 2026
 
 ## Three things to read on this site
 
-- **[An excerpt](hallucination/)**  
-  Hallucination
+- **[Eight excerpts](book/)**  
+  Artificial Intelligence · Neuron · Machine Learning · Natural Language Processing · Token · Hallucination · Recommender System · Agentic AI
 - **[The Making of This Book](making-of/)**  
   How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards.
 - **[Statement on the Use of AI](statement/)**  
@@ -52,6 +52,8 @@ The author of several books, including *Being and the Screen: How the Digital Ch
 From October 13, 2026, the English edition is available on Amazon only, in paperback and Kindle editions. Before publication day, pre-order is available for the Kindle edition only.
 
 %(boutiques)s
+
+%(autres)s
 
 ## The book
 

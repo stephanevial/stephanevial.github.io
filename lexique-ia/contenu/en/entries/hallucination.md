@@ -1,9 +1,11 @@
 ---
-url: /lexique-ia/en/hallucination/
+url: /lexique-ia/en/book/hallucination/
 title: "Hallucination: definition and example | Stéphane Vial"
-description: "A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence."
+description: "A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence…"
 h1: "Hallucination"
 chapeau: "Chapter 6"
+gabarit: notion
+ordre: 6
 page: 96
 ---
 
@@ -18,4 +20,4 @@ Hallucinations can be harmless in a humorous context, but troublesome in sensiti
 
 ## How to cite this text
 
-Vial, S. (2026). Hallucination. In *A Living Lexicon of Artificial Intelligence* (p. 96). Stéphane Vial, Montréal.
+Vial, S. (2026). Hallucination. In *A Living Lexicon of Artificial Intelligence* (p. 96). Stéphane Vial, publisher, Montréal.

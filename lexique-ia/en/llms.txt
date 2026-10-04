@@ -31,26 +31,55 @@ The author of several books, including *Being and the Screen: How the Digital Ch
 
 From October 13, 2026, the English edition is available on Amazon only, in paperback and Kindle editions. Before publication day, pre-order is available for the Kindle edition only.
 
-Order links will be posted here on publication day, October 13, 2026.
+- **United States**  
+  [Order on Amazon.com](https://www.amazon.com/dp/B0HLWQDMZX)
+- **United Kingdom**  
+  [Order on Amazon.co.uk](https://www.amazon.co.uk/dp/B0HLWQDMZX)
+- **Canada**  
+  [Order on Amazon.ca](https://www.amazon.ca/dp/B0HLWQDMZX)
+- **Australia**  
+  [Order on Amazon.com.au](https://www.amazon.com.au/dp/B0HLWQDMZX)
+
+The book is also available on: [amazon.de](https://www.amazon.de/dp/B0HLWQDMZX) · [amazon.fr](https://www.amazon.fr/dp/B0HLWQDMZX) · [amazon.es](https://www.amazon.es/dp/B0HLWQDMZX) · [amazon.it](https://www.amazon.it/dp/B0HLWQDMZX) · [amazon.nl](https://www.amazon.nl/dp/B0HLWQDMZX) · [amazon.co.jp](https://www.amazon.co.jp/dp/B0HLWQDMZX) · [amazon.com.br](https://www.amazon.com.br/dp/B0HLWQDMZX) · [amazon.com.mx](https://www.amazon.com.mx/dp/B0HLWQDMZX) · [amazon.in](https://www.amazon.in/dp/B0HLWQDMZX).
+
+**The 91 concepts, in eight chapters**
+
+- **1. What Artificial Intelligence Is** (15 concepts): Imitation Game · Artificial Intelligence · Generative Artificial Intelligence · Algorithm · Model · Phases (of a Model) · Training · Inference · Fine-Tuning · Foundation Model · Agent · Alignment · Transparency · Explainability · Open Source
+- **2. What an AI System Contains: Neurons and Parameters** (16 concepts): Perceptron · Neuron · Parameter · Weight · Bias (Parameter) · Activation Function · Layer · Neural Network · Backpropagation · Attention · Transformer · Language Model · Large Language Model · Reasoning Model · Diffusion Model · Multimodal
+- **3. What (and How) AI Learns: Forms of Learning** (11 concepts): Learning · Machine Learning · Supervised Learning · Unsupervised Learning · Reinforcement Learning · Deep Learning · Dataset · Training Data · Personal Data · Pattern · Overfitting
+- **4. What AI “Understands”: Language, Images, Sound** (9 concepts): Natural Language Processing · Chatbot · Generative Pre-trained Transformer · Machine Translation · Speech Recognition · Text-to-Speech · Computer Vision · Facial Recognition · Image Generator
+- **5. The Language of Models: Tokens and Computation** (6 concepts): Token · Context Window · Vector · Probability · SoftMax · Temperature
+- **6. What AI Produces: Answers, Errors, Hallucinations** (12 concepts): Input / Output · Prompt · Chain of Thought · Retrieval-Augmented Generation · Context Drift · Hallucination · Algorithmic Bias · Over-elaboration · Sycophancy · Black Box · Prompt Injection · Deepfake
+- **7. AI in Our Digital Lives: Filters, Engines, Interfaces** (10 concepts): Personalization · News Feed · Recommender System · Collaborative Filtering · Ranking · Content Moderation · Spam Detection · Filter Bubble · Latency · Vibe Coding
+- **8. Where Is Artificial Intelligence Going? Horizons, Risks, Questions** (12 concepts): Computing Power · Agentic AI · Artificial General Intelligence · Consciousness (Sentience) · AI Scheming · AI Psychosis · Existential Risk · AI Ecological Impact · AI Race · Sovereign AI · AI Governance · Responsible AI
 
 ## The book and its author
 
 - [A Living Lexicon of Artificial Intelligence](https://web.stephane-vial.net/lexique-ia/en/): 91 concepts of artificial intelligence, one page each, in plain language. A book written with AI, which says so, and read critically by a peer.
-- [The author](https://web.stephane-vial.net/lexique-ia/en/author/): Stéphane Vial is a Full Professor at the School of Design of UQAM. He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design.
-- [Order the book](https://web.stephane-vial.net/lexique-ia/en/order/): Where to buy A Living Lexicon of Artificial Intelligence, by Stéphane Vial: on Amazon, in paperback and Kindle editions. Press contact.
+- [91 concepts to understand artificial intelligence](https://web.stephane-vial.net/lexique-ia/en/book/): Ninety-one concepts, each explained in a page: a definition, an example, why it matters. No formulas, no code, no prerequisites. Eight entries to read.
 - [The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/): The account of how the book was made, as published in it: how a university professor wrote a book about AI with AI, and ran the whole publishing chain himself.
 - [Statement on the Use of Artificial Intelligence](https://web.stephane-vial.net/lexique-ia/en/statement/): The statement published in the book: how artificial intelligence was used to write A Living Lexicon of Artificial Intelligence, and who answers for it.
+- [A Montréal professor publishes a book about AI, written with AI](https://web.stephane-vial.net/lexique-ia/en/press-release/): Press release for the English edition of A Living Lexicon of Artificial Intelligence, by Stéphane Vial. Full text.
+- [The author](https://web.stephane-vial.net/lexique-ia/en/author/): Stéphane Vial is a Full Professor at the School of Design of UQAM. He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design.
+- [Order the book](https://web.stephane-vial.net/lexique-ia/en/order/): Where to buy A Living Lexicon of Artificial Intelligence, by Stéphane Vial: on Amazon, in paperback and Kindle editions. Press contact.
 
-## An excerpt
+## Eight entries to read, one per chapter
 
-- [Hallucination](https://web.stephane-vial.net/lexique-ia/en/hallucination/): Chapter 6 · page 96. A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence.
+- [Artificial Intelligence](https://web.stephane-vial.net/lexique-ia/en/book/artificial-intelligence/): Chapter 1 · page 22. Artificial intelligence (AI) refers to a set of computational methods and systems able to reproduce or simulate certain capacities usually associated with human intelligence.
+- [Neuron](https://web.stephane-vial.net/lexique-ia/en/book/neuron/): Chapter 2 · page 40. An artificial neuron is a computing unit whose name and general principle are borrowed, in simplified form, from biological neurons.
+- [Machine Learning](https://web.stephane-vial.net/lexique-ia/en/book/machine-learning/): Chapter 3 · page 58. Machine learning is a branch of artificial intelligence that lets a system learn from data rather than being programmed rule by rule.
+- [Natural Language Processing](https://web.stephane-vial.net/lexique-ia/en/book/natural-language-processing/): Chapter 4 · page 71. Natural language processing refers to a set of computational methods that allow a machine to process, interpret and produce human language, written or spoken.
+- [Token](https://web.stephane-vial.net/lexique-ia/en/book/token/): Chapter 5 · page 83. In artificial intelligence, a token is the smallest unit of text that language models handle.
+- [Hallucination](https://web.stephane-vial.net/lexique-ia/en/book/hallucination/): Chapter 6 · page 96. A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence.
+- [Recommender System](https://web.stephane-vial.net/lexique-ia/en/book/recommender-system/): Chapter 7 · page 107. A recommender system is an algorithmic system designed to automatically offer content, products or services to a user based on their preferences, their past behaviour or that of users judged to be similar.
+- [Agentic AI](https://web.stephane-vial.net/lexique-ia/en/book/agentic-ai/): Chapter 8 · page 118. Agentic AI refers to artificial intelligence systems capable of acting semi-autonomously or autonomously to reach a goal, often over several steps.
 
 ## Full text
 
-- [The whole site in a single file](https://web.stephane-vial.net/lexique-ia/en/llms-full.txt): the text of its 6 pages, in Markdown.
+- [The whole site in a single file](https://web.stephane-vial.net/lexique-ia/en/llms-full.txt): the text of its 15 pages, in Markdown.
 
 ## Optional
 
 - [Sitemap](https://web.stephane-vial.net/sitemap.xml): every address, in sitemap format.
 - [Cover in high definition](https://web.stephane-vial.net/lexique-ia/img/cover-en-hd.jpg): Book cover: on a coral background, the title “A Living Lexicon of Artificial Intelligence” in deep blue, and the name Stéphane Vial.
-- [Original French edition](https://web.stephane-vial.net/lexique-ia/llms.txt): Petit lexique vivant de l’intelligence artificielle, with eight entries to read in full, in French.
+- [Original French edition](https://web.stephane-vial.net/lexique-ia/llms.txt): Petit lexique vivant de l’intelligence artificielle, the map of the French site.

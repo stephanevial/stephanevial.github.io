@@ -117,6 +117,10 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
    site français passe au corail sur les pages anglaises, par cette seule
    ligne. */
 html[lang="en"] { --safran: #FF8A5B; }
+/* Quatre boutiques anglophones au lieu de trois : quatre colonnes égales. */
+@media (min-width: 55rem) {
+  html[lang="en"] .accueil > #se-procurer-le-livre + p + ul { grid-template-columns: repeat(4, 1fr); }
+}
 
 /* L'adresse de contact presse est coupée en deux par un fragment que cette
    règle masque. Un moissonneur qui lit le HTML brut récolte une adresse
