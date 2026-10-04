@@ -1,39 +1,57 @@
 ---
 url: /lexique-ia/en/
 title: "A Living Lexicon of Artificial Intelligence | Stéphane Vial"
-description: "Ninety-one concepts of artificial intelligence, explained in plain language. A book written with AI, which says so, and read critically by a peer."
+description: "91 concepts of artificial intelligence, one page each, in plain language. A book written with AI, which says so, and read critically by a peer."
 h1: "A Living Lexicon of Artificial Intelligence"
 auteur: "Stéphane Vial"
 attribution: "Available October 13, 2026 · Foreword by Marcello Vitali-Rosati"
-couverture_alt: "Book cover: on a saffron background, the title “A Living Lexicon of Artificial Intelligence” in deep blue, and the name Stéphane Vial"
+couverture_alt: "Book cover: on a coral background, the title “A Living Lexicon of Artificial Intelligence” in deep blue, and the name Stéphane Vial"
+video: annonce-en
+video_libelle: "The book presented on video by its author (in French, English subtitles)"
 ---
 
-I wrote a book about AI, with AI, and I explain how. Ninety-one concepts to understand what artificial intelligence is and how it works.
+I wrote a book about AI, with AI, and I explain how. Ninety-one concepts, one page each, to understand what artificial intelligence is and how it works.
 
 As with any scholarly publication, every page was read and critically commented on by a peer. Marcello Vitali-Rosati, Full Professor at the Université de Montréal, took on that role and wrote the foreword.
 
-Translated from the French. Translation revised by Alexia Moyer.
+But that is not all: I also produced and published this book with the help of AI, from the cover to the marketing, by way of the legal deposit. The last four pages tell how I went about it.
 
-## About the book
-
-Artificial intelligence answers our questions, completes our sentences, creates images and organizes our access to information. It is everywhere, but what do we really know about how it works? What is a model? How does a machine learn? What are a token, a vector, fine-tuning or a hallucination?
-
-This living lexicon offers a clear, rigorous and accessible introduction, free of fantasies and easy fears. Organized in thematic chapters, it reads like a story: from the most fundamental to the most applied, from inside the models to their effects on the world.
-
-Ninety-one concepts, organized into eight progressive, thematic chapters. Each entry is brief and self-contained, and follows the same structure: a definition, a concrete example, and a reflection on why it matters.
+S.V., Montréal, October 2026
 
 ## Three things to read on this site
 
-- **[An excerpt: Hallucination](hallucination/)**  
-  One of the ninety-one entries, in full: a definition, a concrete example, and why it matters.
+- **[An excerpt](hallucination/)**  
+  Hallucination
 - **[The Making of This Book](making-of/)**  
-  The closing chapter of the book: how it was written with AI, checked, and published.
+  How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards.
 - **[Statement on the Use of AI](statement/)**  
-  “I did not write this book in spite of AI. I wrote it with AI.”
+  “I did not write this book in spite of AI. I wrote it with AI.” The position I stand by.
 
-## Order
+## The author
 
-The English edition is available from October 13, 2026, on Amazon only, in paperback and Kindle editions. [Where to order](order/)
+<div class="auteur" markdown="1">
+
+<figure>
+<a href="img/portrait-stephane-vial-hd.jpg" target="_blank" rel="noopener" title="Open the portrait in high definition"><img src="img/portrait-stephane-vial.jpg" alt="Stéphane Vial, Full Professor at the School of Design of the Université du Québec à Montréal"></a>
+<figcaption>© Justine Latour for UQAM</figcaption>
+</figure>
+
+**Stéphane Vial**, Ph.D., is a Full Professor at the School of Design of the Université du Québec à Montréal, a regular researcher at the IUSMM Research Centre and the founder of Mentallys Inc. He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design, and teaches, among other things, the use of artificial intelligence in research, writing and creative work.
+
+The author of several books, including *Being and the Screen: How the Digital Changes Perception* (MIT Press), he explores how technologies transform our ways of perceiving, thinking and acting.
+
+- About (in French): [stephane-vial.net](https://stephane-vial.net)
+- Published books (in French): [stephane-vial.net/livres](https://stephane-vial.net/livres/)
+- Blog on AI (in French): [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Op-ed in *Le Devoir* (in French): [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+
+</div>
+
+## Order the book
+
+From October 13, 2026, the English edition is available on Amazon only, in paperback and Kindle editions. Before publication day, pre-order is available for the Kindle edition only.
+
+%(boutiques)s
 
 ## The book
 
@@ -43,9 +61,8 @@ The English edition is available from October 13, 2026, on Amazon only, in paper
 | **Author** | Stéphane Vial |
 | **Foreword** | Marcello Vitali-Rosati |
 | **Translation** | Translated from the French. Translation revised by Alexia Moyer |
-| **Publisher** | Stéphane Vial · Montréal, Québec, Canada |
+| **Publisher** | Stéphane Vial, publisher · Montréal, Québec |
 | **Publication** | October 13, 2026 (English edition) |
-| **Format** | Paperback, 138 pages · ebook |
-| **ISBN** | 978-2-9825534-2-2 (Print) · 978-2-9825534-3-9 (ePUB) |
+| **Format** | Paperback, 138 pages · ebook (ePub) |
+| **ISBN** | 978-2-9825534-2-2 (paperback) · 978-2-9825534-3-9 (ebook) |
 | **Legal deposit** | Bibliothèque et Archives nationales du Québec |
-| **Original edition** | [*Petit lexique vivant de l’intelligence artificielle*](../) (French, October 6, 2026) |

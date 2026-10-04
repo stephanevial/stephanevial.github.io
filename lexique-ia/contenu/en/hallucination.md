@@ -3,7 +3,8 @@ url: /lexique-ia/en/hallucination/
 title: "Hallucination: definition and example | Stéphane Vial"
 description: "A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence."
 h1: "Hallucination"
-chapeau: "An excerpt · chapter 6 · page 96"
+chapeau: "Chapter 6"
+page: 96
 ---
 
 **Definition**  

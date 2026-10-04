@@ -112,6 +112,12 @@ a:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
 }
 .langues[hidden] { display: none; }
 
+/* L'édition anglaise : même système, même encre, le fond de sa couverture
+   (editions.json, « fond » de l'édition en). Tout ce qui est au safran sur le
+   site français passe au corail sur les pages anglaises, par cette seule
+   ligne. */
+html[lang="en"] { --safran: #FF8A5B; }
+
 /* L'adresse de contact presse est coupée en deux par un fragment que cette
    règle masque. Un moissonneur qui lit le HTML brut récolte une adresse
    morte ; un lecteur d'écran saute le fragment, comme le copier-coller.

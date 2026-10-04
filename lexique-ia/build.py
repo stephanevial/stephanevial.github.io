@@ -92,6 +92,14 @@ LANGUES = [("fr", "Français", ""),
            ("en", "English", "en/"),
            ("es", "Español", "es/")]
 
+# Le site de l’édition anglaise (build_en.py) est un miroir réduit : six
+# pages. Au bout du menu, « English » mène à la page miroir quand elle existe,
+# à l’accueil anglais sinon. build_en.py porte la table inverse.
+VERS_ANGLAIS = {"accueil": "en/", "auteur": "en/author/",
+                "commander": "en/order/", "fabrique": "en/making-of/",
+                "declaration": "en/statement/",
+                "hallucination": "en/hallucination/"}
+
 ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large"
 
 # Le seul script du site, posé uniquement sur les pages qui portent une
@@ -530,6 +538,9 @@ def navigation(prefixe, courante, urls):
             marque = ' class="bouton"' + marque
         entrees.append('<a href="%s"%s>%s</a>'
                        % (cible, marque, MENU_LIBELLE[nom]))
+    # La bascule de langue, au bout du menu.
+    entrees.append('<a href="%s%s" lang="en" hreflang="en">English</a>'
+                   % (prefixe, VERS_ANGLAIS.get(courante, "en/")))
     return "\n      ".join(entrees)
 
 
@@ -655,7 +666,12 @@ def construire(nom, fichier, base, gabarits, urls):
         "prefixe": prefixe,
         "page": nom,
         "og": "\n  ".join('<meta property="%s" content="%s">'
-                          % (k, echapper(v)) for k, v in og),
+                          % (k, echapper(v)) for k, v in og)
+              # Les pages qui ont un miroir anglais le déclarent aux moteurs.
+              + ('\n  <link rel="alternate" hreflang="fr" href="%s">'
+                 '\n  <link rel="alternate" hreflang="en" href="%s%s%s">'
+                 % (url, DOMAINE, BASE, VERS_ANGLAIS[nom])
+                 if nom in VERS_ANGLAIS else ""),
         "donnees": donnees,
         "robots": ROBOTS,
         "navigation": navigation(prefixe, nom, urls),
@@ -826,6 +842,9 @@ def llms(pages):
     if portrait:
         optionnel.append("- [Portrait de l’auteur en haute définition](%s): %s."
                          % (racine + portrait.group(1), portrait.group(2)))
+    optionnel.append("- [Édition anglaise](%sen/llms.txt): A Living Lexicon of "
+                     "Artificial Intelligence, la carte du site de l’édition "
+                     "anglaise." % racine)
 
     carte = a_plat("\n".join([
         "# " + accueil["h1"],

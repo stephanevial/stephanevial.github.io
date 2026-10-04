@@ -3,7 +3,7 @@ url: /lexique-ia/en/making-of/
 title: "The Making of This Book: writing a book with AI | Stéphane Vial"
 description: "The account of how the book was made, as published in it: how a university professor wrote a book about AI with AI, and ran the whole publishing chain himself."
 h1: "The Making of This Book"
-chapeau: "The closing chapter of the book, in full."
+chapeau: "How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards."
 ---
 
 The first idea for this book goes back to the moment when, like many others, I realized that artificial intelligence could do the thing I love most faster than I can: writing. I did not say better than me. I said faster. Writing is labour, intellectual and cognitive of course, but also craft and handwork: fingers on the keyboard or on paper, a little like the work of a painter, who knows their pigments and lays down the layers one by one on the canvas. I wanted to run an experiment, to see what it is to write with a new instrument said to be so powerful. Do I really need, I asked myself, to write out every determiner myself, by hand, to adjust every conjugation, to form the letters of every preposition, every relative pronoun, every coordinating conjunction?
@@ -28,7 +28,7 @@ Such is the story of this book about AI, written with AI.
 
 ## Read also
 
-[Statement on the Use of Artificial Intelligence](../statement/)
+[My statement on the use of artificial intelligence](../statement/)
 
 ## How to cite this text
 

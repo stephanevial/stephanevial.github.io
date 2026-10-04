@@ -3,7 +3,8 @@ url: /lexique-ia/en/statement/
 title: "Statement on the Use of Artificial Intelligence | Stéphane Vial"
 description: "The statement published in the book: how artificial intelligence was used to write A Living Lexicon of Artificial Intelligence, and who answers for it."
 h1: "Statement on the Use of Artificial Intelligence"
-chapeau: "“I did not write this book in spite of AI. I wrote it with AI.”"
+chapeau: "“I did not write this book in spite of AI. I wrote it with AI.” The position I stand by."
+ancre_texte: oui
 ---
 
 This book was written with the help of artificial intelligence.

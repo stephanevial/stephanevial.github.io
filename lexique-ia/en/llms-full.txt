@@ -1,0 +1,201 @@
+# A Living Lexicon of Artificial Intelligence: full text of the site
+
+> 91 concepts of artificial intelligence, one page each, in plain language. A book written with AI, which says so, and read critically by a peer.
+
+A book by Stéphane Vial. Available October 13, 2026. Foreword by Marcello Vitali-Rosati. ISBN 978-2-9825534-2-2 (print) and 978-2-9825534-3-9 (ePUB). Translated from the French; translation revised by Alexia Moyer. © Stéphane Vial, publisher, 2026. Texts on this site are licensed under CC BY 4.0, unless otherwise noted.
+
+This file gathers the text of the 6 pages of the site: the three pages of the menu, then an excerpt, the making of the book and the statement on the use of AI. The annotated map of the site is at https://web.stephane-vial.net/lexique-ia/en/llms.txt.
+
+---
+
+## A Living Lexicon of Artificial Intelligence
+
+Address: https://web.stephane-vial.net/lexique-ia/en/
+
+Stéphane Vial · Available October 13, 2026 · Foreword by Marcello Vitali-Rosati
+
+I wrote a book about AI, with AI, and I explain how. Ninety-one concepts, one page each, to understand what artificial intelligence is and how it works.
+
+As with any scholarly publication, every page was read and critically commented on by a peer. Marcello Vitali-Rosati, Full Professor at the Université de Montréal, took on that role and wrote the foreword.
+
+But that is not all: I also produced and published this book with the help of AI, from the cover to the marketing, by way of the legal deposit. The last four pages tell how I went about it.
+
+S.V., Montréal, October 2026
+
+### Three things to read on this site
+
+- **[An excerpt](https://web.stephane-vial.net/lexique-ia/en/hallucination/)**  
+  Hallucination
+- **[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)**  
+  How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards.
+- **[Statement on the Use of AI](https://web.stephane-vial.net/lexique-ia/en/statement/)**  
+  “I did not write this book in spite of AI. I wrote it with AI.” The position I stand by.
+
+### The author
+
+**Stéphane Vial**, Ph.D., is a Full Professor at the School of Design of the Université du Québec à Montréal, a regular researcher at the IUSMM Research Centre and the founder of Mentallys Inc. He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design, and teaches, among other things, the use of artificial intelligence in research, writing and creative work.
+
+The author of several books, including *Being and the Screen: How the Digital Changes Perception* (MIT Press), he explores how technologies transform our ways of perceiving, thinking and acting.
+
+- About (in French): [stephane-vial.net](https://stephane-vial.net)
+- Published books (in French): [stephane-vial.net/livres](https://stephane-vial.net/livres/)
+- Blog on AI (in French): [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Op-ed in *Le Devoir* (in French): [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+
+### Order the book
+
+From October 13, 2026, the English edition is available on Amazon only, in paperback and Kindle editions. Before publication day, pre-order is available for the Kindle edition only.
+
+Order links will be posted here on publication day, October 13, 2026.
+
+### The book
+
+| Detail | Value |
+|---|---|
+| **Title** | *A Living Lexicon of Artificial Intelligence* |
+| **Author** | Stéphane Vial |
+| **Foreword** | Marcello Vitali-Rosati |
+| **Translation** | Translated from the French. Translation revised by Alexia Moyer |
+| **Publisher** | Stéphane Vial, publisher · Montréal, Québec |
+| **Publication** | October 13, 2026 (English edition) |
+| **Format** | Paperback, 138 pages · ebook (ePub) |
+| **ISBN** | 978-2-9825534-2-2 (paperback) · 978-2-9825534-3-9 (ebook) |
+| **Legal deposit** | Bibliothèque et Archives nationales du Québec |
+
+---
+
+## The author
+
+Address: https://web.stephane-vial.net/lexique-ia/en/author/
+
+Stéphane Vial, professor, researcher and entrepreneur
+
+**Stéphane Vial**, Ph.D., is a Full Professor at the School of Design of the Université du Québec à Montréal, a regular researcher at the IUSMM Research Centre and the founder of Mentallys Inc.
+
+He holds a PhD in philosophy, a degree in clinical psychology and a habilitation to supervise research in design, and teaches, among other things, the use of artificial intelligence in research, writing and creative work.
+
+The author of several books, including *Being and the Screen: How the Digital Changes Perception* (MIT Press), he explores how technologies transform our ways of perceiving, thinking and acting.
+
+- About (in French): [stephane-vial.net](https://stephane-vial.net)
+- Published books (in French): [stephane-vial.net/livres](https://stephane-vial.net/livres/)
+- Blog on AI (in French): [stephane-vial.net/blog](https://stephane-vial.net/blog)
+- Op-ed in *Le Devoir* (in French): [La mort de l’auteur n’aura pas lieu à l’ère de l’IA](https://www.ledevoir.com/opinion/idees/911919/mort-auteur-aura-pas-lieu-ere-ia)
+
+---
+
+## Order the book
+
+Address: https://web.stephane-vial.net/lexique-ia/en/order/
+
+The English edition is available on Amazon only, in paperback and Kindle editions.
+
+Before publication day, pre-order is available for the Kindle edition. The paperback will be available from October 13, 2026.
+
+Order links will be posted here on publication day, October 13, 2026.
+
+### Why only on Amazon?
+
+This book is an experiment, and that experiment could only be carried out through self-publishing. I made the deliberate choice to write a book about artificial intelligence with artificial intelligence, because I know it can be done without giving up any intellectual rigour. I did not want to have to negotiate that choice with a publishing house that would have needed convincing, at a time when AI is shaking up the cultural industries and publishers’ caution is understandable.
+
+I did not want to depend on anyone to carry out this experiment as an author freely, to the very end. And to the very end did not only mean writing the book with AI, as I explain in “[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)”, but actually producing everything else: the layout, the printing, the proofreading, the ISBN, the legal deposit, the sales settings, and so on. So I had to be the publisher as well.
+
+This book is an experiment in authorship and in publishing at once, and it required a platform that makes it possible for a single person to distribute a book worldwide, on demand, in print and digital, with no stock and no intermediary. That was the material condition of the experiment.
+
+### Press
+
+Questions and interviews: address published at https://web.stephane-vial.net/lexique-ia/en/order/
+
+Review copies are available on request.
+
+---
+
+## Hallucination
+
+Address: https://web.stephane-vial.net/lexique-ia/en/hallucination/
+
+Chapter 6 · page 96
+
+**Definition**  
+A hallucination is the phenomenon by which a model generates false, invented, distorted or misleading information while presenting it with apparent coherence or confidence. Language models can thus produce answers that are credible, well written and convincing… but factually wrong. This follows from the very way a probabilistic model works: it does not check whether what it asserts is true; it simply predicts the most plausible continuation of words, given its training and the context of the conversation.
+
+**Example**  
+Ask a chatbot to cite sources on a highly specialized subject and it may invent references that do not exist: “According to a study by Miller published in 2017 in the journal *Health and Cognition*…”, when neither the study nor even the journal cited exists. In the same way, an AI system can attribute a quotation to the wrong person, invent a court ruling or describe an imaginary feature of a piece of software. The more ambiguous, rare or hard to verify the request, the greater the risk of hallucination.
+
+**Why it matters**  
+Hallucinations can be harmless in a humorous context, but troublesome in sensitive fields such as health, education or law. To limit them, current systems use various approaches: better training, access to up-to-date external sources, RAG-type architectures, and so on. These techniques can improve the reliability of answers, but they do not turn a probabilistic model into a fact-checking system. A convincing answer must therefore always be assessed critically.
+
+### How to cite this text
+
+Vial, S. (2026). Hallucination. In *A Living Lexicon of Artificial Intelligence* (p. 96). Stéphane Vial, Montréal.
+
+---
+
+## The Making of This Book
+
+Address: https://web.stephane-vial.net/lexique-ia/en/making-of/
+
+How this book was conceived, written, checked, produced and published, without giving up any of my intellectual standards.
+
+The first idea for this book goes back to the moment when, like many others, I realized that artificial intelligence could do the thing I love most faster than I can: writing. I did not say better than me. I said faster. Writing is labour, intellectual and cognitive of course, but also craft and handwork: fingers on the keyboard or on paper, a little like the work of a painter, who knows their pigments and lays down the layers one by one on the canvas. I wanted to run an experiment, to see what it is to write with a new instrument said to be so powerful. Do I really need, I asked myself, to write out every determiner myself, by hand, to adjust every conjugation, to form the letters of every preposition, every relative pronoun, every coordinating conjunction?
+
+I understood later what is happening. An author who writes with AI is like a painter who makes colour with photography: they no longer have to manufacture each pigment or lay it on the canvas by hand, but they go on thinking through and about the image they are photographing, considering the light, choosing the key colours they want to render, the framing, the sharpness, the depth of field, not to mention all the later corrections they will make with editing software. With writing it is the same. I am the one, and I will always be the one — the author — who conceives the text, works out the idea, weighs the structure and the argument, chooses the key concepts, validates the choice of every word, decides on the style, the tone, the register, and who makes the corrections in the final text. For that, I do not need to shape each letter myself or to compose the words by hand, one letter after another. My value lies elsewhere — and so does my pleasure. The instrument changes with the times; it can never be the author. The author endures through the ages; the author can only be human. Instruments have powers, but they have no identity, no intention, no signature.
+
+Why a lexicon? Because I love dictionaries, and I have just written and edited one on design, with the help of nearly a hundred colleagues. Why artificial intelligence? Because I am the author of *Being and the Screen: How the Digital Changes Perception* (MIT Press), and because the “AI revolution” reproduces exactly the phenomenon I described for the “digital revolution”: any new technology that takes hold systemically ends up being naturalized. AI lexicons already exist, of course. I wanted to bring something different. And so came the idea that governs the whole book: a lexicon presented not in alphabetical order but in chapters, like an essay that tells a story, from the most theoretical to the most applied.
+
+At first, I was tempted to go fast. To let AI produce, and to head straight for the result. I could not. My name on a cover has always meant the same thing, for all my books: the commitment of my intellectual and academic responsibility, the endorsement of the content word for word and, of course, my author’s signature — with the family name it carries. So it very quickly became unthinkable to let AI run without my controlling everything. I built my writing process accordingly, so as to make AI my cognitive and editorial assistant, in every one of *my* phases of work.
+
+First, I worked out an angle, a title, and asked it to challenge me and assess me. I defined a template for the entries, and asked it, iteratively, to apply it. I had it write first drafts, which I systematically modified, sometimes a great deal, sometimes barely. I then had those drafts reread and criticized by the machine itself, which found, after the fact, problems in what it had generated. Nothing that might strike me as intelligent in its answers was intelligent in itself: when there was intelligence in them, it was because *I* was the one seeing it. I decided to ignore whole swaths of its answers; I did not even read everything it replied; I selected only what *I* found relevant, the way I read a book, taking from its contents what interests me.
+
+And then, of course, there was the checking. I have never corrected and verified a manuscript so much. I checked every technical claim against outside sources: encyclopedias, dictionaries, scholarly articles, the websites of digital industry companies, cutting-edge posts on social media… Very often I replaced the examples it proposed with others I found more apt. I rewrote any number of turns of phrase I did not like, either because they did not sound like me, or because they smacked too much of the style of a probabilistic machine (generalizing, abstract, blandly accurate, without personality).
+
+When I had finished the manuscript, I did what any good academic does: I asked a peer for a critical reading, and for that I chose Professor Marcello Vitali-Rosati, not because he is a friend, but because everyone knows that the way he looks at artificial intelligence is critical and uncompromising, free of any indulgence. I then had a series of corrections to make. When I again believed the final manuscript was finished, I had it analyzed by an artificial intelligence system other than the one used at the outset. I asked it to run systematic checks on every aspect of the manuscript, sometimes with several agents running in parallel: spelling and grammar, typos, accuracy (are there errors?), consistency (do I contradict myself?), terminological stability (do I use the same terms everywhere for the same things?), the makeup of the file, the page numbers, the styles, and so on. I still had to make many corrections, because inconsistencies kept appearing that I had not seen before.
+
+Then something unexpected happened. With the manuscript finished, I discovered that I could keep going: design the cover and calculate the width of the spine; obtain the ISBNs and generate the matching barcodes; generate the index and check the ninety-one cross-references automatically; set a price grid across eight marketplaces; submit, correct the proofs, publish, promote. What a publishing house does, with its many professions and its years of know-how, I learned and carried out alone, in a few weeks. I draw no triumphant lesson from it: it was a great deal of work. Working this way demands constant vigilance.
+
+The paradox is that producing this book took me longer than expected, but less time than a conventional publishing process would have. I had to face a few technical costs, and to develop an over-checking mindset. Choosing self-publishing also has a social cost: doing everything yourself means giving up bookstore sales representation, conventional distribution, an editorial team whose worth I know. In exchange, I gained control of the chain and total freedom, indispensable for carrying out such an experiment.
+
+Such is the story of this book about AI, written with AI.
+
+### Read also
+
+[My statement on the use of artificial intelligence](https://web.stephane-vial.net/lexique-ia/en/statement/)
+
+### How to cite this text
+
+Vial, S. (2026). The making of this book. In *A Living Lexicon of Artificial Intelligence* (pp. 131–134). Stéphane Vial, Montréal.
+
+---
+
+## Statement on the Use of Artificial Intelligence
+
+Address: https://web.stephane-vial.net/lexique-ia/en/statement/
+
+“I did not write this book in spite of AI. I wrote it with AI.” The position I stand by.
+
+This book was written with the help of artificial intelligence.
+
+But also with the insufferable Microsoft Word and its spellchecker, the splendid Google Sheets and its way with tables, the marvellous copy-and-paste and *cut-and-paste*, search engines, Wikipedia, French-language dictionaries (CNRTL, OQLF), specialized websites such as those of IBM, Oracle or Amazon Web Services, several hundred Google searches, at least as many articles and exchanges on LinkedIn, not to mention the endless discussions with my friend Éric Kavanagh or the provocative prodding of my colleague Marcello Vitali-Rosati, who agreed to be the critical reader of this book and whose remarks brought many improvements.
+
+In other words, this book was written the way most serious texts are written today: through an ecosystem of tools, documents, software, sources, conversations and assorted mediations.
+
+ChatGPT and Claude were used at many stages: to explore avenues, propose terms, discuss definitions, test formulations, criticize certain passages, suggest improvements, spot ambiguities, rephrase sentences, apply systematic corrections, prepare the final manuscript, and so on. But these systems were only an aid, and never exercised an author’s judgment over the content of the book, its structure, its approach, its conceptual choices, its final wording. Those decisions belong to the author. The systems’ proposals were systematically assessed, verified, accepted, modified or rejected.
+
+I did not write this book in spite of AI. I wrote it with AI.
+
+And, to be honest, I have no idea whether it took me more or less time in the end than it would have without AI, so many hundreds of times did I go back and forth between my thoughts, tools, documents, sources, conversations with AI, conversations with colleagues, online exchanges, notes taken and other bursts of inspiration in the shower… No prompt could have generated this book.
+
+Like every intellectual technology before it — from the clay tablet to the printed book, from the word processor to the search engine — AI has become one working instrument among others, at least for those who do not want to give up their capacity to think and who have understood that there is no prompt magic.
+
+AI does not do away with the work of writing: it inserts a new layer of labour, faster and more efficient in some respects but no less intellectually demanding and laborious, whether in ideation, structuring, background research, putting into words, rephrasing, correcting or proofreading — and all of this without ever taking the place of the author, in order, finally, to stimulate us and push us towards even higher standards.
+
+If some pages of this book strike you as illuminating, the credit goes to the quality of the intellectual work I put into them. If they strike you as questionable or inaccurate, the responsibility is likewise mine.
+
+Artificial intelligence can assist with writing. It never exempts us from thinking.
+
+### Read also
+
+[The Making of This Book](https://web.stephane-vial.net/lexique-ia/en/making-of/)
+
+### How to cite this text
+
+Vial, S. (2026). Statement on the use of artificial intelligence. In *A Living Lexicon of Artificial Intelligence* (pp. 129–130). Stéphane Vial, Montréal.
