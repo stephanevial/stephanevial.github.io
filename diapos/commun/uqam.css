@@ -1262,3 +1262,6 @@ body, .reveal-viewport { background: transparent !important; }
 /* Sur la diapo de fin, la mention se cale sur la ligne de base de la
    dernière coordonnée : les deux blocs du pied se répondent. */
 .sv-fin .sv-qr { bottom: 144px; }
+/* Sur une diapo de contenu, le bloc s'écarte du code QR : la colonne
+   de droite lui est réservée. */
+.avec-qr .sv-champ { margin-right: 196px; }
