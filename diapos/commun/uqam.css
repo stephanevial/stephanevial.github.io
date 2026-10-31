@@ -1202,3 +1202,7 @@ body, .reveal-viewport { background: transparent !important; }
   letter-spacing: .14em;
   white-space: nowrap;
 }
+
+/* Plan à numéros simples (« :: plan 1 ») : un chiffre d'une seule largeur,
+   la colonne se resserre pour que le numéro reste attaché à son intitulé. */
+.sv-plan-rangs.simple .sv-rang { grid-template-columns: 52px 1fr; }
