@@ -1230,3 +1230,32 @@ body, .reveal-viewport { background: transparent !important; }
   color: var(--sv-accent);
   font-variant-numeric: lining-nums;
 }
+
+/* --- 19. Code QR : « qr: medias/qr.svg | mention | lien » (31 oct. 2026) -- */
+
+/* Posé au-dessus du filet de pied, son bord droit sur la fin du filet,
+   comme l'image de couverture. Le fond blanc n'est pas un cadre : c'est la
+   zone de silence qu'exige la lecture du code, surtout sur fond sombre.
+   La mention, en petites capitales grises, se cale sous le code, à droite. */
+.sv-qr {
+  position: absolute;
+  right: var(--sv-pad-x);
+  bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sv-qr-code { width: 132px; height: 132px; padding: 10px; background: #FFFFFF; box-sizing: content-box; }
+.sv-qr-code a, .sv-qr-code img { display: block; width: 100%; height: 100%; margin: 0; border: 0; box-shadow: none; }
+.reveal .slides p.sv-qr-mention {
+  margin: 14px 0 0;
+  max-width: none;
+  font-family: var(--sv-sans);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  text-align: right;
+  color: var(--sv-muted);
+}
