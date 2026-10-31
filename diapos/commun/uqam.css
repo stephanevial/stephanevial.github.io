@@ -1139,21 +1139,56 @@ body, .reveal-viewport { background: transparent !important; }
 .sv-tableaux.cote-a-cote > .sv-notes-colonne { flex: 0 0 30%; padding-top: 30px; }
 .sv-notes-colonne .sv-note { margin: 0 0 14px; }
 
-/* Les grands chiffres : Cardo au corps de la couverture, à l'encre ; le
-   libellé en gris dessous. Le chiffre parle seul, sans couleur. */
-.sv-chiffres-rangee { display: flex; gap: 48px; align-items: flex-start; }
-.sv-chiffre { flex: 1 1 0; min-width: 0; padding-top: 22px; border-top: 1px solid var(--sv-rule); }
-.reveal .slides p.sv-chiffre-valeur {
-  margin: 0;
-  font-family: var(--sv-serif);
-  font-size: 80px;
-  line-height: 1;
-  white-space: nowrap;
-  font-variant-numeric: lining-nums;
-  color: var(--sv-ink);
+/* Les chiffres : des rangs entre filets, dans la langue du plan. Le
+   chiffre en Cardo ocre à chasse fixe, aligné à droite dans sa colonne ;
+   le libellé en Inter à grand corps ; une valeur en gris à droite. */
+.sv-crangs { margin-top: 4px; }
+.sv-crang {
+  display: grid;
+  grid-template-columns: calc(var(--sv-chiffres-n, 3) * 25px) 1fr auto;
+  column-gap: 36px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-top: 1px solid var(--sv-rule);
 }
-.reveal .slides p.sv-chiffre-libelle { margin: 14px 0 0; font-size: 24px; line-height: 1.3; color: var(--sv-muted); }
-.reveal .slides p.sv-chiffre-precision { margin: 6px 0 0; font-size: 20px; line-height: 1.35; color: var(--sv-muted); }
+.sv-crangs > .sv-crang:last-child,
+.sv-crangs-col > .sv-crang:last-child { border-bottom: 1px solid var(--sv-rule); }
+.sv-crang-valeur {
+  font-family: var(--sv-serif);
+  font-size: 48px;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--sv-accent);
+}
+.sv-crang-libelle { font-size: 32px; line-height: 1.3; color: var(--sv-ink); }
+.sv-crang-libelle .sv-precision { color: var(--sv-muted); }
+.sv-crang-droite {
+  font-size: 24px;
+  line-height: 1.3;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--sv-muted);
+}
+/* Cinq rangs et plus : le pas se resserre, la langue reste la même. */
+.sv-crangs.serre .sv-crang {
+  padding: 14px 0;
+  grid-template-columns: calc(var(--sv-chiffres-n, 3) * 21px) 1fr auto;
+}
+.sv-crangs.serre .sv-crang-valeur { font-size: 40px; }
+.sv-crangs.serre .sv-crang-libelle { font-size: 29px; }
+/* Deux colonnes de rangs : pour des listes de personnes. */
+.sv-crangs.deux-colonnes { display: flex; gap: 56px; }
+.sv-crangs.deux-colonnes .sv-crangs-col { flex: 1 1 0; min-width: 0; }
+.sv-crangs.deux-colonnes .sv-crang {
+  grid-template-columns: calc(var(--sv-chiffres-n, 3) * 17px) 1fr;
+  column-gap: 24px;
+  padding: 11px 0;
+}
+.sv-crangs.deux-colonnes .sv-crang-valeur { font-size: 32px; }
+.sv-crangs.deux-colonnes .sv-crang-libelle { font-size: 26px; }
+.sv-crangs.deux-colonnes .sv-crang-droite { display: none; }
 
 /* --- 17. Plan à étiquette : « :: plan temps » (31 octobre 2026) --------- */
 
