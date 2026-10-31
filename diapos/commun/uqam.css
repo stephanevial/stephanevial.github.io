@@ -173,7 +173,7 @@ body, .reveal-viewport { background: transparent !important; }
 .reveal ul > li::before {
   content: "";
   position: absolute;
-  left: 0; top: .68em;
+  left: 0; top: .82em;   /* au milieu de la hauteur d'x d'Inter */
   width: .55em; height: 1px;
   background: var(--sv-accent);
 }
