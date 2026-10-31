@@ -170,12 +170,14 @@ body, .reveal-viewport { background: transparent !important; }
   list-style: none;
 }
 .reveal li { position: relative; padding-left: 1.15em; margin-bottom: .5em; line-height: 1.5; }
+/* La puce est un tiret demi-cadratin, composé comme du texte : il suit la
+   ligne de base, et garde sa couleur pleine. Un filet de 1 px dessiné en
+   absolu tombait entre deux pixels et virait au gris selon la ligne. */
 .reveal ul > li::before {
-  content: "";
+  content: "\2013";
   position: absolute;
-  left: 0; top: .82em;   /* au milieu de la hauteur d'x d'Inter */
-  width: .55em; height: 1px;
-  background: var(--sv-accent);
+  left: 0; top: 0;
+  color: var(--sv-accent);
 }
 .reveal ol { counter-reset: sv-ol; }
 .reveal ol > li { padding-left: 1.6em; }
@@ -475,7 +477,7 @@ body, .reveal-viewport { background: transparent !important; }
   color: var(--sv-muted);
 }
 .sv-credits li { margin-bottom: .45em; break-inside: avoid; }
-.sv-credits ul > li::before { top: .62em; }
+.sv-credits ul > li::before { top: 0; }
 
 /* 4.13 Fin */
 .sv-fin { justify-content: center; }
