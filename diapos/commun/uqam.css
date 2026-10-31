@@ -1259,3 +1259,6 @@ body, .reveal-viewport { background: transparent !important; }
   text-align: right;
   color: var(--sv-muted);
 }
+/* Sur la diapo de fin, la mention se cale sur la ligne de base de la
+   dernière coordonnée : les deux blocs du pied se répondent. */
+.sv-fin .sv-qr { bottom: 144px; }
