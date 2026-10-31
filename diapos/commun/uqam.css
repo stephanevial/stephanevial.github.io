@@ -742,7 +742,9 @@ body, .reveal-viewport { background: transparent !important; }
 .reveal .slides section.sv-grille-images,
 .reveal .slides section.sv-reference,
 .reveal .slides section.sv-credits,
-.reveal .slides section.sv-affirmation {
+.reveal .slides section.sv-affirmation,
+.reveal .slides section.sv-tableau,
+.reveal .slides section.sv-chiffres {
   justify-content: flex-start;
   padding: var(--sv-contenu-y) var(--sv-pad-x) 92px
            calc(var(--sv-pad-x) + var(--sv-axe));
@@ -1053,3 +1055,102 @@ body, .reveal-viewport { background: transparent !important; }
    ornement — elle ne se pose que sur les images dont le ratio exact est
    connu, donc dont le cadre épouse le visuel au pixel près. */
 .sv-couv-image.avec-ombre { box-shadow: var(--sv-ombre); }
+
+
+/* --- 16. Message, tableau, grands chiffres (31 octobre 2026) ------------- */
+
+/* Le message : la thèse de la diapo, posée sous le titre, sans libellé.
+   La salle lit la conclusion d'abord ; les données la prouvent ensuite. */
+.reveal .slides p.sv-message {
+  margin: -14px 0 28px;
+  max-width: 56ch;
+  font-family: var(--sv-serif);
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--sv-ink);
+  text-wrap: balance;
+}
+
+/* Le tableau : des rangs entre filets, comme le plan. Aucun cadre, aucun
+   fond alterné ; les chiffres à chasse fixe, alignés à droite. */
+.sv-tableau-bloc table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 20px;
+  line-height: 1.3;
+}
+.sv-tableau-bloc th,
+.sv-tableau-bloc td {
+  padding: 6px 0;
+  text-align: left;
+  vertical-align: baseline;
+  border: 0;
+}
+.sv-tableau-bloc th + th,
+.sv-tableau-bloc td + td { padding-left: 32px; }
+.sv-tableau-bloc th {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--sv-muted);
+}
+.sv-tableau-bloc td { border-top: 1px solid var(--sv-rule); }
+.sv-tableau-bloc tbody tr:last-child td { border-bottom: 1px solid var(--sv-rule); }
+.sv-tableau-bloc .num { text-align: right; white-space: nowrap; }
+/* Chasse fixe sur les seuls chiffres : appliquée au texte, elle écarterait
+   les traits d'union (« États - Unis »). */
+.sv-tableau-bloc td.num,
+.sv-tableau-bloc td.rang { font-variant-numeric: lining-nums tabular-nums; }
+.sv-tableau-bloc td.rang { white-space: nowrap; color: var(--sv-muted); }
+.sv-tableau-bloc td.lib { min-width: 12em; }
+.sv-tableau-bloc td.txt { color: var(--sv-muted); }
+.sv-tableau-bloc .longue { width: 46%; }
+.sv-tableau-bloc table.dense td { padding-top: 4px; padding-bottom: 4px; }
+.sv-tableau-bloc table.dense tr.sous td { padding-top: 0; }
+.sv-tableau-bloc .sv-precision { color: var(--sv-muted); }
+/* La ligne de total : le filet du dessus passe à l'encre, le texte en
+   demi-gras. Elle conclut le tableau comme un trait d'addition. */
+.sv-tableau-bloc tr.total td { border-top-color: var(--sv-ink); font-weight: 600; }
+/* Sous-lignes (« – France ») : en retrait, en gris, sans filet propre. */
+.sv-tableau-bloc tr.sous td { border-top: 0; padding-top: 2px; color: var(--sv-muted); }
+.sv-tableau-bloc tr.sous td.lib { padding-left: 28px; }
+/* Rangs groupés (première cellule vide) : même rang, pas de filet. */
+.sv-tableau-bloc tr.suite td { border-top: 0; padding-top: 0; }
+
+.reveal .slides p.sv-note {
+  margin: 18px 0 0;
+  max-width: none;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--sv-muted);
+}
+.sv-tableau-bloc > .sv-note:first-child { margin: 0 0 22px; }
+.sv-tableau-bloc > .sv-note:only-child { margin: 0; }
+/* Le champ des tableaux remonte d'un cran : ils sont la diapo la plus
+   haute du gabarit. Le centrage entre les registres reste la règle. */
+.reveal .slides section.sv-tableau { padding-top: 104px; }
+
+.sv-tableaux.cote-a-cote { display: flex; gap: 48px; align-items: flex-start; }
+.sv-tableaux.cote-a-cote > div { flex: 1 1 0; min-width: 0; }
+.sv-tableaux.cote-a-cote > .sv-tableau-colonne { flex: 1 1 auto; }
+.sv-tableaux.cote-a-cote > .sv-notes-colonne { flex: 0 0 30%; padding-top: 30px; }
+.sv-notes-colonne .sv-note { margin: 0 0 14px; }
+
+/* Les grands chiffres : Cardo au corps de la couverture, à l'encre ; le
+   libellé en gris dessous. Le chiffre parle seul, sans couleur. */
+.sv-chiffres-rangee { display: flex; gap: 48px; align-items: flex-start; }
+.sv-chiffre { flex: 1 1 0; min-width: 0; padding-top: 22px; border-top: 1px solid var(--sv-rule); }
+.reveal .slides p.sv-chiffre-valeur {
+  margin: 0;
+  font-family: var(--sv-serif);
+  font-size: 80px;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums;
+  color: var(--sv-ink);
+}
+.reveal .slides p.sv-chiffre-libelle { margin: 14px 0 0; font-size: 24px; line-height: 1.3; color: var(--sv-muted); }
+.reveal .slides p.sv-chiffre-precision { margin: 6px 0 0; font-size: 20px; line-height: 1.35; color: var(--sv-muted); }
