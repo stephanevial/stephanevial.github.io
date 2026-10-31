@@ -1210,3 +1210,23 @@ body, .reveal-viewport { background: transparent !important; }
 /* Plan à numéros simples (« :: plan 1 ») : un chiffre d'une seule largeur,
    la colonne se resserre pour que le numéro reste attaché à son intitulé. */
 .sv-plan-rangs.simple .sv-rang { grid-template-columns: 52px 1fr; }
+
+/* --- 18. Chiffres en masse : « :: chiffres masse » (31 octobre 2026) ---- */
+
+/* Les noms en un bloc continu, chacun précédé de son chiffre en Cardo ocre.
+   Pour montrer un collectif : la répétition des petits chiffres fait voir
+   la masse. Le nom ne se coupe jamais. */
+.reveal .slides p.sv-masse {
+  margin: 0;
+  max-width: none;
+  font-size: 24px;
+  line-height: 1.75;
+  color: var(--sv-ink);
+}
+.sv-masse-item { white-space: nowrap; margin-right: .75em; }
+.sv-masse-n {
+  font-family: var(--sv-serif);
+  font-size: 1.12em;
+  color: var(--sv-accent);
+  font-variant-numeric: lining-nums;
+}
