@@ -1154,3 +1154,16 @@ body, .reveal-viewport { background: transparent !important; }
 }
 .reveal .slides p.sv-chiffre-libelle { margin: 14px 0 0; font-size: 24px; line-height: 1.3; color: var(--sv-muted); }
 .reveal .slides p.sv-chiffre-precision { margin: 6px 0 0; font-size: 20px; line-height: 1.35; color: var(--sv-muted); }
+
+/* --- 17. Plan à étiquette : « :: plan temps » (31 octobre 2026) --------- */
+
+/* Un plan interne à une partie ne se numérote pas 01, 02, 03 : ce sont les
+   numéros des parties. L'étiquette reprend le surtitre des diapos qui
+   ouvriront chaque temps, en capitales Cardo ocre. */
+.sv-plan-rangs.avec-etiquette .sv-rang { grid-template-columns: 150px 1fr; }
+.sv-plan-rangs.avec-etiquette .sv-rang-num {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  white-space: nowrap;
+}
