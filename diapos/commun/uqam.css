@@ -1265,3 +1265,18 @@ body, .reveal-viewport { background: transparent !important; }
 /* Sur une diapo de contenu, le bloc s'écarte du code QR : la colonne
    de droite lui est réservée. */
 .avec-qr .sv-champ { margin-right: 196px; }
+
+/* --- 20. Plan des parties cliquable (31 octobre 2026) ------------------- */
+
+/* Chaque intitulé du plan mène au début de sa partie. Rien ne le signale :
+   ni couleur, ni soulignement, ni effet au survol ; c'est un raccourci
+   pour l'orateur, pas une affordance pour la salle. */
+.reveal .slides a.sv-rang-lien,
+.reveal .slides a.sv-rang-lien:hover,
+.reveal .slides a.sv-rang-lien:focus {
+  color: inherit;
+  text-decoration: none;
+  border: 0;
+  background: none;
+  outline: none;
+}
