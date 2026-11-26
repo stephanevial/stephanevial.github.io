@@ -1305,3 +1305,24 @@ body, .reveal-viewport { background: transparent !important; }
 
 /* « Stéphane Vial, PhD » : le grade suit le nom, en graisse normale. */
 .sv-couverture .sv-nom .sv-grade { font-weight: 400; }
+
+/* --- 23. Complément sous une liste, diapo de contenu (26 novembre 2026) - */
+
+/* « > texte » dans une diapo de contenu : une phrase d'appui (témoignage,
+   précision) sous le propos principal, plus petite et grise, alignée sur
+   le texte de la liste. La diapo :: citation garde son propre rendu. */
+.sv-contenu .sv-corps blockquote {
+  margin: 10px 0 0 1.6em;
+  padding: 0;
+  width: auto;
+  max-width: none;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  font-style: normal;
+  font-size: 26px;
+  line-height: 1.45;
+  color: var(--sv-muted);
+}
+.sv-contenu .sv-corps blockquote::before,
+.sv-contenu .sv-corps blockquote::after { content: none; }
