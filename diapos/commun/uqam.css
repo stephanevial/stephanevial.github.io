@@ -1280,3 +1280,23 @@ body, .reveal-viewport { background: transparent !important; }
   background: none;
   outline: none;
 }
+
+/* --- 21. Aide-mémoire de l'orateur (26 novembre 2026) ------------------- */
+
+/* « >> texte » dans contenu.md : ce que l'orateur veut avoir sous les yeux,
+   composé en petit et en gris au bas de la diapo, sous un filet discret.
+   Lisible de près, ignoré de la salle. Il reste visible en ligne : n'y
+   mettre que ce qui peut être lu par tous. */
+.sv-memo {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--sv-rule);
+  font-family: var(--sv-sans);
+  font-size: var(--sv-micro);
+  line-height: 1.4;
+  color: var(--sv-muted);
+}
+.reveal .slides .sv-memo ul { margin: 0; padding: 0; list-style: none; }
+.reveal .slides .sv-memo li { margin: 0 0 4px; padding-left: 16px; position: relative; }
+.reveal .slides .sv-memo li::before { content: "›"; position: absolute; left: 0; color: var(--sv-accent); }
+.avec-qr .sv-memo { margin-right: 196px; }
