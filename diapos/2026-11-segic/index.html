@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Du curatif au préventif</title>
+<link rel="stylesheet" href="../commun/polices.css">
+<link rel="stylesheet" href="../commun/reveal.css?v=dfeb30f7">
+<link rel="stylesheet" href="../commun/uqam.css?v=f0c22a39">
+</head>
+<body class="">
+<div class="reveal">
+  <div class="slides">
+<section class="sv-couverture sombre">
+
+<p class="sv-eyebrow">Sommet Segic 2026 · Avantages collectifs</p><h1>Du curatif au préventif</h1><p class="sv-sous-titre">Donner aux employés les moyens d'agir plus tôt</p><div class="sv-signature"><div><p class="sv-nom">Stéphane Vial</p><p class="sv-fonction">Professeur titulaire à l'École de design, UQAM</p><p class="sv-fonction">Fondateur de Mentallys</p></div></div>
+<div class="sv-pied"><hr><span class="sv-pied-lieu">Sommet Segic 2026 · Montréal</span><span class="sv-pied-nature">table ronde</span><span class="sv-pied-num">26 novembre 2026</span></div>
+</section>
+<section class="sv-fin avec-qr sombre">
+
+<h1>Merci</h1><div class="sv-contacts"><p><a href="https://stephane-vial.net/"><span class="sv-ico" role="img" aria-label="Site web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z"/></svg></span><span class="sv-ico-texte">stephane-vial.net</span></a><br><a href="mailto:vial.stephane@uqam.ca"><span class="sv-ico" role="img" aria-label="Courriel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.6 6.8 12 13l8.4-6.2"/></svg></span><span class="sv-ico-texte">vial.stephane@uqam.ca</span></a><br><a href="https://www.linkedin.com/in/stephanevial/"><span class="sv-ico" role="img" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.6 10.6v6"/><path d="M7.6 7.7v.2"/><path d="M11.7 16.6v-6"/><path d="M11.7 13.1c0-1.4 1-2.5 2.4-2.5s2.4 1.1 2.4 2.5v3.5"/></svg></span><span class="sv-ico-texte">linkedin.com/in/stephanevial</span></a></p></div>
+<div class="sv-qr"><div class="sv-qr-code"><a href="https://web.stephane-vial.net/diapos/2026-11-segic/"><img src="medias/qr-diapos.svg" alt="Code QR : Diapos disponibles ici"></a></div><p class="sv-qr-mention">Diapos disponibles ici</p></div>
+<div class="sv-pied"><hr><span class="sv-pied-lieu">Sommet Segic 2026 · Montréal</span><span class="sv-pied-nature">table ronde</span><span class="sv-pied-num">2</span></div>
+</section>
+  </div>
+</div>
+<script src="../commun/reveal.js?v=48de495e"></script>
+<div class="sv-aide" role="dialog" aria-label="Raccourcis clavier">
+  <table>
+    <tr><th colspan="2">Se déplacer</th></tr>
+    <tr><td class="touche">&rarr; &darr; Espace</td><td>Diapositive suivante</td></tr>
+    <tr><td class="touche">&larr; &uarr;</td><td>Diapositive précédente</td></tr>
+    <tr><td class="touche">Début / Fin</td><td>Première / dernière diapositive</td></tr>
+    <tr><td class="touche">R</td><td>Revenir à la première diapositive</td></tr>
+    <tr><td class="touche">G</td><td>Aller à une diapositive par son numéro</td></tr>
+    <tr><th colspan="2">Afficher</th></tr>
+    <tr><td class="touche">F</td><td>Plein écran</td></tr>
+    <tr><td class="touche">Échap</td><td>Fermer la recherche ou l'aide · vue d'ensemble</td></tr>
+    <tr><td class="touche">P &nbsp;B &nbsp;.</td><td>Écran noir</td></tr>
+    <tr><td class="touche">S</td><td>Rechercher un mot dans les diapositives</td></tr>
+    <tr><td class="touche">?</td><td>Cette aide</td></tr>
+  </table>
+</div>
+<script src="../commun/search.js?v=40f70903"></script>
+<script>
+Reveal.initialize({
+  plugins: [ RevealSearch ],
+  width: 1280, height: 720, margin: 0,
+  minScale: 0.2, maxScale: 2.0,
+  center: false, controls: false, progress: true,
+  hash: true, slideNumber: false, transition: 'none',
+  overview: true,
+  keyboard: {
+    80: 'togglePause',
+    191: function (e) { if (e && e.shiftKey) svBasculerAide(); }
+  }
+});
+
+var svAide = document.querySelector('.sv-aide');
+function svBasculerAide() { svAide.classList.toggle('visible'); }
+svAide.addEventListener('click', function () { svAide.classList.remove('visible'); });
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  if (svAide.classList.contains('visible')) {
+    svAide.classList.remove('visible');
+    e.preventDefault();
+    e.stopPropagation();
+    return;
+  }
+  var boite = document.querySelector('.searchbox');
+  if (boite && boite.style.display === 'inline') {
+    var module = Reveal.getPlugin('search');
+    if (module) { module.close(); }
+    e.preventDefault();
+    e.stopPropagation();
+  }
+}, true);
+Reveal.addKeyBinding(
+  { keyCode: 82, key: 'R', description: 'Revenir à la première diapositive' },
+  function () { Reveal.slide(0); }
+);
+Reveal.addKeyBinding(
+  { keyCode: 83, key: 'S', description: 'Rechercher un mot dans les diapositives' },
+  function () {
+    var module = Reveal.getPlugin('search');
+    if (!module) return;
+    module.toggle();
+    var champ = document.querySelector('.searchbox .searchinput');
+    if (champ) { champ.placeholder = 'Rechercher…'; }
+  }
+);
+function svAccorderLeFond() {
+  var d = Reveal.getCurrentSlide();
+  document.documentElement.classList.toggle('sv-hors-cadre-sombre',
+    !!(d && d.classList.contains('sombre')));
+}
+Reveal.on('ready', svAccorderLeFond);
+Reveal.on('slidechanged', svAccorderLeFond);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'g' || e.key === 'G') {
+    setTimeout(function () {
+      var saut = document.querySelector('.jump-to-slide-input');
+      if (saut) { saut.placeholder = 'Aller à…'; }
+    }, 0);
+  }
+}, true);
+</script>
+</body>
+</html>
