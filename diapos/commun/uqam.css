@@ -1300,3 +1300,8 @@ body, .reveal-viewport { background: transparent !important; }
 .reveal .slides .sv-memo li { margin: 0 0 4px; padding-left: 16px; position: relative; }
 .reveal .slides .sv-memo li::before { content: "›"; position: absolute; left: 0; color: var(--sv-accent); }
 .avec-qr .sv-memo { margin-right: 196px; }
+
+/* --- 22. Grade après le nom, en couverture (26 novembre 2026) ----------- */
+
+/* « Stéphane Vial, PhD » : le grade suit le nom, en graisse normale. */
+.sv-couverture .sv-nom .sv-grade { font-weight: 400; }
